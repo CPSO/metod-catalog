@@ -1,0 +1,59 @@
+/* Print-Optimized Stylesheet for Gentofte & Herlev Metodeblade */
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .app-header,
+  .hero-section,
+  .letter-bar-container,
+  .filter-bar,
+  .catalog-grid,
+  .modal-backdrop:not(.open),
+  .modal-actions,
+  .modal-tabs,
+  .btn,
+  .toast-container {
+    display: none !important;
+  }
+
+  .modal-backdrop.open {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .modal-container {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    transform: none !important;
+  }
+
+  .modal-header {
+    border-bottom: 2px solid #000 !important;
+    padding: 0 0 1rem 0 !important;
+  }
+
+  .tab-pane {
+    display: block !important;
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+
+  .detail-card {
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+  }
+
+  .data-table th {
+    background: #eee !important;
+    color: #000 !important;
+  }
+}

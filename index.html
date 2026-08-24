@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metodeblade Datakatalog | Klinisk Biokemisk Afdeling (KBA)</title>
+  <meta name="description" content="Søgbar database over laboratoriemetodeblade for Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital. Find NPU-koder, prøverør, referenceintervaller og svartider." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z'/><path d='M12 5v14'/></svg>" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./src/styles/main.css" />
+  <link rel="stylesheet" href="./src/styles/components.css" />
+  <link rel="stylesheet" href="./src/styles/print.css" />
+</head>
+<body>
+
+  <!-- Navigation Mount Point -->
+  <div id="navbar-mount"></div>
+
+  <!-- Hero & Global Search Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-title-area">
+        <h2>Laboratorieanalyser & Metodeblade</h2>
+        <p>Hurtig klinisk opslagsdatabase for Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital</p>
+      </div>
+
+      <!-- Search Input Container -->
+      <div class="search-box-wrapper">
+        <div class="search-input-container">
+          <span class="search-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </span>
+          <input 
+            type="search" 
+            id="main-search-input" 
+            class="search-input" 
+            placeholder="Søg på analysenavn, NPU-kode (fx NPU19673), LABKA (fx ALB), indikation eller prøverør..." 
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <span class="search-shortcut-key" title="Tryk på tastaturet for at søge">/</span>
+          <button id="clear-search-btn" class="btn btn-ghost clear-search-btn" title="Ryd søgning">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Quick Search Suggestion Tags -->
+        <div class="search-tags-row">
+          <span class="search-tags-label">Populære søgninger:</span>
+          <span class="search-tag-chip" data-search="Albumin">Albumin</span>
+          <span class="search-tag-chip" data-search="Amylase">Amylase</span>
+          <span class="search-tag-chip" data-search="ALAT">ALAT</span>
+          <span class="search-tag-chip" data-search="BASP">BASP</span>
+          <span class="search-tag-chip" data-search="NPU19673">NPU19673</span>
+          <span class="search-tag-chip" data-search="pankreatit">Pankreatit</span>
+          <span class="search-tag-chip" data-search="grøn prop">Grøn prop</span>
+          <span class="search-tag-chip" data-search="akut">Akut</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Alphabetical Letter Index Bar Mount Point -->
+  <div id="letter-bar-mount"></div>
+
+  <!-- Main Content Layout -->
+  <main class="container" style="flex: 1; padding-top: 1rem;">
+    
+    <!-- Faceted Filter Bar Mount Point -->
+    <div id="filter-bar-mount"></div>
+
+    <!-- Catalog Grid Mount Point -->
+    <div id="catalog-grid-mount"></div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-color); padding: 2rem 0; margin-top: auto;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+      <div>
+        <strong>Metodeblade Katalog</strong> • Region Hovedstaden • Herlev og Gentofte Hospital
+      </div>
+      <div>
+        Statisk søgedatabase til laboratorieopslag. 100% fri for tracking og backend-servere.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail & Helper Modals Mount Point -->
+  <div id="modal-mount"></div>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Main Application Script Entry -->
+  <script type="module" src="./src/js/app.js"></script>
+</body>
+</html>
