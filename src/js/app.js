@@ -2,10 +2,9 @@
 import rawDatabase from '../data/database.json';
 import { CatalogSearchEngine } from './search.js';
 import { renderNavbar } from './components/navbar.js';
-import { renderLetterBar } from './components/letterBar.js';
 import { renderFilterBar } from './components/filterBar.js';
-import { renderCatalogGrid } from './components/catalogGrid.js';
-import { renderDetailModal } from './components/detailModal.js';
+import { renderReferenceTable } from './components/referenceTable.js';
+import { renderDetailPanel } from './components/detailPanel.js';
 import { renderTubeGuideModal } from './components/tubeGuide.js';
 import { renderImporterModal } from './components/importerModal.js';
 import { showToast } from './utils/export.js';
@@ -25,14 +24,15 @@ class App {
     // Initial state
     this.state = {
       query: '',
-      letter: 'ALL',
       section: 'ALL',
       tubeColor: 'ALL',
       accreditedOnly: false,
+      sortKey: 'name',
+      sortDir: 'asc',
       selectedItem: null,
       isTubeGuideOpen: false,
       isImporterOpen: false,
-      theme: localStorage.getItem(this.themeStorageKey) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      theme: localStorage.getItem(this.themeStorageKey) || 'light'
     };
 
     this.initTheme();
@@ -55,10 +55,10 @@ class App {
 
   initDomContainers() {
     this.navContainer = document.getElementById('navbar-mount');
-    this.letterBarContainer = document.getElementById('letter-bar-mount');
     this.filterBarContainer = document.getElementById('filter-bar-mount');
-    this.gridContainer = document.getElementById('catalog-grid-mount');
+    this.tableContainer = document.getElementById('reference-table-mount');
     this.modalContainer = document.getElementById('modal-mount');
+    this.panelContainer = document.getElementById('panel-mount');
     this.searchInput = document.getElementById('main-search-input');
     this.clearSearchBtn = document.getElementById('clear-search-btn');
   }
@@ -77,17 +77,6 @@ class App {
       if (this.searchInput) this.searchInput.value = '';
       this.toggleClearButton();
       this.renderMainContent();
-    });
-
-    // Search suggestion chips
-    document.querySelectorAll('.search-tag-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        const term = chip.getAttribute('data-search') || chip.textContent.trim();
-        this.state.query = term;
-        if (this.searchInput) this.searchInput.value = term;
-        this.toggleClearButton();
-        this.renderMainContent();
-      });
     });
 
     // Keyboard Shortcuts
@@ -131,13 +120,13 @@ class App {
     } else {
       this.state.selectedItem = null;
     }
-    this.renderModals();
+    this.renderPanel();
   }
 
   openDetailModal(item) {
     this.state.selectedItem = item;
     window.location.hash = item.slug;
-    this.renderModals();
+    this.renderPanel();
   }
 
   closeDetailModal() {
@@ -145,7 +134,7 @@ class App {
     if (window.location.hash) {
       history.pushState('', document.title, window.location.pathname + window.location.search);
     }
-    this.renderModals();
+    this.renderPanel();
   }
 
   openTubeGuide() {
@@ -196,22 +185,9 @@ class App {
   renderMainContent() {
     const results = this.searchEngine.search({
       query: this.state.query,
-      letter: this.state.letter,
       section: this.state.section,
       tubeColor: this.state.tubeColor,
       accreditedOnly: this.state.accreditedOnly
-    });
-
-    const letterCounts = this.searchEngine.getLetterCounts();
-
-    renderLetterBar(this.letterBarContainer, {
-      activeLetter: this.state.letter,
-      letterCounts,
-      onSelectLetter: (letter) => {
-        this.state.letter = letter;
-        this.renderMainContent();
-      },
-      totalResults: results.length
     });
 
     renderFilterBar(this.filterBarContainer, {
@@ -231,11 +207,21 @@ class App {
       }
     });
 
-    renderCatalogGrid(this.gridContainer, results, {
-      onSelectCard: (item) => this.openDetailModal(item),
+    renderReferenceTable(this.tableContainer, results, {
+      sortKey: this.state.sortKey,
+      sortDir: this.state.sortDir,
+      onSort: (key) => {
+        if (this.state.sortKey === key) {
+          this.state.sortDir = this.state.sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          this.state.sortKey = key;
+          this.state.sortDir = 'asc';
+        }
+        this.renderMainContent();
+      },
+      onSelectItem: (item) => this.openDetailModal(item),
       onResetSearch: () => {
         this.state.query = '';
-        this.state.letter = 'ALL';
         this.state.section = 'ALL';
         this.state.tubeColor = 'ALL';
         this.state.accreditedOnly = false;
@@ -246,12 +232,18 @@ class App {
     });
   }
 
-  renderModals() {
+  renderPanel() {
     if (this.state.selectedItem) {
-      renderDetailModal(this.modalContainer, this.state.selectedItem, {
+      renderDetailPanel(this.panelContainer, this.state.selectedItem, {
         onClose: () => this.closeDetailModal()
       });
-    } else if (this.state.isTubeGuideOpen) {
+    } else {
+      this.panelContainer.innerHTML = '';
+    }
+  }
+
+  renderModals() {
+    if (this.state.isTubeGuideOpen) {
       renderTubeGuideModal(this.modalContainer, {
         onClose: () => this.closeTubeGuide()
       });
@@ -269,6 +261,7 @@ class App {
   render() {
     this.renderNavbarSection();
     this.renderMainContent();
+    this.renderPanel();
     this.renderModals();
   }
 }

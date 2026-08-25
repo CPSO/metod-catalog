@@ -19,28 +19,23 @@
   <!-- Navigation Mount Point -->
   <div id="navbar-mount"></div>
 
-  <!-- Hero & Global Search Section -->
+  <!-- Global Search Bar -->
   <section class="hero-section">
     <div class="container">
-      <div class="hero-title-area">
-        <h2>Laboratorieanalyser & Metodeblade</h2>
-        <p>Hurtig klinisk opslagsdatabase for Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital</p>
-      </div>
-
       <!-- Search Input Container -->
       <div class="search-box-wrapper">
         <div class="search-input-container">
           <span class="search-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
           </span>
-          <input 
-            type="search" 
-            id="main-search-input" 
-            class="search-input" 
-            placeholder="Søg på analysenavn, NPU-kode (fx NPU19673), LABKA (fx ALB), indikation eller prøverør..." 
+          <input
+            type="search"
+            id="main-search-input"
+            class="search-input"
+            placeholder="Søg på analysenavn, NPU-kode, LABKA-kode, indikation eller prøverør..."
             autocomplete="off"
             spellcheck="false"
           />
@@ -52,35 +47,18 @@
             </svg>
           </button>
         </div>
-
-        <!-- Quick Search Suggestion Tags -->
-        <div class="search-tags-row">
-          <span class="search-tags-label">Populære søgninger:</span>
-          <span class="search-tag-chip" data-search="Albumin">Albumin</span>
-          <span class="search-tag-chip" data-search="Amylase">Amylase</span>
-          <span class="search-tag-chip" data-search="ALAT">ALAT</span>
-          <span class="search-tag-chip" data-search="BASP">BASP</span>
-          <span class="search-tag-chip" data-search="NPU19673">NPU19673</span>
-          <span class="search-tag-chip" data-search="pankreatit">Pankreatit</span>
-          <span class="search-tag-chip" data-search="grøn prop">Grøn prop</span>
-          <span class="search-tag-chip" data-search="akut">Akut</span>
-        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Alphabetical Letter Index Bar Mount Point -->
-  <div id="letter-bar-mount"></div>
-
   <!-- Main Content Layout -->
-  <main class="container" style="flex: 1; padding-top: 1rem;">
-    
+  <main class="container" style="flex: 1; padding-top: 0.5rem;">
+
     <!-- Faceted Filter Bar Mount Point -->
     <div id="filter-bar-mount"></div>
 
-    <!-- Catalog Grid Mount Point -->
-    <div id="catalog-grid-mount"></div>
+    <!-- Reference Interval Table Mount Point -->
+    <div id="reference-table-mount"></div>
 
   </main>
 
@@ -96,8 +74,11 @@
     </div>
   </footer>
 
-  <!-- Detail & Helper Modals Mount Point -->
+  <!-- Helper Modals Mount Point (tube guide, importer) -->
   <div id="modal-mount"></div>
+
+  <!-- Detail Side Panel Mount Point -->
+  <div id="panel-mount"></div>
 
   <!-- Toast Container -->
   <div id="toast-container" class="toast-container"></div>

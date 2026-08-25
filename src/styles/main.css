@@ -130,7 +130,7 @@ body {
 /* Base Utility Classes */
 .container {
   width: 100%;
-  max-width: 1380px;
+ /* max-width: 1380px; allow it to use the full width */
   margin: 0 auto;
   padding: 0 1.5rem;
 }

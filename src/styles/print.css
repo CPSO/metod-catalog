@@ -9,10 +9,10 @@
 
   .app-header,
   .hero-section,
-  .letter-bar-container,
   .filter-bar,
-  .catalog-grid,
-  .modal-backdrop:not(.open),
+  .ref-table-wrapper,
+  .table-toolbar,
+  .panel-backdrop:not(.open),
   .modal-actions,
   .modal-tabs,
   .btn,
@@ -20,7 +20,7 @@
     display: none !important;
   }
 
-  .modal-backdrop.open {
+  .panel-backdrop.open {
     position: static !important;
     background: transparent !important;
     padding: 0 !important;
@@ -28,11 +28,13 @@
     height: auto !important;
   }
 
-  .modal-container {
+  .side-panel {
     box-shadow: none !important;
     border: none !important;
     max-width: 100% !important;
+    width: 100% !important;
     max-height: none !important;
+    height: auto !important;
     transform: none !important;
   }
 

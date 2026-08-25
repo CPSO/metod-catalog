@@ -45,18 +45,13 @@ export class CatalogSearchEngine {
     });
   }
 
-  search({ query = '', letter = 'ALL', section = 'ALL', tubeColor = 'ALL', accreditedOnly = false }) {
+  search({ query = '', section = 'ALL', tubeColor = 'ALL', accreditedOnly = false }) {
     const cleanQuery = query.trim().toLowerCase();
     const queryTokens = cleanQuery ? cleanQuery.split(/\s+/).filter(t => t.length > 0) : [];
 
     return this.searchIndex
       .filter(({ item, searchTerms }) => {
-        // 1. Letter Filter
-        if (letter !== 'ALL' && item.letter.toUpperCase() !== letter.toUpperCase()) {
-          return false;
-        }
-
-        // 2. Section Filter
+        // 1. Section Filter
         if (section !== 'ALL' && item.section.toUpperCase() !== section.toUpperCase()) {
           return false;
         }
@@ -97,28 +92,6 @@ export class CatalogSearchEngine {
       })
       .sort((a, b) => b.score - a.score || a.item.name.localeCompare(b.item.name, 'da'))
       .map(entry => entry.item);
-  }
-
-  getLetterCounts() {
-    const counts = {};
-    for (let charCode = 65; charCode <= 90; charCode++) {
-      const char = String.fromCharCode(charCode);
-      counts[char] = 0;
-    }
-    counts['Æ'] = 0;
-    counts['Ø'] = 0;
-    counts['Å'] = 0;
-
-    this.dataset.forEach(item => {
-      const l = (item.letter || item.name[0] || '').toUpperCase();
-      if (counts[l] !== undefined) {
-        counts[l]++;
-      } else {
-        counts[l] = (counts[l] || 0) + 1;
-      }
-    });
-
-    return counts;
   }
 
   getSections() {

@@ -1,8 +1,8 @@
-// Comprehensive Detail Modal Component
+// Comprehensive Detail Side Panel Component
 import { renderTubeBadge } from '../utils/tubeBadge.js';
 import { copyToClipboard, downloadJson, showToast } from '../utils/export.js';
 
-export function renderDetailModal(container, item, { onClose }) {
+export function renderDetailPanel(container, item, { onClose }) {
   if (!item) {
     container.innerHTML = '';
     return;
@@ -11,8 +11,8 @@ export function renderDetailModal(container, item, { onClose }) {
   const tubeBadgeHtml = renderTubeBadge(item.sample?.tubeColor, item.sample?.tubeColorName || item.sample?.tube);
 
   container.innerHTML = `
-    <div class="modal-backdrop open" id="detail-modal-backdrop">
-      <div class="modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="panel-backdrop open" id="detail-panel-backdrop">
+      <div class="side-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         
         <!-- Header -->
         <div class="modal-header">
@@ -78,18 +78,18 @@ export function renderDetailModal(container, item, { onClose }) {
 
         <!-- Tab Bar -->
         <div class="modal-tabs">
-          <button class="modal-tab-btn active" data-tab="tab-overview">Oversigt & Indikation</button>
+          <button class="modal-tab-btn" data-tab="tab-overview">Oversigt & Indikation</button>
           <button class="modal-tab-btn" data-tab="tab-sample">Prøvetagning & Rør</button>
-          <button class="modal-tab-btn" data-tab="tab-intervals">Referenceintervaller</button>
+          <button class="modal-tab-btn active" data-tab="tab-intervals">Referenceintervaller</button>
           <button class="modal-tab-btn" data-tab="tab-method">Metode & Apparatur</button>
           <button class="modal-tab-btn" data-tab="tab-qc">Kvalitetskontrol & Logistik</button>
         </div>
 
         <!-- Body -->
         <div class="modal-body">
-          
+
           <!-- TAB 1: OVERVIEW & INDIKATION -->
-          <div class="tab-pane active" id="tab-overview">
+          <div class="tab-pane" id="tab-overview">
             <div class="detail-section">
               <h3 class="detail-section-title">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
@@ -226,7 +226,7 @@ export function renderDetailModal(container, item, { onClose }) {
           </div>
 
           <!-- TAB 3: REFERENCEINTERVALLER -->
-          <div class="tab-pane" id="tab-intervals">
+          <div class="tab-pane active" id="tab-intervals">
             <div class="detail-section">
               <h3 class="detail-section-title">Interaktiv Referenceinterval Beregner</h3>
               
@@ -416,12 +416,12 @@ export function renderDetailModal(container, item, { onClose }) {
   `;
 
   // Attach Event Handlers
-  const modal = document.getElementById('detail-modal-backdrop');
-  
+  const backdrop = document.getElementById('detail-panel-backdrop');
+
   // Close buttons
   document.getElementById('modal-close-btn')?.addEventListener('click', onClose);
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) onClose();
+  backdrop?.addEventListener('click', (e) => {
+    if (e.target === backdrop) onClose();
   });
 
   // Tab switching
