@@ -1,0 +1,181 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                       Aspartattransaminase [ASAT];P NPU19654
+
+Metodeblad nr. M-017/14                                        EXAM Reg.nr. 1001  Revision: 24-01-2028
+Udarbejdet af:
+Ditte Persson                    Taget i brug: 24-01-2025
+                                 Erstatter: 04-10-2022
+
+GENERELT
+
+Ansvarlig KBA analysesektion     KEMI
+Indikation og resultatvurdering
+Analysenavn og kode i SP         Mistanke om og kontrol af leversygdom.
+                                 Kontrol af alkoholikere.
+                                 Paracetamol-forgiftning.
+                                 Leverskade ved abdominaltraumer.
+                                 Forhøjede værdier ses ved:
+                                 Akut og kronisk hepatitis, galdevejsobstruktion, levermetasta-
+                                 ser, infektiøs mononukleose og hepatom.
+                                 Myokardieinfarkt, svær hjerteinsufficiens og lungeemboli. My-
+                                 okarditis, myositis og muskeldystrofi.
+                                 Alkoholmisbrug, abdominal- og muskeltraumer.
+                                 Forgiftning med paracetamol kan give leverskade.
+
+                                 Aspartattransaminase [ASAT];P NPU19654
+
+Analysenavn og kode i LABKA P-Aspartattransaminase [ASAT] ASAT NPU19654
+
+Analysenavn og kode i WebReq Aspartattransaminase [ASAT];P NPU19654
+
+Enhed                            U/L
+Prøvemateriale og rørtype
+                                 Plasma/serum.
+Mindste prøvemængde              Vacuette® glas med grøn prop og sort ring, indeholdende
+Prøvetagning herunder særlige    Lithium-Heparin.
+forhold                          Alternativt kan benyttes: Vacuette® glas med rød prop og sort
+                                 ring, uden tilsætning
+
+                                 Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan
+                                 anvendes Vacuette-glas med grøn prop og hvid ring, indehol-
+                                 dende Lithium-Heparin eller Vacuette-glas med rød prop og
+                                 hvid ring, indeholdende clot activator.
+                                 200 µL plasma.
+                                 Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL
+                                 fuldblod for spædbørn.
+                                 Der tages 50 μL plasma/serum fra prøven til en forfortynding.
+                                 Fra denne forfortynding kræver analysen et volumen på 25 μL
+                                 til en enkelt bestemmelse.
+                                 Volumenet omfatter ikke dødvolumen i prøvebeholderen eller
+                                 det supplerende volumen, som er nødvendigt ved udførelse af
+                                 duplikater eller andre analyser på samme prøve.
+
+                                 Ingen, undgå dog helst kraftig fysisk aktivitet.
+
+M-017 ASAT                                                                        Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                       Aspartattransaminase [ASAT];P NPU19654
+
+                                          EXAM Reg.nr. 1001
+
+Metodeblad nr. M-017/14                   < 1 mdr.: 20 – 100 U/L
+                                          1 – 11 mdr.: 15 – 65 U/L
+Referenceinterval/kliniske be-            1 år – 4 år: 10 – 60 U/L
+slutningsgrænser                          5 år – 17 år: 17 – 46 U/L
+                                          Kvinde ≥ 18 år: 15 – 35 U/L
+Ringegrænser                              Mand ≥ 18 år: 15 – 45 U/L
+
+                                          Ingen
+
+Udførende laboratorie                     Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling
+
+Analyseringshyppighed                     Døgnet rundt alle ugens dage.
+Svartid
+                                          Svartid for 90% af analyserne er maksimalt 60 minutter.
+(efter modtagelse af prøve)               For praksisprøver svares samme dag.
+
+Prøvehåndtering                           Intern rekvirent Ekstern rekvirent        Praksis
+
+Holdbarhed                                Ingen særlige forholdsregler              Opbevares i klima-
+                                                                                    skab indtil afhent-
+Forsendelse                               For afpipetteret materiale:               ning.
+Præanalytiske fejlkilder                  2 – 8°C: 7 dage
+                                          ≤ -20°C: 3 mdr.                           Holdbarhed i fuld-
+                                          Intern transport Region H’s transport-    blod: 7 dage v. 21ᵒC
+
+                                                                 ordning            Region H’s trans-
+                                                                                    portordning ved
+                                                                                    21 °C
+
+                                          Hæmolyserede prøver analyseres ikke.
+
+METODEBESKRIVELSE                         kun udfyldt for analyser udført af KBA HGH
+
+CE mærket analyse                         Ja
+                                          Ja
+(apparatur og reagens i kombination)      Sporbar til IFCC-referencemetode.
+                                          Enzymatisk bestemmelse og absorptionsfotometri.
+Akkrediteret analyse
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur                                 Siemens Atellica CH 930
+
+Kalibrator                                Atellica CH ENZ 2 CAL
+
+Reagens                                   Atellica CH ASTPLc Reagens 1 og 2
+
+Ekstern kvalitetskontrol                  Labquality 3391 FI Almen klinisk biokemi
+
+Præcisionskontrolmaterialer                          BIORAD                         BIORAD
+                                          Liquid Assayed Multiqual 1     Liquid Assayed Multiqual 3
+(navn, producent, materialetype)
+                                                   serumbaseret                   serumbaseret
+Kontrolniveauer
+                                          43 U/L                                    275 U/L
+
+M-017 ASAT                                                                                 Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                       Aspartattransaminase [ASAT];P NPU19654
+
+                                            EXAM Reg.nr. 1001
+
+Metodeblad nr. M-017/14
+
+Intermediær præcision                             8%                          8%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed                        16,2%                       16,2%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                      Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske            semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                            svar 32,6 % beregnet på baggrund af en skønnet biologisk vari-
+
+                                      ation på 8,6 %
+
+Måleområde (total)                    8-6000 U/L
+
+standard analysemåleområde 8-1000 U/L
+
+måleområde fortynding (udstyr) 8-6000 U/L (automatisk fortynding)
+
+                                      Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+
+Interferens                           Bilirubin (342 µmol/L konjugeret og ukonjugeret)
+                                      Intralipid (2,26 mmol/L)
+(hæmolyse, icterus, lipæmi, andet)    Sulfasalazin (753 µmol/L)
+
+                                      Sulfapyridin (1,2 mmol/L)
+
+                                      Bestemmelse af Aspartattransaminase (ASAT) har et lille indi-
+
+Bemærkninger                          kationsområde ved brug i kombination med ALAT. Alanintran-
+                                      saminase (ALAT) er mere specifik for parenkymatøs leversyg-
+
+                                      dom.
+
+Dokumenthistorik                      Justeret CV, måleusikkerhed  Initialer
+ Dato                                 og MRKD. Mindste prøve-      AWUL0013
+ 24-01-2025                           mængde præciseret. Analy-
+                                      sen og referenceinterval
+                                      vurderet og fundet fortsat
+                                      klinisk egnet.
+
+M-017 ASAT                                                                              Side 3 af 3
+

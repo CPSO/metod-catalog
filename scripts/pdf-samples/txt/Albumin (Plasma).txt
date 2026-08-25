@@ -1,0 +1,167 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+                                 Albumin;P NPU19673
+
+Metodeblad nr. M-015/13                                        EXAM Reg.nr. 1001  Revision: 01-03-2027
+Udarbejdet af:
+Anders Berg Wulff                Taget i brug: 01-03-2024
+                                 Erstatter: 10-11-2020
+
+GENERELT
+
+Ansvarlig KBA analysesektion     KEMI
+Indikation og resultatvurdering
+Analysenavn og kode i SP         Albumin anvendes ved bedømmelse af væskebalance og styring
+                                 af væsketerapi, ved kontrol af renalt eller intestinalt proteintab
+                                 og defekt proteinsyntese (leversygdomme) samt ødem af uklar
+                                 årsag. Eventuelt supplerende ved bestemmelse af calcium og
+                                 magnesium.
+                                 Forhøjet albumin:
+                                 Akut dehydrering.
+                                 Nedsat albumin:
+                                 Aktive processer (inflammation, vævsskade, cancer).
+                                 Kronisk leversygdom.
+                                 Malabsorption.
+                                 Renalt proteintab (nefrotisk syndrom, kronisk glomerulonefrit,
+                                 diabetes mellitus, SLE).
+                                 Intestinalt proteintab (diarré-tilstande, ulcerøs colitis).
+                                 Proteintab fra huden ved forbrændinger.
+
+                                 Albumin;P;P NPU19673
+
+Analysenavn og kode i LABKA P-Albumin ALB
+
+Analysenavn og kode i WebReq Albumin;P;P NPU19673
+
+Enhed                            g/L
+                                 Plasma/serum.
+Prøvemateriale og rørtype        Vacuette glas med grøn prop og sort ring, indeholdende
+                                 Lithium-Heparin.
+Mindste prøvemængde              Alternativt kan benyttes: Vacuette glas med rød prop og sort
+Prøvetagning herunder særlige    ring, uden tilsætning
+forhold                          Et fyldt glas.
+
+                                 Ingen.
+
+M-015 ALB                                                                         Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+                                          Albumin;P NPU19673
+
+                                                    EXAM Reg.nr. 1001
+
+Metodeblad nr. M-015/13                   Alle:
+Referenceinterval
+Ringegrænser                              < 1 år    : 26 – 34 g/L
+
+                                          1 år – 3 år : 34 – 42 g/L
+
+                                          4 år      : 36 – 48 g/L
+
+                                          18 år – 39 år : 36 – 48 g/L
+
+                                          40 år – 69 år : 36 – 45 g/L
+
+                                          ≥ 70 år   : 34 – 45 g/L
+
+                                          Kvinder:
+
+                                          5 år – 13 år : 39 – 47 g/L
+
+                                          14 år – 17 år : 35 – 47 g/L
+
+                                          Mænd:
+
+                                          5 år – 17 år : 39 – 50 g/L
+
+                                          Ingen.
+
+Udførende laboratorie                     Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling
+
+Analyseringshyppighed                     Døgnet rundt alle ugens dage.
+Svartid
+                                          Svartid for 90% af analyserne er maksimalt 60 minutter.
+(efter modtagelse af prøve)               For praksisprøver svares samme dag.
+
+Prøvehåndtering                           Intern rekvirent Ekstern rekvirent            Praksis
+
+Holdbarhed                                Ingen særlige forholdsregler              Opbevares i klima-
+                                                                                    skab indtil afhent-
+Forsendelse                               Holdbarhed afpipetteret: 5 mdr. v. 2–8°C  ning.
+Præanalytiske fejlkilder                  Intern transport Region H’s transport-    Holdbarhed i fuld-
+                                                                                    blod: 36 timer v.
+                                                                 ordning            21°C
+                                                                                    Region H’s trans-
+                                                                                    portordning ved
+                                                                                    21 °C
+
+                                          Ingen
+
+METODEBESKRIVELSE                         Ja
+                                          Ja
+CE mærket analyse                         IRMM ERM DA(CRM) 470 fra IFCC
+                                          Kemisk farvereaktion og absorptionsfotometri
+(apparatur og reagens i kombination)
+
+Akkrediteret analyse
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur                                 Siemens Atellica CH 930
+
+Kalibrator                                Atellica CH AlbP CAL
+
+Reagens                                   Atellica CH AlbP Reagens 1 og 2
+
+M-015 ALB                                                                               Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+                                       Albumin;P NPU19673
+
+                                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-015/13                LABQUALITY 3391 FI Almen klinisk biokemi
+Ekstern kvalitetskontrol
+                                                  BIORAD                       BIORAD
+Præcisionskontrolmaterialer            Liquid Assayed Multiqual 1   Liquid Assayed Multiqual 3
+
+ (navn, producent, materialetype)               serumbaseret                 serumbaseret
+
+Kontrolniveauer                                  23 g/L                        42 g/L
+Intermediær præcision
+                                                 4,8 %                         3,0 %
+ (CVoprundet inkl. instru. spred.)
+                                                 9,6 %                         6,0 %
+Ekspanderet måleusikkerhed
+                                       Ved to prøver på samme patient (målt med ovennævnte analy-
+ (k=2 sv.t. 95% CI på måleresultatet)  semetode) er den mindste klinisk signifikante forskel på de to
+                                       svar 13,4 % beregnet på baggrund af en skønnet biologisk vari-
+Mindste relevante kliniske             ation på 3,2 %
+difference
+                                       5-80 g/L
+Måleområde (total)
+   standard analysemåleområde          Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+                                       Hæmoglobin (0,37 mmol/L)
+Interferens                            Bilirubin (513 µmol/L konjugeret og ukonjugeret)
+                                       Lipæmi (5,65 mmol/L)
+ (hæmolyse, icterus, lipæmi, andet)    Albuminkoncentrationer varierer afhængigt af patientens leje.
+                                       Resultater fra oprejst stilling kan være ca. 3 g/L højere end re-
+Bemærkninger                           sultater fra en liggende stilling.
+
+Dokumenthistorik                       Planlagt revision.           Initialer
+ Dato                                  Ændret holdbarhed.           AWUL0013
+ 14-02-2024
+
+M-015 ALB                                                                              Side 3 af 3
+

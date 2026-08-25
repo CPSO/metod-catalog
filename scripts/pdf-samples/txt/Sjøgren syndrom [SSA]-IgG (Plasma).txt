@@ -1,0 +1,205 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                         Sjøgren syndrom [SSA]-IgG;P NPU12564
+
+Metodeblad nr. M-126/12                                         EXAM Reg.nr. 1001  Revision:
+Udarbejdet af:                                                                     23.03.2029
+Valbona Camili                   Taget i brug: 23.03.2026
+                                 Erstatter: 15.12.2025
+
+GENERELT
+
+Ansvarlig KBA analysesektion            Sektion for Immunkemi og Specialanalyser
+Indikation og resultatvurdering
+                                        Påvisning af SS-A/Ro-antistoffer anvendes i forbindelse med
+                                        klinisk diagnosticering af Systemisk Lupus Erythematosus
+                                        (SLE) (forekomst 40-50 %) og Sjögrens syndrom (forekomst
+                                        60-75 % ved primært Sjögrens syndrom).
+
+                                        Se også Fortolkning af autoantistof-analyser
+                                        Ved screening vælges: Nucleært-Ab(IgG) [ANA];arb.stofk.;P
+                                        NPU28541
+                                        Positiv screening udløser analyse af 8 antistoffer, herunder
+                                        Sjøgren syndrom [SSA]-Ab(IgG);P
+
+Analysenavn og kode i SP                eller
+
+                                        ANA (kvantitativ binab) gruppe;P
+                                        NPU28402
+                                        Positiv screening udløser analyse af 14 antistoffer, herunder U1
+                                        Sjøgren syndrom [SSA]-Ab(IgG);P
+
+                                        Ved enkelt test vælges: Sjøgren syndrom [SSA]-Ab(IgG);P
+                                        NPU12564
+                                        I LABKA vælges: ved screening: ANASC
+                                        Ved positiv ANASC analyseres endvidere:
+                                        DNAIGG, SSA, JO1AB, SCL70, CENTROMER, SSB, SM og,
+                                        RNPU1
+
+Analysenavn og kode i LABKA             I LABKA vælges ved screening: BINAB
+                                        Ved positiv BINAB analyseres endvidere:
+                                        DNAIGG, SSA, JO1AB, SCL70, CENTROMER, SSB, SM,
+                                        RNPU1, RIBP, FIBR, MI2, PMSCL, PCNA og RNAPIII.
+
+                                           I LABKA vælges ved enkelt test: SSA
+                                           Sjögrensyndrom A-antistof (IgG)
+
+Analysenavn og kode i WebReq Rekvirering via WebReq er ikke muligt
+
+Enhed                                   kU/L
+
+Prøvemateriale og rørtype               Serum
+                                        Vacuette glas med Sandfarvet prop, indeholdende clot aktiva-
+                                        tor
+
+Mindste prøvemængde                     Minimum ½ mL serum
+
+M-126 Sjøgren syndrom [SSA]-IgG;P (ro)                                                         Side 1 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                         Sjøgren syndrom [SSA]-IgG;P NPU12564
+
+                                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-126/12
+
+Prøvetagning herunder særlige
+
+forhold                                   Ingen
+
+Referenceinterval/kliniske be-            Negativ: < 7 kU/L
+slutningsgrænser                          Inkonklusiv: 7-10 kU/L
+                                          Positiv: > 10 kU/L
+Ringegrænser                              Ingen
+Udførende laboratorie
+Analyseringshyppighed                     Klinisk biokemisk afdeling, Herlev matrikel
+Svartid
+                                          Udføres hverdage
+(efter modtagelse af prøve)
+                                          1 uge
+Prøvehåndtering
+                                           Intern rekvirent Ekstern rekvirent               Praksis/Filialer
+                                                  Ingen særlige forholdsregler
+                                                                                         Opbevares i klima-
+                                          Fuldblod: 8 timer ved stuetemperatur           skab indtil afhent-
+                                                                                         ning
+
+Holdbarhed                                For afpipetteret prøvemateriale:               Region H’s trans-
+                                          Stuetemperatur: 8 timer                        portordning ved
+Forsendelse                               2 – 8 ˚C: 14 dage                              21 °C
+Præanalytiske fejlkilder                  -20 ˚C: 1 måned
+                                          Intern transport Region H’s transport-
+
+                                                                 ordning eller
+                                                                 Postnord som quick-
+                                                                 brev i boblekuvert til
+                                                                 ”Biologisk stof kate-
+                                                                 gori B”
+
+                                          Se punktet Interferens
+
+METODEBESKRIVELSE
+
+CE mærket analyse                         Ja
+
+Akkrediteret analyse                      Ja
+
+Metrologisk sporbarhed                    Ved to prøver på samme patient (målt med ovennævnte analy-
+                                          semetode) er den mindste klinisk signifikante forskel på de to
+(rutinemålingens sporbarhed til referen-  svar 24 % beregnet på baggrund af en skønnet biologisk varia-
+cemateriale og/el. –metode)               tion på 4,5 % (S-Immunoglobulin IgG er anvendt)
+
+M-126 Sjøgren syndrom [SSA]-IgG;P (ro)                                                   Side 2 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                         Sjøgren syndrom [SSA]-IgG;P NPU12564
+
+                                                  EXAM Reg.nr. 1001
+
+Metodeblad nr. M-126/12                 Analysebrønde belagt med rekombinant SS-A/Ro-proteiner (60
+Analyseprincip                          kDa, 52 kDA) tilsættes patientprøvemateriale. Hvis antistoffer
+                                        mod de pågældende proteiner er til stede, binder de til antigener
+                                        i analysebrønden. Efter afvaskning af ubundne antistoffer til-
+                                        sættes konjugat med enzymmærkede antistoffer mod human
+                                        IgG-antistof og der dannes derved et antistof-konjugat-kom-
+                                        pleks. Ubunden konjugat vaskes bort og herefter inkuberes med
+                                        et development-reagens. Efter yderligere inkubation standses
+                                        reaktionen og fluorescens måles. Jo højere en responsværdi de-
+                                        sto mere specifik IgG er der tilstede i patientprøven. For at eva-
+                                        luere testresultaterne sammenlignes patientprøvens respons di-
+                                        rekte med kalibratorens respons.
+
+Apparatur                               Thermo Scientific Phadia® 250
+
+Kalibrator                              EliA IgG Calibrator Strips
+Reagens                                 EliA IgG Calibrator Well
+                                        EliA Ro Well
+                                        EliA IgG Conjugate
+                                        ImmunoCAP Development Solution
+                                        ImmunoCAP Stop Solution
+
+Ekstern kvalitetskontrol                UK NEQAS for Nuclear and related Antigens
+
+Præcisionskontrolmaterialer             EliA IgG/M/A Negative          EliA ANA Positive Control
+                                        Control                        Phadia AB
+(navn, producent, materialetype)        Phadia AB                      Humant serum
+                                        Humant serum
+
+Kontrolniveauer                         0,5 kU/L                       50 kU/L
+
+Intermediær præcision                   10 %                           9%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed              22 %                           20 %
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                        Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske              semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                              svar 32 % beregnet på baggrund af en skønnet biologisk varia-
+
+                                        tion på 4,5 % (P-Immunoglobulin IgG er anvendt)
+
+Måleområde (total)
+
+standard analysemåleområde              Standardmåleområde: 0,4 kU/L til ≥ 340 kU/L
+måleområde fortynding (udstyr)          Der foretages ikke yderligere fortynding ved højere niveauer
+måleområde opkonc. (udstyr)
+
+yderligere fortynding (ja/nej)
+
+Interferens                             Lipæmiske, hæmolyserede, icteriske eller mikrobioelt forure-
+                                        nede prøver kan ikke anvendes
+
+Bemærkninger                            Ingen
+
+M-126 Sjøgren syndrom [SSA]-IgG;P (ro)                                                   Side 3 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                         Sjøgren syndrom [SSA]-IgG;P NPU12564
+
+                                        EXAM Reg.nr. 1001
+
+Metodeblad nr. M-126/12                 Ny forfatter og ny produkti-  Initialer
+Dokumenthistorik                        onsansvarlig                  VCAM
+ Dato                                   Opdateret intermediær         VCAM
+ 26.05.2025                             præcision og måleusikker-
+                                        hed med 3 Phadia apparater    SAF0011
+ 15.12.2025                             Opdateret intermediær
+                                        præcision og måleusikker-
+ 23.03.2026                             hed efter erstatning af 2
+                                        Phadia apparater
+
+M-126 Sjøgren syndrom [SSA]-IgG;P (ro)                                           Side 4 af 4
+

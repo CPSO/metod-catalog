@@ -1,0 +1,190 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                 O2sat.;Hb(aB) NPU03011 / O2sat.;Hb(vB) NPU10199
+
+Metodeblad nr. M-041/12                                             EXAM Reg.nr. 1001  Revision: 14.08.2027
+280322Udarbejdet af:
+Lærke Kristine Kyhl                   Taget i brug: 14.08.2024
+                                      Erstatter: 28.03.2022
+
+GENERELT
+
+Ansvarlig KBA analysesektion          Præanalyse, POCT og EKG
+Indikation og resultatvurdering
+                                      Hypoxi, kontrol af oxygen- og respiratorterapi, respirationssvigt
+                                      og sammen med pO2 til vurdering af graden af en veno-arteriel
+                                      shunt.
+                                      Arterie-blod:
+                                      Navn: O2sat.;Hb(aB)
+                                      Kode: NPU03011
+
+Analysenavn og kode i SP              Vene-blod:
+                                      Navn: O2sat.;Hb(vB)
+                                      Kode: NPU10199
+
+                                      Kapillær-blod:
+                                      Navn: O2 sat.;Hb(kB)
+                                      Kode: NPU10197
+                                      Arterie-blod:
+                                      Navn: Hb(aB)-O2 sat.
+                                      Kode: abo2mæt
+
+                                           Vene-blod:
+Analysenavn og kode i LABKA Navn: Hb(vB)- O2sat.
+
+                                           Kode: vbo2mæt
+
+Analysenavn og kode i WebReq          Kapillær-blod:
+                                      Navn: Hb(kB)- O2 sat.
+                                      Kode: kbo2mæt
+
+                                      Ikke relevant
+
+Enhed                                 Fraktion, ingen enhed.
+Prøvemateriale og rørtype
+Mindste prøvemængde                   Arterieblod i sprøjte. SafePICO selvfyldende arteriesprøjte med
+                                      stålkugle i, fra Radiometer, skal anvendes, når apparatets
+                                      FLEX-modul bruges. Bruges apparatets FLEX-modul ikke, kan
+                                      arteriesprøjten PICO70 også anvendes.
+                                      Veneblod i sprøjte.
+                                      Kapillærblod i kapillærrør med 70units/L heparin.
+                                      Til arteriepunktur med sprøjte: 1 mL
+                                      Til venepunktur: En fyldt sprøjte.
+                                      Til kapillærblod: 95 μL uden kreatinin-bestemmelse / 125 μL
+                                      ved kreatinin-bestemmelse.
+
+M-041 02 sat.;Hb(aB), 02 sat.;Hb(vB)                                                   Side 1 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                 O2sat.;Hb(aB) NPU03011 / O2sat.;Hb(vB) NPU10199
+
+                                                  EXAM Reg.nr. 1001
+
+Metodeblad nr. M-041/12                   Klinisk biokemisk afdelings personale udfører ikke arteriepunk-
+Prøvetagning herunder særlige             tur.
+forhold                                   Arterie- og kapillærblod:
+                                          1–40 år: 0,95-0,99
+Referenceinterval/kliniske be-            >40-80 år: 0,92-0,99
+slutningsgrænser
+                                          Veneblod:
+Ringegrænser                              Alle: 0,70-0,80
+                                          Ingen
+
+Udførende laboratorie                     Klinisk biokemisk afdeling Herlev og Gentofte Hospital
+
+Analyseringshyppighed                     Hele døgnet
+Svartid
+                                          15 min
+(efter modtagelse af prøve)
+                                          Intern rekvirent Ekstern rekvirent Praksis/Filialer
+Prøvehåndtering
+                                          Klinisk biokemisk afde-
+Holdbarhed
+Forsendelse                               lings personale udfører Ikke tilgængelig     Ikke tilgængelig
+
+                                          ikke arteriepunktur.                         Ikke tilgængelig
+                                                                                       Ikke tilgængelig
+                                          15 min (begrænset af       Ikke tilgængelig
+                                          p02)
+
+                                          Intern transport           Ikke tilgængelig
+
+Præanalytiske fejlkilder                  Luftbobler i blodprøven.
+
+METODEBESKRIVELSE                         Ja
+CE mærket analyse
+                                          Ja. Kapillærprøver er dog ikke omfattet af akkrediteringen.
+(apparatur og reagens i kombination)
+                                          Kalibratorerne er sporbare til NIST SRM (absorbance, wave-
+Akkrediteret analyse                      length), NIST SRM gas. whole blood sample. pH = 7,4, ctHb =
+                                          15 g%, sO2 = 100%. Referencemetoden, som er anvendt, er
+Metrologisk sporbarhed                    tonometri. Kalibrering af 100 % sO2.: Den primære kalibrator,
+                                          som er anvendt, er en fuldblodsprøve med en ctHb værdi
+(rutinemålingens sporbarhed til referen-  justeret til mellem 13 og 15 g/100 mL. Blodprøven er tonome-
+cemateriale og/el. –metode)               treret med en gasblanding indeholdende 94,4 % O2 og 5,6 %
+                                          CO2 , som er sporbar til NIST SRM gasser. Kalibrering af 0 %
+                                          sO2: Den primære kalibrator, som er anvendt, er en fuldblod-
+                                          sprøve. Den er centrifugeret og blodlegemekoncentratet er de-
+                                          oxygeneret ved hjælp af Argon og behandlet med en dithionit-
+                                          opløsning. De primære kalibratorer er brugt til at kalibrere refe-
+                                          rence-instrumenter.
+
+M-041 02 sat.;Hb(aB), 02 sat.;Hb(vB)                                                   Side 2 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                 O2sat.;Hb(aB) NPU03011 / O2sat.;Hb(vB) NPU10199
+
+                                       EXAM Reg.nr. 1001
+
+Metodeblad nr. M-041/12                Beregning: Efter fotometrisk bestemmelse af blodets forskellige
+Analyseprincip                         hæmoglobinformer, beregnes hæmoglobinets iltmætning (sO2):
+                                       sO2 = O2Hb / (HHb + O2Hb) hvor O2Hb er koncentrationen af
+Apparatur                              oxihæmoglobin og HHb er koncentrationen af deoxihæmoglo-
+Kalibrator                             bin.
+Reagens                                ABL837 fra Radiometer på Herlev og ABL835 fra Radiometer
+Ekstern kvalitetskontrol               på Gentofte.
+                                       ctHb kalibrator er sporbar til NIST SRM (absorbance, wave-
+Præcisionskontrolmaterialer            length) Haemoglobin-cyanide standard. J.T. Baker (Product No.
+                                       3061)
+ (navn, producent, materialetype)      Cleaning væske
+                                       Rensevæske
+Kontrolniveauer
+                                       Labquality. Haemoxymeters med 2 udsendelser årligt.
+Intermediær præcision
+                                       Intern kontrol fra Radiometer i 4 niveauer.
+ (CVoprundet inkl. instru. spred.)
+                                       Herlev matrikel:            Gentofte matrikel:
+Ekspanderet måleusikkerhed             Rød AutoCheck 6+ Level 1;   Rød AutoCheck 5+ Level 1;
+                                       Prod.No: S7835.             Prod.No: S7735.
+ (k=2 sv.t. 95% CI på måleresultatet)  Gul AutoCheck 6+ Level 2;   Gul AutoCheck 5+ Level 2;
+                                       Prod. No: S7845.            Prod. No: S7745.
+Mindste relevante kliniske             Blå AutoCheck 6+ Level 3;   Blå AutoCheck 5+ Level 3;
+difference                             Prod.No: S7855.             Prod.No: S7755.
+Måleområde (total)                     Grøn AutoCheck 6+ Level 4;  Grøn AutoCheck 5+ Level 4;
+                                       Prod.No: S7865.             Prod.No: S7765.
+                                       Herlev matrikel:            Gentofte matrikel:
+                                       S7835 = 0,5                 S7735 = 0,5
+                                       S7845 = 0,968               S7745 = 0,972
+                                       S7855 = 0,7                 S7755 = 0,701
+                                       S7865 = 0,05                S7765 = 0,050
+                                       Herlev matrikel:            Gentofte matrikel:
+                                       S7835 = 1%                  S7735 = 1%
+                                       S7845 = 0,5%                S7745 = 0,51%
+                                       S7855 = 0,7%                S7755 = 0,71%
+                                       S7865 = 10%                 S7765 = 10%
+
+                                       0,6% for k=2 ved s02 = 100% og B-hæmoglobin = 9,3 mmol/L.
+
+                                       Kan ikke udregnes da den biologiske variation ikke kendes.
+                                       0,01-1,00 (1-100%)
+
+M-041 02 sat.;Hb(aB), 02 sat.;Hb(vB)                                                Side 3 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                 O2sat.;Hb(aB) NPU03011 / O2sat.;Hb(vB) NPU10199
+
+                                      EXAM Reg.nr. 1001
+
+Metodeblad nr. M-041/12
+
+Interferens
+
+(hæmolyse, icterus, lipæmi, andet)
+
+Bemærkninger                          Prøven analyseres på ABL-apparatet uden forudgående rekvire-
+                                      ring af analyser. Analyserne rekvireres automatisk når patien-
+Dokumenthistorik                      tens CPR-nr. indscannes/indtastes. Med sprøjten skal følge op-
+ Dato                                 lysning om prøvematerialet (arterielt/venøst/kapillært) samt re-
+ 14.08.2024                           kvirerende afdeling.
+
+                                      Ændring af måleområde. Tidligere      Initialer
+                                      fremgik måleområde, som ikke var      FLEM0002
+                                      valideret. I den nye version fremgår
+                                      måleområde, som er valideret.
+
+M-041 02 sat.;Hb(aB), 02 sat.;Hb(vB)                                                   Side 4 af 4
+

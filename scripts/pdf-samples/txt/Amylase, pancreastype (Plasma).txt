@@ -1,0 +1,164 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                           Amylase, pancreastype;P NPU19653
+
+Metodeblad nr. M-295/01
+
+Udarbejdet af:                   Taget i brug: 19-08-2026  Revision: 19-11-2026
+Anders Berg Wulff                Erstatter: -
+
+GENERELT
+
+Ansvarlig KBA analysesektion KEMI
+
+Indikation og resultatvurdering  Amylaser er enzymer, som katalyserer spaltning af polysakkeri-
+Analysenavn og kode i SP         der, som f.eks. stivelse og glykogen. Amylaser findes i forskel-
+                                 lige organspecifikke isoformer men dannes primært i spytkirtler
+                                 og i pankreas (www.sundhed.dk).
+                                 Benyttes til diagnosticering og monitorering af akut pankreatit
+                                 samt kontrol af kronisk pankreatit. Desuden ved uspecifikke
+                                 symptomer, der kunne være kræft.
+                                 Ved kronisk nyresvigt samt makroamylasæmi kan der ses for-
+                                 højet P-Amylase, pancreastype. Makroamylasæmi skyldes
+                                 komplekser af amylase og immunglobuliner, der ikke kan ud-
+                                 skilles via nyrerne.
+                                 NPU19653 Amylase, pancreastype;P
+
+Analysenavn og kode i LABKA AMYLP P-Amylase pancreastype
+
+Analysenavn og kode i WebReq Amylase, pancreastype;P NPU19653
+
+Enhed                            U/L
+
+Prøvemateriale og rørtype        Lithium-heparin plasma taget i Vacuette glas med grøn prop
+                                 og sort ring, indeholdende Lithium-Heparin.
+Mindste prøvemængde              Alternativt kan benyttes serum taget i Vacuette glas med rød
+Prøvetagning herunder særlige    prop og sort ring, indeholdende clot activator.
+forhold
+Referenceinterval                Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan
+                                 anvendes Vacuette-glas med grøn prop og hvid ring, indehol-
+                                 dende Lithium-Heparin eller Vacuette-glas med rød prop og
+                                 hvid ring, indeholdende clot activator.
+                                 200 µL plasma.
+                                 Svarende til ~400 µL fuldblod for voksne og børn, og ~550 µL
+                                 fuldblod for spædbørn.
+                                 Der tages 50 μL plasma/serum fra prøven til en forfortynding.
+                                 Fra denne forfortynding kræver analysen et volumen på 16 μL
+                                 til en enkelt bestemmelse.
+                                 Volumenet omfatter ikke dødvolumen i prøvebeholderen eller
+                                 det supplerende volumen, som er nødvendigt ved udførelse af
+                                 duplikater eller andre analyser på samme prøve
+                                 Afdelingens prøvetagningsinstruks følges.
+                                 Ingen særlige forhold.
+
+                                 Alle: 10 – 65 U/L
+
+Ringegrænser                     Ingen
+
+M-295_AMYLP                                                    Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                           Amylase, pancreastype;P NPU19653
+
+Metodeblad nr. M-295/01
+
+Udførende laboratorie                     Herlev og Gentofte Klinisk Biokemisk Afdeling
+
+Analyseringshyppighed                     Døgnet rundt, alle ugens dage.
+Svartid
+                                          Svartid for 90% af analyserne er maksimalt 60 minutter. For
+(efter modtagelse af prøve)               praksisprøver svares samme dag.
+
+Prøvehåndtering                           Intern rekvirent Ekstern rekvirent              Praksis
+
+Holdbarhed                                                                          Opbevares i klima-
+
+Forsendelse                               Ingen særlige forholdsregler              skab indtil afhent-
+Præanalytiske fejlkilder
+                                                                                    ning
+
+                                          Holdbarhed i fuldblod: 4 døgn ved 20-25ᵒ
+
+                                          Holdbarhed afpipetteret på køl (2-8): 30 dage.
+
+                                          Intern transport Region H’s transport- Region H’s trans-
+
+                                                         ordning eller som far- portordning ved
+
+                                                         ligt gods mærket ”Bio- 21 °C
+
+                                                         logisk stof kategori B”
+
+                                          Ingen særlige
+
+METODEBESKRIVELSE                         kun udfyldt for analyser udført af KBA HGH
+
+CE mærket analyse                         Ja
+                                          Nej
+(apparatur og reagens i kombination)      Sporbar til IRMM/IFCC-456-referencematerialet for alfa-
+                                          amylase i pankreas.
+Akkrediteret analyse                      Enzymatisk absorptionsfotometri.
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur                                 Siemens Atellica CH930
+
+Kalibrator                                Atellica CH SPCL CHEM CAL
+
+Reagens                                   Atellica CH Pancreatic Amylase_2 (PAMY_2)
+
+Ekstern kvalitetskontrol                  Laquality – 3391 FI – Almen klinisk biokemi, Serum B og C
+
+Præcisionskontrolmaterialer                         BIORAD                          BIORAD
+                                          Liquid Assayed Multiqual        Liquid Assayed Multiqual
+(navn, producent, materialetype)
+                                            Level 1 serumbaseret            Level 3 serumbaseret
+Kontrolniveauer
+Intermediær præcision                     29 U/L                                    271 U/L
+
+(CVoprundet inkl. instru. spred.)         4,8 %                                     4,8 %
+
+Ekspanderet måleusikkerhed                10,4 %                                    10,4 %
+
+(k=2 sv.t. 95% CI på måleresultatet)      Ved to prøver på samme patient (målt med ovennævnte analy-
+                                          semetode) er den mindste klinisk signifikante forskel på de to
+Mindste relevante kliniske                svar 23 % beregnet på baggrund af en skønnet biologisk varia-
+difference                                tion på 6,7 %
+
+M-295_AMYLP                                                                                 Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                           Amylase, pancreastype;P NPU19653
+
+Metodeblad nr. M-295/01
+
+Måleområde (total)                  20 – 7500 U/L
+
+standard analysemåleområde 20 – 1500 U/L
+
+måleområde fortynding (udstyr) 100 – 7500 U/L
+
+                                    Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+
+Interferens                         Hæmoglobin (500 mg/dL) (0,31 mmol/L)
+
+(hæmolyse, icterus, lipæmi, andet)  Bilirubin (30 mg/dL (513 µmol/L) konjugeret og ukonjugeret)
+
+                                    Lipæmi (Intralipid) (1000 mg/dL) (11,3 mmol/L)
+
+Bemærkninger                        Ingen særlige
+
+Dokumenthistorik                    Metodeblad oprettet  Initialer
+ Dato                                                    AWUL0013
+ 19.08.2026
+
+M-295_AMYLP                                                                         Side 3 af 3
+

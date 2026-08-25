@@ -1,0 +1,247 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+       DNK05219 Pt-Elektrokardiografi; egenskabsart (I II III V1-6 aVflr)
+
+                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-150/09                                                      2 eksemplarer
+
+Udarbejdet af:                   Taget i brug: 15.12.2025  Revision:         Rum nr.:
+Nelle Gitte Andersen Alsig       Erstatter: 19.08.2025     15.12.2028        Kvalitetsleder-
+                                                                             kontor HGH
+GENERELT
+
+Indikation og resultatvurdering  EKG giver information om hjertets tilstand og er indiceret
+                                 blandt andet ved mistanke om forstyrrelser i hjertets rytme eller
+                                 beskadigelse af hjertemusklen. Resultatet skal vurderes i sam-
+                                 menhæng med tidligere EKG og patientens kliniske tilstand.
+
+Analysenavn og kode i SP         Elektrokardiografi [EKG12]; Pt
+
+Analysenavn og kode i LABKA      Pt-Elektrokardiografi [EKG12]; EKG
+Analysenavn og kode i WebReq     EKG (I II III IV-6 aVflr) + QTc (FAS00051)
+Enhed                            EKG (I II III IV-6 aVflr) (FAS00050)
+                                 Ej relevant.
+
+Prøvemateriale og rørtype        Ej relevant.
+
+Mindste prøvemængde              Ej relevant.
+
+Prøvetagning herunder særlige    Patienten skal ligge ned og slappe helt af.
+forhold
+Referenceinterval/kliniske be-   Ej relevant.
+slutningsgrænser
+                                 På afdelingerne afleveres en gul seddel til afdelingens perso-
+                                 nale, hvis der på skærmen fremkommer ”***Kritiske testre-
+                                 sultater”. Afdelingens personale kvitterer for modtagelse ved
+                                 at skrive under på en etikette med patientens data. Etiketten
+                                 klæbes i logbogen ”Abnormt EKG”.
+
+Ringegrænser                     I ambulatoriet kontaktes vagthavende KBA-læge i tidsrummet
+                                 07.30-15.15, hvis der på skærmen fremkommer ”***Kritiske
+                                 testresultater”, for at vurdere EKG’et. Patienten venter imens.
+                                 Er KBA-læge ikke til stede til vurdering af EKG, kontaktes
+                                 vagthavende hjertemedicinsk læge (forvagt, alternativt bag-
+                                 vagt), som foretager den lægelige vurdering.
+
+Udførende laboratorie            Herlev og Gentofte.
+
+M-150 MAC VU360                                                              Side 1 af 5
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+       DNK05219 Pt-Elektrokardiografi; egenskabsart (I II III V1-6 aVflr)
+
+                                          EXAM Reg.nr. 1001
+
+Metodeblad nr. M-150/09                                                               2 eksemplarer
+
+Analyseringshyppighed                     Hele døgnet.
+Svartid
+                                          Når EKG er optaget og afsendt, kan dette tilgås i Kardia og SP.
+(efter modtagelse af prøve)
+                                           Intern rekvirent  Ekstern rekvirent           Praksis/Filialer
+Prøvehåndtering                           Ej relevant.                                Ej relevant.
+
+Holdbarhed                                Ej relevant.                                Ej relevant.
+Forsendelse
+                                          Digitalt via Kar- Digitalt via sund-        Digitalt via sund-
+Præanalytiske fejlkilder
+METODEBESKRIVELSE                         dia og Sundheds- hed.dk                     hed.dk
+
+                                          platformen
+
+                                          At patienten ikke slapper ordentligt af eller ikke ligger stille.
+
+                                          Dårlig kontakt mellem elektrode og hud. Statisk elektricitet fra
+
+                                          syntetisk tøj. AC-interferens fra elektriske apparater i brug i
+
+                                          nærheden.
+
+                                          kun udfyldt for analyser udført af KBA HGH
+
+Ansvarlig KBA analysesektion              Sektion for Præanalyse, EKG og POCT
+
+CE mærket analyse                         Analysemetoden er CE mærket.
+
+(apparatur og reagens i kombination)      Ja
+                                          Analysemetoden er CE mærket, og der henvises til leverandø-
+Akkrediteret analyse                      rens data på metrologisk sporbarhed.
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip                            Enhver muskelkontraktion er forbundet med elektriske ændrin-
+                                          ger (depolarisering). Normalt starter hver hjertecyklus med et
+                                          elektrisk signal i sinusknuden og derfra spreder depolariserin-
+                                          gen sig igennem forkammerets muskelfibre og hurtigt nedad i et
+                                          ledningssystem i de to hjertekamre. Når en elektrisk impuls lø-
+                                          ber gennem hjertemusklen, trækker hjertemuskelfibrene sig
+                                          sammen og blodet pumpes ud af hjertet. Når muskelfibrene af-
+                                          slappes igen, fyldes hjertet på ny med blod. Disse elektriske
+                                          ændringer igennem hjertet registreres på kroppens overflade
+                                          gennem 10 elektroder, som er forbundet med ekg-apparatet via
+                                          ledninger. Elektrokardiogrammet udgøres af disse spændings-
+                                          variationer i optegnet og forstærket form.
+
+Apparatur                                 Herlev og Gentofte bruger GE MAC VU360 EKG-udstyr.
+Kalibrator                                Ej relevant.
+
+M-150 MAC VU360                                                                               Side 2 af 5
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+       DNK05219 Pt-Elektrokardiografi; egenskabsart (I II III V1-6 aVflr)
+
+                                      EXAM Reg.nr. 1001
+
+Metodeblad nr. M-150/09                                                2 eksemplarer
+
+Reagens                               Ej relevant.
+Ekstern kvalitetskontrol
+                                      Kvalitetssikring foretages to gange årligt via simulator Rigel
+                                      333, der én gang om året sendes til kalibrering hos:
+                                      SEAWARD calibration house.
+
+Præcisionskontrolmaterialer           Der foretages intern kvalitetskontrol hver måned, hvor CIMT
+                                      leverer data fra hvert EKG-apparat over niveauet af elektrisk
+(navn, producent, materialetype)      støj på EKG’erne (røde/gule/grønne EKG’er), samt halvårlig
+                                      intern kvalitetskontrol hvor de automatiske opmålinger testes
+                                      ved simulator.
+
+Kontrolniveauer                       Ej relevant.       Ej relevant.
+
+Intermediær præcision                 Ej relevant.       Ej relevant.
+                                                         Ej relevant.
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed            Ej relevant.
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+Mindste relevante kliniske            Ej relevant.
+difference
+
+Måleområde (total)
+
+standard analysemåleområde
+
+måleområde fortynding (udstyr) Ej relevant.
+
+måleområde opkonc. (udstyr)
+
+yderligere fortynding (ja/nej)
+
+Interferens                           Ej relevant.
+
+(hæmolyse, icterus, lipæmi, andet)
+
+M-150 MAC VU360                                                        Side 3 af 5
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+       DNK05219 Pt-Elektrokardiografi; egenskabsart (I II III V1-6 aVflr)
+
+                         EXAM Reg.nr. 1001
+
+Metodeblad nr. M-150/09                                                        2 eksemplarer
+
+                         Beregning af det korrigerede QT-interval (QTc) udføres med
+                         Bazetts korrektion (QTcB) og med Fridericia Formula (QTcF).
+                         Generelt anvendes QTcB kun ved hjertefrekvens 60-80, og der-
+                         for anbefales det som hovedregel at anvende QTcF.
+
+Bemærkninger
+
+                         QTcB = QT / RR1/2 (intervaller måles i sekunder)
+                         QTcF = QT / RR1/3 (intervaller måles i sekunder)
+
+                         QTc bør beregnes ud fra gennemsnittet af QT-intervallerne målt
+
+                         på minimum tre QRS-komplekser.
+
+                         Da de udslag, der registreres på elektrokardiogrammet, skal
+                         være sammenlignelige fra gang til gang og med optagelser med
+                         andet apparatur, er apparatet kalibreret således at en spændings-
+                         forskel på 1 mV giver et udslag på 10 mm.
+
+                         Relevante instrukser:
+                         16-07 MAC EKG intern kvalitetssikring
+                         16-08 EKG-optagelse med MAC VU360
+                         16-10 Kritisk EKG lægehåndtering
+                         16-11 Quick guide til vurdering af EKG
+
+1. Sigurd, B. & Sandøe, E. (2002). Klinisk elektrokardiografi. FADL’s Forlag.
+
+M-150 MAC VU360                                                                Side 4 af 5
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Fælles
+
+       DNK05219 Pt-Elektrokardiografi; egenskabsart (I II III V1-6 aVflr)
+
+                         EXAM Reg.nr. 1001
+
+Metodeblad nr. M-150/09                                             2 eksemplarer
+Dokumenthistorik
+ Dato                                                    Initialer
+ 16.11.2023
+                         Under punktet Forsendelse       SMSJ
+ 30.04.2025              er ændret til at EKG sendes
+ 19.08.2025              digitalt via Kardia, SP og
+ 15.12.2025              sundhed.dk
+
+                         Under punktet Præcisions-
+                         kontrolmaterialer er tilføjet
+                         information om den interne
+                         kontrol af støj på EKG.
+
+                         Under punktet Bemærknin-
+                         ger er tilføjet information om
+                         beregning af QTc samt liste
+                         over relevante instrukser.
+
+                         Apparatur opdateret til at FEL
+
+                         også inkludere MAC VU360
+
+                         Fordeling af apparatur på       FEL
+
+                         matrikler opdateret
+
+                         Fjernelse at matrikelspecifikt NGA
+
+                         apparatur, da begge matrik-
+
+                         ler bruger samme udstyr.
+
+M-150 MAC VU360                                                     Side 5 af 5
+

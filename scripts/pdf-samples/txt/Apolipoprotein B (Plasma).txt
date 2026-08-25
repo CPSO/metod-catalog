@@ -1,0 +1,161 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                               P—Apolipoprotein B NPU22299
+
+Metodeblad nr. M-296/01
+
+Udarbejdet af:                   Taget i brug: 27-10-2025  Revision: 27-01-2026
+Anders Berg Wulff                Erstatter: Nyt
+
+GENERELT
+Ansvarlig KBA analysesektion KEMI
+
+                                 Apolipoprotein B er en risikomarkør for hjertekarsygdom. Apo-
+                                 lipoprotein B produceres af leveren som Apolipoprotein B-100
+                                 og af tarmen som Apolipoprotein B-48. Begge isoformer be-
+                                 stemmes med analysen. Apolipoprotein B i plasma er lokalise-
+                                 ret til overfladen af lipoproteinerne, LDL, IDL, VLDL, kylomi-
+                                 kroner og restpartikler af disse. Apolipoprotein B findes ikke på
+                                 overfladen af HDL partikler.
+
+Indikation og resultatvurdering  Apolipoprotein B;P benyttes til at vurdere den totale mængde af
+                                 aterogene apolipoprotein B-holdige lipoproteiner i plasma og
+                                 kan være indiceret ved udredning af dyslipidæmi.
+                                 Forhøjede værdier skyldes høje plasmakoncentrationer af LDL
+                                 og/eller VLDL partikler. Analysen har en beslutningsgrænse på
+                                 1,00 g/L. Plasmakoncentrationer større end 1,00 g/L angiver høj
+                                 risiko for hjertekarsygdom.
+                                 Umåleligt lave værdier kan skyldes abetalipoproteinæmi.
+
+Analysenavn og kode i SP         Apolipoprotein B;P (NPU22299)
+
+Analysenavn og kode i LABKA APOLIPB (NPU22299)
+
+Analysenavn og kode i WebReq Kan ikke rekvireres i WebReq
+
+Enhed                            g/L
+Prøvemateriale og rørtype
+Mindste prøvemængde              Lithium-heparin plasma taget i Vacuette glas med grøn prop
+                                 og sort ring, indeholdende Lithium-Heparin.
+                                 Alternativt kan benyttes serum taget i Vacuette glas med rød
+                                 prop og sort ring, indeholdende clot activator.
+
+                                 Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan
+                                 anvendes Vacuette-glas med grøn prop og hvid ring, indehol-
+                                 dende Lithium-Heparin eller Vacuette-glas med rød prop og
+                                 hvid ring, indeholdende clot activator.
+                                 200 µL plasma. Svarende til ~400 µL fuldblod for voksne og
+                                 børn og ~550 µL fuldblod for spædbørn. Der tages 11 μL
+                                 plasma/serum fra prøven til en forfortynding. Fra denne forfor-
+                                 tynding kræver analysen et volumen på 5 μL til en enkelt be-
+                                 stemmelse. Volumenet omfatter ikke dødvolumen i prøvebehol-
+                                 deren eller det supplerende volumen, som er nødvendigt ved
+                                 udførelse af duplikater eller andre analyser på samme prøve.
+
+M-296_APOB                                                      Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                               P—Apolipoprotein B NPU22299
+
+Metodeblad nr. M-296/01
+
+Prøvetagning herunder særlige         Ingen særlige forhold
+forhold
+
+                                      Klinisk beslutningsgrænse: >1,0 g/L.
+
+Kliniske beslutningsgrænse            Dette er en signalværdi for værdier hvor der kan være høj risiko
+                                      for hjertekarsygdom (Kilde: DSKB VUK-anbefaling 2022 for
+                                      Non-HDL kolesterol).
+
+Ringegrænser                          Ej relevant.
+Udførende laboratorie
+Analyseringshyppighed                 Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital,
+Svartid                               Herlev matriklen.
+
+(efter modtagelse af prøve)           Svartid for 90% af analyserne er maksimalt 60 minutter.
+
+Prøvehåndtering                       KBA analyse: information indhentes evt. fra gældende KBA
+                                      VIP instruks
+
+                                      Intern rekvirent                      Ekstern rekvirent
+
+                                      Ingen særlige forholdsregler
+
+Holdbarhed                            Holdbarhed i fuldblod i klimaskab (20-22°C): 7 dage
+                                      Holdbarhed i fuldblod i køleskab (2-8°C): 7 dage
+Forsendelse                           Holdbarhed separeret i køleskab (2-8°C): 7 dage
+Præanalytiske fejlkilder
+METODEBESKRIVELSE                     Kan sendes med rørpost        Region H’s transportordning eller
+                                      Ingen særlige.                Postnord som quickbrev i bobleku-
+                                                                    vert til ”Biologisk stof kategori B”
+
+                                      kun udfyldt for analyser udført af KBA HGH
+
+CE mærket analyse                     Ja
+
+(apparatur og reagens i kombination)  Nej
+                                      WHO-IFCC (World Health Organization/International
+Akkrediteret analyse                  Federation of Clinical Chemistry and Laboratory Medicine) ref-
+                                      erencemateriale SP3-07.
+Metrologisk sporbarhed                Immunturbidimetri
+
+Analyseprincip                        Atellica CH930
+Apparatur
+Kalibrator                            Atellica CH APO A1 & B CAL, REF 11099329
+Reagens
+Ekstern kvalitetskontrol              Atellica CH Apolipoprotein B (APO B), REF 11097626
+                                      Labquality product nr 2200,2202: Lipids and lipoproteins via
+                                      DEKS.
+
+M-296_APOB                                                                        Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                               P—Apolipoprotein B NPU22299
+
+Metodeblad nr. M-296/01
+
+Præcisionskontrolmaterialer           BioRad Immunology level 1 BioRad Immunology level 3
+
+(navn, producent, materialetype)
+
+Kontrolniveauer                       0,36 g/L                             1,28 g/L
+
+Intermediær præcision                 8,0%                                 6,0%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed            16,0%                                12,0%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                      Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske            semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                            svar 27,4 % beregnet på baggrund af en skønnet biologisk vari-
+
+                                      ation på 6,9 %
+
+Måleområde (total)                    0,15 – 4,00 g/L
+
+standard analysemåleområde 0,15 – 2,00 g/L
+
+måleområde fortynding (udstyr) 0,30 - 4,00 g/L
+
+Interferens                           Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+                                      Hæmoglobin: 525 mg/dL (0,325 mmol/L)
+(hæmolyse, icterus, lipæmi, andet)    Bilirubin: 30 mg/dL (513 µmol/L) konjugeret og ukonjugeret)
+                                      Lipæmi (Intralipid): 650 mg/dL (7,35 mmol/L)
+
+Bemærkninger                          Ingen særlige
+
+Dokumenthistorik                      Nyt metodeblad oprettet.  Initialer
+ Dato                                                           AWUL0013
+ 27.10.2025
+
+M-296_APOB                                                                        Side 3 af 3
+

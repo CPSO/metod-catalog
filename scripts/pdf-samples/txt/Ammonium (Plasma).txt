@@ -1,0 +1,141 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                               Ammonium;P NPU03928
+
+Metodeblad nr. M-232/03
+
+Udarbejdet af:                   Taget i brug: 27-10-2025       Revision: 27-10-2028
+Anders Berg Wulff                Erstatter: 01-03-2024
+
+GENERELT
+
+Ansvarlig KBA analysesektion     KEMI
+Indikation og resultatvurdering
+Analysenavn og kode i SP         Diagnostik og monitorering af coma hepaticum, encephalopati
+                                 af ukendt årsag samt ved mistanke om Reyes syndrom hos
+                                 børn.
+
+                                 Ammonium;P NPU03928
+
+Analysenavn og kode i LABKA P-Ammonium AMMONIUM NPU03928
+
+Analysenavn og kode i WebReq Kan ikke bestilles i WebReq
+
+Enhed                            µmol/L
+Prøvemateriale og rørtype
+Mindste prøvemængde              EDTA plasma taget i Vacuette glas med lilla prop og sort
+Prøvetagning herunder særlige    ring, indeholdende K2-EDTA.
+forhold
+                                 Et korrekt fyldt glas.
+Referenceinterval
+                                 Patienten bør ikke have røget de sidste 2 timer inden prøvetag-
+Ringegrænser                     ning.
+Udførende laboratorie            0 – 8 d: 32 – 192 µmol/L
+Analyseringshyppighed            8 – 15 d: 34 – 102 µmol/L
+Svartid                          15 – 31 d: 21 – 50 µmol/L
+                                 31 d – 125 år: 11 – 32 µmol/L
+(efter modtagelse af prøve)
+                                 Ingen
+Prøvehåndtering
+                                 Analysen udføres på Herlev-matriklen, Klinisk Biokemisk Af-
+                                 deling, Herlev og Gentofte Hospital
+
+                                 Døgnet rundt alle ugens dage.
+
+                                 Svartid for 90% af analyserne er maksimalt 60 minutter.
+                                 For praksisprøver svares samme dag.
+
+                                         Intern rekvirent       Ekstern rekvirent
+
+                                 Analysen skal tages på is og bringes direkte til KBA og afleve-
+                                  res til personale. Prøven skal kølecentrifugeres senest 30 min
+
+                                      efter prøvetagning og analyseres umiddelbart herefter.
+
+Holdbarhed                       Fuldblod: Se ovenfor
+                                 Afpipetteret: 2 timer ved 2-8ᵒC, 3 døgn ved -20ᵒC og 4 uger ved
+                                 -70ᵒC.
+
+Forsendelse                      Direkte til KBA ved interne ikke frosne prøver. For eksterne re-
+Præanalytiske fejlkilder         kvirenter sendes i frossen tilstand.
+
+                                 Rygning før prøvetagning. Se desuden prøvehåndtering.
+
+M-232 P-Ammonium                                                Side 1 af 2
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                                      Ammonium;P NPU03928
+
+Metodeblad nr. M-232/03
+
+METODEBESKRIVELSE                         Ja
+                                          Nej
+CE mærket analyse                         ACS (American Chemical Society) Grade Ammonium Sulfate.
+                                          Enzymatisk absorptionsfotometri.
+(apparatur og reagens i kombination)
+
+Akkrediteret analyse
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur                                 Atellica CH
+
+Kalibrator                                Atellica CH CHEM III CAL, REF 11099335
+
+Reagens                                   Atellica CH Ammoniak (Amm), REF 11097529
+
+Ekstern kvalitetskontrol                  DEKS Labquality Ammonium ion
+
+Præcisionskontrolmaterialer                      Biorad                            Biorad
+                                          Ethanol / Ammonia                 Ethanol / Ammonia
+(navn, producent, materialetype)
+                                                 Level 1                           Level 3
+
+Kontrolniveauer                           60 µmol/L                             324 µmol/L
+
+Intermediær præcision                                  8,3%                       2,5%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed                             18,0%                      8,6%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                          Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske                semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                                svar 17,8 % beregnet på baggrund af en skønnet biologisk vari-
+
+                                          ation på 5,9 %.
+
+Måleområde (total)                        10 – 1490 µmol/L
+
+standard analysemåleområde 10 – 750 µmol/L
+
+måleområde fortynding (udstyr) 20 – 1490 µmol/L
+
+                                          Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+
+Interferens                               Hæmoglobin (0,047 mmol/L)
+                                          Bilirubin (342 µmol/L konjugeret og ukonjugeret)
+(hæmolyse, icterus, lipæmi, andet)
+
+                                          Lipæmi (Intralipid) (2,3 mmol/L)
+
+Bemærkninger                              Se Præanalytiske fejlkilder og Prøvehåndtering.
+
+Dokumenthistorik                          Ændret måleområde          Initialer
+ Dato                                     Planlagt revision: Ændret  AOLS0291
+ 27-10-2025                               måleområde.                AWUL0013
+ 19-02-2024
+
+M-232 P-Ammonium                                                                            Side 2 af 2
+

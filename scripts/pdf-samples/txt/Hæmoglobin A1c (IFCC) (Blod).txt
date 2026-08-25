@@ -1,0 +1,174 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                       Hæmoglobin A1c (IFCC);Hb(B) NPU27300
+                        Glukose, middel (fra HbA1c);P NPU27412
+
+Metodeblad nr. M-178/10                                        EXAM Reg.nr. 1001  Revision: 27-10-2028
+Udarbejdet af:
+Anders Berg Wulff                Taget i brug: 27-10-2025
+                                 Erstatter: 10-06-2024
+
+GENERELT                         KEMI
+Ansvarlig KBA analysesektion
+                                 Diagnose og terapikontrol af diabetes mellitus.
+                                 HbA1c er et udtryk for gennemsnitlig koncentration af glukose
+                                 i blodet de sidste 2-3 måneder før prøvetagning.
+
+Indikation og resultatvurdering  HbA1c anvendes til diagnosticering af diabetes hvor
+                                 HbA1c > 48 mmol/mol, der bekræftes ved gentagen måling, er
+Analysenavn og kode i SP         diagnostisk.
+Analysenavn og kode i LABKA
+Analysenavn og kode i WebReq     HbA1c koncentration ændrer sig kun langsomt og kun i særlige
+                                 tilfælde er der indikation for gentagelse af HbA1c måling in-
+                                 denfor 3 måneder hvis HbA1c ved første måling er < 42
+                                 mmol/mol.
+                                 Forhøjede værdier ses ved dårligt reguleret diabetes mellitus.
+                                 Nedsatte værdier ses ved f.eks. hæmolytisk anæmi pga. kort
+                                 erythrocytlevetid.
+                                 Hæmoglobin A1c (IFCC);Hb(B) NPU27300
+                                 Glukose, middel (fra HbA1c);P NPU27412
+                                 Navn: Hb(B)-Hæmoglobin A1c (IFCC), Kode: HBA1C
+                                 Navn: P-Glucose, middel (fra HbA1c), Kode eAG NPU27412
+                                 Hæmoglobin A1c (IFCC);Hb(B) NPU27300
+                                 Glukose, middel (fra HbA1c);P NPU27412
+
+Enhed                            mmol/mol
+
+Prøvemateriale og rørtype        Fuldblod. Vacuette glas med lilla prop og sort ring, indehol-
+                                 dende K2EDTA.
+                                 200 µL fuldblod.
+
+Mindste prøvemængde              4,5 µL fuldblod fra primærprøve dispenseres af Atellica CH.
+                                 Hertil kan være pipettespild og der kræves 100 µL dødvolumen.
+Prøvetagning herunder særlige
+forhold                          Ingen særlige.
+Klinisk beslutningsgrænse
+Ringegrænser                     HbA1c (IFCC): < 48 mmol/mol
+                                 eAG: < 7,7 mmol/L
+                                 Ingen.
+
+Udførende laboratorie            Herlev og Gentofte klinisk biokemisk afdeling
+
+Analyseringshyppighed            Døgnet rundt alle ugens dage.
+
+M-178 HbA1c                                                                       Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                       Hæmoglobin A1c (IFCC);Hb(B) NPU27300
+                        Glukose, middel (fra HbA1c);P NPU27412
+
+                                                       EXAM Reg.nr. 1001
+
+Metodeblad nr. M-178/10                   Svartid for 90% af analyserne er maksimalt 60 minutter.
+                                          For praksisprøver svares samme dag.
+Svartid
+
+ (efter modtagelse af prøve)
+
+                                          Intern rekvirent Ekstern rekvirent                   Praksis
+
+Prøvehåndtering                                                                         Opbevares i klima-
+Holdbarhed
+Forsendelse                               Ingen særlige forholdsregler                  skab indtil afhent-
+Præanalytiske fejlkilder
+                                                                                        ning.
+
+                                          Holdbarhed i fuldblod:                        Holdbarhed i fuld-
+
+                                              72 timer v. 21°C                          blod: 72 timer v.
+
+                                              7 dage v. 2-8 °C                          21°C
+
+                                          Intern transport Region H’s transport- Region H’s trans-
+
+                                          Kan sendes med ordning eller                  portordning ved
+
+                                          rørpost.              Postnord som quick- 21 °C
+
+                                                                brev i boblekuvert til
+
+                                                                ”Biologisk stof kate-
+
+                                                                gori B”
+
+                                          HbA1c bør ikke anvendes til diagnosticering af diabetes under
+
+                                          graviditet.
+
+                                          Hæmolytiske tilstande samt hæmoglobinvarianter kan påvirke
+
+                                          resultatet.
+
+METODEBESKRIVELSE
+
+CE mærket analyse                         Ja
+
+(apparatur og reagens i kombination)
+
+Akkrediteret analyse                      Ja
+
+Metrologisk sporbarhed                    Atellica CH A1c_E-analysestandardiseringen er sporbar i over-
+                                          ensstemmelse med IFCC referencekalibratorerne.
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)               Enzymatisk bestemmelse og absorptionsfotometri.
+                                          eAG beregnes ved følgende formel:
+Analyseprincip                            eAG (mmol/L) = HbA1c [IFCC] x 0,145 + 0,829
+
+Apparatur                                 Siemens Atellica CH 930
+
+Kalibrator                                Enzymatisk hæmoglobin A1c_E-kalibrator (A1c_E CAL)
+
+Reagens                                   Atellica CH A1c_E Reagens 1 og 2
+
+Ekstern kvalitetskontrol                  DEKS Labquality HbA1c program 3044FI, 2 niveauer. 6 ud-
+
+Præcisionskontrolmaterialer               sendelser årligt.
+
+ (navn, producent, materialetype)                   Thermo Fisher                       Thermo Fisher
+
+Kontrolniveauer                               MAS Diabetes control          MAS Diabetes control
+Intermediær præcision
+                                                       level 1                          level 2
+ (CVoprundet inkl. instru. spred.)
+                                                    38 mmol/mol                         81 mmol/mol
+M-178 HbA1c
+                                                       2,6 %                            2,1 %
+
+                                                                                                 Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                       Hæmoglobin A1c (IFCC);Hb(B) NPU27300
+                        Glukose, middel (fra HbA1c);P NPU27412
+
+                                       EXAM Reg.nr. 1001
+
+Metodeblad nr. M-178/10                5,8 %                                       4,9 %
+Ekspanderet måleusikkerhed
+                                       Ved to prøver på samme patient (målt med ovennævnte analy-
+ (k=2 sv.t. 95% CI på måleresultatet)  semetode) er den mindste klinisk signifikante forskel på de to
+                                       svar 8,4 % beregnet på baggrund af en skønnet biologisk varia-
+Mindste relevante kliniske             tion på 1,9 %
+difference                             18 – 130 mmol/mol
+                                       18 – 130 mmol/mol
+Måleområde (total)                     Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+   standard analysemåleområde          Konjugeret bilirubin (118,6 µmol/L)
+                                       Ukonjugeret bilirubin (170,9 µmol/L)
+Interferens                            Intralipid (11,3 mmol/L)
+
+ (hæmolyse, icterus, lipæmi, andet)    Ingen.
+
+Bemærkninger
+
+Dokumenthistorik                       Ændret måleområde                Initialer
+ Dato                                  Planlagt revision. Tilføjet re-  AOLS0291
+ 27-10-2025                            striktion på hyppighed af        AWUL0013
+ 10-06-2024                            HbA1c måling under indika-
+                                       tion. Klinisk beslutnings-
+                                       grænse fortsat gældende.
+                                       Holdbarhed revideret.
+
+M-178 HbA1c                                                                               Side 3 af 3
+

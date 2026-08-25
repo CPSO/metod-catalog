@@ -1,0 +1,200 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Koag. overflade-induceret [APTT] NPU01682
+
+Metodeblad nr. M-114/09                                              EXAM Reg.nr. 1001  Revision: 24.06.2027
+Udarbejdet af:
+Signe Vedel Krogh                      Taget i brug: 24.06.2024
+                                       Erstatter: 19.01.2022
+
+GENERELT
+
+Ansvarlig KBA analysesektion           Hæmatologi og koagulation
+Indikation og resultatvurdering
+Analysenavn og kode i SP               P-Koagulation, overflade-induceret (APTT) bruges til kontrol
+                                       af koagulationssystemets interne vej og fælles vej, samt til at
+                                       udrede for blødningstendens.
+                                       Forlænget APTT kan skyldes koagulationsfaktor mangel, tilste-
+                                       deværelse af bla. lupus antikoagulans, samt ses ved behandling
+                                       med visse antikoagulantia, fx heparin. Denne analysemetode er
+                                       dog ikke særlig følsom for lupus antikoagulans.
+
+                                       Koag. overflade-induceret [APTT];P
+
+Analysenavn og kode i LABKA P-Koag. Overflade-induceret [APTT] og APTT
+
+Analysenavn og kode i WebReq NPU01682 Koag. overflade-induceret [APTT];P
+
+Enhed                                  Sekunder
+
+Prøvemateriale og rørtype              Citratplasma
+                                       Blå2,0H (blå/hvid prop).
+Mindste prøvemængde                    Alternativt blå3,5S (blå/sort prop)
+Prøvetagning herunder særlige
+forhold                                Glasset skal fyldes helt for at undgå forkert fortynding
+Referenceinterval/kliniske be-
+slutningsgrænser                       Blodprøvetagning fra katetre med heparin bør undgås, da APTT
+Ringegrænser                           bliver betydeligt falsk forlænget såfremt prøven er kontamineret
+                                       med heparin.
+                                       <18 år: 20-34s
+                                       ≥18 år: 20-29s
+
+                                       Ingen
+
+Udførende laboratorie                  Herlev og Gentofte KBA
+
+Analyseringshyppighed                  Døgnet rundt alle ugens dage
+Svartid
+                                       Svartid for 90 % af analyserne er maksimalt 60 minutter
+(efter modtagelse af prøve)
+                                       Intern rekvirent Ekstern rekvirent Praksis/Filialer
+Prøvehåndtering
+                                       Sendes med rørpost
+
+                                       eller afleveres     Centrifugeres og af- Centrifugeres og af-
+
+                                       umiddelbart efter pipetteres hvis hold- pipetteres hvis hold-
+
+                                       prøvetagning til barhed ellers ikke barhed ellers ikke
+
+                                       Klinisk Biokemisk kan overholdes. kan overholdes.
+
+                                       Afdeling.
+
+M114 Koag. overflade-induceret [APTT]                                                   Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Koag. overflade-induceret [APTT] NPU01682
+
+                                                  EXAM Reg.nr. 1001
+
+Metodeblad nr. M-114/09                    Fuldblod: 4 timer ved stuetemperatur. Må ikke komme på køl.
+
+Holdbarhed                                 Der afgives svar med forbehold ved holdbarhed overskredet
+
+Forsendelse                                med ≤50%.
+
+Præanalytiske fejlkilder                   Ved holdbarhed overskredet >50% mislykkes prøven.
+
+METODEBESKRIVELSE                          For patienter i behandling med ufraktioneret heparin er holdbar-
+CE mærket analyse
+                                           heden kun 1 time inden centrifugering.
+ (apparatur og reagens i kombination)
+                                           Afpipetteret plasma: 4 timer ved stuetemperatur. Op til 2 uger
+Akkrediteret analyse
+Metrologisk sporbarhed                     ved -20 grader.
+
+ (rutinemålingens sporbarhed til referen-  Intern transport Region H’s trans- Region H’s trans-
+ cemateriale og/el. –metode)
+                                                               portordning eller portordning ved
+Analyseprincip
+                                                               Postnord som           21 °C
+Apparatur
+                                                               quickbrev i boble-
+
+                                                               kuvert til ”Biologisk
+
+                                                               stof kategori B”
+
+                                           • Forkert blandingsforhold af blod og citrat. Hvis blodprøve-
+
+                                           glasset ikke er fyldt korrekt (+/- 10 % ifølge måleskabelon)
+
+                                           kasseres prøven
+
+                                           • Koagler i blodprøve
+
+                                           • Prøver med uklart plasma (lipæmi, hæmolyse, bilirubinæmi
+
+                                           mm) mislykkes idet de kan give forkerte resultater
+
+                                           • Heparin i prøven
+
+                                           Ja
+
+                                           Ja
+
+                                           Analysen har ingen kalibrator
+
+                                           Faktorer i det interne koagulationssystem aktiveres ved at inku-
+                                           bere plasma med den optimale mængde phospholipider og en
+                                           overfladeaktivator. Tilsætning af calciumioner starter
+                                           koagulationsprocessen, og koagulationstiden måles ved optisk
+                                           metode.
+                                           Denne analysemetode er ikke særlig følsom for lupus antikoa-
+                                           gulans.
+                                           Sysmex CS5100
+
+Kalibrator                                 Ingen
+
+Reagens                                    Dade Actin FS
+
+Ekstern kvalitetskontrol                   DEKS 3046 DK Koagulation med 5 udsendelser årligt
+
+Præcisionskontrolmaterialer                Siemens Kontrolplasma N – Siemens Kontrolplasma P -
+
+(navn, producent, materialetype)           CONTROL N                 CONTROL P
+
+M114 Koag. overflade-induceret [APTT]                                                        Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Koag. overflade-induceret [APTT] NPU01682
+
+                                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-114/09
+
+Kontrolniveauer                        ca. 24 s                     ca. 51 s
+
+Intermediær præcision                  2%                           4%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed 4%                                       8%
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                       Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske             semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                             svar 11,7% beregnet på baggrund af en skønnet biologisk varia-
+
+                                       tion på 2,8%
+
+Måleområde (total)
+
+standard analysemåleområde 20-170s
+
+måleområde fortynding (udstyr) Resultater under afgives som <20s og resultater over som
+
+måleområde opkonc. (udstyr) >170s
+
+yderligere fortynding (ja/nej)
+
+                                       • Kraftig hæmolyse, lipæmi og høj koncentration af bilirubin.
+
+                                       • Ifølge kitinsert fra producenten af reagenset kan visse læge-
+
+                                           midler kan giver falsk forlænget APTT (diphenylhydantoin,
+
+Interferens                                heparin, warfarin, naloxon, radiografiske stoffer, hirudin el-
+                                           ler andre direkte trombinhæmmere, oritavancin)
+(hæmolyse, icterus, lipæmi, andet)     • Ifølge kitinsert fra producenten af reagenset kan visse læge-
+
+                                           midler kan giver falsk forkortet APTT (konjugeret østrogen-
+
+                                           terapi hos mænd, og orale svangerskabsforebyggende mid-
+
+                                           ler hos kvinder)
+
+Bemærkninger                           Ingen
+
+Dokumenthistorik                                                             Initialer
+ Dato                                  CV%, MRKD og usikkerheds- SVK
+ 24.06.2024                            budget opdateret.
+
+M114 Koag. overflade-induceret [APTT]                                                   Side 3 af 3
+

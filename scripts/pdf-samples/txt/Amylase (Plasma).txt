@@ -1,0 +1,178 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                         NPU19652 P-Amylase; kat.k.(IFCC 2006)
+
+Metodeblad nr. M-016/14                                        EXAM Reg.nr. 1001  Revision: 12.08.2029
+Udarbejdet af:
+Anders Berg Wulff                Taget i brug: 12.08.2026
+                                 Erstatter: 13.05.2026
+
+GENERELT
+
+Ansvarlig KBA analysesektion     Kemi
+Indikation og resultatvurdering
+Analysenavn og kode i SP         Amylaser er enzymer, som katalyserer spaltning af polysakkeri-
+                                 der, som f.eks. stivelse og glykogen. Amylaser findes i forskel-
+                                 lige organspecifikke isoformer men dannes primært i spytkirtler
+                                 og i pankreas (www.sundhed.dk).
+                                 Benyttes til diagnosticering og monitorering af akut pankreatit
+                                 samt kontrol af kronisk pankreatit. Desuden ved uspecifikke
+                                 symptomer, der kunne være kræft.
+                                 Ved kronisk nyresvigt samt makroamylasæmi kan der ses for-
+                                 højet P-Amylase. Makroamylasæmi skyldes komplekser af
+                                 amylase og immuglobuliner, der ikke kan udskilles via nyrerne,
+                                 hvorfor U-Amylase vil være normal.
+
+                                 Amylase;P NPU19652
+
+Analysenavn og kode i LABKA P-Amylase NPU19652, AMYL
+
+Analysenavn og kode i WebReq Amylase;P NPU19652
+
+Enhed                            U/L
+Prøvemateriale og rørtype
+                                 Plasma/serum.
+Mindste prøvemængde              Vaccuette® glas med grøn prop og sort ring, indeholdende
+                                 Lithium-Heparin.
+Prøvetagning herunder særlige    Alternativt kan benyttes: Vaccuette® glas med rød prop og sort
+forhold                          ring uden tilsætning
+Referenceinterval/kliniske be-   200 µL plasma.
+slutningsgrænser                 Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL
+                                 fuldblod for spædbørn.
+                                 Der tages 50 μL plasma/serum fra prøven til en forfortynding.
+                                 Fra denne forfortynding kræver analysen et volumen på 16 μL
+                                 til en enkelt bestemmelse.
+                                 Volumenet omfatter ikke dødvolumen i prøvebeholderen eller
+                                 det supplerende volumen, som er nødvendigt ved udførelse af
+                                 duplikater eller andre analyser på samme prøve.
+
+                                 Ingen.
+
+                                 0 døgn – 15 døgn: 3-10 U/L
+                                 15 døgn – 13 uger: 2-22 U/L
+                                 13 uger – 52 uger: 3-50 U/L
+                                 52 uger – 18 år: 25-101 U/L
+                                 18 år - 125 år: 25-120 U/L
+
+M-016 Amylase                                                                     Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                         NPU19652 P-Amylase; kat.k.(IFCC 2006)
+
+                                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-016/14                   Ingen
+Ringegrænser
+
+Udførende laboratorie                     Herlev og Gentofte Klinisk Biokemisk Afdeling
+
+Analyseringshyppighed                     Døgnet rundt, alle ugens dage.
+Svartid
+                                          Svartid for 90% af analyserne er maksimalt 60 minutter. For
+(efter modtagelse af prøve)               praksisprøver svares samme dag.
+
+Prøvehåndtering                           Intern rekvirent Ekstern rekvirent               Praksis
+
+Holdbarhed                                                                           Opbevares i klima-
+
+Forsendelse                               Ingen særlige forholdsregler               skab indtil afhent-
+Præanalytiske fejlkilder
+                                                                                     ning
+
+                                          Fuldblod: 4 døgn ved 20-25°C
+
+                                          Afpipetteret materiale: 30 døgn ved 2-8°C
+
+                                          Intern transport Region H’s transport- Region H’s trans-
+
+                                                         ordning eller som far- portordning ved
+
+                                                         ligt godt mærket”Bio- 21 °C
+
+                                                         logisk stof kategori B”
+
+                                          Ingen særlige
+
+METODEBESKRIVELSE                         kun udfyldt for analyser udført af KBA HGH
+CE mærket analyse
+                                          Ja
+(apparatur og reagens i kombination)
+                                          Ja
+Akkrediteret analyse
+Metrologisk sporbarhed                    Atellica CH Amylase_2 analysen er sporbar til IFCC-reference-
+                                          metoden og IFCC-456-referencemateriale.
+(rutinemålingens sporbarhed til referen-  Fotometrisk måling af produkter dannet ved α-amylase og
+cemateriale og/el. –metode)               α-glucosidsase aktivitet.
+                                          Siemens Atellica CH 930
+Analyseprincip
+
+Apparatur
+
+Kalibrator                                Atellica CH SPLC CHEM CAL
+
+Reagens                                   Atellica CH Amylase_2 (AMY_2)
+
+Ekstern kvalitetskontrol                  LABQUALITY3391 FI Almen klinisk biokemi
+
+Præcisionskontrolmaterialer                         BIORAD                          BIORAD
+                                          Liquid Assayed Multiqual        Liquid Assayed Multiqual
+(navn, producent, materialetype)
+                                            Level 1 serumbaseret            Level 3 serumbaseret
+Kontrolniveauer
+Intermediær præcision                            47 U/L                              314 U/L
+
+(CVoprundet inkl. instru. spred.)                4,2%                                2,5%
+
+Ekspanderet måleusikkerhed                       9,3%                                6,4%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+M-016 Amylase                                                                              Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                         NPU19652 P-Amylase; kat.k.(IFCC 2006)
+
+                                           EXAM Reg.nr. 1001
+
+Metodeblad nr. M-016/14
+
+                                    Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske          semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                          svar 25,9 % beregnet på baggrund af en skønnet biologisk vari-
+
+                                    ation på 8,7 %
+
+Måleområde (total)                  20-4500 U/L
+
+standard analysemåleområde 20-1500 U/L
+
+måleområde fortynding (udstyr) 60-4500 U/L
+
+                                    Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+
+Interferens                         Hæmoglobin (0,34 mmol/L)
+
+(hæmolyse, icterus, lipæmi, andet)  Bilirubin (513 µmol/L konjugeret og ukonjugeret)
+
+                                    Lipæmi (7,35 mmol/L)
+
+Bemærkninger                        Ingen
+
+Dokumenthistorik                    Planlagt revision.              Initialer
+ Dato                               Mindste prøvemængde             AWUL0013
+ 13.05.2026                         præciseret.
+                                    Stillingtagen til fortsat kli-
+                                    nisk relevans. Fortsat egnet.
+
+13.08.2026                          Referenceinterval for børn      AWUL0013
+                                    <18 år ændres jvf harmoni-
+                                    seringsgruppebeslutning ref.
+                                    84.
+
+M-016 Amylase                                                                         Side 3 af 3
+

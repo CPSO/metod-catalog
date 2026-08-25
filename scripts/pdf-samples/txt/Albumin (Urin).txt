@@ -1,0 +1,200 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                          Albumin;U NPU19677 (akkrediteret)
+               Albumin / Kreatinin-ratio;U NPU19661 (akkrediteret)
+
+                       Albumin;Pt(U) NPU19680 (ej akkrediteret)
+
+Metodeblad nr. M-082/13                                        EXAM Reg.nr. 1001  Revision: 04-05-2029
+Udarbejdet af:
+Anders Berg Wulff                Taget i brug: 04-05-2026
+                                 Erstatter: 27-10-2025
+
+GENERELT
+Ansvarlig KBA analysesektion KEMI
+
+Indikation og resultatvurdering  Mistanke om og kontrol af diabetisk nefropati
+                                 Mistanke om og kontrol af nefropati ved hypertension
+
+Analysenavn og kode i SP         ALBUMIN (LOKAL);U (alias UALB) EPC00044
+Analysenavn og kode i LABKA
+Analysenavn og kode i WebReq     Albumin / Kreatinin-masseratio;U NPU19661
+Enhed
+Prøvemateriale og rørtype        U-Albumin (Lokal)                                EPC00044
+
+                                 U-Albumin UALB                                   NPU19677
+
+                                 Pt(U)-Albumin DUALB                              NPU19680
+
+                                 U-Albumin / Kreatinin;masseratio NPU19661
+
+                                 Albumin;U                                        NPU19677
+
+                                 Albumin / Kreatinin-ratio;U                      NPU19661
+
+                                 U-Albumin: mg/L
+
+                                 Pt(U)-Albumin: mg/d
+                                 U-Albumin / Kreatinin-masseratio: x 10-3 (ratio)
+
+                                 Vacuette glas 6,5 mL med gul prop uden tilsætning
+
+Mindste prøvemængde              2 ml.
+Prøvetagning herunder særlige
+forhold                          Ved døgnurinopsamling, hvor der ønskes svar på Pt(U)-Albu-
+
+Kliniske beslutningsgrænser      min skal der i SP noteres:
+Ringegrænser
+                                 • Diuresen i mL
+
+                                 • Urinopsamlingsperioden i halve eller hele timer
+
+                                 Hvis diuresen er mellem 200-9999 mL og
+
+                                 urinopsamlingsperioden er mellem 22,5 -25,5 timer, afgives
+
+                                 der svar på: NPU19680 Pt(U)—Albumin; massehast.(proc.)
+
+                                 ellers afgives der svar på: NPU19677 U—Albumin; mas-
+
+                                 sek.(proc.)
+
+                                 U-Albumin:
+
+                                 Alle:              < 20 mg/L
+
+                                 Pt(U)-Albumin:
+
+                                 Voksne ≥18 år: < 30 mg/d
+
+                                 U-Albumin / Kreatinin-masseratio: x 10-3 (ratio)
+
+                                 6 måneder til 2 år: < 42 x 10-3
+
+                                 ≥ 2 år:            < 30 x 10-3
+
+                                 Ingen
+
+M-082_UALB                                                                                  Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                          Albumin;U NPU19677 (akkrediteret)
+               Albumin / Kreatinin-ratio;U NPU19661 (akkrediteret)
+
+                       Albumin;Pt(U) NPU19680 (ej akkrediteret)
+
+                                          EXAM Reg.nr. 1001
+
+Metodeblad nr. M-082/13                   Herlev og Gentofte
+Udførende laboratorie
+
+Analyseringshyppighed                     Analyseres hele døgnet dagligt
+Svartid
+                                          Svartid for 90% af analyserne er maksimalt 60 minutter.
+(efter modtagelse af prøve)               For praksisprøver svares samme dag.
+
+Prøvehåndtering                           Intern rekvirent Ekstern rekvirent        Praksis
+
+Holdbarhed                                Ingen særlige forholdsregler              Opbevares i klima-
+                                                                                    skab indtil afhent-
+Forsendelse                               1 uge ved 21ᵒ C                           ning.
+                                          2 uger på køl ved 2-8ᵒ C
+Præanalytiske fejlkilder                                                            1 uge i klimaskab
+                                          Intern transport  Region H’s transport-   ved 21ᵒ C
+                                                            ordning eller           2 uger på køl ved 2-
+                                                            Postnord som quick-     8ᵒ C
+                                                            brev i boblekuvert til
+                                                            ”Biologisk stof kate-   Region H’s trans-
+                                                            gori B”                 portordning ved
+                                                                                    21 °C
+
+                                          Kontaminering med blod
+
+METODEBESKRIVELSE                         kun udfyldt for analyser udført af KBA HGH
+CE mærket analyse
+                                          Ja
+(apparatur og reagens i kombination)
+                                          Ja – Albumin;U NPU19677 (akkrediteret)
+Akkrediteret analyse                      Ja – Albumin / Kreatinin-ratio;U NPU19661
+Metrologisk sporbarhed                    Nej - Albumin;Pt(U) NPU19680
+
+(rutinemålingens sporbarhed til referen-  Ifølge Siemens er Atellica CH μALB_2-analysestandardiserin-
+cemateriale og/el. –metode)               gen sporbar til en intern standard.
+
+Analyseprincip                            PEG-forbedret immunoturbidimetrisk metode.
+                                          Urin-albumin / kreatinin-masseratio bestemmes som:
+Apparatur
+                                                               U-Albumin; massek. (mg/L)
+                                                 U—Creatininium; stofk. (mmol/L) x 0,113 g/mmol
+                                          hvor 0,113 er molekylvægten for creatininium.
+                                          Atellica CH
+
+Kalibrator                                Atellica CH μALB_2 CAL, REF 11099435.
+
+Reagens                                   Atellica CH μALB_2, REF 11097610
+
+Ekstern kvalitetskontrol                  DEKS Almen Urinprogram 3055. 4 udsendelser årligt.
+
+M-082_UALB                                                                          Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                          Albumin;U NPU19677 (akkrediteret)
+               Albumin / Kreatinin-ratio;U NPU19661 (akkrediteret)
+
+                       Albumin;Pt(U) NPU19680 (ej akkrediteret)
+
+                                             EXAM Reg.nr. 1001
+
+Metodeblad nr. M-082/13                   BioRad Liquichek               BioRad Liquichek
+                                      Urine Chemistry Control        Urine Chemistry Control
+Præcisionskontrolmaterialer
+                                                Level 1                        Level 2
+ (navn, producent, materialetype)
+
+Kontrolniveauer                              23 mg/L                               92 mg/L
+
+Intermediær præcision                        10%                                   10%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed                   20%                                   20%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                      For U-Albumin: Ved to prøver på samme patient (målt med
+
+Mindste relevante kliniske            ovennævnte analysemetode) er den mindste klinisk signifikante
+difference                            forskel på de to svar 104 % beregnet på baggrund af en skønnet
+                                      biologisk variation på 36 %. Den mindste kliniske signifikante
+
+                                      forskel kan dog variere individer imellem.
+
+Måleområde (total)
+
+standard analysemåleområde 3 mg/L - 3800 mg/L (fortyndes manuelt herover)
+
+måleområde fortynding (udstyr) 3 mg/L – 380 mg/L
+
+måleområde opkonc. (udstyr) 30 mg/L - 3800 mg/L
+
+yderligere fortynding (ja/nej) Ja – fortyndes manuelt til resultat.
+
+Interferens                           Der er ingen interferens fra hæmoglobin i op til følgende kon-
+                                      centrationer:
+(hæmolyse, icterus, lipæmi, andet)    Hæmoglobin: 0,31 mmol/L
+
+Bemærkninger                          Ingen
+
+Dokumenthistorik                   Gennemgået ved revision. Tilføjet beslutnings-  Initialer
+ Dato                              grænse for Pt(U)-Albumin for voksne og U-Albu-  AWUL0013
+ 04-05-2026                        min/kreatinin.
+                                   Ændret holdbarhed                               AOLS0291
+ 27-10-2025                        Planlagt revision.                              AWUL0013
+ 24-09-2025                        Intermediær præcision, usikkerhed og MRKD ju-
+                                   steret.
+
+M-082_UALB                                                                              Side 3 af 3
+

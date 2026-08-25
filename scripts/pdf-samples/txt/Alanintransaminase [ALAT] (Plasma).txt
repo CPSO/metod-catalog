@@ -1,0 +1,212 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                              Alanintransaminase;P NPU19651
+
+Metodeblad nr. M-014/13                                        EXAM Reg.nr. 1001  Revision: 24-01-2028
+Udarbejdet af:
+Ditte Persson                    Taget i brug: 24-01-2025
+                                 Erstatter: 04-10-2022
+
+GENERELT
+
+Ansvarlig KBA analysesektion     KEMI
+Indikation og resultatvurdering
+Analysenavn og kode i SP         Mistanke om og kontrol af leversygdomme.
+                                 Differentialdiagnostik ved icteriske tilstande.
+                                 Paracetamol-forgiftning.
+                                 Kontrol af børn med akut lymfatisk leukæmi.
+                                 Påvisning af leverskade ved abdominaltraumer.
+                                 Evt. kontrol af alkoholikere.
+                                 Alanintransaminase er en markør for parenkymatøs leversyg-
+                                 dom.
+                                 Forhøjede værdier ses ved:
+                                 Hepatitis, levercirrose, leverstase (kronisk hjerte-insufficiens,
+                                 myokardieinfarkt), galdevejsobstruktion, levermetastaser og he-
+                                 patom.
+                                 Myokarditis, myositis og muskeldystrofi.
+                                 Fedtlever, alkoholmisbrug, svær pancreatitis, hæmolytisk
+                                 anæmi, abdominal- og muskeltraumer.
+                                 Akut lymfatisk leukæmi hos børn.
+                                 Forgiftning med paracetamol
+
+                                 Alanintransaminase [ALAT];P NPU19651
+
+Analysenavn og kode i LABKA P-Alanintransaminase [ALAT] ALAT NPU19651
+
+Analysenavn og kode i WebReq Alanintransaminase [ALAT];P NPU19651
+
+Enhed                            U/L
+Prøvemateriale og rørtype
+                                 Plasma/serum.
+                                 Vacuette glas med grøn prop og sort ring, indeholdende
+                                 Lithium-Heparin.
+                                 Alternativt kan benyttes: Vacuette glas med rød prop og sort
+                                 ring, uden tilsætning
+
+                                 Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan
+                                 anvendes Vacuette-glas med grøn prop og hvid ring, indehol-
+                                 dende Lithium-Heparin eller Vacuette-glas med rød prop og
+                                 hvid ring, indeholdende clot activator.
+
+M-014 ALAT                                                                        Side 1 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                              Alanintransaminase;P NPU19651
+
+                                         EXAM Reg.nr. 1001
+
+Metodeblad nr. M-014/13        200 µL plasma.
+                               Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL
+Mindste prøvemængde            fuldblod for spædbørn.
+                               Der tages 50 μL plasma/serum fra prøven til en forfortynding.
+Prøvetagning herunder særlige  Fra denne forfortynding kræver analysen et volumen på 25 μL
+forhold                        til en enkelt bestemmelse.
+                               Volumenet omfatter ikke dødvolumen i prøvebeholderen eller
+Referenceinterval              det supplerende volumen, som er nødvendigt ved udførelse af
+                               duplikater eller andre analyser på samme prøve.
+Ringegrænser
+Udførende laboratorie          Ingen.
+Analyseringshyppighed
+Svartid                        Alle:
+
+ (efter modtagelse af prøve)   0 – 30 dage : 1 – 40 U/L
+
+Prøvehåndtering                1 mdr. – 4 år : 5 – 45 U/L
+Holdbarhed
+                               Kvinder:
+Forsendelse
+Præanalytiske fejlkilder       5 år – 17 år : 8 – 32 U/L
+
+                               ≥ 18 år        : 10 – 45 U/L
+
+                               Mænd:
+
+                               5 – 8 år       : 8 – 27 U/L
+
+                               9 – 13 år : 8 – 37 U/L
+
+                               14 – 17 år : 8 – 47 U/L
+
+                               ≥ 18 år        : 10 – 70 U/L
+
+                               Ingen.
+
+                               Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling
+
+                               Døgnet rundt alle ugens dage.
+
+                               Svartid for 90% af analyserne er maksimalt 60 minutter.
+                               For praksisprøver svares samme dag.
+
+                               Intern rekvirent Ekstern rekvirent        Praksis
+
+                               Ingen særlige forholdsregler              Opbevares i klima-
+                                                                         skab indtil afhent-
+                               For afpipetteret materiale:               ning.
+                               2 – 8 °C: 7 dage                          Holdbarhed i fuld-
+                                                                         blod: 36 timer v.
+                               Intern transport  Region H’s transport-   21°C
+                                                 ordning eller           Region H’s trans-
+                                                 Postnord som quick-     portordning ved
+                                                 brev i boblekuvert til  21 °C
+                                                 ”Biologisk stof kate-
+                                                 gori B”
+
+                               Ingen særlige
+
+M-014 ALAT                                                               Side 2 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                              Alanintransaminase;P NPU19651
+
+                                           EXAM Reg.nr. 1001
+
+Metodeblad nr. M-014/13                    kun udfyldt for analyser udført af KBA HGH
+
+METODEBESKRIVELSE                          Ja
+                                           Ja
+CE mærket analyse                          Sporbar til IFCC-referencemetode.
+                                           Enzymatisk bestemmelse og absorptionsfotometri
+ (apparatur og reagens i kombination)
+
+Akkrediteret analyse
+
+Metrologisk sporbarhed
+
+ (rutinemålingens sporbarhed til referen-
+ cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur                                  Siemens Atellica CH 930
+
+Kalibrator                                 Atellica CH ENZ 2 CAL
+
+Reagens                                    Atellica CH ALTPLc Reagens 1 og 2
+
+Ekstern kvalitetskontrol                   LABQUALITY 3391 FI Almen klinisk biokemi
+
+Præcisionskontrolmaterialer                           BIORAD                            BIORAD
+                                           Liquid Assayed Multiqual 1        Liquid Assayed Multiqual 3
+(navn, producent, materialetype)
+                                                    serumbaseret                      serumbaseret
+
+Kontrolniveauer                                        30 U/L                     188 U/L
+
+Intermediær præcision                                    8%                       8%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed                               16 %                     16 %
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                           Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske                 semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                                 svar 38,6 % beregnet på baggrund af en skønnet biologisk vari-
+
+                                           ation på 11,4 %
+
+Måleområde (total)                         9-6000 U/L
+
+standard analysemåleområde 9-1000 U/L
+
+måleområde fortynding (udstyr) 9-6000 U/L (automatisk fortynding)
+
+                                           Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+
+                                           Hæmoglobin (0,12 mmol/L)
+
+Interferens                                Bilirubin (342 µmol/L konjugeret og ukonjugeret)
+
+(hæmolyse, icterus, lipæmi, andet)         Lipæmi (Intralipid) (4,5 mmol/L)
+
+                                           Sulfasalazin (126 µmol/L)
+
+                                           Sulfapyridin (1,2 mmol/L)
+
+Bemærkninger                               Ingen særlig
+
+Dokumenthistorik                           Justeret CV%, måleusikker-  Initialer
+ Dato                                      hed og MRKD samt holdbar-   AWUL0013
+ 24-01-2025                                hed. Mindste prøvemængde
+
+M-014 ALAT                                                                                   Side 3 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                              Alanintransaminase;P NPU19651
+
+Metodeblad nr. M-014/13                           EXAM Reg.nr. 1001
+
+                         præciseret. Analysen og re-
+                         ferenceinterval vurderet og
+                         fundet fortsat klinisk egnet.
+
+M-014 ALAT                                                           Side 4 af 4
+

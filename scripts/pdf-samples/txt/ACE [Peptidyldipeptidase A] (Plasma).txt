@@ -1,0 +1,152 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                             Peptidyldipeptidase A [ACE];P NPU29069
+
+Metodeblad nr. M-184/09
+
+Udarbejdet af:                   Taget i brug: 27-10-2025        Revision: 27-10-2028
+Anders Berg Wulff                Erstatter: 10-06-2024
+
+GENERELT
+
+Ansvarlig KBA analysesektion KEMI
+
+Indikation og resultatvurdering  P-Peptidylpeptidase A [ACE] benyttes i diagnostikken og mo-
+                                 nitoreringen af sarkoidose. Høje værdier kan tyde på sarko-
+Analysenavn og kode i SP         idose. Sundhed.dk angiver en sensitivitet for sarkoidose på 60%
+Analysenavn og kode i LABKA      og en specificitet på 90%. ACE er en god aktivitetsparameter til
+                                 monitorering af sarkoidose. ACE stiger før progression kan på-
+                                 vises klinisk og ved røntgen og falder ved remission.
+                                 Behandling med ACE-hæmmer reducerer den målte ACE akti-
+                                 vitet.
+                                 Navn: P-ACE (Peptidylpeptidase A), NPU29069
+                                 Kode: Peptidyl
+                                 Peptidylpeptidase A [ACE];P NPU29069
+
+Analysenavn og kode i WebReq Analysen kan ikke rekvireres i WebReq
+
+Enhed                            U/L
+
+Prøvemateriale og rørtype        Serum taget i Vacuette glas med rød prop og sort ring, inde-
+Mindste prøvemængde              holdende clot activator.
+                                 Et fyldt glas
+
+Prøvetagning herunder særlige    Ingen særlige
+forhold
+                                 6 mdr. - < 18 år: 29 - 112 U/L
+Referenceinterval                18 år – 125 år: 13 - 64 U/L
+
+Ringegrænser                     Ingen
+
+Udførende laboratorie            Udføres på Gentofte matriklen. Klinisk Biokemisk Afdeling,
+Analyseringshyppighed            Herlev og Gentofte Hospital
+                                 Døgnet rundt alle ugens dage.
+
+Svartid                          Svartid for 90% af analyserne er maksimalt 60 minutter.
+                                 For praksisprøver svares samme dag.
+(efter modtagelse af prøve)
+
+                                 Intern rekvirent Ekstern rekvirent         Praksis
+
+Prøvehåndtering                  Centrifugér prøven, og fjern serum fra
+Holdbarhed                       cellulært materiale inden for 3 timer fra
+                                 prøvetagning.
+                                 Fuldblod: 3 timer ved 21°C
+                                 Afpipetteret: 7 dage ved 2-8°C
+                                 Afpipetteret: 6 mdr. ved -20°C
+
+M-184 PEPTIDYL                                                              Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                    Peptidyldipeptidase A [ACE];P NPU29069
+
+Metodeblad nr. M-184/09
+
+                                          Intern transport   Region H’s transport-   Region H’s trans-
+                                                             ordning eller           portordning ved
+Forsendelse                                                  Postnord som quick-     21 °C
+Præanalytiske fejlkilder                                     brev i boblekuvert til
+                                                             ”Biologisk stof kate-
+                                                             gori B”
+
+                                          Behandling med ACE-hæmmer.
+
+METODEBESKRIVELSE                         Ja
+
+CE mærket analyse                         Nej
+                                          Sporbar til et internt master kalibrator materiale hos Sentinel
+(apparatur og reagens i kombination)      Diagnostics.
+                                          Absorptionsfotometrisk bestemmelse af enzymaktivitet.
+Akkrediteret analyse
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur                                 Atellica CH
+
+Kalibrator                                Sentinel Diagnostics ACE Calibrator
+
+Reagens                                   Sentinel Diagnostics ACE Liquid
+
+Ekstern kvalitetskontrol                  Labquality Angiotensin convertase (ACE), 2 niveauer. Produkt
+
+Præcisionskontrolmaterialer               nr: 4009.
+
+(navn, producent, materialetype)          Sentinel Diagnostics                 Sentinel Diagnostics
+
+                                          ACE Control Set                      ACE Control Set
+
+                                                     Normal                          Elevated
+
+Kontrolniveauer                                        32 U/L                        106 U/L
+
+Intermediær præcision                                   12%                          9%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed                              24%                          18%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                          Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske                semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                                svar 45 % beregnet på baggrund af en skønnet biologisk varia-
+
+                                          tion på 12,5 %
+
+Måleområde (total)                        8 - 1200 U/L
+
+standard analysemåleområde 8 - 120 U/L
+
+måleområde fortynding (udstyr) 8 – 1200 U/L
+
+Interferens                               Hæmolyseret, ikterisk og lipæmisk serum kan ikke benyttes.
+
+(hæmolyse, icterus, lipæmi, andet)
+
+Bemærkninger                              Ingen særlige.
+
+M-184 PEPTIDYL                                                                            Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                Peptidyldipeptidase A [ACE];P NPU29069
+
+Metodeblad nr. M-184/09      Ændret måleområde og           Initialer
+                             holdbarhed                     AOLS0291
+Dokumenthistorik             Planlagt revision. Reference-
+ Dato                        interval vurderet og fundet    AWUL0013
+ 27-10-2025                  fortsat anvendeligt ud fra
+                             patientmedianer.
+ 10-06-2024
+
+M-184 PEPTIDYL                                                         Side 3 af 3
+

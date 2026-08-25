@@ -1,0 +1,289 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Hydrogencarbonat (aktuel);P(aB) NPU02409
+                  P(vB)-Hydrogencarbonat;(aktuel; 37°C) POC00174
+                  Hydrogencarbonat;(aktuel; 37°C);P(kB) NPU14264
+
+                       Hydrogencarbonat (standard);P NPU02410
+
+                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-252/03
+
+Udarbejdet af:                   Taget i brug: 14.01.2025  Revision: 14.01.2028
+Sune Møller Skov-Jeppesen        Erstatter: 10.11.2021
+
+GENERELT
+
+Ansvarlig KBA analysesektion     Præanalyse, POCT og EKG
+
+                                 Indikation:
+                                 HCO3- kan anvendes i stedet for base excess til at klassificere
+                                 syre/base forstyrrelser.
+
+Indikation og resultatvurdering  Resultatvurdering:
+                                 Sammen med pH og pCO2 kan HCO3- anvendes til at klassifi-
+                                 cere syre/base forstyrrelser som værende respiratorisk acidose,
+                                 respiratorisk alkalose, metabolisk acidose, metabolisk alkalose
+                                 eller af primær blandet karakter. I klinikken er aktuel bikarbo-
+                                 nat ikke et godt mål og i stedet anvendes standard bikarbonat.
+                                 Fx udløser akut primær hyperkapni (akut respiratorisk aci-
+                                 dose) en moderat stigning i aktuel bikarbonat, men et moderat
+                                 kompensatorisk fald i standard-bikarbonat.
+
+                                 Besvarelse af aktuel bikarbonat:
+                                 Arterie-blod:
+                                 Navn: Hydrogencarbonat (aktuel);P(aB)
+                                 Kode: NPU02409
+
+Analysenavn og kode i SP         Veneblod:
+                                 Navn: P(vB)-Hydrogencarbonat;(aktuel; 37°C)
+                                 Kode: POC00174
+
+                                 Kapillær-blod:
+                                 Navn: Hydrogencarbonat (aktuel);P(kB)
+                                 Kode: NPU14264
+
+                                 Besvarelse af standard bikarbonat:
+                                 Navn: Hydrogencarbonat (standard);P
+                                 Kode: NPU02410
+
+M-252 Hydrogencarbonat           Side 1 af 7
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Hydrogencarbonat (aktuel);P(aB) NPU02409
+                  P(vB)-Hydrogencarbonat;(aktuel; 37°C) POC00174
+                  Hydrogencarbonat;(aktuel; 37°C);P(kB) NPU14264
+
+                       Hydrogencarbonat (standard);P NPU02410
+
+                                EXAM Reg.nr. 1001
+
+Metodeblad nr. M-252/03
+
+                                Aktuel bikarbonat:
+                                Arterie-blod:
+                                Navn: P(aB)-Hydrogencarbonat (aktuel; 37 °C)
+                                Kode: abhco3
+
+                                           Vene-blod:
+                                           Navn: P(vB)-Hydrogencarbonat (aktuel; 37 °C)
+Analysenavn og kode i LABKA Kode: hco3akPOC
+
+                                           Kapillær-blod:
+                                           Navn: P(kB)-Hydrogencarbonat (aktuel; 37 °C)
+                                           Kode: kbhco3
+
+Analysenavn og kode i WebReq    Standard bikarbonat (ens for alle prøve-materialer):
+                                Navn: P-Hydrogencarbonat (standard)
+                                Kode: HCO3
+
+                                Ikke relevant.
+
+Enhed                           mmol/L
+
+Prøvemateriale og rørtype       Arterieblod i sprøjte.
+                                SafePICO selvfyldende arteriesprøjte med stålkugle i, fra Ra-
+Mindste prøvemængde             diometer, skal anvendes, når apparatets FLEX-modul bruges.
+Prøvetagning herunder særlige   Bruges apparatets FLEX-modul ikke, kan arteriesprøjten
+forhold                         PICO70 også anvendes.
+Referenceinterval/kliniske be-  Veneblod i sprøjte.
+slutningsgrænser                Kapillærblod i kapillærrør med 70units/L heparin.
+Ringegrænser                    Til arteriepunktur med sprøjte: 1 mL
+                                Til venepunktur: En fyldt sprøjte.
+                                Til kapillærblod: 95 μL uden kreatinin-bestemmelse / 125 μL
+                                ved kreatinin-bestemmelse.
+                                Klinisk Biokemisk Afdelings personale udfører ikke arterie-
+                                punktur.
+                                Arterie- og kapillærblod:
+                                22,0-27,0 mmol/L.
+                                Veneblod:
+                                21,0-26,0 mmol/L
+
+                                Ingen.
+
+Udførende laboratorie           Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital
+
+M-252 Hydrogencarbonat          Side 2 af 7
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Hydrogencarbonat (aktuel);P(aB) NPU02409
+                  P(vB)-Hydrogencarbonat;(aktuel; 37°C) POC00174
+                  Hydrogencarbonat;(aktuel; 37°C);P(kB) NPU14264
+
+                       Hydrogencarbonat (standard);P NPU02410
+
+                                            EXAM Reg.nr. 1001
+
+Metodeblad nr. M-252/03                Hele døgnet.
+Analyseringshyppighed
+Svartid                                15 minutter.
+
+ (efter modtagelse af prøve)                Intern rekvirent      Ekstern rekvirent  Praksis/Filialer
+                                                                    Ikke relevant     Ikke relevant
+Prøvehåndtering                        Prøven skal analyseres
+                                           indenfor 15 min.         Ikke relevant     Ikke relevant
+Holdbarhed                                    efter den er          Ikke relevant     Ikke relevant
+
+Forsendelse                            taget for arterielle prø-
+Præanalytiske fejlkilder               ver og indenfor 30 min.
+METODEBESKRIVELSE                      for venøse og kapillære
+CE mærket analyse
+                                                 prøver
+ (apparatur og reagens i kombination)     Arterielle prøver:
+
+                                                15 min.
+                                        Venøse og kapillære
+
+                                           prøver: 30 min.
+                                           Intern transport
+
+                                       Koagulation af prøvematerialet. Luftbobler i prøvematerialet.
+
+                                       Ja.
+
+M-252 Hydrogencarbonat                      Side 3 af 7
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Hydrogencarbonat (aktuel);P(aB) NPU02409
+                  P(vB)-Hydrogencarbonat;(aktuel; 37°C) POC00174
+                  Hydrogencarbonat;(aktuel; 37°C);P(kB) NPU14264
+
+                       Hydrogencarbonat (standard);P NPU02410
+
+                              EXAM Reg.nr. 1001
+
+Metodeblad nr. M-252/03
+Akkrediteret analyse
+
+                         Ja.
+
+M-252 Hydrogencarbonat        Side 4 af 7
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Hydrogencarbonat (aktuel);P(aB) NPU02409
+                  P(vB)-Hydrogencarbonat;(aktuel; 37°C) POC00174
+                  Hydrogencarbonat;(aktuel; 37°C);P(kB) NPU14264
+
+                       Hydrogencarbonat (standard);P NPU02410
+
+Metodeblad nr. M-252/03                        EXAM Reg.nr. 1001
+
+                         Aktuelt bikarbonat er en beregnet parameter ved 37° (jf.
+                         ABL800 FLEX reference manual):
+                         Aktuelt bikarbonat er beregnet således:
+
+                         Standard bikarbonat er beregnet således:
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+                                           Sporbarhed for pCO2 og pH, som er de faktorer som indgår i
+                                           beregningen af HCO3-:
+
+                                           pCO2 kalibratorerne er sporbar til gravimetrisk fremstillede pri-
+                                           mære standarder sporbare til NIST traceable weights.
+
+                                           pH kalibratorerne er sporbare til IUPAC pH scale og NIST pH
+                                           scale.
+
+                                           sO2 kalibratorerne er sporbare til NIST SRM (absorbans og
+                                           bølgelængde). NIST SRM gas, whole blood sample, pH = 7,4,
+                                           ctHb = 15 g%, sO2 = 100%.
+
+                                           Hb kalibratorne er sporbare til NIST SRM (absorbans og bølge-
+                                           længde). Hæmoglobin-cyanid standard J.T. Baker (product nr.
+                                           3061).
+
+M-252 Hydrogencarbonat   Side 5 af 7
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Hydrogencarbonat (aktuel);P(aB) NPU02409
+                  P(vB)-Hydrogencarbonat;(aktuel; 37°C) POC00174
+                  Hydrogencarbonat;(aktuel; 37°C);P(kB) NPU14264
+
+                       Hydrogencarbonat (standard);P NPU02410
+
+                                       EXAM Reg.nr. 1001
+
+Metodeblad nr. M-252/03                Beregnet parameter – se ovenfor. Der udføres potentiometrisk
+Analyseprincip                         måling af gastension- og H+ -ion og fotometrisk måling af hæ-
+                                       moglobin.
+Apparatur                              ABL837 fra Radiometer på Herlev og ABL835 fra Radiometer
+                                       på Gentofte.
+Kalibrator                             Kalibrator 1
+                                       Kalibrator 2
+Reagens                                Gas kalibrator 1
+Ekstern kvalitetskontrol               Gas kalibrator 2
+Præcisionskontrolmaterialer            Cleaning væske
+                                       Rensevæske KL50
+ (navn, producent, materialetype)      Labquality. Standard bikarbonat på programmet acid-base sta-
+                                       tus and electrolytes med fire udsendelser om året.
+Kontrolniveauer                        Der er ingen intern kontrol for aktuel eller standard HCO3-.
+Intermediær præcision                  pCO2 og pH følges med særskilte interne kontroller.
+                                       Ingen da der ikke er interne kontroller for aktuel eller standard
+ (CVoprundet inkl. instru. spred.)     HCO3-.
+                                       Der er ingen intern kontrol for aktuel eller standard HCO3- og
+Ekspanderet måleusikkerhed             analysen følges derfor ikke med et selvstændig IQC krav.
+
+ (k=2 sv.t. 95% CI på måleresultatet)  5% ved k=2
+
+Mindste relevante kliniske             Ved to prøver på samme patient (målt med ovennævnte analy-
+difference                             semetode) er den mindste klinisk signifikante forskel på de to
+                                       svar 13,4% beregnet på baggrund af en skønnet biologisk varia-
+Måleområde (total)                     tion på 4,0%
+                                       Der afgives svar for HCO3- i intervallet 3,0 til 60 mmol/L.
+
+                                       Der afgives ikke svar på HCO3-, hvis de målte niveauer af
+                                       pCO2 og/eller pH ligger uden for deres måleområder. Yderli-
+                                       gere afgives ikke svar på standard HCO3-, hvis de målte ni-
+                                       veauer af Hb og/eller sO2 ligger uden for deres måleområder.
+
+M-252 Hydrogencarbonat                 Side 6 af 7
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                      Hydrogencarbonat (aktuel);P(aB) NPU02409
+                  P(vB)-Hydrogencarbonat;(aktuel; 37°C) POC00174
+                  Hydrogencarbonat;(aktuel; 37°C);P(kB) NPU14264
+
+                       Hydrogencarbonat (standard);P NPU02410
+
+                                     EXAM Reg.nr. 1001
+
+Metodeblad nr. M-252/03              Interferens for pCO2 og pH, som er de faktorer som indgår i be-
+                                     regningen af HCO3-:
+Interferens
+                                     pCO2: Intet oplyst.
+ (hæmolyse, icterus, lipæmi, andet)
+                                     pH: Intralipid (Kabivitrum Inc., California and Stockholm) i en
+Bemærkninger                         koncentration på 0.8% vil ikke interferere med pH målingen.
+Dokumenthistorik                     Ved intralipid i højere koncentrationer vil der være interferens
+ Dato                                på pH-målingen jf. nedenstående:
+ 14/01 2025                          Intralipid = 1.2% giver interferens på 1.4% på pH målingen.
+                                     Intralipid = 1.6% giver interferens på 2.6% på pH målingen.
+                                     Prøven analyseres på ABL-apparatet uden forudgående rekvire-
+                                     ring af analyser. Analyserne rekvireres automatisk når patien-
+                                     tens CPR-nr. indscannes/indtastes. Med sprøjten skal følge op-
+                                     lysning om prøvematerialet (arterielt/venøst/kapillært) samt re-
+                                     kvirerende afdeling.
+
+                                     Tilføjet at der kun udgives    Initialer
+                                     svar på HCO3-, når de målte    SSKO0107
+                                     værdier, der ligger til grund
+                                     for beregningen, er inden
+                                     for måleområde.
+
+                                     Tilføjet sporbarhed af kalib-
+                                     ratorer for sO2 og Hb.
+
+M-252 Hydrogencarbonat               Side 7 af 7
+

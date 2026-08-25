@@ -1,0 +1,139 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                                 Zink;P NPU03768
+
+Metodeblad nr. M-256/03
+
+Udarbejdet af:                   Taget i brug: 27-10-2025  Revision: 27-10-2028
+Ditte Iben Persson               Erstatter: 15-05-2023
+
+GENERELT
+
+Ansvarlig KBA analysesektion     Kemi
+Indikation og resultatvurdering
+Analysenavn og kode i SP         Bestemmelse af P-Zink benyttes ved kontrol af patienter i pa-
+                                 renteral ernæring, ved langvarig diarré, malabsorption, ved mis-
+                                 tanke om zinkmangel eller zinkforgiftning samt monitorering
+                                 ved behandling med zink.
+                                 Ca. 70-80% af zink i plasma er bundet til albumin. Lavt albu-
+                                 min kan derfor føre til lav måling af p-zink.
+                                 Behandling med penicillamin, kortikosteorider og thiazider kan
+                                 sænke niveauet af P-Zink.
+
+                                 Zink;P NPU03768
+
+Analysenavn og kode i LABKA Navn: P-Zink, Kode: ZINK
+
+Analysenavn og kode i WebReq Zink;P NPU03768
+
+Enhed                            µmol/L
+Prøvemateriale og rørtype
+Mindste prøvemængde              Serum.
+                                 Vacuette® glas med rød prop og sort ring, indeholdende clot-ac-
+Prøvetagning herunder særlige    tivator.
+forhold
+                                 Et fyldt glas
+Referenceinterval/kliniske be-
+slutningsgrænser                 Overhold generelle forholdsregler, når der tages prøver. Hånd-
+Ringegrænser                     tér alle prøver som værende potentielt smittefarlige.
+                                 Følg anbefalede procedurer for indsamling af diagnostiske
+                                 blodprøver ved venepunktur.
+                                 Kan bestilles men ikke tages i praksis grundet krav om centrifu-
+                                 gering indenfor 2 timer.
+                                 Må ikke tages som kapillærblod grundet risiko for afsmitning.
+
+                                 Alle: 10 – 19 µmol/L
+
+                                 Ingen.
+
+Udførende laboratorie            Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling
+
+Analyseringshyppighed            Døgnet rundt alle ugens dage.
+Svartid
+                                 Svartid for 90% af analyserne er maksimalt 60 minutter. For
+(efter modtagelse af prøve)      praksisprøver svares samme dag.
+
+Prøvehåndtering                  Intern rekvirent Ekstern rekvirent  Filialer
+
+                                 Skal centrifugeres og afpipetteres indenfor 2 timer.
+
+M-256 P-Zink                                                                           Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                                          Zink;P NPU03768
+
+Metodeblad nr. M-256/03
+
+Holdbarhed                                Holdbarhed i fuldblod:
+Forsendelse                               Ved 20-25ᵒC: Centrifugeres indenfor 2 timer og afpipetteres (el-
+
+                                          ler analyseres) senest en time derefter.
+
+                                          Holdbarhed afpipetteret:
+                                          2 dage ved 20-25ᵒC.
+                                          14 dage ved 2-8ᵒC.
+
+                                          Sendes med Region H’s interne transport
+
+Præanalytiske fejlkilder                  Må ikke tages som kapillærblod grundet risiko for afsmitning.
+
+METODEBESKRIVELSE                         Ja
+
+CE mærket analyse                         Nej
+                                          NIST SRM 3168a (National Institute of Standards and Technol-
+(apparatur og reagens i kombination)      ogy Standard Reference Material).
+                                          Absorptionsfotometri efter farvet kompleksdannelse.
+Akkrediteret analyse
+
+Metrologisk sporbarhed
+
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur                                 Atellica CH 930
+
+Kalibrator                                Sentinel Diagnostics: Zinc standard
+
+Reagens                                   Sentinel Diagnostics: Zinc (ref 17640H)
+
+Ekstern kvalitetskontrol                  DEKS Almen Klinisk Biokemi.            BIORAD
+                                                       BIORAD          Liquid Assayed Multiqual
+Præcisionskontrolmaterialer
+                                             Liquid Assayed Multiqual             Level 3
+(navn, producent, materialetype)                        Level 1               serumbaseret
+                                                                               35,5 µmol/L
+Kontrolniveauer                                      serumbaseret
+Intermediær præcision                                14,7 µmol/L                   5,2%
+
+(CVoprundet inkl. instru. spred.)                        5,4%
+
+Ekspanderet måleusikkerhed                10,9%                                    10,5%
+
+(k=2 sv.t. 95% CI på måleresultatet)      Ved to prøver på samme patient (målt med ovennævnte analy-
+                                          semetode) er den mindste klinisk signifikante forskel på de to
+Mindste relevante kliniske                svar 30 % beregnet på baggrund af en skønnet biologisk varia-
+difference                                tion på 9 %
+                                          1 – 300 µmol/L
+Måleområde (total)                        1 – 300 µmol/L
+  standard analysemåleområde              Der ses ingen interferens (<10% bias) ved tilstedeværelse af:
+                                          Hæmoglobin (500 mg/dL)
+Interferens                               Bilirubin (680 μmol/L konjugeret og ukonjugeret)
+                                          Lipæmi (15 mmol/L)
+(hæmolyse, icterus, lipæmi, andet)
+                                          Ingen særlige.
+Bemærkninger
+
+M-256 P-Zink                                                                              Side 2 af 3
+Herlev og Gentofte Hospital  Zink;P NPU03768
+Klinisk Biokemisk Afdeling
+                             Ændret måleområde  Initialer
+Metodeblad nr. M-256/03                         AOLS0291
+ Dato
+ 27-10-2025
+
+M-256 P-Zink                                               Side 3 af 3
+

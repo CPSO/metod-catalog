@@ -1,0 +1,207 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                       U1 snRNP(70 kDa+A+C)-IgG;P NPU26646
+
+                                       EXAM Reg.nr. 1001
+
+Metodeblad nr. M-129/11
+
+Udarbejdet af:                         Taget i brug: 24.03.2026  Revision:
+Valbona Camili                         Erstatter: 15.12.2025     24.03.2029
+
+GENERELT
+
+Ansvarlig KBA analysesektion           Sektion for Immunkemi og Specialanalyser
+Indikation og resultatvurdering
+                                       U1-snRNP-antistoffer forekommer typisk ved både SLE og
+                                       mixed connective tissue disease (MCTD, Sharps syndrom). Ved
+                                       MCTD er tilstedeværelse af U1-snRNP-antistoffer nødvendige
+                                       for diagnosticering, mens de kun forekommer hos 30-40 % af
+                                       SLE-patienter.
+
+Analysenavn og kode i SP               Se også Fortolkning af autoantistof-analyser
+                                       Ved screening vælges: Nucleært-Ab(IgG) [ANA];arb.stofk.;P
+                                       NPU28541
+                                       Positiv screening udløser analyse af 8 antistoffer, herunder
+                                       U1 snRNP(70 kDa+A+C)-Ab(IgG);P
+                                       eller
+                                       ANA (kvantitativ binab) gruppe;P
+                                       NPU28402
+                                       Positiv screening udløser analyse af 14 antistoffer, herunder U1
+                                       U1 snRNP(70 kDa+A+C)-Ab(IgG);P
+
+                                       Ved enkelt test vælges: U1 snRNP(70 kDa+A+C)-Ab(IgG);P
+                                       NPU26646
+                                       I LABKA vælges: ved screening: ANASC
+                                       Ved positiv ANASC analyseres endvidere:
+                                       DNAIGG, SSA, JO1AB, SCL70, CENTROMER, SSB, SM og,
+                                       RNPU1
+
+Analysenavn og kode i LABKA            I LABKA vælges ved screening: BINAB
+                                       Ved positiv BINAB analyseres endvidere:
+                                       DNAIGG, SSA, JO1AB, SCL70, CENTROMER, SSB, SM,
+                                       RNPU1, RIBP, FIBR, MI2, PMSCL, PCNA og RNAPIII.
+
+Analysenavn og kode i WebReq           I LABKA vælges ved enkelt test:
+                                       RNPU1
+                                       P-Ribonucleoprotein U1(70 kDa+A+C)-antistof(IgG)
+
+                                       Rekvirering via WebReq er ikke muligt
+
+Enhed                                  kU/L
+Prøvemateriale og rørtype
+                                       Serum
+                                       Vacuette glas med Sandfarvet prop, indeholdende clot aktiva-
+                                       tor
+
+M-129 U1 snRNP(70 kDa+A+C)-IgG;P (rn)                                        Side 1 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                       U1 snRNP(70 kDa+A+C)-IgG;P NPU26646
+
+                                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-129/11
+
+Mindste prøvemængde                       Minimum ½ mL serum
+Prøvetagning herunder særlige
+forhold                                   Ingen
+Referenceinterval/kliniske be-
+slutningsgrænser                          Negativ: < 5 kU/L
+                                          Inkonklusiv: 5-10 kU/L
+Ringegrænser                              Positiv: > 10 kU/L
+Udførende laboratorie                     Ingen
+Analyseringshyppighed
+Svartid                                   Klinisk biokemisk afdeling, Herlev matrikel
+
+(efter modtagelse af prøve)               Udføres hverdage
+
+Prøvehåndtering                           1 uge
+
+                                           Intern rekvirent Ekstern rekvirent               Praksis/Filialer
+                                                  Ingen særlige forholdsregler
+                                                                                         Opbevares i klima-
+                                          Fuldblod: 8 timer ved stuetemperatur           skab indtil afhent-
+                                                                                         ning
+
+Holdbarhed                                For afpipetteret prøvemateriale:               Region H’s trans-
+                                          Stuetemperatur: 8 timer                        portordning ved
+Forsendelse                               2 – 8 ˚C: 14 dage                              21 °C
+Præanalytiske fejlkilder                  -20 ˚C: 1 måned
+                                          Intern transport Region H’s transport-
+
+                                                                 ordning eller
+                                                                 Postnord som quick-
+                                                                 brev i boblekuvert til
+                                                                 ”Biologisk stof kate-
+                                                                 gori B”
+
+                                          Se punktet Interferens
+
+METODEBESKRIVELSE
+
+CE mærket analyse                         Ja
+
+Akkrediteret analyse                      Ja
+
+Metrologisk sporbarhed                    IgG-kalibratorerne kan spores (via en ubrudt kæde af kalibre-
+                                          ringer) til det internationale referencepræperat (IRP) 67/86 for
+(rutinemålingens sporbarhed til referen-  humane serum-immunglobuliner A, G og M fra Verdenssund-
+cemateriale og/el. –metode)               hedsorganisationen (WHO).
+
+M-129 U1 snRNP(70 kDa+A+C)-IgG;P (rn)                                                    Side 2 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                       U1 snRNP(70 kDa+A+C)-IgG;P NPU26646
+
+                                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-129/11
+
+Analyseprincip                         Analysebrønde belagt med rekombinant RNP-proteiner
+                                       (RNP70, A, C) tilsættes patientprøvemateriale. Hvis antistoffer
+                                       mod det pågældende protein er til stede, binder de til antigener i
+                                       analysebrønden. Efter afvaskning af ubundne antistoffer tilsæt-
+                                       tes konjugat med enzymmærkede antistoffer mod human IgG-
+                                       antistof og der dannes derved et antistof-konjugat-kompleks.
+                                       Ubunden konjugat vaskes bort og herefter inkuberes med et de-
+                                       velopment-reagens. Efter yderligere inkubation standses reakti-
+                                       onen og fluorescens måles. Jo højere en responsværdi desto
+                                       mere specifik IgG er der tilstede i patientprøven. For at evaluere
+                                       testresultaterne sammenlignes patientprøvens respons direkte
+                                       med kalibratorens respons.
+
+Apparatur                              Thermo Scientific Phadia® 250
+
+Kalibrator                             EliA IgG Calibrator Strips
+Reagens                                EliA IgG Calibrator Well
+                                       EliA RNP 70 Well
+                                       EliA IgG Conjugate
+                                       ImmunoCAP Development Solution
+                                       ImmunoCAP Stop Solution
+
+Ekstern kvalitetskontrol               UK NEQAS for Nuclear and related Antigens
+
+Præcisionskontrolmaterialer            EliA IgG/M/A Negative          EliA ANA Positive Control
+                                       Control                        Phadia AB
+(navn, producent, materialetype)       Phadia AB                      Humant serum
+                                       Humant serum
+
+Kontrolniveauer                        0,5 kU/L                       50 kU/L
+
+Intermediær præcision                  10 %                           9%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed             22 %                           20 %
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                       Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske             semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                             svar 32 % beregnet på baggrund af en skønnet biologisk varia-
+
+                                       tion på 4,5 % (P-Immunoglobulin IgG er anvendt)
+
+Måleområde (total)
+
+standard analysemåleområde             Standardmåleområde: 0,4 kU/L til ≥ 340 kU/L
+måleområde fortynding (udstyr)         Der foretages ikke yderligere fortynding ved højere niveauer
+måleområde opkonc. (udstyr)
+
+yderligere fortynding (ja/nej)
+
+Interferens                            Lipæmiske, hæmolyserede, icteriske eller mikrobioelt forure-
+                                       nede prøver kan ikke anvendes
+
+Bemærkninger                           Ingen
+
+M-129 U1 snRNP(70 kDa+A+C)-IgG;P (rn)                                                   Side 3 af 4
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+Herlev matrikel
+
+                       U1 snRNP(70 kDa+A+C)-IgG;P NPU26646
+
+                                       EXAM Reg.nr. 1001
+
+Metodeblad nr. M-129/11                Ny forfatter og ny produkti-  Initialer
+Dokumenthistorik                       onsansvarlig                  VCAM
+ Dato                                  Opdateret intermediær         VCAM
+ 26.05.2025                            præcision og måleusikker-
+ 15.12.2025                            hed med 3 Phadia apparater    SAF0011
+                                       Opdateret intermediær
+ 24.03.2026                            præcision og måleusikker-
+                                       hed efter erstatning af 2
+                                       Phadia apparater
+
+M-129 U1 snRNP(70 kDa+A+C)-IgG;P (rn)                                           Side 4 af 4
+

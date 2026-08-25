@@ -1,0 +1,170 @@
+                                 NPU01972 P-Østradiol
+
+Metodeblad nr. M-206/09                                    EXAM Reg.nr. 1001  Revision:
+Udarbejdet af:                                                                22.10.2028
+Camilla J Kobylecki              Taget i brug: 22.10.2025
+                                 Erstatter: 30.09.2024
+
+GENERELT
+
+Ansvarlig KBA analysesektion     Immunkemi
+Indikation og resultatvurdering
+                                 Indikation:
+                                 Udredning ved mistanke om svigtende gonadefunktion
+                                 Kontrol af gonadotropinbehandlet infertilitet
+                                 Differentialdiagnostik for at vurdere om amenoré skyldes
+                                 gonade- eller hypofysesvigt
+                                 Ved postmenopausal blødning for at vurdere om der er øget
+                                 østrogenaktivitet
+                                 Truende abort
+                                 Udredning af gynækomasti og feminisering hos mænd
+                                 Pubertas præcox
+
+                                 Forhøjede værdier ses ved:
+                                 Ved behandling med gonadotropiner hos kvinder med bevaret
+                                 gonadefunktion
+                                 Puberts præcox
+                                 Østrogenproducerende tumorer
+
+                                 Nedsatte værdier ses ved:
+                                 Amenoré forårsaget af hypothalamisk, hypofysær eller ovariel
+                                 insufficiens
+
+Analysenavn og kode i SP         Østradiol;P og NPU01972
+
+Analysenavn og kode i LABKA Østradiol og ESTRA
+
+Analysenavn og kode i WebReq Østradiol;P og NPU01972
+
+Enhed                            nmol/L
+Prøvemateriale og rørtype
+                                 Serum
+Mindste prøvemængde              Vacuette-glas med rød prop og sort ring tilsat clot aktivator.
+Prøvetagning herunder særlige    Fyldt glas (alternativt: til én måling kræves 80 μL prøve + 300
+forhold                          μL dødvolumen).
+
+                                 Ingen særlige forhold.
+
+M-206 Østradiol                                                                           Side 1 af 3
+                                       NPU01972 P-Østradiol
+
+                                       EXAM Reg.nr. 1001
+
+Metodeblad nr. M-206/09                ♀: 16 dage – 10 år: 0,02-0,11 nmol/L
+                                       ♀: 11 – 13 år: 0,02-0,19 nmol/L
+Referenceinterval                      ♀: >50 år (efter menopause): ≤ 0,30 nmol/L
+
+Ringegrænser                           ♂: 16 dage – 10 år: 0,02-0,09 nmol/L
+Udførende laboratorie                  ♂: 11 – 13 år: 0,02-0,23 nmol/L
+Analyseringshyppighed                  ♂: 14 – 15 år: 0,02-0,27 nmol/L
+Svartid                                ♂: ≥ 16 år: ≤ 0,30 nmol/L
+                                       Harmoniseret reference interval i Region H.
+ (efter modtagelse af prøve)
+                                       Autokommentarer på svar:
+Prøvehåndtering                        For kvinder over 50 år: ” >50 år (efter menopause): ≤ 0,30 nmol/L”
+                                       For kvinder 15-50 år:
+Holdbarhed                             ”Follikulær fase: 0,07-0,53 nmol/L.
+                                       Midtcyklustop: 0,23-1,31 nmol/L.
+Forsendelse                            Luteal fase: 0,20-0,79 nmol/L”
+                                       Fra producentens oplysninger.
+Præanalytiske fejlkilder
+METODEBESKRIVELSE                      Ikke relevant
+CE mærket analyse
+                                       Klinisk biokemisk afdeling Herlev og Gentofte Hospital
+ (apparatur og reagens i kombination)
+                                       Hele døgnet
+Akkrediteret analyse
+Metrologisk sporbarhed                 Hospitalsprøver: 90 % af alle prøver er besvaret inden for 1 timer.
+Analyseprincip                         Praksisprøver: Prøven er besvaret inden næste hverdag kl. 08:00.
+Apparatur
+Kalibrator                             Intern rekvirent Ekstern rekvirent                      Praksis
+
+                                       Sendes med rørpost eller afleveres umid- Opbevares i klima-
+
+                                       delbart efter prøvetagningen til klinisk skab (21 °C) indtil
+
+                                       biokemisk afdeling.                          afhentning.
+
+                                       Stuetemperatur: 72 timer i fuldblod (ucentrifugeret):
+
+                                       2-8°C: 72 timer ved afpipetteret materiale
+
+                                       Intern transport Region H’s transport- Region H’s trans-
+
+                                                    ordning eller                   portordning ved
+
+                                                    Postnord som quick- 21 °C
+
+                                                    brev i boblekuvert til
+
+                                                    ”Biologisk stof kate-
+
+                                                    gori B”
+
+                                       Ingen bemærkninger.
+
+                                       Ja
+
+                                       Ja
+                                       Atellica IM eE2-analysen er standardiseret med interne standar-
+                                       der, som er sporbare til ID-GC/MS.
+                                       Analyseprincippet er en kompetitiv-immunanalyse, der anven-
+                                       der direkte kemiluminescens-teknologi
+                                       Siemens Atellica IM Analyzer
+
+                                       Atellica IM CAL 30
+
+M-206 Østradiol                                                                                Side 2 af 3
+                               NPU01972 P-Østradiol
+
+                                      EXAM Reg.nr. 1001
+
+Metodeblad nr. M-206/09        Atellica IM Enhanced Estradiol (eE2)
+Reagens
+Ekstern kvalitetskontrol       LABQUALITY Hormone determinations B.
+Præcisionskontrolmaterialer
+                               Immunoassay Plus Control level 1  Immunoassay Plus Control level 3
+Kontrolniveauer                Bio-Rad                           Bio-Rad
+Intermediær præcision          Baseret på humant serum           Baseret på humant serum
+Ekspanderet måleusikkerhed
+                               0,17 nmol/L                       3,88 nmol/L
+Mindste relevante kliniske
+difference                     8,0%                              5,0%
+
+Måleområde (total)             17,7%                             6,8%
+   standard analysemåleområde
+   måleområde fortynding       Ved to prøver på samme patient (målt med ovennævnte analy-
+                               semetode) er den mindste klinisk signifikante forskel på de to
+                               svar 64,6 % beregnet på baggrund af en skønnet biologisk vari-
+                               ation på 22,5 %
+
+                               0,044-11 nmol/L
+                               0,044-55 nmol/L (ved fortynding)
+
+                               Stoffet Fulvestrant (Faslodex®) kan forårsage falsk forhøjede
+                               østradiolresultater med denne analysemetode.
+
+Interferens                    Patientprøver kan indeholde heterofile antistoffer, der kan rea-
+                               gere i immunanalyser og give falsk forhøjede eller for lave re-
+                               sultater.
+
+                               Ingen interferens ved:
+                               Hæmolyse (hæmoglobin) H-indeks<250 mg/dL(<155 µmol/L)
+                               Icterus (bilirubin) I-indeks < 20 mg/dL (<340 µmol/L)
+                               Lipæmi (triglycerid) L-indeks<1000 mg/dL(<11,3 mmol/L)
+
+Bemærkninger                   Ved behov for præcis kvantitering af lave P-Østradiol koncen-
+                               trationer (<0,05 nmol/L), kontaktes vagthavende læge på kli-
+Dokumenthistorik               nisk biokemisk afdeling vedrørende alternative analyser.
+ Dato
+ 22-10-2025                    Opdateret CV.                     Initialer
+ 30-09-2024                    Tilføjelse af information om      ELAR0084
+                               auto-kommentarer.                 CKOB0004
+ 16-03-2022                    Materiale ændret fra plasma
+                               til serum efter henvendelse       CKOB0004
+ 19-12-2023                    fra producenten.
+                               Ny skabelon og HIL-indeks         CKOB0004
+                               tilføjet
+
+M-206 Østradiol                                                               Side 3 af 3
+

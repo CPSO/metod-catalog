@@ -1,0 +1,150 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                                         P-Antitrypsin NPU19692
+
+Metodeblad nr. M-212/04
+
+Udarbejdet af:                                   Taget i brug: 19-06-2026 Revision: 19-06-2029
+Anders Berg Wulff                                Erstatter: 27-10-2025
+
+GENERELT
+
+Ansvarlig KBA analysesektion             KEMI
+Indikation og resultatvurdering
+Analysenavn og kode i SP                 AAT anvendes til at diagnosticere alpha-1 antitrypsinmangel,
+                                         som manifesterer sig som levercirrose og pulmonalt emfysem.
+                                         Meget lave værdier ses ved alfa1-antitrypsinmangel i homo-
+                                         zygot form (< 0,5 g/L), mens værdier oftest ligger mellem 0,5
+                                         og 1,5 g/L ved alfa-1-antitrypsinmangel i heterozygot form.
+                                         Ydermere kan lave resultater ses ved tilstande med stort prote-
+                                         intab, kakeksi eller svær leversygdom.
+                                         Høje værdier kan ses ved akut og kronisk inflammation da alfa-
+                                         1-antitrypsin er en akut fasereaktant. Desuden ses øgning i kon-
+                                         centrationen under svangerskab og ved østrogenbehandling (P-
+                                         piller).
+
+                                         Antitrypsin;P NPU19692
+
+Analysenavn og kode i LABKA P-Antitrypsin ANTITRYP
+
+Analysenavn og kode i WebReq Antitrypsin;P NPU19692
+
+Enhed                                    g/L
+Prøvemateriale og rørtype
+                                         Plasma/serum.
+Mindste prøvemængde                      Vacuette glas med grøn prop og sort ring, indeholdende
+                                         Lithium-Heparin.
+Prøvetagning herunder særlige            Alternativt kan benyttes: Vacuette glas med rød prop og sort
+forhold                                  ring, uden tilsætning
+Referenceinterval                        200 µL plasma. Svarende til ~400 µL fuldblod for voksne og
+                                         børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL
+                                         plasma/serum fra prøven til en forfortynding. Fra denne forfor-
+                                         tynding kræver analysen et volumen på 4 μL til en enkelt be-
+                                         stemmelse. Volumenet omfatter ikke dødvolumen i prøvebehol-
+                                         deren eller det supplerende volumen, som er nødvendigt ved
+                                         udførelse af duplikater eller andre analyser på samme prøve.
+
+                                         Ingen.
+
+                                         0,97-1,68 g/L
+
+Ringegrænser                             Ingen.
+
+Udførende laboratorie                    Herlev og Gentofte klinisk biokemisk afdeling
+
+Analyseringshyppighed                    Døgnet rundt alle ugens dage.
+
+Svartid                                  Svartid for 90% af analyserne er maksimalt 60 minutter.
+                                         For praksisprøver svares samme dag.
+(efter modtagelse af prøve)
+                                         Intern rekvirent  Ekstern rekvirent            Praksis
+Prøvehåndtering
+
+M-212 Antitrypsin.docxM-212 Antitrypsin                                                 Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                                         P-Antitrypsin NPU19692
+
+Metodeblad nr. M-212/04
+
+                                         Ingen særlige forholdsregler                 Opbevares i kli-
+                                                                                      maskab indtil
+                                                                                      afhentning.
+
+Holdbarhed                               Holdbarhed i fuldblod: 11 døgn v. 21°C
+                                         Holdbarhed afpipetteret: 5 mdr. v. 2-8°C
+
+Forsendelse                              Intern transport Region H’s transportord-    Region H’s
+                                                                ning                  transportord-
+Præanalytiske fejlkilder                                                              ning ved
+METODEBESKRIVELSE                        Hæmolyseret prøvemateriale analyseres ikke.  21 °C
+Ansvarlig KBA analysesektion
+CE mærket analyse                        Kemi
+                                         Ja
+(apparatur og reagens i kombination)     Nej
+                                         ERM-DA470k/IFCC
+Akkrediteret analyse                     Immunturbidimetri
+Metrologisk sporbarhed                   Atellica CH 930
+Analyseprincip                           Diagam Multiparametric calibrators kit (5 levels) MPREK-000
+Apparatur
+Kalibrator                               Diagam Alpha1-antitrypsin, Atellica dedicated kit ATTUR
+
+Reagens
+
+Ekstern kvalitetskontrol                 LABQUALITY Product nr 2230 FI Almen klinisk biokemi
+
+Præcisionskontrolmaterialer                         BIORAD                        BIORAD
+                                         Liquid Assayed Multiqual 1    Liquid Assayed Multiqual 3
+(navn, producent, materialetype)
+                                                  serumbaseret                  serumbaseret
+
+Kontrolniveauer                          0,74 g/L                                  1,21 g/L
+
+Intermediær præcision                                    4%                           4%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed               9,9%                                         9,9%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                         Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske               semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                               svar 15 % beregnet på baggrund af en skønnet biologisk varia-
+
+                                         tion på 3,6 %.
+
+Måleområde (total)                       0,014-7,00 g/L
+
+standard analysemåleområde 0,007-3,50 g/L
+
+måleområde fortynding (udstyr) 0,014-7,00 g/L (automatisk fortynding)
+
+M-212 Antitrypsin.docxM-212 Antitrypsin                                                     Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+Metodeblad nr. M-212/04                  P-Antitrypsin NPU19692
+
+Interferens                                Analysen svares ikke ved tilstedeværelse af:
+                                           Hæmoglobin (0,62 mmol/L)
+ (hæmolyse, icterus, lipæmi, andet)        Bilirubin (428 µmol/L konjugeret og ukonjugeret)
+                                           Intralipid (1,42 mmol/L)
+Bemærkninger                               Ingen.
+
+Dokumenthistorik                         Revision. Ændret reagens og  Initialer
+ Dato                                    måleområde. Mindste prø-     AWUL0013
+ 19-06-2026                              vemængde uddybet. Usik-
+                                         kerhedsbudget, MRKD og in-   AOLS0291
+ 27-10-2025                              termediær præcision opda-    AWUL0013
+ 22-02-2024                              teret.
+                                         Ændret måleområde
+                                         Planlagt revision: Ændret
+                                         holdbarhed.
+
+M-212 Antitrypsin.docxM-212 Antitrypsin                                                      Side 3 af 3
+

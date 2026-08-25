@@ -1,0 +1,198 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                           Antithrombin (enz.; Xa);P NPU29992
+
+Metodeblad nr. M-116/07
+
+Udarbejdet af:                   Taget i brug: 07.10.2025      Revision: 07.10.2028
+Signe Vedel                      Erstatter: 19.01.2022
+
+GENERELT
+
+Ansvarlig KBA analysesektion     Hæmatologi og koagulation
+Indikation og resultatvurdering
+                                 Antitrombin hæmmer blodets koagulation ved at hæmmer de
+                                 fleste aktiverede koagulationsfaktorer herunder faktor Xa og
+                                 faktor IIa (trombin). Når antitrombin danner komplekser med
+                                 aktiverede koagulationsfaktorer, inaktiveres disse. Kompleks-
+                                 dannelsen øges af heparin.
+                                 Antitrombin måles bl.a. ved udredning for trombofili og disse-
+                                 mineret intravaskulær koagulation.
+                                 Nedsat antitrombin ses ved:
+
+                                     • Medfødt antitrombin mangel
+                                     • Tilstande med aktiveret koagulationssystem, fx større
+
+                                          traumer og efter større operationer,
+                                     • Leversygdom og nefrotisk syndrom
+
+                                 Forhøjet antitrombin menes at være uden klinisk betydning.
+
+Analysenavn og kode i SP         Antithrombin (enz; Xa);P (× 103 IU/L) og NPU29992
+
+Analysenavn og kode i LABKA P—Antitrombin (enz.) og AT3ENZ
+
+Analysenavn og kode i WebReq Kan ikke rekvireres fra praksis.
+
+Enhed                            x 103 IU/L
+
+Prøvemateriale og rørtype        Citratplasma.
+                                 Vacuette® glas (Greiner Bio-One) med lyseblå prop og hvid
+Mindste prøvemængde              ring, indeholdende Natrium-Citrat, blå2,0H (blå/hvid prop).
+Prøvetagning herunder særlige
+forhold                          Glasset skal fyldes helt for at undgå forkert fortynding.
+
+Referenceinterval/kliniske be-   Prøvetagning fra katetre med heparin bør undgås, da det kan
+slutningsgrænser                 give forkerte resultater.
+                                 0-6 dage: 0,40-0,90 x 103 IU/L
+                                 6 dage-1 måned: 0,45-1,01 x 103 IU/L
+                                 1-3 måneder: 0,61-1,15 x 103 IU/L
+                                 >3 måneder: 0,83-1,15 x 103 IU/L
+
+Ringegrænser                     Ingen
+                                 Herlev og Gentofte KBA
+Udførende laboratorie            Døgnet rundt alle ugens dage.
+                                 Svartid for 90 % af analyserne er maksimalt 60 minutter
+Analyseringshyppighed
+Svartid
+
+(efter modtagelse af prøve)
+
+Antithrombin (enz.; Xa);P                                      Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                           Antithrombin (enz.; Xa);P NPU29992
+
+Metodeblad nr. M-116/07
+
+                                          Intern rekvirent  Ekstern rekvi-  Praksis/Filialer
+                                                                  rent
+
+                                                            Centrifugeres,
+
+Prøvehåndtering                                             afpipetteres
+Holdbarhed
+                                          Ingen             og fryses hvis
+                                                            holdbarheden
+
+                                                            ikke kan over-
+
+                                                            holdes.
+
+                                          Fuldblod: 4 timer ved stuetempe-
+
+                                          ratur. Må ikke komme på køl.
+
+                                          Der afgives svar med forbehold
+
+                                          ved holdbarhed overskredet med
+
+                                          ≤50%.
+
+                                          Ved holdbarhed overskredet
+
+                                          >50% mislykkes prøven.
+
+Forsendelse                               Frossent plasma: 1 år ved -24 gra-
+Præanalytiske fejlkilder                  der.
+METODEBESKRIVELSE                         Intern transport Region H’s
+
+                                                                  transportord-
+                                                                  ning
+
+                                              • Forkert blandingsforhold af blod og citrat. Hvis blod-
+                                                   prøveglasset ikke er fyldt korrekt (+/- 10 % ifølge måle-
+                                                   skabelon) kasseres prøven
+
+                                              • Koagler i blodprøve
+                                              • Prøver med uklart plasma (lipæmi, hæmolyse, biliru-
+
+                                                   binæmi mm)
+                                              • Heparin eller anden antikoagulans i prøven
+
+CE mærket analyse                         Ja
+
+(apparatur og reagens i kombination)      Nej
+
+Akkrediteret analyse                      Siemens Standard Human Plasma er sporbart til 3rd Interna-
+Metrologisk sporbarhed                    tional Standard for Antithrombin WHO 08/258.
+
+(rutinemålingens sporbarhed til referen-  Analysen anvender et kromogent måleprincip og er faktor X ba-
+cemateriale og/el. –metode)               seret. Et overskud af faktor Xa tilsættes citratplasmaet. I tilste-
+                                          deværelse af heparin, danner en del af enzymet et kompleks og
+Analyseprincip                            inaktiveres af det tilstedeværende antitrombin i prøven. Over-
+                                          skydende ikke hæmmet faktor Xa spalter så et specifikt kromo-
+                                          gent substrat, hvilket frigiver en farve. Hastigheden for sub-
+                                          stratspaltningen bestemmes af øgningen i absorbansværdi ved
+                                          405 nm.
+
+Antithrombin (enz.; Xa);P                                                   Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                           Antithrombin (enz.; Xa);P NPU29992
+
+Metodeblad nr. M-116/07
+
+Apparatur                             Sysmex CS5100
+Kalibrator                            Siemens Standard Human Plasma ORKL, Antithrombin (IN-
+Reagens                               NOVANCE Antithrombin)
+                                      Siemens INNOVANCE Antithrombin
+
+Ekstern kvalitetskontrol              DEKS 3046 DK Koagulation med 5 udsendelser årligt
+
+Præcisionskontrolmaterialer           Siemens Kontrolplasma P - CON- Siemens Kontrolplasma N
+
+(navn, producent, materialetype)      TROL P                         – CONTROL N
+
+Kontrolniveauer                       ca. 0,30 x 103 IU/L            ca. 1,00 x 103 IU/L
+
+Intermediær præcision                 9,6%                           8,1%
+                                      19,4%                          16,4%
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                      Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske            semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                            svar 26,4% beregnet på baggrund af en skønnet biologisk varia-
+
+                                      tion på 3,4%.
+
+Måleområde (total)                    0,10-1,50 x 103 IU/L
+  standard analysemåleområde
+
+måleområde fortynding (udstyr)        Resultater under afgives som <0,10 og resultater over som
+måleområde opkonc. (udstyr)           >1,50
+yderligere fortynding (ja/nej)
+
+                                      • Kraftig hæmolyse, lipæmi og høj koncentration af
+
+                                             bilirubin.
+
+                                      • Antikoagulant behandling kan give interferens
+
+Interferens                           • Perorale direkte faktor Xa hæmmere kan forårsage ukor-
+
+(hæmolyse, icterus, lipæmi, andet)           rekte forhøjede antithrombinaktiviteter
+
+                                      • Perorale direkte trombinhæmmere (NOAK m.fl.) kan
+
+                                             interfere med målingen
+
+                                      • Heparin i prøven
+
+Bemærkninger                          Ingen
+
+Dokumenthistorik                                                            Initialer
+ Dato                                 Gennemgående revideret jf. SV
+ 7/10-2025                            tillæg til valideringsrapport
+
+Antithrombin (enz.; Xa);P                                                              Side 3 af 3
+

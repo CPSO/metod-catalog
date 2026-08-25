@@ -1,0 +1,174 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                   Koagulationsfaktor II+VII+X; P NPU18878
+
+Metodeblad nr. M-209/03
+
+Udarbejdet af:                          Taget i brug: 02.05.2024      Revision: 02.05.2027
+Signe Vedel Krogh                       Erstatter: 19.01.2022
+
+GENERELT
+
+Ansvarlig KBA analysesektion            Hæmatologi og koagulation
+Indikation og resultatvurdering
+Analysenavn og kode i SP                Koagulationsfaktor II+VII+X bruges til:
+                                            • Kontrol af koagulationssystemets eksterne vej og fælles
+                                                 vej, fx ved blødningsudredning
+                                            • Kontrol af leverfunktion da koagulationsfaktor II, VII
+                                                 og X dannes i leveren
+
+                                        Nedsat koagulationsfaktor II+VII+X kan således skyldes koa-
+                                        gulationsfaktor mangel af forskellige årsager samt antikoagu-
+                                        lant behandling.
+                                        Analysen bør ikke anvendes til kontrol af patienter i antikoagu-
+                                        lationsbehandling, da den ikke er følsom nok og resultater ikke
+                                        kan sammenlignes mellem laboratorier
+
+                                        Koagulationsfaktor II+VII+X;P og NPU18878
+
+Analysenavn og kode i LABKA P-Koagulationsfaktor II+VII+X og KF2710
+
+Analysenavn og kode i WebReq Kan ikke bestilles i praksis
+
+Enhed                                   Ratio
+                                        Citratplasma
+Prøvemateriale og rørtype               Blå2,0H (blå/hvid prop)
+                                        Glasset skal fyldes helt for at undgå forkert fortynding
+Mindste prøvemængde
+Prøvetagning herunder særlige           Ingen
+forhold
+Referenceinterval/kliniske be-          1 dag-1 måned: >0,40
+slutningsgrænser                        >1 måned: >0,60
+Ringegrænser                            Ingen
+
+Udførende laboratorie                   Herlev KBA
+
+Analyseringshyppighed                   Døgnet rundt alle ugens dage
+
+Svartid                                 Svartid for 90 % af analyserne er maksimalt 60 minutter
+
+(efter modtagelse af prøve)             Intern rekvirent             Ekstern rekvirent Praksis/Filialer
+
+Prøvehåndtering
+
+                                        Sendes med rørpost eller
+                                        afleveres umiddelbart efter
+                                        prøvetagning til Klinisk
+                                        Biokemisk Afdeling
+
+H-M-209 Koagulationsfaktor II+VII+X; P                                Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+            Koagulationsfaktor II+VII+X; P NPU18878
+
+Metodeblad nr. M-209/03                   Fuldblod: 24 timer ved
+                                          stuetemperatur. Må ikke
+Holdbarhed                                komme på køl.
+                                          Der afgives svar med for-
+Forsendelse                               behold ved holdbarhed
+Præanalytiske fejlkilder                  overskredet med ≤50%.
+METODEBESKRIVELSE                         Ved holdbarhed overskre-
+                                          det >50% mislykkes prø-
+                                          ven.
+                                          Afpipetteret plasma har
+                                          samme holdbarhed som
+                                          fuldblod.
+                                          Intern transport
+
+                                              • Koagler i blodprøve.
+                                              • Forkert blandingsforhold af blod og citrat. Hvis blod-
+
+                                                   prøveglasset ikke er fyldt korrekt, mislykkes prøven.
+                                              • Antikoagulant behandling kan give lavt faktor II-VII-X
+
+                                                   resultat, som ikke afspejler patientens egen produktion
+                                                   af koagulationsfaktorerne.
+
+CE mærket analyse                         Ja
+
+(apparatur og reagens i kombination)      Nej
+
+Akkrediteret analyse                      DEKS normal kalibrator er sporbar til de international reference
+Metrologisk sporbarhed                    præparationer WHO 4th International Standard Thromboplas-
+                                          tin, Human, Recombinant, Plain (rTF/09) og WHO Interna-
+(rutinemålingens sporbarhed til referen-  tional Standard Thromboplastin, Rabbit, Plain (RBT/05).
+cemateriale og/el. –metode)               Koagulationsaktiviteten bestemmes som en clotanalyse ved til-
+                                          sætning af MediRox Owrens PT reagens der indeholder
+Analyseprincip                            vævstromboplastin fra dyr samt plasma, der mangler faktor II,
+                                          VII og X, men indeholder alle andre koagulationsfaktorer. Når
+Apparatur                                 dette blandes med patientens plasma vil koagulationstiden være
+                                          afhængig af patient-plasmaets indhold af faktor II, VII og X.
+                                          Clotdannelsen måles optisk. Den målte koagulationstid omsæt-
+                                          tes til ratio i forhold til normal ved brug af kalibreringskurve
+                                          fremstillet ved fortyndinger af normalplasma.
+
+                                          Sysmex CS5100
+
+Kalibrator                                DEKS kalibrator normal.
+
+Reagens                                   MediRox Owrens PT
+
+Ekstern kvalitetskontrol                  DEKS 3046 DK Koagulation med 5 udsendelser årligt.
+
+H-M-209 Koagulationsfaktor II+VII+X; P                             Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                    Koagulationsfaktor II+VII+X; P NPU18878
+
+Metodeblad nr. M-209/03
+
+Præcisionskontrolmaterialer             Siemens Kontrolplasma –         MediRox OKP
+                                        CONTROL N
+(navn, producent, materialetype)
+
+Kontrolniveauer                         1,0                             0,20
+
+Intermediær præcision                   6,5%                            3,5%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed              13,4%                           6,8%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                        Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske              semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                              svar 16% beregnet på baggrund af en skønnet biologisk varia-
+
+                                        tion på 2,5%
+
+Måleområde (total)
+
+standard analysemåleområde 0,1-1,50
+
+måleområde fortynding (udstyr)
+
+måleområde opkonc. (udstyr) Under svares som <0,1 og over svares som >1,50
+
+yderligere fortynding (ja/nej)
+
+                                        Ifølge producentens kitinsert:
+
+Interferens                             Reagenset påvirkes ikke af bilirubin op til 0,5 g/L, af lipider op
+
+(hæmolyse, icterus, lipæmi, andet)      til 10 g/L, af hæmoglobin op til 10 g/L og af heparin op til
+
+                                        1IE/mL.
+
+                                        Koagulationsfaktor II+VII+X kan kun rekvireres på Herlev ma-
+
+Bemærkninger                            triklen. Rekvirering af analysen erstattes automatisk af INR på
+
+                                        Gentofte matriklen.
+
+Dokumenthistorik                                                              Initialer
+ Dato                                   Revision af CVoprundet, MRKD, SVK
+ 02.05.2024                             usikkerhedsbudget.
+
+H-M-209 Koagulationsfaktor II+VII+X; P                                                   Side 3 af 3
+

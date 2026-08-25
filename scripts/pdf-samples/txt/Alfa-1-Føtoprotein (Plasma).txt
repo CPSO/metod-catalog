@@ -1,0 +1,186 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                               NPU02043 P-Alfa-1-Føtoprotein
+
+Metodeblad nr. M-226/04                                        EXAM Reg.nr. 1001  Revision:
+Udarbejdet af:                                                                    09.10.2028
+Søren Egstrand                   Taget i brug: 09.10.2025
+                                 Erstatter: 16.11.2023
+
+GENERELT                         Immunkemi
+Ansvarlig KBA analysesektion
+                                 Indikation:
+                                     - Udredning og monitorering af primær leverkræft
+                                     - Udredning og monitorering af germinalcelletumorer
+                                          både i testes, ovarier og ekstra-gonadalt (sammen med
+                                          hCG)
+                                     - Screening af gravide (indgår som en del af triple test,
+                                          som måles i 14.-20. graviditetsuge.).
+
+Indikation og resultatvurdering  Resultatvurdering:
+                                 Forhøjede værdier kan ses ved:
+                                 -Primær leverkræft
+                                 -Testikelkræft
+                                 -Ovariekræft
+                                 -cirrose og hepatitis
+                                 I sjældnere tilfælde ved kræft i ovarier, tarm, pancreas eller
+                                 lunge samt koniske leversygdomme. P-AFP kan ikke anvendes
+                                 til generel screening for cancer.
+
+Analysenavn og kode i SP         Alfa-1-Føtoprotein; P og NPU02043
+
+Analysenavn og kode i LABKA P-Alfa-1-Føtoprotein og AFP
+
+Analysenavn og kode i WebReq Alfa-1-Føtoprotein; P og NPU02043
+
+Enhed                            × 103 IU/L
+
+Prøvemateriale og rørtype        Plasma
+                                 Vacuette glas med grøn prop og sort ring, indeholdende
+Mindste prøvemængde              lithium-heparin
+Prøvetagning herunder særlige
+forhold                          Alternativt kan benyttes:
+                                 Serum
+                                 Vacuette glas med rød prop og sort ring tilsat clot-aktivator
+                                 Et helt fyldt glas (alternativt: til én måling kræves 20 µL prøve-
+                                 materiale + 300 µL dødvolumen)
+
+                                 Ingen særlige forhold
+
+M-226 AFP                                                                                     Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                               NPU02043 P-Alfa-1-Føtoprotein
+
+                                          EXAM Reg.nr. 1001
+
+Metodeblad nr. M-226/04                   0-1 måned. 42-83000 × 10³ IU/L
+Referenceinterval                         1-4 måned: 33-830 × 10³ IU/L
+Ringegrænser                              4 måned-18 år: <10 × 10³ IU/L
+                                          18-125 år: <12 × 10³ IU/L
+                                          Referenceinterval er harmoniseret i Region H.
+
+                                          Ikke relevant
+
+Udførende laboratorie                     KBA Herlev og KBA Gentofte
+
+Analyseringshyppighed                     Udføres hele døgnet.
+Svartid
+                                          Hospitalsprøver: 90 % af alle prøver er besvaret inden for 1 time.
+(efter modtagelse af prøve)               Praksisprøver: Prøven er besvaret inden næste hverdag kl. 08:00.
+
+Prøvehåndtering                           Intern rekvirent Ekstern rekvirent               Praksis
+
+Holdbarhed                                Sendes med rørpost eller afleveres umid- Opbevares i klima-
+
+Forsendelse                               delbart efter prøvetagningen til klinisk skab (21 °C) indtil
+
+Præanalytiske fejlkilder                  biokemisk afdeling.                           afhentning.
+
+                                          Fuldblod (ucentrifugeret): stuetemperatur, 48 timer
+
+                                          For afpipetteret materiale: 2-8 °C, 96 timer
+
+                                          Intern transport Region H’s transport- Region H’s trans-
+
+                                                                ordning eller           portordning ved
+
+                                                                Postnord som quick- 21 °C
+
+                                                                brev i boblekuvert til
+
+                                                                ”Biologisk stof kate-
+
+                                                                gori B”
+
+                                          Ingen særlige forhold
+
+METODEBESKRIVELSE                         Ja.
+CE mærket analyse
+                                          Ja
+(apparatur og reagens i kombination)      Atellica IM AFP-analysestandardisering er sporbar til (WHO)
+                                          International Reference Preparation (IRP) for human AFP
+Akkrediteret analyse                      (72/225) ved brug af oprenset AFP.
+                                          Atellica IM AFP-analysen er en 2‑trins sandwich-immunana-
+Metrologisk sporbarhed                    lyse, der anvender direkte kemiluminescensteknologi.
+                                          Atellica IM Analyzer
+(rutinemålingens sporbarhed til referen-
+cemateriale og/el. –metode)
+
+Analyseprincip
+
+Apparatur
+
+Kalibrator                                Atellica IM CAL D
+
+Reagens                                   Atellica IM Alpha Fetoprotein (AFP)
+Ekstern kvalitetskontrol
+                                          LabQuality External Quality Assessment Schemes
+                                          Tumour markers
+
+M-226 AFP                                                                                      Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                               NPU02043 P-Alfa-1-Føtoprotein
+
+                                                 EXAM Reg.nr. 1001
+
+Metodeblad nr. M-226/04               Liquichek Immunoassay Plus Con-  Liquichek Immunoassay Plus Con-
+                                      trol 1                           trol 3
+Præcisionskontrolmaterialer           Bio-Rad                          Bio-Rad
+                                      Baseret på humant serum          Baseret på humant serum
+ (navn, producent, materialetype)
+                                      27 × 103 IU/L                    217 × 103 IU/L
+Kontrolniveauer
+
+Intermediær præcision                 5,4%                             5,4%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed            10,4%                            10,1%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                      Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske            semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                            svar 19,7 % beregnet på baggrund af en skønnet biologisk vari-
+
+                                      ation på 4,6 %
+
+Måleområde (total)                    Direkte måleområde: 1,1-830 × 103 IU/L
+
+standard analysemåleområde Ved fortynding: 1,1-166,000 × 103 IU/L
+
+måleområde fortynding (udstyr)        Prøver over måleområdets øvre grænse kan fortyndes til numerisk svar ved
+                                      henvendelse. Disse resultater er behæftet med en større usikkerhed og er
+måleområde opkonc. (udstyr)           ikke omfattet af analysens CE-mærkning eller DANAK akkreditering.
+yderligere fortynding (ja/nej)
+
+                                      Patientprøver kan indeholde heterofile antistoffer, der kan rea-
+
+                                      gere i immunanalyser og give falsk forhøjede eller for lave re-
+
+                                      sultater.
+
+Interferens                           Ingen interferens ved:
+                                      Hæmolyse (hæmoglobin) H-indeks<500 mg/dL(<310 µmol/L)
+(hæmolyse, icterus, lipæmi, andet)    Icterus (bilirubin) I-indeks < 20 mg/dL (<340 µmol/L)
+                                      Lipæmi (triglycerid) L-indeks<1000 mg/dL(<11,3 mmol/L)
+
+Bemærkninger                          Ingen.
+Dokumenthistorik
+ Dato                                 Opdatering af intermediær        Initialer
+ 09-10-2025                           præcision, ekspanderet må-       SJEN0455
+                                      leusikkerhed, MRKD og må-
+ 16-11-2023                           leområde.                        CKOB0004
+                                      Opdatering af intermediær
+                                      præcision, MRKD og HIL-
+                                      grænser.
+
+M-226 AFP                                                                         Side 3 af 3
+

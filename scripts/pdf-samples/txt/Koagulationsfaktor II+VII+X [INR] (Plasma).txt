@@ -1,0 +1,201 @@
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                     Koagulationsfaktor II+VII+X [INR] NPU01685
+
+Metodeblad nr. M-113/09                                               EXAM Reg.nr. 1001  Revision: 07.06.2027
+Udarbejdet af:
+Signe Vedel Krogh                       Taget i brug: 07.06.2024
+                                        Erstatter: 15.03.2024
+
+GENERELT
+
+Ansvarlig KBA analysesektion            Hæmatologi og koagulation
+Indikation og resultatvurdering
+                                        Koagulationsfaktor II+VII+X; INR bruges til:
+                                        • Kontrol af koagulationssystemets eksterne vej og fælles vej,
+
+                                            f.eks. ved blødningsudredning
+                                        • Monitorering af peroral antikoagulant behandling med vita-
+
+                                            min K-antagonister (f.eks. Marevan).
+                                        • Kan indgå i kontrol af leverfunktion da koagulationsfaktor
+
+                                            II, VII og X dannes i leveren
+
+                                        Forhøjet INR og kan således skyldes koagulationsfaktor mangel
+                                        af forskellige årsager samt antikoagulant behandling.
+
+Analysenavn og kode i SP                Koagulationsfaktor II+VII+X [INR];P og NPU01685
+
+Analysenavn og kode i LABKA P-Koagulationsfaktor II+VII+X [INR], INR
+
+Analysenavn og kode i WebReq Koagulationsfaktor II+VII+X [INR];P og NPU01685
+
+Enhed                                   Ingen
+Prøvemateriale og rørtype
+Mindste prøvemængde                     Citratplasma
+Prøvetagning herunder særlige           Blå2H, alternativt blå3,5S
+forhold                                 Glasset skal fyldes helt for at undgå forkert fortynding (inden-
+                                        for markering på mærkaten, så der fås 9 dele blod og 1 del na-
+Referenceinterval/kliniske be-          triumcitrat).
+slutningsgrænser
+                                        Ved prøvetagning er det vigtigt at glasset fyldes helt.
+Ringegrænser
+                                        Børn født i gestationsalder 37.-39. uge: 1,1-1,7
+                                        0 dag - 6 uger: <1,8
+                                        6 uger - 60 uger: < 1,3
+                                        60 uger - 125 år: <1,2
+                                        Terapeutisk interval: 2,0-3,0 (enkelte patientgrupper har ifølge
+                                        specialespecifikke guidelines et andet terapeutisk interval)
+                                        Referenceintervallet er harmoniseret i Region H.
+
+                                        >5,0
+
+Udførende laboratorie                   Herlev og Gentofte KBA
+
+Analyseringshyppighed                   Døgnet rundt alle ugens dage
+                                        Svartid for 90 % af analyserne er maksimalt 60 minutter
+Svartid
+
+(efter modtagelse af prøve)
+
+M113 Koagulationsfaktor II+VII+X [INR]                                                   Side 1 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                     Koagulationsfaktor II+VII+X [INR] NPU01685
+
+                                                EXAM Reg.nr. 1001
+
+Metodeblad nr. M-113/09
+
+                                          Intern rekvirent Ekstern rekvirent           Praksis/Filialer
+
+Prøvehåndtering                           Sendes med rørpost eller afleveres umid- Opbevares i klima-
+Holdbarhed
+Forsendelse                               delbart efter prøvetagning til Klinisk Bio- skab (21°C) indtil
+Præanalytiske fejlkilder
+                                          kemisk Afdeling.                             afhentning.
+
+                                          Fuldblod: 24 timer ved stuetemperatur. Må ikke komme på køl.
+
+                                          Der afgives svar med forbehold ved holdbarhed overskredet
+
+                                          med ≤50%. Ved holdbarhed overskredet >50% mislykkes prø-
+
+                                          ven.
+
+                                          Afpipetteret plasma har samme holdbarhed som fuldblod.
+
+                                          Intern transport Region H’s transport- Region H’s trans-
+
+                                                            ordning eller              portordning ved
+
+                                                            Postnord som quickbrev 21 °C
+
+                                                            i boblekuvert til ”Biolo-
+
+                                                            gisk stof kategori B”
+
+                                          • Koagler i blodprøve
+
+                                          • Forkert blandingsforhold af blod og natriumcitrat. Hvis
+
+                                                blodprøveglasset ikke er fyldt korrekt (+/- 10 % ifølge
+
+                                                måleskabelon) mislykkes prøven
+
+METODEBESKRIVELSE
+
+CE mærket analyse                         Ja
+
+(apparatur og reagens i kombination)      Ja
+
+Akkrediteret analyse                      DEKS normal kalibrator er sporbar til de international reference
+                                          præparationer WHO 4th International Standard Thromboplas-
+Metrologisk sporbarhed                    tin, Human, Recombinant, Plain (rTF/09) og WHO Interna-
+                                          tional Standard Thromboplastin, Rabbit, Plain (RBT/05).
+(rutinemålingens sporbarhed til referen-  DEKS terapeutisk kalibrator er sporbar til de tre internationale
+cemateriale og/el. –metode)               reference præparationer af thromboplastiner: WHO 3rd IRP,
+                                          Human Recombinant Plain (rTF/95), WHO IRP, Rabbit Plain
+Analyseprincip                            (RBT/05), samt WHO 2nd IRP, Bovine Combined (OBT/79).
+                                          DEKS høj kalibrator er sporbar til de tre internationale refer-
+                                          encepræparationer af thromboplastiner: WHO 4th IRP, Human
+                                          Recombinant Plain (rTF/09), WHO IRP, Rabbit Plain
+                                          (RBT/05), samt WHO 2nd IRP, Bovine Combined (OBT/79).
+                                          Analysen udføres som en clotanalyse med MediRox Owrens PT
+                                          hvor INR beregnes udfra:
+
+                                                            INR = (Patient PT/Normal PT)ISI
+                                          Hvor ISI er et lotspecifikt internationalt sensitivitets-index for
+                                          reagens/instrument-system som fås gennem kalibrering med re-
+                                          ference kalibratorer.
+
+Apparatur                                 Sysmex CS5100
+
+M113 Koagulationsfaktor II+VII+X [INR]                                                    Side 2 af 3
+Herlev og Gentofte Hospital
+Klinisk Biokemisk Afdeling
+
+                     Koagulationsfaktor II+VII+X [INR] NPU01685
+
+                                                EXAM Reg.nr. 1001
+
+Metodeblad nr. M-113/09                 DEKS kalibratorer i 3 niveauer (normal, terapeutisk og højt ni-
+Kalibrator                              veau).
+Reagens
+                                        MediRox Owrens PT
+
+Ekstern kvalitetskontrol                DEKS 3046 DK Koagulation med 5 udsendelser årligt
+
+Præcisionskontrolmaterialer             Siemens Kontrolplasma –         MediRox OKP
+                                        CONTROL N
+(navn, producent, materialetype)
+
+Kontrolniveauer                         0,98                            2,6
+
+Intermediær præcision                   4%                              4%
+
+(CVoprundet inkl. instru. spred.)
+
+Ekspanderet måleusikkerhed              8,4%                            8%
+
+(k=2 sv.t. 95% CI på måleresultatet)
+
+                                        Ved to prøver på samme patient (målt med ovennævnte analy-
+
+Mindste relevante kliniske              semetode) er den mindste klinisk signifikante forskel på de to
+
+difference                              svar 20% beregnet på baggrund af en skønnet biologisk varia-
+
+                                        tion på 4 %
+
+Måleområde (total)
+
+standard analysemåleområde              0,9 – 8,0
+måleområde fortynding (udstyr)          Under svares som <0,9 og over som >8,0
+måleområde opkonc. (udstyr)
+
+yderligere fortynding (ja/nej)
+
+                                        Ifølge producentens kitinsert:
+
+Interferens                             Reagenset påvirkes ikke af bilirubin op til 0,5 g/L, af lipider op
+
+(hæmolyse, icterus, lipæmi, andet)      til 10 g/L, af hæmoglobin op til 10 g/L og af heparin op til 1
+
+                                        IE/mL.
+
+Bemærkninger                            Ingen
+
+Dokumenthistorik                        Planmæssig revision, CV%,       Initialer
+ Dato                                   MRKD og usikkerhedsbudget       SVK
+ 19.11.2023                             opdateret. Referenceinterval
+                                        ændret efter Harmonise-         SVK
+ 07.06.2024                             ringsgruppereferat nr. 74.
+                                        Citratplasma anført som
+                                        prøvemateriale
+
+M113 Koagulationsfaktor II+VII+X [INR]                                               Side 3 af 3
+
