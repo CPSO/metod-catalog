@@ -6,9 +6,9 @@ const COLUMNS = [
   { key: 'age', label: 'Alder' },
   { key: 'range', label: 'Referenceinterval' },
   { key: 'unit', label: 'Enhed' },
-  { key: 'inUseDate', label: 'Taget i brug dato' },
-  { key: 'revisionDate', label: 'Næste revision' },
   { key: 'laboratory', label: 'Udførende laboratorium' },
+  { key: 'inUseDate', label: 'Taget i brug' },
+  { key: 'revisionDate', label: 'Næste revision' },
   { key: 'pdfUrl', label: 'Metodeblad PDF', sortable: false }
 ];
 
@@ -18,7 +18,11 @@ function isAdultInterval(ageText) {
   if (!ageText) return true;
   const firstNumber = ageText.match(/\d+/);
   if (!firstNumber) return true;
-  return Number(firstNumber[0]) >= 18;
+  const value = Number(firstNumber[0]);
+  // "< 18 år" is an exclusive upper bound (everyone in the bracket is younger than that number),
+  // so it only counts as adult once the bound itself is past 18.
+  if (ageText.trim().startsWith('<')) return value > 18;
+  return value >= 18;
 }
 
 function parseDanishDate(str) {
@@ -136,9 +140,9 @@ export function renderReferenceTable(container, items, { sortKey, sortDir, onSor
       <td>${row.age}</td>
       <td class="mono cell-range">${row.range}</td>
       <td>${row.unit}</td>
+      <td>${row.laboratory}</td>
       <td class="mono">${row.inUseDate}</td>
       <td class="mono">${row.revisionDate}</td>
-      <td>${row.laboratory}</td>
       <td>${row.pdfUrl
         ? `<a href="${row.pdfUrl}" class="pdf-link" target="_blank" rel="noopener" data-pdf-link title="Åbn metodeblad PDF">PDF <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>`
         : '<span class="pdf-link-empty">—</span>'}</td>
