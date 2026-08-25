@@ -1,11 +1,20 @@
 // Faceted Filter Bar Component
 
-export function renderFilterBar(container, { sections, activeSection, activeTubeColor, accreditedOnly, onFilterChange, onResetFilters }) {
-  const hasActiveFilters = activeSection !== 'ALL' || activeTubeColor !== 'ALL' || accreditedOnly;
+export function renderFilterBar(container, { sections, activeSection, activeTubeColor, accreditedOnly, adultOnly, onFilterChange, onResetFilters }) {
+  const hasActiveFilters = activeSection !== 'ALL' || activeTubeColor !== 'ALL' || accreditedOnly || !adultOnly;
 
   container.innerHTML = `
     <div class="filter-bar">
       <div class="filter-group-left">
+        <!-- Kun voksne (18+) Toggle -->
+        <button id="adult-toggle" class="filter-pill ${adultOnly ? 'active' : ''}" title="Skjul referenceintervaller for børn (alder under 18 år)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
+          </svg>
+          <span>Kun voksne (18+)</span>
+        </button>
+
         <!-- Analysesektion -->
         <select id="section-filter" class="filter-select" aria-label="Filtrer efter sektion">
           <option value="ALL" ${activeSection === 'ALL' ? 'selected' : ''}>Alle Sektioner</option>
@@ -55,6 +64,10 @@ export function renderFilterBar(container, { sections, activeSection, activeTube
 
   document.getElementById('accredited-toggle')?.addEventListener('click', () => {
     onFilterChange({ accreditedOnly: !accreditedOnly });
+  });
+
+  document.getElementById('adult-toggle')?.addEventListener('click', () => {
+    onFilterChange({ adultOnly: !adultOnly });
   });
 
   document.getElementById('reset-filters-btn')?.addEventListener('click', onResetFilters);

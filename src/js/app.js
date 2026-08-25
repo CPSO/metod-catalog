@@ -27,6 +27,7 @@ class App {
       section: 'ALL',
       tubeColor: 'ALL',
       accreditedOnly: false,
+      adultOnly: true,
       sortKey: 'name',
       sortDir: 'asc',
       selectedItem: null,
@@ -195,6 +196,7 @@ class App {
       activeSection: this.state.section,
       activeTubeColor: this.state.tubeColor,
       accreditedOnly: this.state.accreditedOnly,
+      adultOnly: this.state.adultOnly,
       onFilterChange: (filters) => {
         Object.assign(this.state, filters);
         this.renderMainContent();
@@ -203,6 +205,7 @@ class App {
         this.state.section = 'ALL';
         this.state.tubeColor = 'ALL';
         this.state.accreditedOnly = false;
+        this.state.adultOnly = true;
         this.renderMainContent();
       }
     });
@@ -210,6 +213,7 @@ class App {
     renderReferenceTable(this.tableContainer, results, {
       sortKey: this.state.sortKey,
       sortDir: this.state.sortDir,
+      adultOnly: this.state.adultOnly,
       onSort: (key) => {
         if (this.state.sortKey === key) {
           this.state.sortDir = this.state.sortDir === 'asc' ? 'desc' : 'asc';
@@ -221,10 +225,12 @@ class App {
       },
       onSelectItem: (item) => this.openDetailModal(item),
       onResetSearch: () => {
+        // "Vis alle analyser" clears every filter (including adult-only) to recover from an empty result set
         this.state.query = '';
         this.state.section = 'ALL';
         this.state.tubeColor = 'ALL';
         this.state.accreditedOnly = false;
+        this.state.adultOnly = false;
         if (this.searchInput) this.searchInput.value = '';
         this.toggleClearButton();
         this.renderMainContent();

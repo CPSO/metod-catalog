@@ -2,14 +2,24 @@
 const COLUMNS = [
   { key: 'name', label: 'Analyse' },
   { key: 'npu', label: 'NPU-kode' },
-  { key: 'labkaFullName', label: 'Labka navn' },
+  { key: 'group', label: 'Køn' },
+  { key: 'age', label: 'Alder' },
   { key: 'range', label: 'Referenceinterval' },
   { key: 'unit', label: 'Enhed' },
+  { key: 'inUseDate', label: 'Taget i brug dato' },
   { key: 'revisionDate', label: 'Næste revision' },
   { key: 'laboratory', label: 'Udførende laboratorium' },
-  { key: 'age', label: 'Alder' },
-  { key: 'group', label: 'Køn' }
+  { key: 'pdfUrl', label: 'Metodeblad PDF', sortable: false }
 ];
+
+// Rows where the youngest age boundary implied by this interval is below 18.
+// Intervals that don't specify a numeric age (e.g. "Alle aldre") are treated as adult-inclusive.
+function isAdultInterval(ageText) {
+  if (!ageText) return true;
+  const firstNumber = ageText.match(/\d+/);
+  if (!firstNumber) return true;
+  return Number(firstNumber[0]) >= 18;
+}
 
 function parseDanishDate(str) {
   if (!str) return 0;
@@ -27,13 +37,14 @@ function buildRows(items) {
         item,
         name: item.name,
         npu: item.npu,
-        labkaFullName: item.labkaFullName || item.labka,
         range: interval.range,
         unit: interval.unit || item.unit,
+        inUseDate: item.inUseDate || '-',
         revisionDate: item.revisionDate || '-',
         laboratory: item.logistics?.laboratory || '-',
         age: interval.age || '-',
-        group: interval.group || '-'
+        group: interval.group || '-',
+        pdfUrl: item.pdfUrl || ''
       });
     });
   });
@@ -43,8 +54,8 @@ function buildRows(items) {
 function sortRows(rows, key, dir) {
   const factor = dir === 'desc' ? -1 : 1;
   const sorted = [...rows].sort((a, b) => {
-    if (key === 'revisionDate') {
-      return (parseDanishDate(a.revisionDate) - parseDanishDate(b.revisionDate)) * factor;
+    if (key === 'revisionDate' || key === 'inUseDate') {
+      return (parseDanishDate(a[key]) - parseDanishDate(b[key])) * factor;
     }
     const av = String(a[key] ?? '').toLowerCase();
     const bv = String(b[key] ?? '').toLowerCase();
@@ -53,7 +64,7 @@ function sortRows(rows, key, dir) {
   return sorted;
 }
 
-export function renderReferenceTable(container, items, { sortKey, sortDir, onSort, onSelectItem, onResetSearch }) {
+export function renderReferenceTable(container, items, { sortKey, sortDir, onSort, onSelectItem, onResetSearch, adultOnly = false }) {
   if (!items || items.length === 0) {
     container.innerHTML = `
       <div class="empty-state">
@@ -79,25 +90,58 @@ export function renderReferenceTable(container, items, { sortKey, sortDir, onSor
     return;
   }
 
-  const rows = sortRows(buildRows(items), sortKey, sortDir);
+  let rows = buildRows(items);
+  if (adultOnly) {
+    rows = rows.filter(row => isAdultInterval(row.age));
+  }
+  rows = sortRows(rows, sortKey, sortDir);
+
+  if (rows.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-state-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <line x1="8" y1="11" x2="14" y2="11"/>
+          </svg>
+        </div>
+        <h3>Ingen referenceintervaller fundet</h3>
+        <p>Ingen intervaller matcher dine filtre (fx er "Kun voksne" muligvis for restriktivt).</p>
+        <button id="empty-reset-btn" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          <span>Vis alle analyser</span>
+        </button>
+      </div>
+    `;
+    document.getElementById('empty-reset-btn')?.addEventListener('click', onResetSearch);
+    return;
+  }
 
   const headHtml = COLUMNS.map(col => {
     const isActive = col.key === sortKey;
     const arrow = isActive ? (sortDir === 'asc' ? '▲' : '▼') : '';
-    return `<th data-sort-key="${col.key}" class="${isActive ? 'sorted' : ''}"><span>${col.label}</span><span class="sort-arrow">${arrow}</span></th>`;
+    const sortable = col.sortable !== false;
+    return `<th ${sortable ? `data-sort-key="${col.key}"` : 'class="not-sortable"'} class="${isActive ? 'sorted' : ''}"><span>${col.label}</span>${sortable ? `<span class="sort-arrow">${arrow}</span>` : ''}</th>`;
   }).join('');
 
   const bodyHtml = rows.map((row, i) => `
     <tr data-row-index="${i}" tabindex="0" role="button" aria-label="Se metodeblad for ${row.name}">
       <td class="cell-name">${row.name}</td>
       <td class="mono cell-npu">${row.npu}</td>
-      <td class="mono">${row.labkaFullName}</td>
+      <td>${row.group}</td>
+      <td>${row.age}</td>
       <td class="mono cell-range">${row.range}</td>
       <td>${row.unit}</td>
+      <td class="mono">${row.inUseDate}</td>
       <td class="mono">${row.revisionDate}</td>
       <td>${row.laboratory}</td>
-      <td>${row.age}</td>
-      <td>${row.group}</td>
+      <td>${row.pdfUrl
+        ? `<a href="${row.pdfUrl}" class="pdf-link" target="_blank" rel="noopener" data-pdf-link title="Åbn metodeblad PDF">PDF <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>`
+        : '<span class="pdf-link-empty">—</span>'}</td>
     </tr>
   `).join('');
 
@@ -131,5 +175,9 @@ export function renderReferenceTable(container, items, { sortKey, sortDir, onSor
         onSelectItem(row.item);
       }
     });
+  });
+
+  container.querySelectorAll('[data-pdf-link]').forEach(link => {
+    link.addEventListener('click', (e) => e.stopPropagation());
   });
 }

@@ -305,7 +305,7 @@
 
 .ref-table {
   width: 100%;
-  min-width: 1080px;
+  min-width: 1180px;
   border-collapse: collapse;
   font-size: 0.83rem;
 }
@@ -334,6 +334,14 @@
 
 .ref-table thead th.sorted {
   color: var(--color-accent);
+}
+
+.ref-table thead th.not-sortable {
+  cursor: default;
+}
+
+.ref-table thead th.not-sortable:hover {
+  color: var(--text-secondary);
 }
 
 .sort-arrow {
@@ -375,6 +383,29 @@
   color: var(--text-primary);
   white-space: normal;
   min-width: 220px;
+}
+
+.pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+}
+
+.pdf-link:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-glow);
+  text-decoration: none;
+}
+
+.pdf-link-empty {
+  color: var(--text-muted);
 }
 
 .cell-npu {
