@@ -1,2 +1,6 @@
 node_modules/
 dist/
+
+# Sample PDFs (and their extracted text) used to develop/test the PDF-scraping parser
+scripts/pdf-samples/*.pdf
+scripts/pdf-samples/txt/

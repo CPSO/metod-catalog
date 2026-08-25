@@ -236,34 +236,33 @@
     ]
   },
   {
-    "id": "M-014/11",
+    "id": "M-014/13",
     "documentNumber": "M-014 ALAT",
-    "slug": "alanin-aminotransferase-alat-p-npu01129",
-    "name": "Alanin-aminotransferase [ALAT];P",
+    "slug": "alanintransaminase-alat-p-npu19651",
+    "name": "Alanintransaminase [ALAT];P",
     "letter": "A",
-    "npu": "NPU01129",
+    "npu": "NPU19651",
     "labka": "ALAT",
-    "labkaFullName": "P-Alanin-aminotransferase ALAT",
-    "spCode": "Alanin-aminotransferase;P NPU01129",
-    "webreqCode": "Alanin-aminotransferase;P NPU01129",
+    "labkaFullName": "P-Alanintransaminase [ALAT] ALAT",
+    "spCode": "Alanintransaminase [ALAT];P NPU19651",
+    "webreqCode": "Alanintransaminase [ALAT];P NPU19651",
     "unit": "U/L",
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
     "accreditation": "DANAK EXAM Reg.nr. 1001",
-    "author": "Anders Berg Wulff",
-    "inUseDate": "01-02-2024",
-    "revisionDate": "01-02-2027",
-    "replaces": "15-09-2021",
+    "author": "Ditte Persson",
+    "inUseDate": "24-01-2025",
+    "revisionDate": "24-01-2028",
+    "replaces": "04-10-2022",
     "indication": {
-      "summary": "ALAT er et intracellulært enzym, som primært findes i hepatocytter. Anvendes ved mistanke om og kontrol af akut eller kronisk leversygdom, toksisk leverpåvirkning (fx paracetamol, alkohol eller lægemidler) samt galdestase.",
+      "summary": "Mistanke om og kontrol af leversygdomme. Differentialdiagnostik ved icteriske tilstande. Paracetamol-forgiftning. Kontrol af børn med akut lymfatisk leukæmi. Påvisning af leverskade ved abdominaltraumer. Evt. kontrol af alkoholikere. Alanintransaminase er en markør for parenkymatøs leversygdom.",
       "elevated": [
-        "Akut viral hepatitis (ofte > 10-20 gange forhøjet).",
-        "Toksisk hepatit (fx paracetamolforgiftning, alkoholisk hepatit).",
-        "Iskæmisk hepatitis / choklever.",
-        "Kronisk hepatitis (B, C), non-alkoholisk steatohepatitis (NASH).",
-        "Galdesten / ekstrahepatisk galdevejsobstruktion.",
-        "Hjertesvigt med leverstase."
+        "Hepatitis, levercirrose, leverstase (kronisk hjerte-insufficiens, myokardieinfarkt), galdevejsobstruktion, levermetastaser og hepatom.",
+        "Myokarditis, myositis og muskeldystrofi.",
+        "Fedtlever, alkoholmisbrug, svær pancreatitis, hæmolytisk anæmi, abdominal- og muskeltraumer.",
+        "Akut lymfatisk leukæmi hos børn.",
+        "Forgiftning med paracetamol."
       ],
       "decreased": [
         "Ingen klinisk betydning."
@@ -277,15 +276,20 @@
       "ringColor": "sort",
       "alternativeTube": "Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "alternativeTubeColor": "red",
-      "minVolume": "Et fyldt glas (mindst 200 µL plasma/serum).",
-      "specialConditions": "Undgå hæmolyse da erytrocytter indeholder nogen ALAT-aktivitet."
+      "minVolume": "200 µL plasma/serum.",
+      "specialConditions": "Ingen særlige forhold."
     },
     "referenceIntervals": [
+      { "group": "Alle", "age": "0 – 30 dage", "range": "1 – 40", "unit": "U/L" },
+      { "group": "Alle", "age": "1 mdr. – 4 år", "range": "5 – 45", "unit": "U/L" },
+      { "group": "Kvinder", "age": "5 år – 17 år", "range": "8 – 32", "unit": "U/L" },
       { "group": "Kvinder", "age": "≥ 18 år", "range": "10 – 45", "unit": "U/L" },
-      { "group": "Mænd", "age": "≥ 18 år", "range": "10 – 70", "unit": "U/L" },
-      { "group": "Børn", "age": "< 18 år", "range": "10 – 40", "unit": "U/L" }
+      { "group": "Mænd", "age": "5 – 8 år", "range": "8 – 27", "unit": "U/L" },
+      { "group": "Mænd", "age": "9 – 13 år", "range": "8 – 37", "unit": "U/L" },
+      { "group": "Mænd", "age": "14 – 17 år", "range": "8 – 47", "unit": "U/L" },
+      { "group": "Mænd", "age": "≥ 18 år", "range": "10 – 70", "unit": "U/L" }
     ],
-    "alarmLimits": "Ingen rutinemæssig ringegrænse (kontakt vagthavende biokemiker ved værdier > 1000 U/L efter lokal aftale).",
+    "alarmLimits": "Ingen.",
     "logistics": {
       "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
       "frequency": "Døgnet rundt alle ugens dage.",
@@ -296,55 +300,56 @@
         "practice": "Opbevares i klimaskab indtil afhentning."
       },
       "stability": {
-        "wholeBlood": "24 timer v. 21°C",
-        "pipetted": "7 døgn v. 2–8°C, 3 mdr v. -20°C"
+        "wholeBlood": "36 timer v. 21°C",
+        "pipetted": "7 dage v. 2–8°C"
       },
       "transport": {
         "internal": "Intern transport",
-        "external": "Region H's transportordning",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
         "practice": "Region H's transportordning ved 21 °C"
       },
-      "preanalyticalErrors": "Hæmolyse kan give falsk forhøjede værdier."
+      "preanalyticalErrors": "Ingen særlige."
     },
     "method": {
       "ceMarked": true,
       "accredited": true,
-      "traceability": "IFCC referencemetode med pyridoxalfosfataktivering",
-      "principle": "Kinetisk enzymatisk fotometri (NADH oxidation)",
+      "traceability": "Sporbar til IFCC-referencemetode.",
+      "principle": "Enzymatisk bestemmelse og absorptionsfotometri",
       "instrument": "Siemens Atellica CH 930",
-      "calibrator": "Atellica CH ENZ CAL",
-      "reagent": "Atellica CH ALAT Reagens",
+      "calibrator": "Atellica CH ENZ 2 CAL",
+      "reagent": "Atellica CH ALTPLc Reagens 1 og 2",
       "externalQC": "LABQUALITY 3391 FI Almen klinisk biokemi",
       "precisionControls": [
         {
-          "name": "BIORAD Liquid Assayed Multiqual 1",
-          "level": "35 U/L",
-          "cv": "3,5 %",
-          "ci": "7,0 %"
+          "name": "BIORAD Liquid Assayed Multiqual 1 (serumbaseret)",
+          "level": "30 U/L",
+          "cv": "8 %",
+          "ci": "16 %"
         },
         {
-          "name": "BIORAD Liquid Assayed Multiqual 3",
-          "level": "180 U/L",
-          "cv": "2,8 %",
-          "ci": "5,6 %"
+          "name": "BIORAD Liquid Assayed Multiqual 3 (serumbaseret)",
+          "level": "188 U/L",
+          "cv": "8 %",
+          "ci": "16 %"
         }
       ],
-      "clinicalDifference": "Kritisk forskel (RCV) er ca. 24 % baseret på biologisk variation.",
+      "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 38,6 % beregnet på baggrund af en skønnet biologisk variation på 11,4 %",
       "measuringRange": {
-        "total": "5 – 1000 U/L (med automatisk fortynding op til 10.000 U/L)",
-        "standard": "5 – 1000 U/L"
+        "total": "9-6000 U/L (automatisk fortynding)",
+        "standard": "9-1000 U/L"
       },
       "interference": {
-        "hemoglobin": "Svag hæmolyse tolereres, ved H-indeks > 50 ses positiv interferens.",
-        "bilirubin": "Ingen interferens op til 500 µmol/L",
-        "lipemia": "Ingen interferens op til 10 mmol/L"
+        "hemoglobin": "0,12 mmol/L",
+        "bilirubin": "342 µmol/L (konjugeret og ukonjugeret)",
+        "lipemia": "4,5 mmol/L (Intralipid)",
+        "biasNote": "Der ses ingen interferens (<10% bias) ved tilstedeværelse af nævnte koncentrationer. Yderligere: Sulfasalazin (126 µmol/L), Sulfapyridin (1,2 mmol/L)."
       },
       "comments": "Let forhøjelse ses hyppigt ved overvægt og moderat alkoholforbrug uden alvorlig leversygdom."
     },
     "history": [
       {
-        "date": "01-02-2024",
-        "action": "Periodisk revision. Opdateret referenceinterval og kontrolniveauer.",
+        "date": "24-01-2025",
+        "action": "Justeret CV%, måleusikkerhed og MRKD samt holdbarhed. Mindste prøvemængde præciseret. Analysen og referenceinterval vurderet og fundet fortsat klinisk egnet.",
         "initials": "AWUL0013"
       }
     ]
@@ -694,112 +699,103 @@
     ]
   },
   {
-    "id": "M-023/07",
-    "documentNumber": "M-023 APOB",
-    "slug": "apolipoprotein-b-p-npu01259",
+    "id": "M-296/01",
+    "documentNumber": "M-296_APOB",
+    "slug": "apolipoprotein-b-p-npu22299",
     "name": "Apolipoprotein B;P",
     "letter": "A",
-    "npu": "NPU01259",
-    "labka": "APOB",
-    "labkaFullName": "P-Apolipoprotein B APOB",
-    "spCode": "Apolipoprotein B;P NPU01259",
-    "webreqCode": "Apolipoprotein B;P NPU01259",
+    "npu": "NPU22299",
+    "labka": "APOLIPB",
+    "labkaFullName": "APOLIPB (NPU22299)",
+    "spCode": "Apolipoprotein B;P (NPU22299)",
+    "webreqCode": "Kan ikke rekvireres i WebReq",
     "unit": "g/L",
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "accreditation": "KBA HGH",
     "author": "Anders Berg Wulff",
-    "inUseDate": "01-11-2023",
-    "revisionDate": "01-11-2026",
-    "replaces": "01-10-2018",
+    "inUseDate": "27-10-2025",
+    "revisionDate": "27-01-2026",
+    "replaces": "Nyt",
     "indication": {
-      "summary": "Apolipoprotein B (Apo B) er det strukturelle protein i alle potentielt aterogene lipoproteiner (VLDL, IDL, LDL og Lp(a)). Én Apo B-molekyle findes pr. aterogen partikel, hvilket gør Apo B til et direkte mål for partikelantallet. Anvendes ved kardiovaskulær risikostratificering, særligt ved metabolisk syndrom, diabetes eller hypertriglyceridæmi.",
+      "summary": "Apolipoprotein B er en risikomarkør for hjertekarsygdom. Apolipoprotein B produceres af leveren som Apolipoprotein B-100 og af tarmen som Apolipoprotein B-48. Begge isoformer bestemmes med analysen. Apolipoprotein B i plasma er lokaliseret til overfladen af lipoproteinerne, LDL, IDL, VLDL, kylomikroner og restpartikler af disse. Apolipoprotein B findes ikke på overfladen af HDL partikler. Apolipoprotein B;P benyttes til at vurdere den totale mængde af aterogene apolipoprotein B-holdige lipoproteiner i plasma og kan være indiceret ved udredning af dyslipidæmi.",
       "elevated": [
-        "Øget risiko for iskæmisk hjertekarsygdom.",
-        "Familiær hyperkolesterolæmi / familiær kombineret hyperlipidæmi.",
-        "Type 2 diabetes, insulinresistens, overvægt.",
-        "Nefrotisk syndrom, hypothyreose.",
-        "Kolestase."
+        "Høje plasmakoncentrationer af LDL og/eller VLDL partikler. Plasmakoncentrationer større end 1,00 g/L angiver høj risiko for hjertekarsygdom (klinisk beslutningsgrænse: > 1,0 g/L)."
       ],
       "decreased": [
-        "Abetalipoproteinæmi / hypobetalipoproteinæmi (sjælden genetisk defekt).",
-        "Svær leverskade / nedsat syntese.",
-        "Hypertyreose.",
-        "Effektiv lipidsænkende behandling (statiner, PCSK9-hæmmere, ezetimibe)."
+        "Umåleligt lave værdier kan skyldes abetalipoproteinæmi."
       ]
     },
     "sample": {
       "material": "Plasma/serum",
-      "tube": "Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin",
+      "tube": "Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin",
       "tubeColor": "green",
       "tubeColorName": "Grøn prop (Lithium-Heparin)",
       "ringColor": "sort",
-      "alternativeTube": "Vacuette® glas med rød prop og sort ring, uden tilsætning",
+      "alternativeTube": "Vacuette glas med rød prop og sort ring, indeholdende clot activator (serum)",
       "alternativeTubeColor": "red",
-      "minVolume": "Et fyldt glas.",
-      "specialConditions": "Ingen særlige."
+      "minVolume": "200 µL plasma/serum.",
+      "specialConditions": "Ingen særlige forhold. Ved reduceret prøvemængde (fx børn) kan Vacuette-glas med hvid ring benyttes."
     },
     "referenceIntervals": [
-      { "group": "Voksne (lav risiko)", "age": "≥ 18 år", "range": "< 1,00", "unit": "g/L" },
-      { "group": "Voksne (høj risiko)", "age": "≥ 18 år", "range": "< 0,80", "unit": "g/L" },
-      { "group": "Voksne (meget høj risiko)", "age": "≥ 18 år", "range": "< 0,65", "unit": "g/L" }
+      { "group": "Alle", "age": "Alle aldre", "range": "> 1,00 (høj risiko for hjertekarsygdom)", "unit": "g/L" }
     ],
-    "alarmLimits": "Ingen.",
+    "alarmLimits": "Ej relevant.",
     "logistics": {
-      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "laboratory": "Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital, Herlev matriklen.",
       "frequency": "Udføres på hverdage i dagtiden.",
-      "turnaroundTime": "Svares inden for 1-2 hverdage.",
+      "turnaroundTime": "Svartid for 90% af analyserne er maksimalt 60 minutter.",
       "handling": {
         "internal": "Ingen særlige forholdsregler.",
         "external": "Opbevares på køl.",
         "practice": "Opbevares i klimaskab indtil afhentning."
       },
       "stability": {
-        "wholeBlood": "2 døgn v. 21°C",
-        "pipetted": "8 døgn v. 2–8°C, 3 mdr v. -20°C"
+        "wholeBlood": "7 dage v. 20–22°C (klimaskab), 7 dage v. 2–8°C (køleskab)",
+        "pipetted": "7 dage v. 2–8°C (separeret)"
       },
       "transport": {
-        "internal": "Intern transport",
-        "external": "Region H's transportordning",
+        "internal": "Kan sendes med rørpost",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
         "practice": "Region H's transportordning ved 21 °C"
       },
       "preanalyticalErrors": "Ingen særlige."
     },
     "method": {
       "ceMarked": true,
-      "accredited": true,
-      "traceability": "WHO-IFCC SP3-07 referencemateriale",
-      "principle": "Immunoturbidimetrisk assay",
-      "instrument": "Siemens Atellica CH 930",
-      "calibrator": "Atellica CH SPEC SPEC CAL",
-      "reagent": "Atellica CH Apolipoprotein B",
-      "externalQC": "LABQUALITY Specifikke proteiner",
+      "accredited": false,
+      "traceability": "WHO-IFCC (World Health Organization/International Federation of Clinical Chemistry and Laboratory Medicine) referencemateriale SP3-07.",
+      "principle": "Immunturbidimetri",
+      "instrument": "Atellica CH930",
+      "calibrator": "Atellica CH APO A1 & B CAL, REF 11099329",
+      "reagent": "Atellica CH Apolipoprotein B (APO B), REF 11097626",
+      "externalQC": "Labquality product nr 2200,2202: Lipids and lipoproteins via DEKS.",
       "precisionControls": [
         {
-          "name": "Bio-Rad Liquichek Immunology Control 1",
-          "level": "0,65 g/L",
-          "cv": "3,1 %",
-          "ci": "6,2 %"
+          "name": "BioRad Immunology level 1",
+          "level": "0,36 g/L",
+          "cv": "8,0 %",
+          "ci": "16,0 %"
         },
         {
-          "name": "Bio-Rad Liquichek Immunology Control 3",
-          "level": "1,45 g/L",
-          "cv": "2,7 %",
-          "ci": "5,4 %"
+          "name": "BioRad Immunology level 3",
+          "level": "1,28 g/L",
+          "cv": "6,0 %",
+          "ci": "12,0 %"
         }
       ],
-      "clinicalDifference": "RCV er ca. 14 %.",
+      "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 27,4 % beregnet på baggrund af en skønnet biologisk variation på 6,9 %",
       "measuringRange": {
-        "total": "0,15 – 3,00 g/L",
-        "standard": "0,15 – 3,00 g/L"
+        "total": "0,15 – 4,00 g/L (måleområde fortynding (udstyr): 0,30 – 4,00 g/L)",
+        "standard": "0,15 – 2,00 g/L"
       },
       "interference": {
-        "hemoglobin": "Maks 0,50 mmol/L",
-        "bilirubin": "Maks 500 µmol/L",
-        "lipemia": "Maks 12 mmol/L"
+        "hemoglobin": "525 mg/dL (0,325 mmol/L)",
+        "bilirubin": "30 mg/dL (513 µmol/L), konjugeret og ukonjugeret",
+        "lipemia": "650 mg/dL (7,35 mmol/L), Intralipid"
       },
-      "comments": "ESC/EAS guidelines anbefaler Apo B måling ved diabetes, fedme og høje triglycerider."
+      "comments": "Dette er en signalværdi for værdier hvor der kan være høj risiko for hjertekarsygdom (Kilde: DSKB VUK-anbefaling 2022 for Non-HDL kolesterol)."
     },
     "history": [
       {
@@ -917,6 +913,128 @@
       {
         "date": "15-01-2024",
         "action": "Præciseret præanalytiske krav og isvandstransport.",
+        "initials": "AWUL0013"
+      }
+    ]
+  },
+  {
+    "id": "M-212/04",
+    "documentNumber": "M-212 Antitrypsin",
+    "slug": "antitrypsin-p-npu19692",
+    "name": "Antitrypsin;P",
+    "letter": "A",
+    "npu": "NPU19692",
+    "labka": "ANTITRYP",
+    "labkaFullName": "P-Antitrypsin ANTITRYP",
+    "spCode": "Antitrypsin;P NPU19692",
+    "webreqCode": "Antitrypsin;P NPU19692",
+    "unit": "g/L",
+    "section": "KEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "KBA HGH",
+    "author": "Anders Berg Wulff",
+    "inUseDate": "19-06-2026",
+    "revisionDate": "19-06-2029",
+    "replaces": "27-10-2025",
+    "indication": {
+      "summary": "AAT anvendes til at diagnosticere alpha-1 antitrypsinmangel, som manifesterer sig som levercirrose og pulmonalt emfysem. Meget lave værdier ses ved alfa1-antitrypsinmangel i homozygot form (< 0,5 g/L), mens værdier oftest ligger mellem 0,5 og 1,5 g/L ved alfa-1-antitrypsinmangel i heterozygot form. Ydermere kan lave resultater ses ved tilstande med stort proteintab, kakeksi eller svær leversygdom.",
+      "elevated": [
+        "Akut og kronisk inflammation (alfa-1-antitrypsin er en akut fasereaktant).",
+        "Svangerskab.",
+        "Østrogenbehandling (p-piller)."
+      ],
+      "decreased": [
+        "Alfa-1-antitrypsinmangel i homozygot form (< 0,5 g/L).",
+        "Alfa-1-antitrypsinmangel i heterozygot form (0,5 – 1,5 g/L).",
+        "Stort proteintab, kakeksi eller svær leversygdom."
+      ]
+    },
+    "sample": {
+      "material": "Plasma/serum",
+      "tube": "Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin",
+      "tubeColor": "green",
+      "tubeColorName": "Grøn prop (Lithium-Heparin)",
+      "ringColor": "sort",
+      "alternativeTube": "Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "alternativeTubeColor": "red",
+      "minVolume": "200 µL plasma.",
+      "specialConditions": "Hæmolyseret prøvemateriale analyseres ikke."
+    },
+    "referenceIntervals": [
+      { "group": "Alle", "age": "Alle aldre", "range": "0,97 – 1,68", "unit": "g/L" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte klinisk biokemisk afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90% af analyserne er maksimalt 60 minutter. For praksisprøver svares samme dag.",
+      "handling": {
+        "internal": "Ingen særlige forholdsregler.",
+        "external": "Ingen særlige forholdsregler.",
+        "practice": "Opbevares i klimaskab indtil afhentning."
+      },
+      "stability": {
+        "wholeBlood": "11 døgn v. 21°C",
+        "pipetted": "5 mdr. v. 2–8°C"
+      },
+      "transport": {
+        "internal": "Intern transport",
+        "external": "Region H's transportordning",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Hæmolyseret prøvemateriale analyseres ikke."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": false,
+      "traceability": "ERM-DA470k/IFCC",
+      "principle": "Immunturbidimetri",
+      "instrument": "Atellica CH 930",
+      "calibrator": "Diagam Multiparametric calibrators kit (5 levels) MPREK-000",
+      "reagent": "Diagam Alpha1-antitrypsin, Atellica dedicated kit ATTUR",
+      "externalQC": "LABQUALITY Product nr 2230 FI Almen klinisk biokemi",
+      "precisionControls": [
+        {
+          "name": "BIORAD Liquid Assayed Multiqual 1 (serumbaseret)",
+          "level": "0,74 g/L",
+          "cv": "4 %",
+          "ci": "9,9 %"
+        },
+        {
+          "name": "BIORAD Liquid Assayed Multiqual 3 (serumbaseret)",
+          "level": "1,21 g/L",
+          "cv": "4 %",
+          "ci": "9,9 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 15 % beregnet på baggrund af en skønnet biologisk variation på 3,6 %.",
+      "measuringRange": {
+        "total": "0,014 – 7,00 g/L (måleområde fortynding (udstyr): 0,014 – 7,00 g/L, automatisk fortynding)",
+        "standard": "0,007 – 3,50 g/L"
+      },
+      "interference": {
+        "hemoglobin": "0,62 mmol/L",
+        "bilirubin": "428 µmol/L (konjugeret og ukonjugeret)",
+        "lipemia": "1,42 mmol/L (Intralipid)",
+        "biasNote": "Analysen svares ikke ved tilstedeværelse af koncentrationer over de nævnte grænser."
+      },
+      "comments": "Ingen."
+    },
+    "history": [
+      {
+        "date": "19-06-2026",
+        "action": "Revision. Ændret reagens og måleområde. Mindste prøvemængde uddybet. Usikkerhedsbudget, MRKD og intermediær præcision opdateret.",
+        "initials": "AWUL0013"
+      },
+      {
+        "date": "27-10-2025",
+        "action": "Ændret måleområde.",
+        "initials": "AOLS0291"
+      },
+      {
+        "date": "22-02-2024",
+        "action": "Planlagt revision: Ændret holdbarhed.",
         "initials": "AWUL0013"
       }
     ]
