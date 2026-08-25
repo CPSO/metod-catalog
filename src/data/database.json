@@ -472,114 +472,113 @@
     ]
   },
   {
-    "id": "M-018/08",
-    "documentNumber": "M-018 AT",
-    "slug": "antithrombin-p-npu01280",
-    "name": "Antithrombin;P",
+    "id": "M-116/07",
+    "documentNumber": "M-116 AT3ENZ",
+    "slug": "antithrombin-enz-xa-p-npu29992",
+    "name": "Antithrombin (enz.; Xa);P",
     "letter": "A",
-    "npu": "NPU01280",
-    "labka": "AT",
-    "labkaFullName": "P-Antithrombin AT",
-    "spCode": "Antithrombin;P NPU01280",
-    "webreqCode": "Antithrombin;P NPU01280",
-    "unit": "x 10^3 IU/L (eller % af normal)",
+    "npu": "NPU29992",
+    "labka": "AT3ENZ",
+    "labkaFullName": "P-Antitrombin (enz.) AT3ENZ",
+    "spCode": "Antithrombin (enz; Xa);P (× 103 IU/L) og NPU29992",
+    "webreqCode": "Kan ikke rekvireres fra praksis.",
+    "unit": "x 10^3 IU/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "accreditation": "DANAK EXAM Reg.nr. 1001",
-    "author": "Kirsten Lindegaard",
-    "inUseDate": "15-05-2023",
-    "revisionDate": "15-05-2026",
-    "replaces": "01-04-2019",
+    "accreditation": "KBA HGH",
+    "author": "Signe Vedel",
+    "inUseDate": "07-10-2025",
+    "revisionDate": "07-10-2028",
+    "replaces": "19-01-2022",
     "indication": {
-      "summary": "Antithrombin (AT-III) er den vigtigste fysiologiske koagulationshæmmer i plasma. Undersøges ved udredning for arvelig eller erhvervet trombofili (venøse tromboembolier i ung alder eller recidiverende), mistanke om DIC, nefrotisk syndrom eller heparinresistens.",
+      "summary": "Antitrombin hæmmer blodets koagulation ved at hæmme de fleste aktiverede koagulationsfaktorer herunder faktor Xa og faktor IIa (trombin). Når antitrombin danner komplekser med aktiverede koagulationsfaktorer, inaktiveres disse. Kompleksdannelsen øges af heparin. Antitrombin måles bl.a. ved udredning for trombofili og dissemineret intravaskulær koagulation.",
       "elevated": [
-        "Behandling med vitamin K-antagonister (Warfarin).",
-        "Uden væsentlig klinisk betydning."
+        "Forhøjet antitrombin menes at være uden klinisk betydning."
       ],
       "decreased": [
-        "Arvelig antithrombinmangel (Type I eller Type II).",
-        "Dissemineret intravaskulær koagulation (DIC).",
-        "Akut dyb venetrombose / lungeemboli (forbrugsfase).",
-        "Nefrotisk syndrom (proteintab i urinen).",
-        "Svær leversvigt / nedsat syntese.",
-        "Ufravigeligt heparinforbrug / højdosis heparinbehandling."
+        "Medfødt antitrombin mangel.",
+        "Tilstande med aktiveret koagulationssystem, fx større traumer og efter større operationer.",
+        "Leversygdom og nefrotisk syndrom."
       ]
     },
     "sample": {
       "material": "Citratplasma",
-      "tube": "Vacuette® glas med lyseblå prop og sort ring, 3,2% natriumcitrat (1:9)",
+      "tube": "Vacuette® glas (Greiner Bio-One) med lyseblå prop og hvid ring, indeholdende Natrium-Citrat, blå2,0H",
       "tubeColor": "lightblue",
       "tubeColorName": "Lyseblå prop (3,2% Natriumcitrat)",
-      "ringColor": "sort",
-      "minVolume": "Et helt fyldt glas (præcis fyldning til indikatorstregen er afgørende).",
-      "specialConditions": "Må ikke over- eller underfyldes. Skal vendes forsigtigt 5-8 gange straks efter prøvetagning."
+      "ringColor": "hvid",
+      "minVolume": "Glasset skal fyldes helt for at undgå forkert fortynding.",
+      "specialConditions": "Prøvetagning fra katetre med heparin bør undgås, da det kan give forkerte resultater."
     },
     "referenceIntervals": [
-      { "group": "Voksne", "age": "≥ 18 år", "range": "0,80 – 1,20", "unit": "x 10^3 IU/L (80 – 120 %)" },
-      { "group": "Nyfødte", "age": "< 1 md", "range": "0,40 – 0,80", "unit": "x 10^3 IU/L" }
+      { "group": "Alle", "age": "0-6 dage", "range": "0,40-0,90", "unit": "x 10^3 IU/L" },
+      { "group": "Alle", "age": "6 dage-1 måned", "range": "0,45-1,01", "unit": "x 10^3 IU/L" },
+      { "group": "Alle", "age": "1-3 måneder", "range": "0,61-1,15", "unit": "x 10^3 IU/L" },
+      { "group": "Alle", "age": ">3 måneder", "range": "0,83-1,15", "unit": "x 10^3 IU/L" }
     ],
-    "alarmLimits": "< 0,50 x 10^3 IU/L (ved nyopdaget svær mangel orienteres rekvirent).",
+    "alarmLimits": "Ingen.",
     "logistics": {
-      "laboratory": "Herlev og Gentofte Hospital, Koagulationssektionen",
-      "frequency": "Døgnet rundt for akutte prøver.",
-      "turnaroundTime": "Akut: under 60 min. Rutine: inden for 24 timer.",
+      "laboratory": "Herlev og Gentofte KBA",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90 % af analyserne er maksimalt 60 minutter.",
       "handling": {
-        "internal": "Centrifugeres indenfor 2 timer.",
-        "external": "Afpipetteret plasma sendes frosset ved længere transport.",
-        "practice": "Skal afhentes samme dag."
+        "internal": "Ingen særlige forholdsregler.",
+        "external": "Centrifugeres, afpipetteres og fryses hvis holdbarheden ikke kan overholdes.",
+        "practice": "Centrifugeres, afpipetteres og fryses hvis holdbarheden ikke kan overholdes."
       },
       "stability": {
-        "wholeBlood": "4 timer ved stuetemperatur (15-25°C)",
-        "pipetted": "8 timer v. 20°C, 1 md v. -20°C"
+        "wholeBlood": "4 timer ved stuetemperatur. Må ikke komme på køl.",
+        "pipetted": "Frossent plasma: 1 år ved -24 grader."
       },
       "transport": {
-        "internal": "Intern rørpost eller transportør.",
-        "external": "Region H's køle/frost transportordning",
+        "internal": "Intern transport",
+        "external": "Region H's transportordning",
         "practice": "Region H's transportordning"
       },
-      "preanalyticalErrors": "Underfyldte rør giver falsk nedsat værdi pga. overskud af citrat."
+      "preanalyticalErrors": "Forkert blandingsforhold af blod og citrat (kasseres ved fejlfyldning >±10%). Koagler i blodprøve. Uklart plasma (lipæmi, hæmolyse, bilirubinæmi). Heparin eller anden antikoagulans i prøven."
     },
     "method": {
       "ceMarked": true,
-      "accredited": true,
-      "traceability": "WHO International Standard for Antithrombin",
-      "principle": "Kromogen substratanalyse (Faktor Xa eller Trombin-hæmning)",
-      "instrument": "Sysmex CS-5100 / CS-2500",
-      "calibrator": "Siemens Coagulation Standard",
-      "reagent": "Innovance Antithrombin",
-      "externalQC": "ECAT Foundation / LABQUALITY Koagulation",
+      "accredited": false,
+      "traceability": "Siemens Standard Human Plasma er sporbart til 3rd International Standard for Antithrombin WHO 08/258.",
+      "principle": "Kromogent, faktor Xa-baseret måleprincip. Et overskud af faktor Xa tilsættes citratplasmaet; i tilstedeværelse af heparin danner en del af enzymet et kompleks og inaktiveres af antitrombin i prøven. Overskydende ikke-hæmmet faktor Xa spalter et specifikt kromogent substrat, hvilket frigiver en farve målt ved 405 nm.",
+      "instrument": "Sysmex CS5100",
+      "calibrator": "Siemens Standard Human Plasma ORKL, Antithrombin (INNOVANCE Antithrombin)",
+      "reagent": "Siemens INNOVANCE Antithrombin",
+      "externalQC": "DEKS 3046 DK Koagulation med 5 udsendelser årligt",
       "precisionControls": [
         {
-          "name": "Ci-Trol Normal",
-          "level": "1,00 x 10^3 IU/L",
-          "cv": "3,2 %",
-          "ci": "6,4 %"
+          "name": "Siemens Kontrolplasma P (CONTROL P)",
+          "level": "ca. 0,30 x 103 IU/L",
+          "cv": "9,6 %",
+          "ci": "19,4 %"
         },
         {
-          "name": "Ci-Trol Abnormal I",
-          "level": "0,52 x 10^3 IU/L",
-          "cv": "4,1 %",
-          "ci": "8,2 %"
+          "name": "Siemens Kontrolplasma N (CONTROL N)",
+          "level": "ca. 1,00 x 103 IU/L",
+          "cv": "8,1 %",
+          "ci": "16,4 %"
         }
       ],
-      "clinicalDifference": "Signifikant forskel > 12 %.",
+      "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 26,4% beregnet på baggrund af en skønnet biologisk variation på 3,4%.",
       "measuringRange": {
-        "total": "0,10 – 1,50 x 10^3 IU/L",
-        "standard": "0,10 – 1,50 x 10^3 IU/L"
+        "total": "0,10-1,50 x 10^3 IU/L (resultater under afgives som <0,10, over som >1,50)",
+        "standard": "0,10-1,50 x 10^3 IU/L"
       },
       "interference": {
-        "hemoglobin": "Maks 0,15 mmol/L",
-        "bilirubin": "Maks 300 µmol/L",
-        "lipemia": "Maks 5,0 mmol/L"
+        "hemoglobin": "Kraftig hæmolyse giver interferens",
+        "bilirubin": "Høj koncentration af bilirubin giver interferens",
+        "lipemia": "Kraftig lipæmi giver interferens",
+        "biasNote": "Antikoagulant behandling (perorale direkte faktor Xa- eller trombinhæmmere, NOAK) og heparin i prøven kan give interferens."
       },
-      "comments": "Ved heparinbehandling kan værdien være falsk lav."
+      "comments": "Ingen."
     },
     "history": [
       {
-        "date": "15-05-2023",
-        "action": "Metodeblad opdateret til Sysmex CS-platform.",
-        "initials": "KLIN004"
+        "date": "07-10-2025",
+        "action": "Gennemgående revideret jf. SV tillæg til valideringsrapport.",
+        "initials": "-"
       }
     ]
   },
@@ -806,34 +805,30 @@
     ]
   },
   {
-    "id": "M-019/09",
-    "documentNumber": "M-019 NH3",
-    "slug": "ammoniak-p-npu01140",
-    "name": "Ammoniak;P",
+    "id": "M-232/03",
+    "documentNumber": "M-232 P-Ammonium",
+    "slug": "ammonium-p-npu03928",
+    "name": "Ammonium;P",
     "letter": "A",
-    "npu": "NPU01140",
-    "labka": "NH3",
-    "labkaFullName": "P-Ammoniak NH3",
-    "spCode": "Ammoniak;P NPU01140",
-    "webreqCode": "Ammoniak;P NPU01140",
+    "npu": "NPU03928",
+    "labka": "AMMONIUM",
+    "labkaFullName": "P-Ammonium AMMONIUM",
+    "spCode": "Ammonium;P NPU03928",
+    "webreqCode": "Kan ikke bestilles i WebReq",
     "unit": "µmol/L",
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "accreditation": "KBA HGH",
     "author": "Anders Berg Wulff",
-    "inUseDate": "15-01-2024",
-    "revisionDate": "15-01-2027",
-    "replaces": "10-09-2020",
+    "inUseDate": "27-10-2025",
+    "revisionDate": "27-10-2028",
+    "replaces": "01-03-2024",
     "indication": {
-      "summary": "Ammoniak dannes ved aminosyrenedbrydning i tarm og perifere væv og omdannes i leveren til urinstof (urinstofcyklus). Anvendes akut ved udredning for hepatisk encefalopati, mistanke om medfødte stofskiftesygdomme (urinstofcyklusdefekter) hos nyfødte/børn samt ved uforklarlig bevidsthedspåvirkning eller kramper.",
+      "summary": "Diagnostik og monitorering af coma hepaticum, encephalopati af ukendt årsag samt ved mistanke om Reyes syndrom hos børn.",
       "elevated": [
-        "Akut eller kronisk leversvigt med hepatisk encefalopati (levercoma).",
-        "Portosystemisk shunt / TIPS.",
-        "Medfødte enzymdefekter i urinstofcyklus (fx OTC-mangel).",
-        "Valproatbehandling (toksisk effekt på mitokondriel urinstofcyklus).",
-        "Svær gastrointestinal blødning hos cirrosepatienter.",
-        "Urinvejsinfektion med ureaselproducerende bakterier kombineret med urinretention."
+        "Coma hepaticum og hepatisk encefalopati.",
+        "Reyes syndrom (hos børn)."
       ],
       "decreased": [
         "Ingen klinisk betydning."
@@ -841,79 +836,85 @@
     },
     "sample": {
       "material": "Plasma (EDTA)",
-      "tube": "Vacuette® glas med lilla prop og sort ring, K2-EDTA",
+      "tube": "Vacuette glas med lilla prop og sort ring, indeholdende K2-EDTA",
       "tubeColor": "purple",
       "tubeColorName": "Lilla prop (K2-EDTA)",
       "ringColor": "sort",
-      "minVolume": "Et helt fyldt glas.",
-      "specialConditions": "KRITISK PRÆANALYTIK: Prøven SKAL tages uden stase, stilles i isvand straks efter udtagning og bringes omgående til laboratoriet. Centrifugeres og afpipetteres inden for 15-30 minutter (ammoniak dannes hurtigt in vitro ved erytrocytdeaminering)."
+      "minVolume": "Et korrekt fyldt glas.",
+      "specialConditions": "Patienten bør ikke have røget de sidste 2 timer inden prøvetagning."
     },
     "referenceIntervals": [
-      { "group": "Voksne", "age": "≥ 18 år", "range": "11 – 51", "unit": "µmol/L" },
-      { "group": "Børn", "age": "1 – 17 år", "range": "15 – 65", "unit": "µmol/L" },
-      { "group": "Nyfødte", "age": "< 1 md", "range": "40 – 120", "unit": "µmol/L" }
+      { "group": "Alle", "age": "0 – 8 d", "range": "32 – 192", "unit": "µmol/L" },
+      { "group": "Alle", "age": "8 – 15 d", "range": "34 – 102", "unit": "µmol/L" },
+      { "group": "Alle", "age": "15 – 31 d", "range": "21 – 50", "unit": "µmol/L" },
+      { "group": "Alle", "age": "31 d – 125 år", "range": "11 – 32", "unit": "µmol/L" }
     ],
-    "alarmLimits": "> 80 µmol/L hos voksne (> 100 µmol/L hos børn/nyfødte) meddeles telefonisk som akut fund.",
+    "alarmLimits": "Ingen.",
     "logistics": {
-      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling (Akutlab)",
-      "frequency": "Døgnet rundt, altid som hastende/akut analyse.",
-      "turnaroundTime": "Akut svar inden for 30-45 minutter.",
+      "laboratory": "Analysen udføres på Herlev-matriklen, Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90% af analyserne er maksimalt 60 minutter. For praksisprøver svares samme dag.",
       "handling": {
-        "internal": "Skal transporteres på isvand og centrifugeres straks på kølecentrifuge.",
-        "external": "Kun muligt ved forudgående aftale og hurtig nedfrysning af plasma.",
-        "practice": "Anbefales henvist til hospitalets blodprøvetagning."
+        "internal": "Analysen skal tages på is og bringes direkte til KBA og afleveres til personale. Prøven skal kølecentrifugeres senest 30 min efter prøvetagning og analyseres umiddelbart herefter.",
+        "external": "For eksterne rekvirenter sendes i frossen tilstand.",
+        "practice": "Ikke angivet."
       },
       "stability": {
-        "wholeBlood": "Maksimalt 15-30 minutter i isvand (0-4°C)!",
-        "pipetted": "2 timer v. 2–8°C, 3 uger v. -80°C"
+        "wholeBlood": "Se prøvehåndtering (kølecentrifugeres senest 30 min. efter prøvetagning).",
+        "pipetted": "2 timer ved 2-8°C, 3 døgn ved -20°C og 4 uger ved -70°C."
       },
       "transport": {
-        "internal": "Håndbæres straks på isvand til laboratoriet.",
-        "external": "Frosset på tøris.",
-        "practice": "Ikke egnet til almen praksis transport."
+        "internal": "Direkte til KBA ved interne ikke frosne prøver.",
+        "external": "Frosset tilstand.",
+        "practice": "Ikke angivet."
       },
-      "preanalyticalErrors": "Stase ved prøvetagning, forsinket centrifugering, manglende isvand eller rygning hos prøvetager giver udtalt falsk forhøjede værdier."
+      "preanalyticalErrors": "Rygning før prøvetagning. Se desuden prøvehåndtering."
     },
     "method": {
       "ceMarked": true,
-      "accredited": true,
-      "traceability": "Gravimetrisk primærstandard (Ammoniumchlorid)",
-      "principle": "Enzymatisk analyse med glutamatdehydrogenase (GLDH) og NADPH oxidation.",
-      "instrument": "Siemens Atellica CH 930",
-      "calibrator": "Atellica CH NH3 CAL",
-      "reagent": "Atellica CH Ammonia",
-      "externalQC": "LABQUALITY Akut biokemi",
+      "accredited": false,
+      "traceability": "ACS (American Chemical Society) Grade Ammonium Sulfate.",
+      "principle": "Enzymatisk absorptionsfotometri.",
+      "instrument": "Atellica CH",
+      "calibrator": "Atellica CH CHEM III CAL, REF 11099335",
+      "reagent": "Atellica CH Ammoniak (Amm), REF 11097529",
+      "externalQC": "DEKS Labquality Ammonium ion",
       "precisionControls": [
         {
-          "name": "Bio-Rad Liquichek Ammonia Control 1",
-          "level": "30 µmol/L",
-          "cv": "4,5 %",
-          "ci": "9,0 %"
+          "name": "Biorad Ethanol / Ammonia Level 1",
+          "level": "60 µmol/L",
+          "cv": "8,3 %",
+          "ci": "18,0 %"
         },
         {
-          "name": "Bio-Rad Liquichek Ammonia Control 3",
-          "level": "160 µmol/L",
-          "cv": "3,2 %",
-          "ci": "6,4 %"
+          "name": "Biorad Ethanol / Ammonia Level 3",
+          "level": "324 µmol/L",
+          "cv": "2,5 %",
+          "ci": "8,6 %"
         }
       ],
-      "clinicalDifference": "Signifikant ændring > 20 %.",
+      "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 17,8 % beregnet på baggrund af en skønnet biologisk variation på 5,9 %.",
       "measuringRange": {
-        "total": "10 – 1000 µmol/L",
-        "standard": "10 – 1000 µmol/L"
+        "total": "10 – 1490 µmol/L (måleområde fortynding (udstyr): 20 – 1490 µmol/L)",
+        "standard": "10 – 750 µmol/L"
       },
       "interference": {
-        "hemoglobin": "Maks 0,10 mmol/L (hæmolyse frigør ammoniak)",
-        "bilirubin": "Maks 350 µmol/L",
-        "lipemia": "Maks 6,0 mmol/L"
+        "hemoglobin": "0,047 mmol/L",
+        "bilirubin": "342 µmol/L (konjugeret og ukonjugeret)",
+        "lipemia": "2,3 mmol/L (Intralipid)"
       },
-      "comments": "Rygning i nærheden af prøven forurener luften og giver falsk høje resultater."
+      "comments": "Se Præanalytiske fejlkilder og Prøvehåndtering."
     },
     "history": [
       {
-        "date": "15-01-2024",
-        "action": "Præciseret præanalytiske krav og isvandstransport.",
+        "date": "27-10-2025",
+        "action": "Ændret måleområde.",
         "initials": "AWUL0013"
+      },
+      {
+        "date": "19-02-2024",
+        "action": "Planlagt revision: Ændret måleområde.",
+        "initials": "AOLS0291"
       }
     ]
   },
