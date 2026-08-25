@@ -385,6 +385,53 @@
   min-width: 220px;
 }
 
+.cell-revision {
+  overflow: visible;
+}
+
+.revision-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  margin-left: 0.35rem;
+  vertical-align: middle;
+  cursor: help;
+}
+
+.revision-dot.soon {
+  background: var(--color-warning);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.revision-dot.overdue {
+  background: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.ref-tooltip {
+  position: fixed;
+  z-index: 500;
+  transform: translate(-50%, -100%);
+  background: var(--text-primary);
+  color: var(--bg-surface);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.65rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  max-width: 280px;
+  line-height: 1.35;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.08s ease;
+  white-space: normal;
+}
+
+.ref-tooltip.visible {
+  opacity: 1;
+}
+
 .pdf-link {
   display: inline-flex;
   align-items: center;

@@ -32,6 +32,31 @@ function parseDanishDate(str) {
   return new Date(y, m - 1, d).getTime();
 }
 
+const REVISION_SOON_DAYS = 60;
+
+// Status dot for the "Næste revision" date: red once overdue, orange once within the
+// soon-window, and nothing (no dot, no tooltip) when the revision is comfortably in the future.
+function getRevisionStatus(dateStr) {
+  const dueTime = parseDanishDate(dateStr);
+  if (!dueTime) return null;
+
+  const daysLeft = Math.round((dueTime - Date.now()) / 86400000);
+
+  if (daysLeft < 0) {
+    return {
+      level: 'overdue',
+      tooltip: `Metodebladet skulle være revideret ${dateStr} — ${Math.abs(daysLeft)} dage forsinket.`
+    };
+  }
+  if (daysLeft <= REVISION_SOON_DAYS) {
+    return {
+      level: 'soon',
+      tooltip: `Revision nærmer sig: forfalder ${dateStr} (om ${daysLeft} ${daysLeft === 1 ? 'dag' : 'dage'}).`
+    };
+  }
+  return null;
+}
+
 function buildRows(items) {
   const rows = [];
   items.forEach(item => {
@@ -66,6 +91,45 @@ function sortRows(rows, key, dir) {
     return av.localeCompare(bv, 'da') * factor;
   });
   return sorted;
+}
+
+const TOOLTIP_SHOW_DELAY_MS = 40;
+
+function getTooltipEl() {
+  let el = document.getElementById('ref-table-tooltip');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'ref-table-tooltip';
+    el.className = 'ref-tooltip';
+    document.body.appendChild(el);
+  }
+  return el;
+}
+
+// Native `title` tooltips have a long, browser-controlled delay. Since the revision
+// dot's popup should appear almost instantly, drive a fixed-position tooltip ourselves.
+function wireFastTooltips(container) {
+  const tooltipEl = getTooltipEl();
+  tooltipEl.classList.remove('visible');
+  let showTimer = null;
+
+  container.querySelectorAll('[data-tooltip]').forEach(target => {
+    target.addEventListener('mouseenter', () => {
+      clearTimeout(showTimer);
+      const text = target.getAttribute('data-tooltip');
+      showTimer = setTimeout(() => {
+        const rect = target.getBoundingClientRect();
+        tooltipEl.textContent = text;
+        tooltipEl.style.left = `${rect.left + rect.width / 2}px`;
+        tooltipEl.style.top = `${rect.top - 6}px`;
+        tooltipEl.classList.add('visible');
+      }, TOOLTIP_SHOW_DELAY_MS);
+    });
+    target.addEventListener('mouseleave', () => {
+      clearTimeout(showTimer);
+      tooltipEl.classList.remove('visible');
+    });
+  });
 }
 
 export function renderReferenceTable(container, items, { sortKey, sortDir, onSort, onSelectItem, onResetSearch, adultOnly = false }) {
@@ -142,7 +206,10 @@ export function renderReferenceTable(container, items, { sortKey, sortDir, onSor
       <td>${row.unit}</td>
       <td>${row.laboratory}</td>
       <td class="mono">${row.inUseDate}</td>
-      <td class="mono">${row.revisionDate}</td>
+      <td class="mono cell-revision">${row.revisionDate}${(() => {
+        const status = getRevisionStatus(row.revisionDate);
+        return status ? ` <span class="revision-dot ${status.level}" data-tooltip="${status.tooltip}"></span>` : '';
+      })()}</td>
       <td>${row.pdfUrl
         ? `<a href="${row.pdfUrl}" class="pdf-link" target="_blank" rel="noopener" data-pdf-link title="Åbn metodeblad PDF">PDF <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>`
         : '<span class="pdf-link-empty">—</span>'}</td>
@@ -184,4 +251,6 @@ export function renderReferenceTable(container, items, { sortKey, sortDir, onSor
   container.querySelectorAll('[data-pdf-link]').forEach(link => {
     link.addEventListener('click', (e) => e.stopPropagation());
   });
+
+  wireFastTooltips(container);
 }
