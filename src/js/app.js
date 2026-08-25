@@ -26,6 +26,7 @@ class App {
       query: '',
       section: 'ALL',
       tubeColor: 'ALL',
+      letter: 'ALL',
       accreditedOnly: false,
       adultOnly: true,
       sortKey: 'name',
@@ -188,11 +189,14 @@ class App {
       query: this.state.query,
       section: this.state.section,
       tubeColor: this.state.tubeColor,
+      letter: this.state.letter,
       accreditedOnly: this.state.accreditedOnly
     });
 
     renderFilterBar(this.filterBarContainer, {
       sections: this.searchEngine.getSections(),
+      availableLetters: this.searchEngine.getAvailableLetters(),
+      activeLetter: this.state.letter,
       activeSection: this.state.section,
       activeTubeColor: this.state.tubeColor,
       accreditedOnly: this.state.accreditedOnly,
@@ -204,6 +208,7 @@ class App {
       onResetFilters: () => {
         this.state.section = 'ALL';
         this.state.tubeColor = 'ALL';
+        this.state.letter = 'ALL';
         this.state.accreditedOnly = false;
         this.state.adultOnly = true;
         this.renderMainContent();
@@ -225,10 +230,11 @@ class App {
       },
       onSelectItem: (item) => this.openDetailModal(item),
       onResetSearch: () => {
-        // "Vis alle analyser" clears every filter (including adult-only) to recover from an empty result set
+        // "Vis alle analyser" clears every filter (including letter and adult-only)
         this.state.query = '';
         this.state.section = 'ALL';
         this.state.tubeColor = 'ALL';
+        this.state.letter = 'ALL';
         this.state.accreditedOnly = false;
         this.state.adultOnly = false;
         if (this.searchInput) this.searchInput.value = '';

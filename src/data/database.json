@@ -1039,5 +1039,1270 @@
         "initials": "AWUL0013"
       }
     ]
+  },
+  {
+    "id": "M-252/03",
+    "documentNumber": "M-252 HCO3",
+    "slug": "hydrogencarbonat-aktuel-p-ab-npu02409",
+    "name": "Hydrogencarbonat (aktuel);P(aB)",
+    "letter": "H",
+    "npu": "NPU02409",
+    "labka": "abhco3",
+    "labkaFullName": "P(aB)-Hydrogencarbonat (aktuel; 37 °C) abhco3",
+    "spCode": "Hydrogencarbonat (aktuel);P(aB) NPU02409",
+    "webreqCode": "Ikke relevant",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/H/Hydrogencarbonat%20(aktuel);P(aB),%20P(vB)-Hydrogencarbonat;(aktuel;%2037%C2%B0C),%20Hydrogencarbonat%20(standrad)%20(ABL).pdf",
+    "unit": "mmol/L",
+    "section": "POCT",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Sune Møller Skov-Jeppesen",
+    "inUseDate": "14-01-2025",
+    "revisionDate": "14-01-2028",
+    "replaces": "10-11-2021",
+    "indication": {
+      "summary": "HCO3- kan anvendes i stedet for base excess til at klassificere syre/base-forstyrrelser. Sammen med pH og pCO2 kan HCO3- anvendes til at differentiere mellem respiratorisk acidose, respiratorisk alkalose, metabolisk acidose, metabolisk alkalose eller blandede forstyrrelser.",
+      "elevated": [
+        "Metabolisk alkalose (f.eks. ved opkastninger, diuretikabehandling, hypokaliæmi).",
+        "Kompenseret respiratorisk acidose (kronisk hypoventilation/KOL)."
+      ],
+      "decreased": [
+        "Metabolisk acidose (f.eks. ketoacidose, laktatacidose, nyresvigt, toksinindtagelse).",
+        "Kompenseret respiratorisk alkalose (vedvarende hyperventilation)."
+      ]
+    },
+    "sample": {
+      "material": "Arterieblod / Veneblod / Kapillærblod",
+      "tube": "SafePICO selvfyldende arteriesprøjte med stålkugle (Radiometer), PICO70 eller hepariniserede kapillærrør (70 units/L)",
+      "tubeColor": "grey",
+      "tubeColorName": "Sprøjte / SafePICO (Hepariniseret)",
+      "ringColor": "hvid",
+      "minVolume": "1 mL arterieblod / fyldt sprøjte for veneblod / 95–125 µL for kapillærblod.",
+      "specialConditions": "KBA udfører ikke arteriepunktur. Prøven skal analyseres inden for 15 min. (arterielt) eller 30 min. (venøst/kapillært)."
+    },
+    "referenceIntervals": [
+      { "group": "Arterie- og kapillærblod", "age": "Alle aldre", "range": "22,0 – 27,0", "unit": "mmol/L" },
+      { "group": "Veneblod", "age": "Alle aldre", "range": "21,0 – 26,0", "unit": "mmol/L" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital",
+      "frequency": "Hele døgnet.",
+      "turnaroundTime": "15 minutter.",
+      "handling": {
+        "internal": "Analyseres inden for 15 minutter efter prøvetagning for arterielle prøver og inden for 30 minutter for venøse/kapillære prøver.",
+        "external": "Ikke relevant.",
+        "practice": "Ikke relevant."
+      },
+      "stability": {
+        "wholeBlood": "Arterielle: 15 min. Venøse/kapillære: 30 min.",
+        "pipetted": "Ikke relevant."
+      },
+      "transport": {
+        "internal": "Intern hurtigtransport til ABL-station",
+        "external": "Ikke relevant",
+        "practice": "Ikke relevant"
+      },
+      "preanalyticalErrors": "Luftbobler i sprøjten (ændrer pO2/pCO2/pH). Koageldannelse i prøvematerialet."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "Sporbarhed for pCO2 og pH: pCO2 er sporbar til NIST standarder, pH er sporbar til IUPAC og NIST pH skalaer.",
+      "principle": "Beregnet parameter ved 37°C baseret på potentiometrisk måling af gastension (pCO2) og H+-aktivitet (pH) samt fotometrisk hæmoglobinmåling.",
+      "instrument": "Radiometer ABL837 (Herlev) / ABL835 (Gentofte)",
+      "calibrator": "Radiometer Kalibrator 1 & 2 samt Gaskalibrator 1 & 2",
+      "reagent": "Radiometer Cleaning væske og Rensevæske KL50",
+      "externalQC": "Labquality Standard bikarbonat (Acid-base status and electrolytes, 4 udsendelser/år)",
+      "precisionControls": [],
+      "clinicalDifference": "Ved to prøver på samme patient er den mindste klinisk signifikante forskel 13,4% (skønnet biologisk variation på 4,0%).",
+      "measuringRange": {
+        "total": "3,0 – 60 mmol/L",
+        "standard": "3,0 – 60 mmol/L"
+      },
+      "interference": {
+        "biasNote": "Der afgives ikke svar på HCO3-, hvis de målte niveauer af pCO2 og/eller pH ligger uden for deres måleområder."
+      },
+      "comments": "Omfatter aktuel bikarbonat (arterie: NPU02409, vene: POC00174, kapillær: NPU14264) samt standard bikarbonat (NPU02410)."
+    },
+    "history": [
+      {
+        "date": "14-01-2025",
+        "action": "Planmæssig revision.",
+        "initials": "SMSJ"
+      }
+    ]
+  },
+  {
+    "id": "M-178/10",
+    "documentNumber": "M-178 HBA1C",
+    "slug": "haemoglobin-a1c-ifcc-hb-b-npu27300",
+    "name": "Hæmoglobin A1c (IFCC);Hb(B)",
+    "letter": "H",
+    "npu": "NPU27300",
+    "labka": "HBA1C",
+    "labkaFullName": "Hb(B)-Hæmoglobin A1c (IFCC) HBA1C",
+    "spCode": "Hæmoglobin A1c (IFCC);Hb(B) NPU27300",
+    "webreqCode": "Hæmoglobin A1c (IFCC);Hb(B) NPU27300",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/H/H%C3%A6moglobin%20A1c%20(IFCC)%20(Blod).pdf",
+    "unit": "mmol/mol",
+    "section": "KEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Anders Berg Wulff",
+    "inUseDate": "27-10-2025",
+    "revisionDate": "27-10-2028",
+    "replaces": "10-06-2024",
+    "indication": {
+      "summary": "Diagnose og behandlingskontrol af diabetes mellitus. HbA1c afspejler den gennemsnitlige glukosekoncentration i blodet over de seneste 2–3 måneder. HbA1c ≥ 48 mmol/mol bekræftet ved gentagen måling er diagnostisk for diabetes mellitus.",
+      "elevated": [
+        "Diabetes mellitus type 1 og type 2.",
+        "Dårligt reguleret diabetes eller behandlingssvigt.",
+        "Klinisk beslutningsgrænse for diabetesdiagnostik: ≥ 48 mmol/mol."
+      ],
+      "decreased": [
+        "Hæmolytisk anæmi eller tilstande med forkortet erythrocytlevetid.",
+        "Nylig større blødning eller blodtransfusion.",
+        "Kronisk nyresvigt i dialyse (kan give falsk lave værdier)."
+      ]
+    },
+    "sample": {
+      "material": "Fuldblod (EDTA)",
+      "tube": "Vacuette® glas med lilla prop og sort ring, indeholdende K2EDTA",
+      "tubeColor": "purple",
+      "tubeColorName": "Lilla prop (K2-EDTA)",
+      "ringColor": "sort",
+      "minVolume": "200 µL fuldblod (4,5 µL dispenseres, 100 µL dødvolumen).",
+      "specialConditions": "Bør ikke anvendes til diagnosticering af diabetes under graviditet. Hæmoglobinvarianter kan interferere."
+    },
+    "referenceIntervals": [
+      { "group": "Alle", "age": "Alle aldre", "range": "< 48 (Klinisk beslutningsgrænse)", "unit": "mmol/mol" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90% af analyserne er maksimalt 60 minutter. For praksisprøver svares samme dag.",
+      "handling": {
+        "internal": "Ingen særlige forholdsregler.",
+        "external": "Ingen særlige forholdsregler.",
+        "practice": "Opbevares i klimaskab indtil afhentning."
+      },
+      "stability": {
+        "wholeBlood": "72 timer v. 21°C, 7 dage v. 2–8°C",
+        "pipetted": "Ikke relevant (fuldblod)."
+      },
+      "transport": {
+        "internal": "Intern transport (kan sendes med rørpost)",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Hæmolytiske tilstande og hæmoglobinvarianter."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "Atellica CH A1c_E er sporbar i overensstemmelse med IFCC referencekalibratorer.",
+      "principle": "Enzymatisk bestemmelse og absorptionsfotometri. Estimateret gennemsnitsglukose beregnes som eAG (mmol/L) = HbA1c [IFCC] × 0,145 + 0,829.",
+      "instrument": "Siemens Atellica CH 930",
+      "calibrator": "Enzymatisk hæmoglobin A1c_E-kalibrator (A1c_E CAL)",
+      "reagent": "Atellica CH A1c_E Reagens 1 og 2",
+      "externalQC": "DEKS Labquality HbA1c program 3044FI (2 niveauer, 6 udsendelser/år)",
+      "precisionControls": [
+        {
+          "name": "Thermo Fisher MAS Diabetes control level 1",
+          "level": "38 mmol/mol",
+          "cv": "2,6 %",
+          "ci": "5,8 %"
+        },
+        {
+          "name": "Thermo Fisher MAS Diabetes control level 2",
+          "level": "81 mmol/mol",
+          "cv": "2,1 %",
+          "ci": "4,9 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient er den mindste klinisk signifikante forskel 8,4% (skønnet biologisk variation på 1,9%).",
+      "measuringRange": {
+        "total": "18 – 130 mmol/mol",
+        "standard": "18 – 130 mmol/mol"
+      },
+      "interference": {
+        "hemoglobin": "Hæmoglobinvarianter kan påvirke målingen.",
+        "bilirubin": "Konjugeret 118,6 µmol/L, Ukonjugeret 170,9 µmol/L",
+        "lipemia": "11,3 mmol/L (Intralipid)",
+        "biasNote": "Der ses ingen interferens (<10% bias) ved tilstedeværelse af nævnte koncentrationer."
+      },
+      "comments": "Companion parameter: Glukose, middel (fra HbA1c);P (NPU27412, eAG) har klinisk beslutningsgrænse < 7,7 mmol/L."
+    },
+    "history": [
+      {
+        "date": "27-10-2025",
+        "action": "Ændret måleområde.",
+        "initials": "AOLS0291"
+      },
+      {
+        "date": "10-06-2024",
+        "action": "Planlagt revision. Tilføjet restriktion på hyppighed af HbA1c måling under indikation. Klinisk beslutningsgrænse fortsat gældende. Holdbarhed revideret.",
+        "initials": "AWUL0013"
+      }
+    ]
+  },
+  {
+    "id": "M-114/09",
+    "documentNumber": "M-114 APTT",
+    "slug": "koagulation-overfladeinduceret-aptt-p-npu01682",
+    "name": "Koagulation overfladeinduceret [APTT];P",
+    "letter": "K",
+    "npu": "NPU01682",
+    "labka": "APTT",
+    "labkaFullName": "P-Koag. Overflade-induceret [APTT] APTT",
+    "spCode": "Koag. overflade-induceret [APTT];P NPU01682",
+    "webreqCode": "NPU01682 Koag. overflade-induceret [APTT];P",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Koagulation%20overfladeinduceret%20%5BAPTT%5D%20(Plasma).pdf",
+    "unit": "s",
+    "section": "KOAGULATION",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Signe Vedel Krogh",
+    "inUseDate": "24-06-2024",
+    "revisionDate": "24-06-2027",
+    "replaces": "19-01-2022",
+    "indication": {
+      "summary": "P-Koagulation, overflade-induceret (APTT) bruges til kontrol af koagulationssystemets interne og fælles vej samt ved udredning for blødningstendens og monitorering af ufraktioneret heparin.",
+      "elevated": [
+        "Koagulationsfaktormangel (faktor VIII [hæmofili A], faktor IX [hæmofili B], XI, XII m.fl.).",
+        "Antikoagulant behandling (ufraktioneret heparin, direkte trombin-/faktor Xa-hæmmere).",
+        "Lupus antikoagulans / antifosfolipidsyndrom (analysen er dog ikke specielt følsom herfor).",
+        "Svær leversygdom, dissemineret intravaskulær koagulation (DIC), massiv transfusion."
+      ],
+      "decreased": [
+        "Høj faktor VIII-aktivitet (f.eks. som akutfasereaktion).",
+        "Ingen primær klinisk betydning."
+      ]
+    },
+    "sample": {
+      "material": "Citratplasma",
+      "tube": "Vacuette® glas med lyseblå prop og hvid ring (blå2,0H), alternativt lyseblå prop og sort ring (blå3,5S)",
+      "tubeColor": "lightblue",
+      "tubeColorName": "Lyseblå prop (3,2% Natriumcitrat)",
+      "ringColor": "hvid",
+      "minVolume": "Glasset skal fyldes helt for at sikre korrekt blandingsforhold (9 dele blod til 1 del citrat, ±10%).",
+      "specialConditions": "Blodprøvetagning fra katetre med heparin bør undgås, da kontaminering giver falsk forlænget APTT."
+    },
+    "referenceIntervals": [
+      { "group": "Børn/Unge", "age": "< 18 år", "range": "20 – 34", "unit": "s" },
+      { "group": "Voksne", "age": "≥ 18 år", "range": "20 – 29", "unit": "s" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90 % af analyserne er maksimalt 60 minutter.",
+      "handling": {
+        "internal": "Sendes med rørpost eller afleveres umiddelbart efter prøvetagning.",
+        "external": "Centrifugeres og afpipetteres hvis holdbarhed ellers ikke kan overholdes.",
+        "practice": "Centrifugeres og afpipetteres hvis holdbarhed ellers ikke kan overholdes."
+      },
+      "stability": {
+        "wholeBlood": "4 timer ved stuetemperatur. Må ikke komme på køl. Ved ufraktioneret heparin: 1 time inden centrifugering.",
+        "pipetted": "4 timer ved stuetemperatur. Op til 2 uger ved -20°C."
+      },
+      "transport": {
+        "internal": "Intern transport (rørpost)",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Forkert blandingsforhold (kasseres ved fejlfyldning > ±10%). Koagler i blodprøven. Lipæmi, hæmolyse, bilirubinæmi. Heparinforurening."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "Analysen har ingen kalibrator.",
+      "principle": "Faktorer i det interne koagulationssystem aktiveres ved at inkubere plasma med phospholipider og en overfladeaktivator. Tilsætning af calciumioner starter koagulationsprocessen, og koagulationstiden måles optisk.",
+      "instrument": "Sysmex CS5100",
+      "calibrator": "Ingen",
+      "reagent": "Dade Actin FS",
+      "externalQC": "DEKS 3046 DK Koagulation (5 udsendelser årligt)",
+      "precisionControls": [
+        {
+          "name": "Siemens Kontrolplasma N (CONTROL N)",
+          "level": "ca. 24 s",
+          "cv": "2 %",
+          "ci": "4 %"
+        },
+        {
+          "name": "Siemens Kontrolplasma P (CONTROL P)",
+          "level": "ca. 51 s",
+          "cv": "4 %",
+          "ci": "8 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient er den mindste klinisk signifikante forskel 11,7% (skønnet biologisk variation på 2,8%).",
+      "measuringRange": {
+        "total": "20 – 170 s (under svares som <20 s, over som >170 s)",
+        "standard": "20 – 170 s"
+      },
+      "interference": {
+        "hemoglobin": "Kraftig hæmolyse giver interferens.",
+        "bilirubin": "Høj koncentration af bilirubin giver interferens.",
+        "lipemia": "Kraftig lipæmi giver interferens.",
+        "biasNote": "Lægemidler der giver falsk forlænget APTT: heparin, warfarin, diphenylhydantoin, naloxon, direkte trombinhæmmere, oritavancin. Falsk forkortet: østrogener."
+      },
+      "comments": "Ingen."
+    },
+    "history": [
+      {
+        "date": "24-06-2024",
+        "action": "CV%, MRKD og usikkerhedsbudget opdateret.",
+        "initials": "SVK"
+      }
+    ]
+  },
+  {
+    "id": "M-113/09",
+    "documentNumber": "M-113 INR",
+    "slug": "koagulationsfaktor-ii-vii-x-inr-p-npu01685",
+    "name": "Koagulationsfaktor II+VII+X [INR];P",
+    "letter": "K",
+    "npu": "NPU01685",
+    "labka": "INR",
+    "labkaFullName": "P-Koagulationsfaktor II+VII+X [INR] INR",
+    "spCode": "Koagulationsfaktor II+VII+X [INR];P NPU01685",
+    "webreqCode": "Koagulationsfaktor II+VII+X [INR];P NPU01685",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Koagulationsfaktor%20II+VII+X%20%5BINR%5D%20(Plasma).pdf",
+    "unit": "",
+    "section": "KOAGULATION",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Signe Vedel Krogh",
+    "inUseDate": "07-06-2024",
+    "revisionDate": "07-06-2027",
+    "replaces": "15-03-2024",
+    "indication": {
+      "summary": "Koagulationsfaktor II+VII+X (INR) bruges til kontrol af koagulationssystemets eksterne og fælles vej ved blødningsudredning, monitorering af peroral antikoagulant behandling med vitamin K-antagonister (f.eks. Marevan/Warfarin) samt vurdering af leverfunktion.",
+      "elevated": [
+        "Behandling med vitamin K-antagonister (Marevan).",
+        "Koagulationsfaktormangel (faktor II, VII, X) pga. nedsat leversyntese eller vitamin K-mangel.",
+        "Dissemineret intravaskulær koagulation (DIC)."
+      ],
+      "decreased": [
+        "Ingen klinisk betydning."
+      ]
+    },
+    "sample": {
+      "material": "Citratplasma",
+      "tube": "Vacuette® glas med lyseblå prop og hvid ring (blå2H), alternativt blå3,5S",
+      "tubeColor": "lightblue",
+      "tubeColorName": "Lyseblå prop (3,2% Natriumcitrat)",
+      "ringColor": "hvid",
+      "minVolume": "Glasset skal fyldes helt for at sikre 9 dele blod og 1 del citrat (±10%).",
+      "specialConditions": "Korrekt fyldning er afgørende."
+    },
+    "referenceIntervals": [
+      { "group": "Nyfødte", "age": "Gestationsalder 37.–39. uge", "range": "1,1 – 1,7", "unit": "" },
+      { "group": "Spædbørn", "age": "0 dage – 6 uger", "range": "< 1,8", "unit": "" },
+      { "group": "Børn", "age": "6 uger – 60 uger", "range": "< 1,3", "unit": "" },
+      { "group": "Voksne og børn", "age": "60 uger – 125 år", "range": "< 1,2", "unit": "" },
+      { "group": "Terapeutisk interval (VKA)", "age": "Alle aldre", "range": "2,0 – 3,0 (ved Marevan-behandling)", "unit": "" }
+    ],
+    "alarmLimits": "> 5,0 (Ringegrænse)",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90 % af analyserne er maksimalt 60 minutter.",
+      "handling": {
+        "internal": "Sendes med rørpost eller afleveres umiddelbart efter prøvetagning til KBA.",
+        "external": "Opbevares ved stuetemperatur (21°C).",
+        "practice": "Opbevares i klimaskab (21°C) indtil afhentning."
+      },
+      "stability": {
+        "wholeBlood": "24 timer ved stuetemperatur. Må ikke komme på køl.",
+        "pipetted": "24 timer ved stuetemperatur."
+      },
+      "transport": {
+        "internal": "Intern transport (rørpost)",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Koagler i blodprøve. Forkert blandingsforhold af blod og natriumcitrat (kasseres ved fejlfyldning > ±10%)."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "DEKS kalibratorer er sporbare til WHO internationale referencepræparationer for tromboplastiner (rTF/09, RBT/05, rTF/95, OBT/79).",
+      "principle": "Clotanalyse med MediRox Owrens PT, hvor INR beregnes som INR = (Patient PT / Normal PT)^ISI.",
+      "instrument": "Sysmex CS5100",
+      "calibrator": "DEKS kalibratorer i 3 niveauer (normal, terapeutisk, højt)",
+      "reagent": "MediRox Owrens PT",
+      "externalQC": "DEKS 3046 DK Koagulation (5 udsendelser årligt)",
+      "precisionControls": [
+        {
+          "name": "Siemens Kontrolplasma CONTROL N",
+          "level": "0,98",
+          "cv": "4 %",
+          "ci": "8,4 %"
+        },
+        {
+          "name": "MediRox OKP",
+          "level": "2,6",
+          "cv": "4 %",
+          "ci": "8 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient er den mindste klinisk signifikante forskel 20% (skønnet biologisk variation på 4%).",
+      "measuringRange": {
+        "total": "0,9 – 8,0 (under svares <0,9, over svares >8,0)",
+        "standard": "0,9 – 8,0"
+      },
+      "interference": {
+        "hemoglobin": "Påvirkes ikke op til 10 g/L.",
+        "bilirubin": "Påvirkes ikke op til 0,5 g/L.",
+        "lipemia": "Påvirkes ikke op til 10 g/L.",
+        "biasNote": "Heparin påvirker ikke analysen op til 1 IE/mL."
+      },
+      "comments": "Referenceintervallet er harmoniseret i Region H."
+    },
+    "history": [
+      {
+        "date": "07-06-2024",
+        "action": "Referenceinterval ændret efter Harmoniseringsgruppereferat nr. 74. Citratplasma anført som prøvemateriale.",
+        "initials": "SVK"
+      },
+      {
+        "date": "19-11-2023",
+        "action": "Planmæssig revision, CV%, MRKD og usikkerhedsbudget opdateret.",
+        "initials": "SVK"
+      }
+    ]
+  },
+  {
+    "id": "M-209/03",
+    "documentNumber": "M-209 KF2710",
+    "slug": "koagulationsfaktor-ii-vii-x-p-npu18878",
+    "name": "Koagulationsfaktor II+VII+X;P",
+    "letter": "K",
+    "npu": "NPU18878",
+    "labka": "KF2710",
+    "labkaFullName": "P-Koagulationsfaktor II+VII+X KF2710",
+    "spCode": "Koagulationsfaktor II+VII+X;P NPU18878",
+    "webreqCode": "Kan ikke bestilles i praksis",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Koagulationsfaktor%20II-VII-X%20(Plasma).pdf",
+    "unit": "Ratio",
+    "section": "KOAGULATION",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "KBA HGH",
+    "author": "Signe Vedel Krogh",
+    "inUseDate": "02-05-2024",
+    "revisionDate": "02-05-2027",
+    "replaces": "19-01-2022",
+    "indication": {
+      "summary": "Koagulationsfaktor II+VII+X bruges til kontrol af koagulationssystemets eksterne og fælles vej ved blødningsudredning samt kontrol af leverfunktion. Analysen bør IKKE anvendes til kontrol af patienter i AK-behandling (hertil anvendes INR).",
+      "elevated": [
+        "Ingen klinisk betydning."
+      ],
+      "decreased": [
+        "Koagulationsfaktormangel pga. nedsat leversyntese (cirrose, akut leversvigt).",
+        "Vitamin K-mangel.",
+        "Antikoagulant behandling (afspejler dog ikke patientens egen produktion pålideligt)."
+      ]
+    },
+    "sample": {
+      "material": "Citratplasma",
+      "tube": "Vacuette® glas med lyseblå prop og hvid ring (blå2,0H)",
+      "tubeColor": "lightblue",
+      "tubeColorName": "Lyseblå prop (3,2% Natriumcitrat)",
+      "ringColor": "hvid",
+      "minVolume": "Glasset skal fyldes helt for at undgå forkert fortynding.",
+      "specialConditions": "Kan kun rekvireres på Herlev matriklen. Rekvirering af analysen erstattes automatisk af INR på Gentofte matriklen."
+    },
+    "referenceIntervals": [
+      { "group": "Spædbørn", "age": "1 dag – 1 måned", "range": "> 0,40", "unit": "Ratio" },
+      { "group": "Voksne og børn", "age": "> 1 måned", "range": "> 0,60", "unit": "Ratio" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Herlev Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90 % af analyserne er maksimalt 60 minutter.",
+      "handling": {
+        "internal": "Sendes med rørpost eller afleveres umiddelbart efter prøvetagning til KBA.",
+        "external": "Ikke relevant.",
+        "practice": "Ikke relevant."
+      },
+      "stability": {
+        "wholeBlood": "24 timer ved stuetemperatur. Må ikke komme på køl.",
+        "pipetted": "24 timer ved stuetemperatur."
+      },
+      "transport": {
+        "internal": "Intern transport",
+        "external": "Ikke relevant",
+        "practice": "Ikke relevant"
+      },
+      "preanalyticalErrors": "Koagler i blodprøve. Forkert blandingsforhold af blod og citrat."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": false,
+      "traceability": "DEKS normal kalibrator er sporbar til WHO 4th International Standard Thromboplastin Human Recombinant Plain (rTF/09) og Rabbit Plain (RBT/05).",
+      "principle": "Koagulationsaktiviteten bestemmes som en clotanalyse ved tilsætning af MediRox Owrens PT reagens med optisk detektion og omsætning til ratio via kalibreringskurve.",
+      "instrument": "Sysmex CS5100",
+      "calibrator": "DEKS kalibrator normal",
+      "reagent": "MediRox Owrens PT",
+      "externalQC": "DEKS 3046 DK Koagulation (5 udsendelser årligt)",
+      "precisionControls": [
+        {
+          "name": "Siemens Kontrolplasma CONTROL N",
+          "level": "1,0",
+          "cv": "6,5 %",
+          "ci": "13,4 %"
+        },
+        {
+          "name": "MediRox OKP",
+          "level": "0,20",
+          "cv": "3,5 %",
+          "ci": "6,8 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient er den mindste klinisk signifikante forskel 16% (skønnet biologisk variation på 2,5%).",
+      "measuringRange": {
+        "total": "0,10 – 1,50 (under svares som <0,1, over som >1,50)",
+        "standard": "0,10 – 1,50"
+      },
+      "interference": {
+        "hemoglobin": "Påvirkes ikke op til 10 g/L.",
+        "bilirubin": "Påvirkes ikke op til 0,5 g/L.",
+        "lipemia": "Påvirkes ikke op til 10 g/L.",
+        "biasNote": "Heparin påvirkes ikke op til 1 IE/mL."
+      },
+      "comments": "Udføres kun på Herlev Hospital."
+    },
+    "history": [
+      {
+        "date": "02-05-2024",
+        "action": "Revision af CVoprundet, MRKD, usikkerhedsbudget.",
+        "initials": "SVK"
+      }
+    ]
+  },
+  {
+    "id": "M-041/12",
+    "documentNumber": "M-041 O2SAT",
+    "slug": "oxygen-saturation-abl-hb-ab-npu03011",
+    "name": "Oxygen (O2);mætn. [Saturation] (ABL);Hb(aB)",
+    "letter": "O",
+    "npu": "NPU03011",
+    "labka": "abo2mæt",
+    "labkaFullName": "Hb(aB)-O2 sat. abo2mæt",
+    "spCode": "O2sat.;Hb(aB) NPU03011",
+    "webreqCode": "Ikke relevant",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/O/Oxygen%20(O2);m%C3%A6tn.%20%5BSaturation%5D%20(ABL)%20(Blod).pdf",
+    "unit": "Fraktion",
+    "section": "POCT",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Lærke Kristine Kyhl",
+    "inUseDate": "14-08-2024",
+    "revisionDate": "14-08-2027",
+    "replaces": "28-03-2022",
+    "indication": {
+      "summary": "Vurdering af hypoxi, kontrol af ilt- og respiratorterapi, respirationssvigt samt sammen med pO2 til vurdering af graden af veno-arteriel shunt.",
+      "elevated": [
+        "Hyperoksi ved overdreven ilttilførsel."
+      ],
+      "decreased": [
+        "Hypoxi, respirationsinsufficiens, hypoventilation.",
+        "Svære lungesygdomme (KOL, pneumoni, ARDS, lungeødem).",
+        "Højre-til-venstre shunt i hjertet eller lungekredsløbet."
+      ]
+    },
+    "sample": {
+      "material": "Arterieblod / Veneblod / Kapillærblod",
+      "tube": "SafePICO selvfyldende arteriesprøjte med stålkugle (Radiometer), PICO70 eller hepariniserede kapillærrør (70 units/L)",
+      "tubeColor": "grey",
+      "tubeColorName": "Sprøjte / SafePICO (Hepariniseret)",
+      "ringColor": "hvid",
+      "minVolume": "1 mL arterieblod / fyldt sprøjte for veneblod / 95–125 µL for kapillærblod.",
+      "specialConditions": "KBA udfører ikke arteriepunktur. Prøven analyseres indenfor 15 min. (begrænset af pO2). Med sprøjten skal følge oplysning om prøvematerialetype."
+    },
+    "referenceIntervals": [
+      { "group": "Arterie- og kapillærblod", "age": "1 – 40 år", "range": "0,95 – 0,99", "unit": "Fraktion" },
+      { "group": "Arterie- og kapillærblod", "age": "> 40 – 80 år", "range": "0,92 – 0,99", "unit": "Fraktion" },
+      { "group": "Veneblod", "age": "Alle aldre", "range": "0,70 – 0,80", "unit": "Fraktion" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Klinisk Biokemisk Afdeling, Herlev og Gentofte Hospital",
+      "frequency": "Hele døgnet.",
+      "turnaroundTime": "15 minutter.",
+      "handling": {
+        "internal": "Analyseres inden for 15 minutter efter prøvetagning.",
+        "external": "Ikke tilgængelig.",
+        "practice": "Ikke tilgængelig."
+      },
+      "stability": {
+        "wholeBlood": "15 min (begrænset af pO2)",
+        "pipetted": "Ikke relevant."
+      },
+      "transport": {
+        "internal": "Intern hurtigtransport til ABL",
+        "external": "Ikke tilgængelig",
+        "practice": "Ikke tilgængelig"
+      },
+      "preanalyticalErrors": "Luftbobler i blodprøven (påvirker iltmætning kraftigt). Koagler."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "Kalibratorer er sporbare til NIST SRM (absorbans og bølgelængde) og tonometri.",
+      "principle": "Spektrofotometrisk måling af blodets hæmoglobinfraktioner på ABL og beregning af sO2 = O2Hb / (HHb + O2Hb).",
+      "instrument": "Radiometer ABL837 (Herlev) / ABL835 (Gentofte)",
+      "calibrator": "ctHb kalibrator (NIST SRM)",
+      "reagent": "Cleaning væske og Rensevæske",
+      "externalQC": "Labquality Haemoxymeters (2 udsendelser årligt)",
+      "precisionControls": [
+        {
+          "name": "AutoCheck 6+ / 5+ Level 1 (Rød)",
+          "level": "0,50",
+          "cv": "1 %",
+          "ci": "0,6 %"
+        },
+        {
+          "name": "AutoCheck 6+ / 5+ Level 2 (Gul)",
+          "level": "0,97",
+          "cv": "0,5 %",
+          "ci": "0,6 %"
+        },
+        {
+          "name": "AutoCheck 6+ / 5+ Level 3 (Blå)",
+          "level": "0,70",
+          "cv": "0,7 %",
+          "ci": "0,6 %"
+        }
+      ],
+      "clinicalDifference": "Kan ikke udregnes da biologisk variation ikke kendes.",
+      "measuringRange": {
+        "total": "0,01 – 1,00 (1 – 100%)",
+        "standard": "0,01 – 1,00"
+      },
+      "interference": {
+        "biasNote": "Luftbobler i sprøjten giver betydelig målefejl."
+      },
+      "comments": "Veneblod: NPU10199 (O2sat.;Hb(vB)). Kapillærblod: NPU10197 (O2sat.;Hb(kB)). Kapillærprøver er ikke omfattet af akkrediteringen."
+    },
+    "history": [
+      {
+        "date": "14-08-2024",
+        "action": "Ændring af måleområde til valideret område 0,01–1,00.",
+        "initials": "FLEM0002"
+      }
+    ]
+  },
+  {
+    "id": "M-126/12",
+    "documentNumber": "M-126 SSA",
+    "slug": "sjoegren-syndrom-ssa-igg-p-npu12564",
+    "name": "Sjøgren syndrom [SSA]-IgG;P",
+    "letter": "S",
+    "npu": "NPU12564",
+    "labka": "SSA",
+    "labkaFullName": "P-Sjögrensyndrom A-antistof (IgG) SSA",
+    "spCode": "Sjøgren syndrom [SSA]-Ab(IgG);P NPU12564",
+    "webreqCode": "Rekvirering via WebReq er ikke muligt",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/S/Sj%C3%B8gren%20syndrom%20%5BSSA%5D-IgG%20(Plasma).pdf",
+    "unit": "kU/L",
+    "section": "IMMUNKEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Valbona Camili",
+    "inUseDate": "23-03-2026",
+    "revisionDate": "23-03-2029",
+    "replaces": "15-12-2025",
+    "indication": {
+      "summary": "Påvisning af SS-A/Ro-antistoffer anvendes ved klinisk diagnosticering af Systemisk Lupus Erythematosus (SLE, forekomst 40–50%) og Sjögrens syndrom (forekomst 60–75% ved primært Sjögrens syndrom).",
+      "elevated": [
+        "Primært og sekundært Sjögrens syndrom.",
+        "Systemisk lupus erythematosus (SLE).",
+        "Neonatal lupus og kongenit hjerteblok hos nyfødte.",
+        "Subakut kutan lupus erythematosus (SCLE)."
+      ],
+      "decreased": [
+        "Ingen klinisk betydning."
+      ]
+    },
+    "sample": {
+      "material": "Serum",
+      "tube": "Vacuette® glas med sandfarvet prop, indeholdende clot aktivator",
+      "tubeColor": "red",
+      "tubeColorName": "Sandfarvet prop (Serum med clot aktivator)",
+      "ringColor": "sort",
+      "minVolume": "Minimum ½ mL serum.",
+      "specialConditions": "Lipæmiske, hæmolyserede, ikteriske eller mikrobielt forurenede prøver kan ikke anvendes."
+    },
+    "referenceIntervals": [
+      { "group": "Negativ", "age": "Alle aldre", "range": "< 7", "unit": "kU/L" },
+      { "group": "Inkonklusiv (gråzone)", "age": "Alle aldre", "range": "7 – 10", "unit": "kU/L" },
+      { "group": "Positiv", "age": "Alle aldre", "range": "> 10", "unit": "kU/L" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Klinisk Biokemisk Afdeling, Herlev matrikel",
+      "frequency": "Udføres på hverdage.",
+      "turnaroundTime": "1 uge.",
+      "handling": {
+        "internal": "Ingen særlige forholdsregler.",
+        "external": "Ingen særlige forholdsregler.",
+        "practice": "Opbevares i klimaskab indtil afhentning."
+      },
+      "stability": {
+        "wholeBlood": "8 timer ved stuetemperatur.",
+        "pipetted": "8 timer v. stuetemperatur, 14 dage v. 2–8°C, 1 måned v. -20°C."
+      },
+      "transport": {
+        "internal": "Intern transport",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Lipæmi, hæmolyse, ikterus eller mikrobiel kontaminering."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "IgG-kalibratorerne kan spores til det internationale referencepræparat WHO IRP 67/86 for humane serum-immunglobuliner A, G og M.",
+      "principle": "Fluorescens-enzym-immunassay (FEIA). Brønde belagt med rekombinant SS-A/Ro-protein (60 kDa, 52 kDa) inkuberes med serum og detekteres med enzymmærket anti-human-IgG.",
+      "instrument": "Thermo Scientific Phadia® 250",
+      "calibrator": "EliA IgG Calibrator Strips",
+      "reagent": "EliA Ro Well, EliA IgG Conjugate, ImmunoCAP Development & Stop Solution",
+      "externalQC": "UK NEQAS for Nuclear and related Antigens",
+      "precisionControls": [
+        {
+          "name": "EliA IgG/M/A Negative Control",
+          "level": "0,5 kU/L",
+          "cv": "10 %",
+          "ci": "22 %"
+        },
+        {
+          "name": "EliA ANA Positive Control",
+          "level": "50 kU/L",
+          "cv": "9 %",
+          "ci": "20 %"
+        }
+      ],
+      "clinicalDifference": "Mindste klinisk signifikante forskel er 32% (biologisk variation på 4,5% for IgG).",
+      "measuringRange": {
+        "total": "0,4 – 340 kU/L",
+        "standard": "0,4 – 340 kU/L"
+      },
+      "interference": {
+        "biasNote": "Lipæmiske, hæmolyserede, ikteriske eller mikrobielt forurenede prøver kan ikke anvendes."
+      },
+      "comments": "Indgår i ANA screening (ANASC / BINAB) samt som enkeltbestemmelse."
+    },
+    "history": [
+      {
+        "date": "23-03-2026",
+        "action": "Opdateret intermediær præcision og måleusikkerhed efter erstatning af 2 Phadia apparater.",
+        "initials": "VCAM"
+      },
+      {
+        "date": "15-12-2025",
+        "action": "Opdateret intermediær præcision og måleusikkerhed med 3 Phadia apparater.",
+        "initials": "SAF0011"
+      },
+      {
+        "date": "26-05-2025",
+        "action": "Ny forfatter og ny produktionsansvarlig.",
+        "initials": "VCAM"
+      }
+    ]
+  },
+  {
+    "id": "M-125/11",
+    "documentNumber": "M-125 SSB",
+    "slug": "sjoegren-syndrom-ssb-igg-p-npu12567",
+    "name": "Sjøgren syndrom [SSB]-IgG;P",
+    "letter": "S",
+    "npu": "NPU12567",
+    "labka": "SSB",
+    "labkaFullName": "P-Sjögrensyndrom B-antistof(IgG) SSB",
+    "spCode": "Sjøgren syndrom [SSB]-Ab(IgG);P NPU12567",
+    "webreqCode": "Rekvirering via WebReq er ikke muligt",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/S/Sj%C3%B8gren%20syndrom%20%5BSSB%5D-IgG%20(Plasma).pdf",
+    "unit": "kU/L",
+    "section": "IMMUNKEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Valbona Camili",
+    "inUseDate": "23-03-2026",
+    "revisionDate": "23-03-2029",
+    "replaces": "15-12-2025",
+    "indication": {
+      "summary": "SS-B/La-antistoffer er et serologisk kendetegn for Sjögrens syndrom (forekommer hos ca. 40–50% af patienterne, oftest ledsaget af SS-A/Ro). Påvises desuden hos 6–15% af patienter med SLE.",
+      "elevated": [
+        "Primært og sekundært Sjögrens syndrom.",
+        "Systemisk lupus erythematosus (SLE).",
+        "Neonatal lupus erythematosus."
+      ],
+      "decreased": [
+        "Ingen klinisk betydning."
+      ]
+    },
+    "sample": {
+      "material": "Serum",
+      "tube": "Vacuette® glas med sandfarvet prop, indeholdende clot aktivator",
+      "tubeColor": "red",
+      "tubeColorName": "Sandfarvet prop (Serum med clot aktivator)",
+      "ringColor": "sort",
+      "minVolume": "Minimum ½ mL serum.",
+      "specialConditions": "Lipæmiske, hæmolyserede, ikteriske eller mikrobielt forurenede prøver kan ikke anvendes."
+    },
+    "referenceIntervals": [
+      { "group": "Negativ", "age": "Alle aldre", "range": "< 7", "unit": "kU/L" },
+      { "group": "Inkonklusiv (gråzone)", "age": "Alle aldre", "range": "7 – 10", "unit": "kU/L" },
+      { "group": "Positiv", "age": "Alle aldre", "range": "> 10", "unit": "kU/L" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Klinisk Biokemisk Afdeling, Herlev matrikel",
+      "frequency": "Udføres på hverdage.",
+      "turnaroundTime": "1 uge.",
+      "handling": {
+        "internal": "Ingen særlige forholdsregler.",
+        "external": "Ingen særlige forholdsregler.",
+        "practice": "Opbevares i klimaskab indtil afhentning."
+      },
+      "stability": {
+        "wholeBlood": "8 timer ved stuetemperatur.",
+        "pipetted": "8 timer v. stuetemperatur, 14 dage v. 2–8°C, 1 måned v. -20°C."
+      },
+      "transport": {
+        "internal": "Intern transport",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Lipæmi, hæmolyse, ikterus eller mikrobiel kontaminering."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "IgG-kalibratorerne kan spores til det internationale referencepræparat WHO IRP 67/86 for humane serum-immunglobuliner A, G og M.",
+      "principle": "Fluorescens-enzym-immunassay (FEIA). Brønde belagt med humant rekombinant SS-B/La-protein inkuberes med serum og detekteres med fluorescens-mærket anti-human-IgG.",
+      "instrument": "Thermo Scientific Phadia® 250",
+      "calibrator": "EliA IgG Calibrator Strips",
+      "reagent": "EliA La Well, EliA IgG Conjugate, ImmunoCAP Development & Stop Solution",
+      "externalQC": "UK NEQAS for Nuclear and related Antigens",
+      "precisionControls": [
+        {
+          "name": "EliA IgG/M/A Negative Control",
+          "level": "0,5 kU/L",
+          "cv": "10 %",
+          "ci": "22 %"
+        },
+        {
+          "name": "EliA ANA Positive Control",
+          "level": "50 kU/L",
+          "cv": "9 %",
+          "ci": "20 %"
+        }
+      ],
+      "clinicalDifference": "Mindste klinisk signifikante forskel er 32% (biologisk variation på 4,5% for IgG).",
+      "measuringRange": {
+        "total": "0,4 – 340 kU/L",
+        "standard": "0,4 – 340 kU/L"
+      },
+      "interference": {
+        "biasNote": "Lipæmiske, hæmolyserede, ikteriske eller mikrobielt forurenede prøver kan ikke anvendes."
+      },
+      "comments": "Indgår i ANA screening (ANASC / BINAB) samt som enkeltbestemmelse."
+    },
+    "history": [
+      {
+        "date": "23-03-2026",
+        "action": "Opdateret intermediær præcision og måleusikkerhed efter erstatning af 2 Phadia apparater.",
+        "initials": "VCAM"
+      },
+      {
+        "date": "15-12-2025",
+        "action": "Opdateret intermediær præcision og måleusikkerhed med 3 Phadia apparater.",
+        "initials": "SAF0011"
+      },
+      {
+        "date": "26-05-2025",
+        "action": "Ny forfatter og ny produktionsansvarlig.",
+        "initials": "VCAM"
+      }
+    ]
+  },
+  {
+    "id": "M-129/11",
+    "documentNumber": "M-129 RNPU1",
+    "slug": "u1-snrnp-70-kda-a-c-igg-p-npu26646",
+    "name": "U1 snRNP(70 kDa+A+C)-IgG;P",
+    "letter": "U",
+    "npu": "NPU26646",
+    "labka": "RNPU1",
+    "labkaFullName": "P-Ribonucleoprotein U1(70 kDa+A+C)-antistof(IgG) RNPU1",
+    "spCode": "U1 snRNP(70 kDa+A+C)-Ab(IgG);P NPU26646",
+    "webreqCode": "Rekvirering via WebReq er ikke muligt",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/U/U1%20snRNP(70%20kDa+A+C)-IgG%20(Plasma).pdf",
+    "unit": "kU/L",
+    "section": "IMMUNKEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Valbona Camili",
+    "inUseDate": "24-03-2026",
+    "revisionDate": "24-03-2029",
+    "replaces": "15-12-2025",
+    "indication": {
+      "summary": "U1-snRNP-antistoffer forekommer typisk ved Mixed Connective Tissue Disease (MCTD / Sharps syndrom) og Systemisk Lupus Erythematosus (SLE). Ved MCTD er tilstedeværelse af U1-snRNP-antistoffer et obligatorisk diagnostisk kriterium.",
+      "elevated": [
+        "Mixed Connective Tissue Disease (MCTD / Sharps syndrom, sensitivitet nær 100%).",
+        "Systemisk Lupus Erythematosus (SLE, forekomst 30–40%).",
+        "Systemisk sklerose (sklerodermi)."
+      ],
+      "decreased": [
+        "Ingen klinisk betydning."
+      ]
+    },
+    "sample": {
+      "material": "Serum",
+      "tube": "Vacuette® glas med sandfarvet prop, indeholdende clot aktivator",
+      "tubeColor": "red",
+      "tubeColorName": "Sandfarvet prop (Serum med clot aktivator)",
+      "ringColor": "sort",
+      "minVolume": "Minimum ½ mL serum.",
+      "specialConditions": "Lipæmiske, hæmolyserede, ikteriske eller mikrobielt forurenede prøver kan ikke anvendes."
+    },
+    "referenceIntervals": [
+      { "group": "Negativ", "age": "Alle aldre", "range": "< 5", "unit": "kU/L" },
+      { "group": "Inkonklusiv (gråzone)", "age": "Alle aldre", "range": "5 – 10", "unit": "kU/L" },
+      { "group": "Positiv", "age": "Alle aldre", "range": "> 10", "unit": "kU/L" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Klinisk Biokemisk Afdeling, Herlev matrikel",
+      "frequency": "Udføres på hverdage.",
+      "turnaroundTime": "1 uge.",
+      "handling": {
+        "internal": "Ingen særlige forholdsregler.",
+        "external": "Ingen særlige forholdsregler.",
+        "practice": "Opbevares i klimaskab indtil afhentning."
+      },
+      "stability": {
+        "wholeBlood": "8 timer ved stuetemperatur.",
+        "pipetted": "8 timer v. stuetemperatur, 14 dage v. 2–8°C, 1 måned v. -20°C."
+      },
+      "transport": {
+        "internal": "Intern transport",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Lipæmi, hæmolyse, ikterus eller mikrobiel kontaminering."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "IgG-kalibratorerne kan spores til det internationale referencepræparat WHO IRP 67/86 for humane serum-immunglobuliner A, G og M.",
+      "principle": "Fluorescens-enzym-immunassay (FEIA). Brønde belagt med rekombinante RNP-proteiner (RNP70, A, C) inkuberes med serum og detekteres med enzymmærket anti-human-IgG.",
+      "instrument": "Thermo Scientific Phadia® 250",
+      "calibrator": "EliA IgG Calibrator Strips",
+      "reagent": "EliA RNP 70 Well, EliA IgG Conjugate, ImmunoCAP Development & Stop Solution",
+      "externalQC": "UK NEQAS for Nuclear and related Antigens",
+      "precisionControls": [
+        {
+          "name": "EliA IgG/M/A Negative Control",
+          "level": "0,5 kU/L",
+          "cv": "10 %",
+          "ci": "22 %"
+        },
+        {
+          "name": "EliA ANA Positive Control",
+          "level": "50 kU/L",
+          "cv": "9 %",
+          "ci": "20 %"
+        }
+      ],
+      "clinicalDifference": "Mindste klinisk signifikante forskel er 32% (biologisk variation på 4,5% for IgG).",
+      "measuringRange": {
+        "total": "0,4 – 340 kU/L",
+        "standard": "0,4 – 340 kU/L"
+      },
+      "interference": {
+        "biasNote": "Lipæmiske, hæmolyserede, ikteriske eller mikrobielt forurenede prøver kan ikke anvendes."
+      },
+      "comments": "Obligatorisk serologisk markør ved udredning for MCTD (Sharps syndrom)."
+    },
+    "history": [
+      {
+        "date": "24-03-2026",
+        "action": "Opdateret intermediær præcision og måleusikkerhed efter erstatning af 2 Phadia apparater.",
+        "initials": "VCAM"
+      },
+      {
+        "date": "15-12-2025",
+        "action": "Opdateret intermediær præcision og måleusikkerhed med 3 Phadia apparater.",
+        "initials": "SAF0011"
+      },
+      {
+        "date": "26-05-2025",
+        "action": "Ny forfatter og ny produktionsansvarlig.",
+        "initials": "VCAM"
+      }
+    ]
+  },
+  {
+    "id": "M-256/03",
+    "documentNumber": "M-256 ZINK",
+    "slug": "zink-p-npu03768",
+    "name": "Zink;P",
+    "letter": "Z",
+    "npu": "NPU03768",
+    "labka": "ZINK",
+    "labkaFullName": "P-Zink ZINK",
+    "spCode": "Zink;P NPU03768",
+    "webreqCode": "Zink;P NPU03768",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/Z/Zink%20(Plasma).pdf",
+    "unit": "µmol/L",
+    "section": "KEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "KBA HGH",
+    "author": "Ditte Iben Persson",
+    "inUseDate": "27-10-2025",
+    "revisionDate": "27-10-2028",
+    "replaces": "15-05-2023",
+    "indication": {
+      "summary": "Bestemmelse af P-Zink benyttes ved kontrol af patienter i parenteral ernæring, ved langvarig diarré, malabsorption, ved mistanke om zinkmangel eller zinkforgiftning samt monitorering ved zinksubstitution. Ca. 70–80% af zink i plasma er bundet til albumin; lavt albumin kan derfor give pseudolav P-Zink.",
+      "elevated": [
+        "Akut eller kronisk zinkforgiftning (overdosering, erhvervsmæssig eksponering)."
+      ],
+      "decreased": [
+        "Zinkmangel (utilstrækkelig tilførsel, malabsorption, langvarig total parenteral ernæring).",
+        "Acrodermatitis enteropathica (arvelig defekt i zinkabsorption).",
+        "Hypoalbuminæmi (nedsat bæreevne).",
+        "Behandling med penicillamin, kortikosteroider eller thiazider."
+      ]
+    },
+    "sample": {
+      "material": "Serum",
+      "tube": "Vacuette® glas med rød prop og sort ring, indeholdende clot-activator",
+      "tubeColor": "red",
+      "tubeColorName": "Rød prop (Serum med clot activator)",
+      "ringColor": "sort",
+      "minVolume": "Et fyldt glas.",
+      "specialConditions": "Kan bestilles men ikke tages i almen praksis pga. krav om centrifugering indenfor 2 timer. Må IKKE tages som kapillærblod grundet risiko for afsmitning."
+    },
+    "referenceIntervals": [
+      { "group": "Alle", "age": "Alle aldre", "range": "10 – 19", "unit": "µmol/L" }
+    ],
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90% af analyserne er maksimalt 60 minutter. For praksisprøver svares samme dag.",
+      "handling": {
+        "internal": "Skal centrifugeres og afpipetteres inden for 2 timer.",
+        "external": "Skal centrifugeres og afpipetteres inden for 2 timer.",
+        "practice": "Kan ikke tages i praksis."
+      },
+      "stability": {
+        "wholeBlood": "Ved 20–25°C: Centrifugeres inden for 2 timer og afpipetteres senest 1 time derefter.",
+        "pipetted": "2 dage ved 20–25°C, 14 dage ved 2–8°C."
+      },
+      "transport": {
+        "internal": "Sendes med Region H's interne transport",
+        "external": "Region H's transportordning",
+        "practice": "Ikke relevant"
+      },
+      "preanalyticalErrors": "Må ikke tages som kapillærblod grundet afsmitningsrisiko. Kontaminering fra gummi og metalgenstande."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": false,
+      "traceability": "NIST SRM 3168a (National Institute of Standards and Technology Standard Reference Material).",
+      "principle": "Absorptionsfotometri efter dannelse af farvet zinkkompleks.",
+      "instrument": "Siemens Atellica CH 930",
+      "calibrator": "Sentinel Diagnostics: Zinc standard",
+      "reagent": "Sentinel Diagnostics: Zinc (ref 17640H)",
+      "externalQC": "DEKS Almen Klinisk Biokemi",
+      "precisionControls": [
+        {
+          "name": "BIORAD Liquid Assayed Multiqual Level 1",
+          "level": "14,7 µmol/L",
+          "cv": "5,4 %",
+          "ci": "10,9 %"
+        },
+        {
+          "name": "BIORAD Liquid Assayed Multiqual Level 3",
+          "level": "35,5 µmol/L",
+          "cv": "5,2 %",
+          "ci": "10,5 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient er den mindste klinisk signifikante forskel 30% (skønnet biologisk variation på 9%).",
+      "measuringRange": {
+        "total": "1 – 300 µmol/L",
+        "standard": "1 – 300 µmol/L"
+      },
+      "interference": {
+        "hemoglobin": "500 mg/dL (0,31 mmol/L)",
+        "bilirubin": "680 µmol/L (konjugeret og ukonjugeret)",
+        "lipemia": "15 mmol/L",
+        "biasNote": "Der ses ingen interferens (<10% bias) ved tilstedeværelse af nævnte koncentrationer."
+      },
+      "comments": "Ca. 70–80% af zink i plasma er bundet til albumin."
+    },
+    "history": [
+      {
+        "date": "27-10-2025",
+        "action": "Ændret måleområde.",
+        "initials": "AOLS0291"
+      }
+    ]
+  },
+  {
+    "id": "M-206/09",
+    "documentNumber": "M-206 ESTRA",
+    "slug": "oestradiol-p-npu01972",
+    "name": "Østradiol;P",
+    "letter": "Ø",
+    "npu": "NPU01972",
+    "labka": "ESTRA",
+    "labkaFullName": "P-Østradiol ESTRA",
+    "spCode": "Østradiol;P NPU01972",
+    "webreqCode": "Østradiol;P NPU01972",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/O/%C3%98stradiol%20(Plasma).pdf",
+    "unit": "nmol/L",
+    "section": "IMMUNKEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "accreditation": "DANAK EXAM Reg.nr. 1001",
+    "author": "Camilla J Kobylecki",
+    "inUseDate": "22-10-2025",
+    "revisionDate": "22-10-2028",
+    "replaces": "30-09-2024",
+    "indication": {
+      "summary": "Udredning ved mistanke om svigtende gonadefunktion, kontrol af gonadotropinbehandlet infertilitet, differentialdiagnostik ved amenoré, udredning af postmenopausal blødning, truende abort, gynækomasti/feminisering hos mænd samt pubertas præcox.",
+      "elevated": [
+        "Gonadotropinstimulation ved fertilitetsbehandling.",
+        "Østrogenproducerende tumorer (ovarier, testes, binyrer).",
+        "Pubertas præcox.",
+        "Gynækomasti og feminisering hos mænd."
+      ],
+      "decreased": [
+        "Amenoré (primær eller sekundær ovarieinsufficiens).",
+        "Hypofysesvigt / hypogonadotrop hypogonadisme.",
+        "Menopause (fysiologisk)."
+      ]
+    },
+    "sample": {
+      "material": "Serum",
+      "tube": "Vacuette® glas med rød prop og sort ring, indeholdende clot aktivator",
+      "tubeColor": "red",
+      "tubeColorName": "Rød prop (Serum med clot aktivator)",
+      "ringColor": "sort",
+      "minVolume": "Fyldt glas (til én måling kræves 80 µL + 300 µL dødvolumen).",
+      "specialConditions": "Prøvemateriale er ændret fra plasma til serum. Prøven tages som serum."
+    },
+    "referenceIntervals": [
+      { "group": "Piger", "age": "16 dage – 10 år", "range": "0,02 – 0,11", "unit": "nmol/L" },
+      { "group": "Piger", "age": "11 – 13 år", "range": "0,02 – 0,19", "unit": "nmol/L" },
+      { "group": "Kvinder (15-50 år)", "age": "Follikulær fase", "range": "0,07 – 0,53", "unit": "nmol/L" },
+      { "group": "Kvinder (15-50 år)", "age": "Midtcyklustop", "range": "0,23 – 1,31", "unit": "nmol/L" },
+      { "group": "Kvinder (15-50 år)", "age": "Luteal fase", "range": "0,20 – 0,79", "unit": "nmol/L" },
+      { "group": "Kvinder", "age": "> 50 år (postmenopausal)", "range": "≤ 0,30", "unit": "nmol/L" },
+      { "group": "Drenge", "age": "16 dage – 10 år", "range": "0,02 – 0,09", "unit": "nmol/L" },
+      { "group": "Drenge", "age": "11 – 13 år", "range": "0,02 – 0,23", "unit": "nmol/L" },
+      { "group": "Drenge", "age": "14 – 15 år", "range": "0,02 – 0,27", "unit": "nmol/L" },
+      { "group": "Mænd", "age": "≥ 16 år", "range": "≤ 0,30", "unit": "nmol/L" }
+    ],
+    "alarmLimits": "Ikke relevant.",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Hele døgnet.",
+      "turnaroundTime": "Hospitalsprøver: 90 % besvares inden for 1 time. Praksisprøver: Besvares inden næste hverdag kl. 08:00.",
+      "handling": {
+        "internal": "Sendes med rørpost eller afleveres umiddelbart efter prøvetagning.",
+        "external": "Opbevares i klimaskab (21°C) indtil afhentning.",
+        "practice": "Opbevares i klimaskab (21°C) indtil afhentning."
+      },
+      "stability": {
+        "wholeBlood": "72 timer i ucentrifugeret fuldblod ved 20–22°C.",
+        "pipetted": "72 timer ved 2–8°C for afpipetteret serum."
+      },
+      "transport": {
+        "internal": "Intern transport (rørpost)",
+        "external": "Region H's transportordning eller Postnord som quickbrev i boblekuvert til \"Biologisk stof kategori B\"",
+        "practice": "Region H's transportordning ved 21 °C"
+      },
+      "preanalyticalErrors": "Ingen særlige."
+    },
+    "method": {
+      "ceMarked": true,
+      "accredited": true,
+      "traceability": "Atellica IM eE2-analysen er standardiseret med interne standarder, som er sporbare til ID-GC/MS.",
+      "principle": "Kompetitiv immunanalyse med direkte kemiluminescens-teknologi.",
+      "instrument": "Siemens Atellica IM Analyzer",
+      "calibrator": "Atellica IM CAL 30",
+      "reagent": "Atellica IM Enhanced Estradiol (eE2)",
+      "externalQC": "LABQUALITY Hormone determinations B",
+      "precisionControls": [
+        {
+          "name": "Bio-Rad Immunoassay Plus Control Level 1",
+          "level": "0,17 nmol/L",
+          "cv": "8,0 %",
+          "ci": "17,7 %"
+        },
+        {
+          "name": "Bio-Rad Immunoassay Plus Control Level 3",
+          "level": "3,88 nmol/L",
+          "cv": "5,0 %",
+          "ci": "6,8 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient er den mindste klinisk signifikante forskel 64,6% (skønnet biologisk variation på 22,5%).",
+      "measuringRange": {
+        "total": "0,044 – 55 nmol/L (ved fortynding)",
+        "standard": "0,044 – 11 nmol/L"
+      },
+      "interference": {
+        "hemoglobin": "H-indeks < 250 mg/dL (< 155 µmol/L)",
+        "bilirubin": "I-indeks < 20 mg/dL (< 340 µmol/L)",
+        "lipemia": "L-indeks < 1000 mg/dL (< 11,3 mmol/L)",
+        "biasNote": "Stoffet Fulvestrant (Faslodex®) kan forårsage falsk forhøjede resultater. Heterofile antistoffer kan interferere."
+      },
+      "comments": "Harmoniseret referenceinterval i Region H. Ved behov for præcis kvantitering ved meget lave niveauer (< 0,05 nmol/L) kontaktes KBA vedrørende LC-MS/MS."
+    },
+    "history": [
+      {
+        "date": "22-10-2025",
+        "action": "Opdateret CV.",
+        "initials": "ELAR0084"
+      },
+      {
+        "date": "30-09-2024",
+        "action": "Tilføjelse af information om autokommentarer.",
+        "initials": "CKOB0004"
+      },
+      {
+        "date": "19-12-2023",
+        "action": "Ny skabelon og HIL-indeks tilføjet.",
+        "initials": "CKOB0004"
+      },
+      {
+        "date": "16-03-2022",
+        "action": "Materiale ændret fra plasma til serum efter henvendelse fra producenten.",
+        "initials": "CKOB0004"
+      }
+    ]
   }
 ]

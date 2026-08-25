@@ -45,7 +45,7 @@ export class CatalogSearchEngine {
     });
   }
 
-  search({ query = '', section = 'ALL', tubeColor = 'ALL', accreditedOnly = false }) {
+  search({ query = '', section = 'ALL', tubeColor = 'ALL', letter = 'ALL', accreditedOnly = false }) {
     const cleanQuery = query.trim().toLowerCase();
     const queryTokens = cleanQuery ? cleanQuery.split(/\s+/).filter(t => t.length > 0) : [];
 
@@ -54,6 +54,16 @@ export class CatalogSearchEngine {
         // 1. Section Filter
         if (section !== 'ALL' && item.section.toUpperCase() !== section.toUpperCase()) {
           return false;
+        }
+
+        // 2. Letter Filter
+        if (letter !== 'ALL') {
+          const itemLetter = (item.letter || item.name[0] || '').toUpperCase();
+          if (letter === '0-9' || letter === '1-9' || letter === '#') {
+            if (!/^\d/.test(itemLetter)) return false;
+          } else if (itemLetter !== letter.toUpperCase()) {
+            return false;
+          }
         }
 
         // 3. Tube Color Filter
@@ -100,5 +110,18 @@ export class CatalogSearchEngine {
       if (item.section) sections.add(item.section);
     });
     return Array.from(sections).sort();
+  }
+
+  getAvailableLetters() {
+    const letters = new Set();
+    this.dataset.forEach(item => {
+      const l = (item.letter || item.name[0] || '').toUpperCase();
+      if (/^\d/.test(l)) {
+        letters.add('0-9');
+      } else if (l) {
+        letters.add(l);
+      }
+    });
+    return letters;
   }
 }

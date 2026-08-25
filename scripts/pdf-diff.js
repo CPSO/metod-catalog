@@ -27,7 +27,9 @@ const GROUP_WORDS = {
   'mand': 'Mænd',
   'mænd': 'Mænd',
   'børn': 'Børn',
-  'barn': 'Børn'
+  'barn': 'Børn',
+  '♀': 'Kvinder',
+  '♂': 'Mænd'
 };
 
 function normalizeDate(raw) {
@@ -76,15 +78,15 @@ function extractLaboratory(text) {
 
 // A reference-interval row is any line that splits into "descriptor : numeric-range/threshold [unit]".
 // Unit tail is unrestricted (not "no digits") because units like "x 103 IU/L" or "10³ IU/L" contain them.
-const ROW_RE = /^(.{2,60}?):\s*([<≥>]?\s*[\d.,]+(?:\s*[-–]\s*[\d.,]+)?)\s*(.{0,25})$/;
-const STANDALONE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn)\s*:?\s*$/i;
+const ROW_RE = /^(.{1,60}?):\s*([<≥≤>]?\s*[\d.,]+(?:\s*[-–]\s*[\d.,]+)?)\s*(.{0,25})$/;
+const STANDALONE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])\s*:?\s*$/i;
 
 // An age/time descriptor must contain a recognizable unit (or be a bare group word) —
 // this is what keeps unrelated "label: value" lines elsewhere in the document (dates,
 // stability durations, etc.) from being mistaken for reference-interval rows.
 // Note: \b doesn't work around å/æ/ø (JS treats them as non-word chars), so these
 // patterns match on the substring directly instead of relying on word boundaries.
-const AGE_UNIT_RE = /(år|døgn|dage?|(?:^|\s)d(?:\s|$)|mdr\.?|uger|måned|timer|voksne|risiko)/i;
+const AGE_UNIT_RE = /(år|døgn|dage?|(?:^|\s)d(?:\s|$)|mdr\.?|uger|måned|timer|voksne|risiko|menopause|fase)/i;
 const DATE_LIKE_RE = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
 
 // Label text that sometimes drifts into the same line as a genuine interval row
@@ -95,7 +97,7 @@ const NOISE_PREFIXES = [
   'Referenceinterval/kliniske be-', 'Referenceinterval', 'slutningsgrænser'
 ];
 const DOC_NUMBER_RE = /Metodeblad nr\.\s*[A-Z]-\d+\/\d+/i;
-const BARE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn)$/i;
+const BARE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])$/i;
 
 function stripNoisePrefixes(descriptor) {
   let cleaned = descriptor.replace(DOC_NUMBER_RE, ' ');
@@ -107,7 +109,8 @@ function stripNoisePrefixes(descriptor) {
 
 function splitGroupFromAge(descriptor) {
   for (const word of Object.keys(GROUP_WORDS)) {
-    const re = new RegExp(`^${word}\\.?\\s+`, 'i');
+    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`^${escaped}[:.]?\\s*`, 'i');
     if (re.test(descriptor)) {
       return { group: GROUP_WORDS[word], age: descriptor.replace(re, '').trim() };
     }
