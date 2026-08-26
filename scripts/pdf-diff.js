@@ -110,11 +110,21 @@ function extractNpu(text) {
   return m ? m[0] : null;
 }
 
+// pdftotext flattens superscript formatting before this script ever sees the
+// text — a PDF unit like "×10⁹/L" gets extracted as the plain string "x
+// 109/L", textually identical to what a genuine (much rarer) "109" would
+// produce. No regex can recover which one it was; the exponent information
+// is already gone at the text-extraction layer. Confirmed against real
+// data: 15+ hematology entries (erythrocytes, leukocyte subtypes,
+// thrombocytes) all use "×10ⁿ/L"-style units and would extract this way.
+const STRIPPED_EXPONENT_RE = /10\d/;
+
 function extractUnit(text) {
   const line = text.split('\n').find(l => l.trim().startsWith('Enhed'));
   if (!line) return { value: null, confidence: 'missing' };
   const value = line.replace(/^\s*Enhed/, '').trim();
-  return { value: value || null, confidence: value ? 'high' : 'missing' };
+  if (!value) return { value: null, confidence: 'missing' };
+  return { value, confidence: STRIPPED_EXPONENT_RE.test(value) ? 'low' : 'high' };
 }
 
 function extractLaboratory(text) {
@@ -313,6 +323,7 @@ function intervalsEqual(a = [], b = []) {
 // scripts/mark-reviewed.js once a human has verified it.
 const REFERENCE_INTERVAL_FLAG = 'Referenceinterval udtrukket automatisk fra PDF-scraping — kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet.';
 const DRAFT_ENTRY_FLAG = 'Automatisk oprettet kladde fra PDF-scraping. Navn er sat til PDF-filnavnet (ikke det kanoniske format) og indikation/prøvetagning/metode/sektion er ikke udfyldt — kræver manuel færdiggørelse.';
+const EXPONENT_UNIT_FLAG = 'Enheden kan indeholde en tabt eksponent — pdftotext udtrækker fx PDF-tekstens "×10⁹" som "109", der er umuligt at skelne fra et ægte "109" i den udtrukne tekst. Tjek enheden mod selve PDF\'en.';
 
 // Fields we trust enough to auto-apply to an EXISTING entry. `laboratory`
 // and everything under `method`/QC are excluded — see PLAN.md's "Known
@@ -386,7 +397,11 @@ function createDraftEntry(fileBaseName, parsed, meta, docId) {
     logistics: { laboratory: '', frequency: '', handling: {}, stability: {}, transport: {}, preanalyticalErrors: '' },
     method: {},
     history: [],
-    dataQualityFlags: [DRAFT_ENTRY_FLAG, ...(parsed.referenceIntervals.length > 0 ? [REFERENCE_INTERVAL_FLAG] : [])]
+    dataQualityFlags: [
+      DRAFT_ENTRY_FLAG,
+      ...(parsed.referenceIntervals.length > 0 ? [REFERENCE_INTERVAL_FLAG] : []),
+      ...(parsed.unit.confidence === 'low' ? [EXPONENT_UNIT_FLAG] : [])
+    ]
   };
 }
 

@@ -234,14 +234,43 @@ catalog (191+ analyses aren't in it yet), not just diff the 20 that are:
   earlier "Changes ... have been applied" phrasing was genuinely
   misread as "everything in this diff is trustworthy."
 
+## `unit` field: stripped-exponent bug found in PR #4 review (fixed)
+User caught a real one reviewing PR #4's diff: Antithrombin's `unit` would
+have auto-applied `"x 10^3 IU/L"` → `"x 103 IU/L"` — losing the exponent.
+Root cause is **not** a regex bug: `pdftotext` itself already flattens
+superscript formatting before this script ever sees the text (confirmed —
+`grep`ing the raw `.txt` file directly shows `"x 103 IU/L"`, no caret). A
+PDF's `×10⁹` and a genuine plain `109` produce byte-identical extracted
+text, so no amount of pattern-matching can tell them apart after the fact —
+the information is gone at the text-extraction layer, not lost by us.
+
+Checked scope on the actual PR #4 branch (211 real PDFs, not just local
+samples): **16 entries** affected — Antithrombin (the one caught by
+inspection) plus **15 new draft entries**, nearly the entire CBC/
+differential panel (erythrocytes, leukocyte subtypes, thrombocytes,
+reticulocytes — all use `×10ⁿ/L`-style units in Danish hematology
+convention). PR #4 closed without merging.
+
+Fix in `extractUnit()`: any unit value matching `/10\d/` (a bare digit run
+immediately after "10", the signature of a flattened exponent) now gets
+`confidence: 'low'` instead of `'high'`. Effects:
+- **Existing entries**: `applyToEntry()` already skips low-confidence
+  fields, so this can never again silently overwrite a correct existing
+  unit — confirmed Antithrombin's unit is now untouched in a re-run.
+- **New draft entries**: a specific `EXPONENT_UNIT_FLAG` gets added to
+  `dataQualityFlags` (separate from the generic draft-entry flag) so it's
+  visibly called out as needing a PDF cross-check, not folded into the
+  generic "needs completion" note.
+
 ## Next steps (in rough priority order)
-1. Trigger the workflow again with this redesign and review the resulting
-   PR — first run will still be large (`pdf-manifest.json` on `main` is
-   still empty; every known PDF looks "new" the first time).
+1. Trigger the workflow again and review the resulting PR — first run will
+   still be large (`pdf-manifest.json` on `main` is still empty; every
+   known PDF looks "new" the first time).
 2. Manually complete the auto-created draft entries' `name`/`indication`/
    `sample`/`method`/`section` fields (same per-entry human work PLAN.md
    always expected for these fields — the scraper now hands you a
-   pre-filled starting point instead of nothing).
+   pre-filled starting point instead of nothing), and double-check units on
+   any entry flagged with the exponent-risk note against its source PDF.
 3. Push local commits to origin when ready.
 
 ## Data-quality flags in the UI (done)
