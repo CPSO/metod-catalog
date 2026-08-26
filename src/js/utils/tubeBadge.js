@@ -30,13 +30,23 @@ export const TUBE_DEFINITIONS = {
     color: '#6b7280',
     bg: 'var(--tube-grey-bg)',
     desc: 'Anvendes til glukose- og laktatbestemmelser.'
+  },
+  // Not a real tube type — shown when tubeColor is genuinely unset (e.g. a
+  // scraper-generated draft entry awaiting manual completion). Falling back
+  // to a specific real tube (e.g. grey/Fluorid-Oxalat) here would present
+  // unverified data as if it were fact.
+  unknown: {
+    name: 'Rørtype ikke angivet',
+    color: '#9ca3af',
+    bg: 'var(--tube-grey-bg)',
+    desc: 'Rørtype er ikke registreret for denne analyse endnu.'
   }
 };
 
 export function renderTubeBadge(tubeColor, customLabel) {
-  const colorKey = (tubeColor || 'grey').toLowerCase();
-  const def = TUBE_DEFINITIONS[colorKey] || TUBE_DEFINITIONS.grey;
-  const label = customLabel || def.name;
+  const colorKey = (tubeColor || 'unknown').toLowerCase();
+  const def = TUBE_DEFINITIONS[colorKey] || TUBE_DEFINITIONS.unknown;
+  const label = tubeColor ? (customLabel || def.name) : def.name;
 
   return `
     <span class="tube-indicator ${colorKey}" title="${def.desc}">

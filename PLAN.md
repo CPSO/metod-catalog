@@ -179,19 +179,70 @@ with proposed changes — never auto-commits, since this is clinical reference d
   going forward (uncommented), but the already-tracked sample files
   haven't been removed from git history.
 
+## Auto-apply redesign after PR #1–#3 review (done)
+The first three real PRs from the live Action (closed without merging — see
+commit/PR history) surfaced that auto-applying `referenceIntervals` to
+*existing, hand-curated* entries was net-harmful: on complex tables it
+silently replaced correct data with worse extractions (dropped rows, merged
+distinct patient groups like "arterial vs. venous" into one, garbled prose
+into a range). The `DECISION_LABEL_RE` widening from the earlier session
+(the "decision-threshold row" fix) was reverted back to the original,
+narrower `extractReferenceIntervals()` — `scripts/pdf-diff.js`'s function is
+now byte-identical to the pre-session version at commit `450c27b`.
+
+Redesigned scope, reflecting that the actual goal was always to grow the
+catalog (191+ analyses aren't in it yet), not just diff the 20 that are:
+- **Matched entries** (NPU already in `database.json`): only `unit`,
+  `inUseDate`, `revisionDate` auto-apply — proven reliable across two real
+  runs. `referenceIntervals` differences are report-only now, explicitly
+  labeled "NOT auto-applied — compare manually" in both console and PR body.
+- **New entries** (NPU not yet in `database.json`): auto-created as draft
+  entries — no LLM (ruled out on cost), just the fields this parser can
+  actually get reliably: `npu`, `unit`, `inUseDate`/`revisionDate`/`replaces`,
+  best-effort `referenceIntervals`, plus `pdfUrl`/`letter` from the
+  scraper's `changed.json` (passed via new `--changed-json` flag — matched
+  to each `.txt` by filename). Fields that tested as unreliable across real
+  samples — `name` (title-line format/order varies by template, e.g.
+  `NPU02043 P-Alfa-1-Føtoprotein` vs `Zink;P NPU03768`; a "Analysenavn og
+  kode i SP" label that looked promising in one sample turned out to be the
+  same column-drift problem in 2 of 3 other samples checked), `section`,
+  `indication`, `sample`, `method` — are left **honestly empty**, not
+  guessed, and the whole entry is stamped with a `dataQualityFlags` note
+  explaining what needs manual completion. `name` falls back to the PDF's
+  own filename (e.g. "Zink (Plasma)") — real and unambiguous, just not the
+  canonical `;P` format the rest of the DB uses.
+  - New functions: `slugify()`, `extractDocId()` (pulls "M-256/03" from
+    "Metodeblad nr. M-256/03"), `createDraftEntry()`.
+  - Deliberately does **not** reuse `importerModal.js`'s existing pattern of
+    filling unknowns with plausible-sounding generic defaults (e.g. a
+    hardcoded `"Siemens Atellica CH 930"` instrument, `"Se indlægsseddel"`
+    text) — that presents fabricated data as if verified.
+  - Found and fixed a real instance of that same anti-pattern while testing
+    this: `utils/tubeBadge.js`'s `renderTubeBadge()` silently defaulted an
+    empty/unknown `tubeColor` to a *specific real tube type* ("Grå prop
+    (Fluorid-Oxalat)") instead of an honest "not set" state — harmless
+    before (every entry had real curated tube data) but actively misleading
+    once draft entries with empty `tubeColor` exist. Added a real `unknown`
+    tube definition ("Rørtype ikke angivet") instead.
+- Verified end-to-end against all 24 real local samples plus a full
+  headless-browser UI check (list view, detail panel, search) with a
+  synthetic `changed.json` — zero console/page errors, drafts render
+  correctly, no regression on existing entries' tube badges.
+- PR body wording rewritten to be unambiguous about what happened:
+  `"N matched entries with differences (unit/dates auto-applied,
+  referenceIntervals report-only), M new draft entries created"` — the
+  earlier "Changes ... have been applied" phrasing was genuinely
+  misread as "everything in this diff is trustworthy."
+
 ## Next steps (in rough priority order)
-1. Trigger the new workflow manually (`workflow_dispatch`) once pushed to
-   origin, and review the first PR carefully — it will be a large one since
-   `pdf-manifest.json` starts empty (every known PDF looks "new").
-2. Add further PDF samples from remaining letters (B, C, E, F, G, I, J, L,
-   M, N, O, P, Q, R, S, T, U, V, W, X, Y) to expand catalog coverage beyond
-   the current 20 entries — the new scraper can supply these automatically
-   now via its PR, but each still needs the same manual-entry treatment for
-   brand-new NPUs (indication, sample, method fields).
-3. Consider improving `extractReferenceIntervals()` for age/group
-   stratification before trusting `--apply`'s referenceIntervals output
-   without a careful per-PR read — see limitation noted above.
-4. Push local commits to origin when ready.
+1. Trigger the workflow again with this redesign and review the resulting
+   PR — first run will still be large (`pdf-manifest.json` on `main` is
+   still empty; every known PDF looks "new" the first time).
+2. Manually complete the auto-created draft entries' `name`/`indication`/
+   `sample`/`method`/`section` fields (same per-entry human work PLAN.md
+   always expected for these fields — the scraper now hands you a
+   pre-filled starting point instead of nothing).
+3. Push local commits to origin when ready.
 
 ## Data-quality flags in the UI (done)
 Since `pdf-diff.js --apply`'s `referenceIntervals` extraction is known-unreliable

@@ -52,7 +52,7 @@ jobs:
             exit 0
           fi
           echo "has_txt=true" >> "$GITHUB_OUTPUT"
-          node scripts/pdf-diff.js scripts/pdf-cache/txt --apply --report scripts/pdf-cache/report.md
+          node scripts/pdf-diff.js scripts/pdf-cache/txt --apply --report scripts/pdf-cache/report.md --changed-json scripts/pdf-cache/changed.json
 
       - name: Open PR with changes
         if: steps.diff.outputs.has_txt == 'true'

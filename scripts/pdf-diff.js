@@ -6,15 +6,29 @@
  * src/data/database.json, matched by NPU code.
  *
  * By default this does NOT write anything — it only prints a report.
- * Pass --apply to also patch matched entries in database.json for the
- * fields we trust (unit, dates, referenceIntervals) and write a Markdown
- * summary (--report <path>) suitable as a PR body. Low-confidence fields
- * (laboratory, deep method/QC fields) are never auto-applied — they're
- * always left for manual review. PDFs with no matching NPU in the database
- * are never auto-created as new entries; they're flagged in the report.
+ * Pass --apply to also patch database.json:
+ *   - Matched entries (NPU already in the database): only unit, inUseDate,
+ *     revisionDate, replaces get auto-applied — these have held up correctly
+ *     across real runs. referenceIntervals is NOT auto-applied to existing
+ *     entries anymore: its extraction is unreliable enough on complex
+ *     tables (tried and reverted — see PLAN.md) that overwriting known-good
+ *     curated data with it caused real data loss. Differences are still
+ *     reported as text for manual review.
+ *   - New entries (NPU not yet in the database): auto-created as draft
+ *     entries using only genuinely-reliable fields (npu, unit, dates,
+ *     pdfUrl, letter, best-effort referenceIntervals). Fields that were
+ *     never reliably regex-parseable from these PDFs — name (title-line
+ *     format is inconsistent across templates), indication, sample,
+ *     method, section — are left honestly empty rather than guessed, and
+ *     the whole entry is stamped with dataQualityFlags so it's visibly a
+ *     draft in the app until a human completes it.
+ *   pdfUrl/letter come from --changed-json (the scraper's changed.json),
+ *   matched to each .txt file by filename.
+ *
+ * Pass --report <path> to write a Markdown summary suitable as a PR body.
  *
  * Usage:
- *   node scripts/pdf-diff.js [dir-of-txt-files] [--apply] [--report path.md]
+ *   node scripts/pdf-diff.js [dir-of-txt-files] [--apply] [--report path.md] [--changed-json path.json]
  */
 
 import fs from 'fs';
@@ -27,9 +41,22 @@ const cliArgs = process.argv.slice(2);
 const apply = cliArgs.includes('--apply');
 const reportIdx = cliArgs.indexOf('--report');
 const reportPath = reportIdx !== -1 ? cliArgs[reportIdx + 1] : null;
-const positional = cliArgs.filter((a, i) => !a.startsWith('--') && cliArgs[i - 1] !== '--report');
+const changedJsonIdx = cliArgs.indexOf('--changed-json');
+const changedJsonPath = changedJsonIdx !== -1 ? cliArgs[changedJsonIdx + 1] : null;
+const flagValueIndices = new Set([reportIdx + 1, changedJsonIdx + 1].filter(i => i > 0));
+const positional = cliArgs.filter((a, i) => !a.startsWith('--') && !flagValueIndices.has(i));
 const txtDir = positional[0] || path.join(__dirname, 'pdf-samples', 'txt');
 const dbPath = path.join(__dirname, '..', 'src', 'data', 'database.json');
+
+// filename (without extension) -> { url, letter } — lets draft entries get a
+// real pdfUrl/letter without trying to parse either out of the PDF text.
+const changedMeta = new Map();
+if (changedJsonPath && fs.existsSync(changedJsonPath)) {
+  const changedEntries = JSON.parse(fs.readFileSync(changedJsonPath, 'utf-8'));
+  for (const entry of changedEntries) {
+    changedMeta.set(path.basename(entry.file, path.extname(entry.file)), { url: entry.url, letter: entry.letter });
+  }
+}
 
 const GROUP_WORDS = {
   'alle': 'Alle',
@@ -115,21 +142,6 @@ const STANDALONE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])\s*:
 const AGE_UNIT_RE = /(år|døgn|dage?|(?:^|\s)d(?:\s|$)|mdr\.?|uger|måned|timer|voksne|risiko|menopause|fase)/i;
 const DATE_LIKE_RE = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
 
-// Decision-threshold row labels (as opposed to age brackets) — a deliberately
-// narrow, curated vocabulary rather than "any non-age descriptor". Widening
-// this to accept arbitrary labels was tried and reverted: it let through
-// Negativ/Inkonklusiv/Positiv rows correctly, but also swept in unrelated
-// "label: number unit"-shaped lines from elsewhere in the document (dates,
-// stability/storage durations, interference thresholds, author names glued
-// to a date field by column-drift) — the exact false-positive risk
-// AGE_UNIT_RE was originally written to prevent, just without an age word
-// to gate on.
-// Not anchored to the start: two-column PDF layouts sometimes glue an
-// unrelated left-column label onto the same extracted line (e.g. a
-// "Prøvetagning ... forhold" continuation ending up right before
-// "Negativ: < 7 kU/L"), so the decision label can appear mid-descriptor.
-const DECISION_LABEL_RE = /(negativ|positiv|inkonklusiv(\s*\(gråzone\))?|gråzone|grænseværdi|beslutningsgrænse|klinisk beslutningsgrænse|terapeutisk interval)/i;
-
 // Label text that sometimes drifts into the same line as a genuine interval row
 // (PDF column misalignment) — stripped rather than used to reject the row.
 const NOISE_PREFIXES = [
@@ -191,30 +203,15 @@ function extractReferenceIntervals(text) {
       continue;
     }
 
-    if (!descriptor) continue;
+    if (!AGE_UNIT_RE.test(descriptor)) continue;
 
-    if (AGE_UNIT_RE.test(descriptor)) {
-      const inline = splitGroupFromAge(descriptor);
-      rows.push({
-        group: inline ? inline.group : currentGroup,
-        age: inline ? inline.age : descriptor,
-        range: trimmedRange,
-        unit: unit || null
-      });
-      continue;
-    }
-
-    // Not an age bracket, but matches a known decision-threshold label
-    // (e.g. "Negativ: < 7 kU/L", "Inkonklusiv: 7-10 kU/L", "Positiv: > 10 kU/L").
-    // These used to get silently dropped here, which for tables with no age
-    // stratification at all meant every row but one vanished (the lone
-    // survivor came from extractFallbackWholeLifeRange() picking the first
-    // bare number in the section, losing the label entirely).
-    const decisionMatch = descriptor.match(DECISION_LABEL_RE);
-    if (decisionMatch) {
-      const group = descriptor.slice(decisionMatch.index).trim();
-      rows.push({ group, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
-    }
+    const inline = splitGroupFromAge(descriptor);
+    rows.push({
+      group: inline ? inline.group : currentGroup,
+      age: inline ? inline.age : descriptor,
+      range: trimmedRange,
+      unit: unit || null
+    });
   }
   return rows;
 }
@@ -314,12 +311,21 @@ function intervalsEqual(a = [], b = []) {
 // as a warning icon so anyone browsing the catalog knows to double-check this
 // entry against its source PDF rather than trust it outright. Cleared by
 // scripts/mark-reviewed.js once a human has verified it.
-const REFERENCE_INTERVAL_FLAG = 'Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet.';
+const REFERENCE_INTERVAL_FLAG = 'Referenceinterval udtrukket automatisk fra PDF-scraping — kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet.';
+const DRAFT_ENTRY_FLAG = 'Automatisk oprettet kladde fra PDF-scraping. Navn er sat til PDF-filnavnet (ikke det kanoniske format) og indikation/prøvetagning/metode/sektion er ikke udfyldt — kræver manuel færdiggørelse.';
 
-// Fields we trust enough to auto-apply. `laboratory` and everything under
-// `method`/QC are excluded — see PLAN.md's "Known parser quirks": PDF
-// two-column layout drift makes those unreliable, so they always stay
-// manual-review-only regardless of --apply.
+// Fields we trust enough to auto-apply to an EXISTING entry. `laboratory`
+// and everything under `method`/QC are excluded — see PLAN.md's "Known
+// parser quirks": PDF two-column layout drift makes those unreliable, so
+// they always stay manual-review-only regardless of --apply.
+//
+// referenceIntervals is deliberately NOT auto-applied here anymore. It was
+// for a while (see PLAN.md), but on complex/drifted tables it silently
+// replaced correct, hand-curated data with worse extractions — dropped
+// rows, merged distinct patient groups into one, garbled prose into a
+// range. That's a real regression when it happens to data someone already
+// verified, so referenceIntervals differences on matched entries are
+// report-only now; a human decides whether to apply them by hand.
 function applyToEntry(dbEntry, parsed) {
   const applied = [];
   const setIfChanged = (label, parsedField, dbValue, setter) => {
@@ -334,27 +340,98 @@ function applyToEntry(dbEntry, parsed) {
   setIfChanged('inUseDate', parsed.inUseDate, dbEntry.inUseDate, v => { dbEntry.inUseDate = v; });
   setIfChanged('revisionDate', parsed.revisionDate, dbEntry.revisionDate, v => { dbEntry.revisionDate = v; });
 
-  if (!intervalsEqual(parsed.referenceIntervals, dbEntry.referenceIntervals) && parsed.referenceIntervals.length > 0) {
-    dbEntry.referenceIntervals = parsed.referenceIntervals;
-    applied.push('referenceIntervals');
-
-    dbEntry.dataQualityFlags = dbEntry.dataQualityFlags || [];
-    if (!dbEntry.dataQualityFlags.includes(REFERENCE_INTERVAL_FLAG)) {
-      dbEntry.dataQualityFlags.push(REFERENCE_INTERVAL_FLAG);
-    }
-  }
-
   return applied;
 }
 
-function report(file, parsed, dbEntry) {
+function slugify(name, npu) {
+  return name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '') + `-${npu.toLowerCase()}`;
+}
+
+// "Metodeblad nr. M-256/03" -> "M-256/03". Same landmark already used to
+// strip noise out of referenceIntervals descriptors (see stripNoisePrefixes).
+function extractDocId(text) {
+  const m = text.match(/Metodeblad nr\.\s*([A-Z]-\d+\/\d+)/i);
+  return m ? m[1] : null;
+}
+
+// Builds a new database.json entry from only the fields this parser can
+// reliably get (see the file-level comment for why the rest are left
+// empty rather than guessed). meta is { url, letter } from the scraper's
+// changed.json, keyed by filename — see changedMeta below.
+function createDraftEntry(fileBaseName, parsed, meta, docId) {
+  const name = fileBaseName; // PDF's own filename, e.g. "Zink (Plasma)" — not the ";P" canonical format, but real and unambiguous
+  return {
+    id: docId || '',
+    documentNumber: '',
+    slug: slugify(name, parsed.npu),
+    name,
+    letter: meta?.letter || name[0].toUpperCase(),
+    npu: parsed.npu,
+    labka: '',
+    labkaFullName: '',
+    spCode: '',
+    webreqCode: '',
+    pdfUrl: meta?.url || '',
+    unit: parsed.unit.value || '',
+    section: '',
+    hospital: 'Herlev og Gentofte Hospital',
+    department: 'Klinisk Biokemisk Afdeling',
+    inUseDate: parsed.inUseDate.value || '',
+    revisionDate: parsed.revisionDate.value || '',
+    replaces: parsed.replaces.value || '',
+    indication: { summary: '', elevated: [], decreased: [] },
+    sample: { material: '', tube: '', tubeColor: '', minVolume: '', specialConditions: '' },
+    referenceIntervals: parsed.referenceIntervals,
+    alarmLimits: '',
+    logistics: { laboratory: '', frequency: '', handling: {}, stability: {}, transport: {}, preanalyticalErrors: '' },
+    method: {},
+    history: [],
+    dataQualityFlags: [DRAFT_ENTRY_FLAG, ...(parsed.referenceIntervals.length > 0 ? [REFERENCE_INTERVAL_FLAG] : [])]
+  };
+}
+
+function report(file, text, parsed, dbEntry, database) {
   const lines = [];
   const md = [];
   lines.push(`\n=== ${file} (${parsed.npu || 'NO NPU FOUND'}) ===`);
   md.push(`### ${file} (${parsed.npu || 'NO NPU FOUND'})`);
 
   if (!dbEntry) {
-    lines.push('  ⚠ No matching entry in database.json — candidate NEW entry.');
+    if (!parsed.npu) {
+      // Can't create an entry without an NPU to key it on (e.g. Elektrokardiografi —
+      // a diagnostic procedure code, not a blood test; see PLAN.md).
+      lines.push('  ⚠ No NPU found — skipped (nothing to create an entry for).');
+      console.log(lines.join('\n'));
+      md.push('**⚠ No NPU found in this PDF — skipped, not a matchable analysis.**');
+      return { kind: 'skipped', md: md.join('\n') };
+    }
+
+    const fileBaseName = file.replace(/\.txt$/i, '');
+    const meta = changedMeta.get(fileBaseName);
+    const docId = extractDocId(text);
+
+    if (apply) {
+      const draft = createDraftEntry(fileBaseName, parsed, meta, docId);
+      database.push(draft);
+      lines.push(`  + Created draft entry "${draft.name}" (${draft.slug}) — needs manual completion (name/indication/sample/method/section).`);
+      lines.push(`    unit: ${fmt(parsed.unit)}`);
+      lines.push(`    inUseDate: ${fmt(parsed.inUseDate)}`);
+      lines.push(`    revisionDate: ${fmt(parsed.revisionDate)}`);
+      lines.push(`    referenceIntervals (${parsed.referenceIntervals.length}):`);
+      parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+      console.log(lines.join('\n'));
+
+      md.push(`**+ Created draft entry:** \`${draft.slug}\` — **needs manual completion**: name (currently the PDF filename, not the canonical \`;P\` format), indication, sample/tube, method, section.`);
+      md.push('');
+      md.push(`- unit: ${fmt(parsed.unit)}`);
+      md.push(`- inUseDate: ${fmt(parsed.inUseDate)}`);
+      md.push(`- revisionDate: ${fmt(parsed.revisionDate)}`);
+      md.push(`- referenceIntervals (unverified):`);
+      parsed.referenceIntervals.forEach(r => md.push(`  - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+      return { kind: 'new', md: md.join('\n'), created: true };
+    }
+
+    lines.push('  ⚠ No matching entry in database.json — candidate NEW entry (dry run, not created).');
     lines.push(`    unit: ${fmt(parsed.unit)}`);
     lines.push(`    inUseDate: ${fmt(parsed.inUseDate)}`);
     lines.push(`    revisionDate: ${fmt(parsed.revisionDate)}`);
@@ -363,7 +440,7 @@ function report(file, parsed, dbEntry) {
     parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     console.log(lines.join('\n'));
 
-    md.push('**⚠ No matching NPU in database.json — needs manual entry (not auto-created).**');
+    md.push('**⚠ No matching NPU in database.json — candidate NEW entry (dry run, not created).**');
     md.push('');
     md.push(`- unit: ${fmt(parsed.unit)}`);
     md.push(`- inUseDate: ${fmt(parsed.inUseDate)}`);
@@ -401,15 +478,16 @@ function report(file, parsed, dbEntry) {
 
   if (!intervalsEqual(parsed.referenceIntervals, dbEntry.referenceIntervals)) {
     anyDiff = true;
-    lines.push('  ≠ referenceIntervals:');
+    lines.push('  ≠ referenceIntervals [NOT auto-applied — compare manually]:');
     lines.push('    DB:');
     (dbEntry.referenceIntervals || []).forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     lines.push('    PDF:');
     parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
 
-    md.push('- ≠ **referenceIntervals**:');
+    md.push('- ≠ **referenceIntervals** _(not auto-applied — this parser is unreliable on complex tables; compare manually against the PDF before editing)_:');
     md.push('  - DB: ' + (dbEntry.referenceIntervals || []).map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
     md.push('  - PDF: ' + parsed.referenceIntervals.map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
+    needsReview.push('referenceIntervals (not auto-applied)');
   }
 
   if (!anyDiff) {
@@ -454,10 +532,10 @@ for (const file of files) {
   const text = fs.readFileSync(path.join(txtDir, file), 'utf-8');
   const parsed = parsePdfText(text);
   const dbEntry = database.find(item => item.npu === parsed.npu);
-  const result = report(file, parsed, dbEntry);
+  const result = report(file, text, parsed, dbEntry, database);
   if (result) {
     results.push(result);
-    if (result.appliedFields?.length) anyApplied = true;
+    if (result.appliedFields?.length || result.created) anyApplied = true;
   }
 }
 
@@ -467,16 +545,20 @@ if (apply && anyApplied) {
 }
 
 if (reportPath) {
-  const newCount = results.filter(r => r.kind === 'new').length;
+  const createdCount = results.filter(r => r.created).length;
+  const skippedCount = results.filter(r => r.kind === 'skipped').length;
+  const newNotCreatedCount = results.filter(r => r.kind === 'new' && !r.created).length;
   const changedCount = results.filter(r => r.kind === 'matched' && r.anyDiff).length;
   const header = [
     '## PDF scrape / database sync report',
     '',
-    `${files.length} PDF(s) checked — ${changedCount} matched entr${changedCount === 1 ? 'y' : 'ies'} with differences, ${newCount} candidate new entr${newCount === 1 ? 'y' : 'ies'}.`,
+    `${files.length} PDF(s) checked — ${changedCount} matched entr${changedCount === 1 ? 'y' : 'ies'} with differences (unit/dates auto-applied, referenceIntervals report-only), ` +
+      (apply
+        ? `${createdCount} new draft entr${createdCount === 1 ? 'y' : 'ies'} created`
+        : `${newNotCreatedCount} candidate new entr${newNotCreatedCount === 1 ? 'y' : 'ies'} (dry run, not created)`) +
+      (skippedCount ? `, ${skippedCount} skipped (no NPU found)` : '') + '.',
     apply
-      ? (anyApplied
-        ? '_Changes for high-confidence fields have been applied to `database.json` in this PR._'
-        : '_Nothing to apply — no field differences found._')
+      ? '_unit/inUseDate/revisionDate applied to matched entries; new entries created as flagged drafts needing manual completion; referenceIntervals changes on matched entries were NOT applied — see below._'
       : '_Dry run — no changes applied._',
     ''
   ];
