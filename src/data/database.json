@@ -482,7 +482,7 @@
     "labkaFullName": "P-Antitrombin (enz.) AT3ENZ",
     "spCode": "Antithrombin (enz; Xa);P (× 103 IU/L) og NPU29992",
     "webreqCode": "Kan ikke rekvireres fra praksis.",
-    "unit": "x 10^3 IU/L",
+    "unit": "x 103 IU/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -738,7 +738,7 @@
       "specialConditions": "Ingen særlige forhold. Ved reduceret prøvemængde (fx børn) kan Vacuette-glas med hvid ring benyttes."
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "Alle aldre", "range": "> 1,00 (høj risiko for hjertekarsygdom)", "unit": "g/L" }
+      { "group": "Klinisk beslutningsgrænse", "age": "Alle aldre", "range": ">1,0", "unit": "g/L." }
     ],
     "alarmLimits": "Ej relevant.",
     "logistics": {
@@ -802,6 +802,9 @@
         "action": "Opdateret målområder i henhold til nyeste ESC kardiovaskulære guidelines.",
         "initials": "AWUL0013"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -963,7 +966,7 @@
       "specialConditions": "Hæmolyseret prøvemateriale analyseres ikke."
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "Alle aldre", "range": "0,97 – 1,68", "unit": "g/L" }
+      { "group": "Alle", "age": "Alle aldre", "range": "0,97-1,68", "unit": "g/L" }
     ],
     "alarmLimits": "Ingen.",
     "logistics": {
@@ -1038,6 +1041,9 @@
         "action": "Planlagt revision: Ændret holdbarhed.",
         "initials": "AWUL0013"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -1082,8 +1088,7 @@
       "specialConditions": "KBA udfører ikke arteriepunktur. Prøven skal analyseres inden for 15 min. (arterielt) eller 30 min. (venøst/kapillært)."
     },
     "referenceIntervals": [
-      { "group": "Arterie- og kapillærblod", "age": "Alle aldre", "range": "22,0 – 27,0", "unit": "mmol/L" },
-      { "group": "Veneblod", "age": "Alle aldre", "range": "21,0 – 26,0", "unit": "mmol/L" }
+      { "group": "Alle", "age": "Alle aldre", "range": "22,0-27,0", "unit": "mmol/L" }
     ],
     "alarmLimits": "Ingen.",
     "logistics": {
@@ -1132,6 +1137,9 @@
         "action": "Planmæssig revision.",
         "initials": "SMSJ"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -1262,7 +1270,7 @@
     "spCode": "Koag. overflade-induceret [APTT];P NPU01682",
     "webreqCode": "NPU01682 Koag. overflade-induceret [APTT];P",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Koagulation%20overfladeinduceret%20%5BAPTT%5D%20(Plasma).pdf",
-    "unit": "s",
+    "unit": "Sekunder",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -1294,8 +1302,8 @@
       "specialConditions": "Blodprøvetagning fra katetre med heparin bør undgås, da kontaminering giver falsk forlænget APTT."
     },
     "referenceIntervals": [
-      { "group": "Børn/Unge", "age": "< 18 år", "range": "20 – 34", "unit": "s" },
-      { "group": "Voksne", "age": "≥ 18 år", "range": "20 – 29", "unit": "s" }
+      { "group": "Alle", "age": "<18 år", "range": "20-34", "unit": "s" },
+      { "group": "Alle", "age": "≥18 år", "range": "20-29", "unit": "s" }
     ],
     "alarmLimits": "Ingen.",
     "logistics": {
@@ -1360,6 +1368,9 @@
         "action": "CV%, MRKD og usikkerhedsbudget opdateret.",
         "initials": "SVK"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -1374,7 +1385,7 @@
     "spCode": "Koagulationsfaktor II+VII+X [INR];P NPU01685",
     "webreqCode": "Koagulationsfaktor II+VII+X [INR];P NPU01685",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Koagulationsfaktor%20II+VII+X%20%5BINR%5D%20(Plasma).pdf",
-    "unit": "",
+    "unit": "Ingen",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -1404,11 +1415,9 @@
       "specialConditions": "Korrekt fyldning er afgørende."
     },
     "referenceIntervals": [
-      { "group": "Nyfødte", "age": "Gestationsalder 37.–39. uge", "range": "1,1 – 1,7", "unit": "" },
-      { "group": "Spædbørn", "age": "0 dage – 6 uger", "range": "< 1,8", "unit": "" },
-      { "group": "Børn", "age": "6 uger – 60 uger", "range": "< 1,3", "unit": "" },
-      { "group": "Voksne og børn", "age": "60 uger – 125 år", "range": "< 1,2", "unit": "" },
-      { "group": "Terapeutisk interval (VKA)", "age": "Alle aldre", "range": "2,0 – 3,0 (ved Marevan-behandling)", "unit": "" }
+      { "group": "Alle", "age": "0 dag - 6 uger", "range": "<1,8", "unit": null },
+      { "group": "Alle", "age": "6 uger - 60 uger", "range": "< 1,3", "unit": null },
+      { "group": "Alle", "age": "60 uger - 125 år", "range": "<1,2", "unit": null }
     ],
     "alarmLimits": "> 5,0 (Ringegrænse)",
     "logistics": {
@@ -1478,6 +1487,9 @@
         "action": "Planmæssig revision, CV%, MRKD og usikkerhedsbudget opdateret.",
         "initials": "SVK"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -1522,8 +1534,8 @@
       "specialConditions": "Kan kun rekvireres på Herlev matriklen. Rekvirering af analysen erstattes automatisk af INR på Gentofte matriklen."
     },
     "referenceIntervals": [
-      { "group": "Spædbørn", "age": "1 dag – 1 måned", "range": "> 0,40", "unit": "Ratio" },
-      { "group": "Voksne og børn", "age": "> 1 måned", "range": "> 0,60", "unit": "Ratio" }
+      { "group": "Alle", "age": "1 dag-1 måned", "range": ">0,40", "unit": null },
+      { "group": "Alle", "age": ">1 måned", "range": ">0,60", "unit": null }
     ],
     "alarmLimits": "Ingen.",
     "logistics": {
@@ -1588,6 +1600,9 @@
         "action": "Revision af CVoprundet, MRKD, usikkerhedsbudget.",
         "initials": "SVK"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -1602,7 +1617,7 @@
     "spCode": "O2sat.;Hb(aB) NPU03011",
     "webreqCode": "Ikke relevant",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/O/Oxygen%20(O2);m%C3%A6tn.%20%5BSaturation%5D%20(ABL)%20(Blod).pdf",
-    "unit": "Fraktion",
+    "unit": "Fraktion, ingen enhed.",
     "section": "POCT",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -1632,9 +1647,9 @@
       "specialConditions": "KBA udfører ikke arteriepunktur. Prøven analyseres indenfor 15 min. (begrænset af pO2). Med sprøjten skal følge oplysning om prøvematerialetype."
     },
     "referenceIntervals": [
-      { "group": "Arterie- og kapillærblod", "age": "1 – 40 år", "range": "0,95 – 0,99", "unit": "Fraktion" },
-      { "group": "Arterie- og kapillærblod", "age": "> 40 – 80 år", "range": "0,92 – 0,99", "unit": "Fraktion" },
-      { "group": "Veneblod", "age": "Alle aldre", "range": "0,70 – 0,80", "unit": "Fraktion" }
+      { "group": "Alle", "age": "1–40 år", "range": "0,95-0,99", "unit": null },
+      { "group": "Alle", "age": ">40-80 år", "range": "0,92-0,99", "unit": null },
+      { "group": "Alle", "age": "Alle aldre", "range": "0,70-0,80", "unit": null }
     ],
     "alarmLimits": "Ingen.",
     "logistics": {
@@ -1702,6 +1717,9 @@
         "action": "Ændring af måleområde til valideret område 0,01–1,00.",
         "initials": "FLEM0002"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -1748,7 +1766,7 @@
     },
     "referenceIntervals": [
       { "group": "Negativ", "age": "Alle aldre", "range": "< 7", "unit": "kU/L" },
-      { "group": "Inkonklusiv (gråzone)", "age": "Alle aldre", "range": "7 – 10", "unit": "kU/L" },
+      { "group": "Inkonklusiv", "age": "Alle aldre", "range": "7-10", "unit": "kU/L" },
       { "group": "Positiv", "age": "Alle aldre", "range": "> 10", "unit": "kU/L" }
     ],
     "alarmLimits": "Ingen.",
@@ -1821,6 +1839,9 @@
         "action": "Ny forfatter og ny produktionsansvarlig.",
         "initials": "VCAM"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -1984,7 +2005,7 @@
     },
     "referenceIntervals": [
       { "group": "Negativ", "age": "Alle aldre", "range": "< 5", "unit": "kU/L" },
-      { "group": "Inkonklusiv (gråzone)", "age": "Alle aldre", "range": "5 – 10", "unit": "kU/L" },
+      { "group": "Inkonklusiv", "age": "Alle aldre", "range": "5-10", "unit": "kU/L" },
       { "group": "Positiv", "age": "Alle aldre", "range": "> 10", "unit": "kU/L" }
     ],
     "alarmLimits": "Ingen.",
@@ -2057,6 +2078,9 @@
         "action": "Ny forfatter og ny produktionsansvarlig.",
         "initials": "VCAM"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -2214,16 +2238,16 @@
       "specialConditions": "Prøvemateriale er ændret fra plasma til serum. Prøven tages som serum."
     },
     "referenceIntervals": [
-      { "group": "Piger", "age": "16 dage – 10 år", "range": "0,02 – 0,11", "unit": "nmol/L" },
-      { "group": "Piger", "age": "11 – 13 år", "range": "0,02 – 0,19", "unit": "nmol/L" },
-      { "group": "Kvinder (15-50 år)", "age": "Follikulær fase", "range": "0,07 – 0,53", "unit": "nmol/L" },
-      { "group": "Kvinder (15-50 år)", "age": "Midtcyklustop", "range": "0,23 – 1,31", "unit": "nmol/L" },
-      { "group": "Kvinder (15-50 år)", "age": "Luteal fase", "range": "0,20 – 0,79", "unit": "nmol/L" },
-      { "group": "Kvinder", "age": "> 50 år (postmenopausal)", "range": "≤ 0,30", "unit": "nmol/L" },
-      { "group": "Drenge", "age": "16 dage – 10 år", "range": "0,02 – 0,09", "unit": "nmol/L" },
-      { "group": "Drenge", "age": "11 – 13 år", "range": "0,02 – 0,23", "unit": "nmol/L" },
-      { "group": "Drenge", "age": "14 – 15 år", "range": "0,02 – 0,27", "unit": "nmol/L" },
-      { "group": "Mænd", "age": "≥ 16 år", "range": "≤ 0,30", "unit": "nmol/L" }
+      { "group": "Kvinder", "age": "16 dage – 10 år", "range": "0,02-0,11", "unit": "nmol/L" },
+      { "group": "Kvinder", "age": "Alle aldre", "range": "11 – 13", "unit": "år: 0,02-0,19 nmol/L" },
+      { "group": "Kvinder", "age": ">50 år (efter menopause)", "range": "≤ 0,30", "unit": "nmol/L" },
+      { "group": "Mænd", "age": "16 dage – 10 år", "range": "0,02-0,09", "unit": "nmol/L" },
+      { "group": "Mænd", "age": "Alle aldre", "range": "11 – 13", "unit": "år: 0,02-0,23 nmol/L" },
+      { "group": "Mænd", "age": "Alle aldre", "range": "14 – 15", "unit": "år: 0,02-0,27 nmol/L" },
+      { "group": "Mænd", "age": "Alle aldre", "range": "≥ 16", "unit": "år: ≤ 0,30 nmol/L" },
+      { "group": "Alle", "age": "For kvinder over 50 år: ” >50 år (efter menopause)", "range": "≤ 0,30", "unit": "nmol/L”" },
+      { "group": "Alle", "age": "”Follikulær fase", "range": "0,07-0,53", "unit": "nmol/L." },
+      { "group": "Alle", "age": "Luteal fase", "range": "0,20-0,79", "unit": "nmol/L”" }
     ],
     "alarmLimits": "Ikke relevant.",
     "logistics": {
@@ -2303,6 +2327,9 @@
         "action": "Materiale ændret fra plasma til serum efter henvendelse fra producenten.",
         "initials": "CKOB0004"
       }
+    ],
+    "dataQualityFlags": [
+      "Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet."
     ]
   }
 ]
