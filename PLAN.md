@@ -7,16 +7,20 @@ Eventual target: a scheduled GitHub Action that scrapes, parses, and opens a PR
 with proposed changes — never auto-commits, since this is clinical reference data.
 
 ## What exists
-- `scripts/pdf-diff.js` — dry-run parser. Takes pre-extracted `.txt` files (from
-  `pdftotext -layout -enc UTF-8`), extracts NPU code / unit / dates / reference-interval
-  table, and diffs against `database.json` (matched by NPU). Print-only, no writes.
-  Run it with: `docker compose exec app node scripts/pdf-diff.js` (needs Node; this repo's
-  sandbox doesn't have Node installed directly, use the Docker container).
+- `scripts/extract_pdf_fields.py` — Python/pdfplumber field extractor. Takes a PDF,
+  outputs JSON of `{npu, docId, fields: {label: value}, dates: {...}}` using pdfplumber's
+  table detection (word-position-aware, not linearized text — see "Extraction rewrite"
+  below for why). Pure extraction, no business logic.
+- `scripts/pdf-diff.js` — parser/differ. Takes a directory of those `.json` files,
+  extracts unit/dates/referenceIntervals/name/section/indication/sample/etc., and diffs
+  against `database.json` (matched by NPU). Dry-run by default (print-only); `--apply`
+  patches matched entries (unit/dates only) and auto-creates draft entries for new NPUs.
+  Run it with: `docker compose exec app node scripts/pdf-diff.js scripts/pdf-samples/json`
+  (needs Node + Python; this repo's sandbox doesn't have either installed directly — the
+  Docker dev image now has both, see Dockerfile).
 - `scripts/pdf-samples/` — local scratch folder for real sample PDFs, gitignored
-  (`*.pdf` and `txt/` both ignored — only `README.md` is committed). Extract new PDFs with:
-  ```
-  pdftotext -layout -enc UTF-8 "file.pdf" "scripts/pdf-samples/txt/file.txt"
-  ```
+  (`*.pdf`, `txt/`, and `json/` all ignored — only `README.md` is committed). Extract a
+  new PDF with: `python3 scripts/extract_pdf_fields.py "file.pdf" > scripts/pdf-samples/json/file.json`
 
 ## Known parser quirks (already handled)
 - Danish å/æ/ø break JS `\b` word-boundary regex — don't rely on `\b` around them.
@@ -262,16 +266,111 @@ immediately after "10", the signature of a flattened exponent) now gets
   visibly called out as needing a PDF cross-check, not folded into the
   generic "needs completion" note.
 
+## Extraction layer rewrite: pdftotext -> pdfplumber (done)
+User asked whether per-PDF or per-template parsers were feasible, since the
+regex approach kept needing new special-casing for each new bug found. Real
+answer: neither per-file nor per-template parsers would have fixed the
+actual root cause, because the column-drift corruption isn't really
+template-dependent — it's `pdftotext -layout`'s column-reconstruction
+heuristic breaking down differently based on how much text is in each
+field, even across two PDFs from the *same* template (confirmed: Zink and
+ACE use the same template, Zink extracts cleanly, ACE doesn't). Regex
+patching was fighting symptoms of a real information-loss problem at the
+text-extraction layer.
+
+Tested the real fix instead: `pdftotext -layout` linearizes a PDF's
+two-column layout into one text stream using a positional *guess*, which is
+what breaks. `pdfplumber` (Python) uses each word's actual bounding box to
+reconstruct real table structure instead of guessing. Validated against all
+24 local samples plus the 3 worst-known cases (Østradiol, INR,
+Hydrogencarbonat) before committing to the rewrite:
+- Every labeled field in a document comes back as a clean, correctly-
+  isolated table cell — not just `referenceIntervals`, but `Analysenavn og
+  kode i SP` (the canonical name), `Indikation og resultatvurdering`,
+  `Prøvemateriale og rørtype`, `Ansvarlig KBA analysesektion` (section),
+  `Ringegrænser` (alarm limits), all of it. Fields written off all session
+  as "not reliably regex-parseable" turned out to be trivially parseable
+  once the table structure survives extraction — the data was never the
+  problem, `pdftotext`'s linearization destroying it was.
+- INR's dropped "Terapeutisk interval" row, Hydrogencarbonat's dropped
+  Veneblod row, and Østradiol's cross-section content mixing are all fixed
+  at the mechanism level (isolated table cells), not patched per-case.
+- The date-label mixup (`Revision:`/`Erstatter:`, see the earlier fix
+  above) is *also* solved structurally — confirmed the two labels land in
+  genuinely separate table cells, not just separated by a smarter regex.
+- **Not fixed by this, still applies**: the superscript/exponent-stripping
+  issue (`×10⁹` -> `109`) — that's font-rendering-level information loss,
+  below the layout-reconstruction level pdfplumber operates at. The
+  existing `STRIPPED_EXPONENT_RE` confidence-downgrade logic is unchanged
+  and still necessary.
+
+New pieces:
+- **`scripts/extract_pdf_fields.py`** — pure extraction, PDF -> JSON
+  (`{npu, docId, fields: {label: value}, dates: {...}}`). No business logic
+  or field-selection rules; those all stay in `pdf-diff.js`. The
+  `Taget i brug`/`Revision`/`Erstatter` date cluster is read from its own
+  table cells specifically (not a full-text regex fallback — that
+  reintroduced the exact drift bug this rewrite was partly meant to fix,
+  caught and corrected before shipping).
+- **`scripts/pdf-diff.js`** rewritten to consume that JSON instead of
+  scanning linearized text. New extractors: `extractName()` (from
+  `Analysenavn og kode i SP`/`WebReq`, stripping the NPU suffix; requires
+  the result match the DB's real `Name;SpecimenCode` shape — a positive
+  check, not a blacklist of "doesn't look like a name" phrases, since a
+  blacklist kept missing new bad phrasings like "Rekvirering via WebReq er
+  ikke muligt" showing up as a fake name), `extractSection()` (keyword-
+  mapped to the DB's existing `KEMI`/`KOAGULATION`/`IMMUNKEMI`/`POCT`
+  codes), `extractIndicationSummary()`, `extractSampleMaterial()`,
+  `extractMinVolume()`, `extractAlarmLimits()`. `extractReferenceIntervals()`
+  now runs on a single isolated cell instead of the whole document, so the
+  earlier decision-label-as-group widening (reverted for being unsafe
+  against raw pdftotext text — see above) is back and safe here: nothing
+  else in the string to sweep in by mistake. Two more row-parsing fixes
+  found via this session's re-testing: `stripLeadingGroupPrefix()` (rows
+  like `♀: 16 dage – 10 år: 0,02-0,11 nmol/L` have two colons — the old
+  code let the first one make `♀` look like a bare group symbol and
+  swallow the real age/range into a mangled "unit" string) and
+  `mergeSplitLabelValueLines()` (some cells put a row's label and value on
+  separate lines, e.g. Hydrogencarbonat's `Arterie- og kapillærblod:` /
+  `22,0-27,0 mmol/L.` on two lines — silently dropped the whole row before).
+- **New draft entries are now dramatically more complete**: name (when
+  extractable), section, indication summary, sample material, min volume,
+  alarm limits, laboratory, unit, dates, referenceIntervals — not just the
+  bare npu/unit/dates/referenceIntervals skeleton from before. Deep
+  method/QC fields still left empty (not attempted this pass).
+  `dataQualityFlags` gained `NAME_IS_FILENAME_FLAG` (separate from the
+  generic draft-entry note) for when name extraction falls back to the
+  PDF's filename.
+- **Dockerfile**: dev container now installs Python 3 + `pdfplumber` (see
+  `scripts/requirements.txt`, pinned) alongside Node, so
+  `docker compose exec app` can run the whole pipeline — no more needing a
+  separate scratch container for the Python half during local testing.
+- **`.github/workflows/scrape-metodeblade.yml`**: `pdftotext`/poppler-utils
+  step replaced with `actions/setup-python` + `pip install -r
+  scripts/requirements.txt` + `extract_pdf_fields.py` per PDF.
+- Policy unchanged from the previous redesign: matched (existing) entries
+  still only get unit/dates auto-applied, referenceIntervals stays
+  report-only — the extraction being far more reliable now doesn't change
+  that policy, since the risk being guarded against is "this parser is
+  wrong again someday," not "this parser is currently wrong."
+
 ## Next steps (in rough priority order)
 1. Trigger the workflow again and review the resulting PR — first run will
    still be large (`pdf-manifest.json` on `main` is still empty; every
-   known PDF looks "new" the first time).
-2. Manually complete the auto-created draft entries' `name`/`indication`/
-   `sample`/`method`/`section` fields (same per-entry human work PLAN.md
-   always expected for these fields — the scraper now hands you a
-   pre-filled starting point instead of nothing), and double-check units on
-   any entry flagged with the exponent-risk note against its source PDF.
-3. Push local commits to origin when ready.
+   known PDF looks "new" the first time). Draft entries should now come in
+   much more complete (name/section/indication/sample/alarm limits filled
+   where extractable, not just the bare npu/unit/dates/referenceIntervals
+   skeleton from before the pdfplumber rewrite).
+2. Manually complete whatever the auto-created draft entries still leave
+   empty — `method`/QC fields always (not attempted yet), plus
+   `name`/`indication`/`sample` on the entries where those specifically
+   couldn't be reliably extracted (flagged individually, not blanket) —
+   and double-check units on any entry flagged with the exponent-risk note
+   against its source PDF.
+3. Consider splitting `indication.summary`'s raw paragraph into the
+   `elevated`/`decreased` bullet arrays the schema has fields for — not
+   attempted this pass; the raw text is captured but not sub-parsed.
+4. Push local commits to origin when ready.
 
 ## Data-quality flags in the UI (done)
 Since `pdf-diff.js --apply`'s `referenceIntervals` extraction is known-unreliable
@@ -296,7 +395,8 @@ carry that risk visibly in the app itself, not just in the PR:
 ## Running / Testing with Docker
 ```bash
 docker compose up -d --build
-docker compose exec app node scripts/pdf-diff.js
+docker compose exec app python3 scripts/extract_pdf_fields.py "scripts/pdf-samples/file.pdf" > scripts/pdf-samples/json/file.json
+docker compose exec app node scripts/pdf-diff.js scripts/pdf-samples/json
 docker compose exec app node scripts/mark-reviewed.js <npu-or-slug>
 ```
 

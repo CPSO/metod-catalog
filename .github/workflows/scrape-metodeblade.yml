@@ -28,34 +28,39 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Install poppler-utils (pdftotext)
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install pdfplumber
+        run: pip install -r scripts/requirements.txt
 
       - name: Scrape metodeblade PDFs
         run: node scripts/scrape-metodeblade.js scripts/pdf-cache
 
-      - name: Extract text from new/changed PDFs
+      - name: Extract fields from new/changed PDFs
         run: |
-          mkdir -p scripts/pdf-cache/txt
+          mkdir -p scripts/pdf-cache/json
           shopt -s nullglob
           for f in scripts/pdf-cache/*.pdf; do
             base="$(basename "$f" .pdf)"
-            pdftotext -layout -enc UTF-8 "$f" "scripts/pdf-cache/txt/$base.txt"
+            python3 scripts/extract_pdf_fields.py "$f" > "scripts/pdf-cache/json/$base.json"
           done
 
       - name: Run parser / apply changes
         id: diff
         run: |
-          if [ -z "$(ls -A scripts/pdf-cache/txt 2>/dev/null)" ]; then
+          if [ -z "$(ls -A scripts/pdf-cache/json 2>/dev/null)" ]; then
             echo "No new/changed PDFs — nothing to parse."
-            echo "has_txt=false" >> "$GITHUB_OUTPUT"
+            echo "has_json=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          echo "has_txt=true" >> "$GITHUB_OUTPUT"
-          node scripts/pdf-diff.js scripts/pdf-cache/txt --apply --report scripts/pdf-cache/report.md --changed-json scripts/pdf-cache/changed.json
+          echo "has_json=true" >> "$GITHUB_OUTPUT"
+          node scripts/pdf-diff.js scripts/pdf-cache/json --apply --report scripts/pdf-cache/report.md --changed-json scripts/pdf-cache/changed.json
 
       - name: Open PR with changes
-        if: steps.diff.outputs.has_txt == 'true'
+        if: steps.diff.outputs.has_json == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "chore: sync database.json from scraped metodeblade PDFs"

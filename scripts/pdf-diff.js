@@ -1,34 +1,48 @@
 #!/usr/bin/env node
 /**
- * Parses pre-extracted metodeblad text files (produced by
- *   pdftotext -layout -enc UTF-8 file.pdf file.txt
+ * Parses pre-extracted metodeblad field JSON (produced by
+ *   python3 scripts/extract_pdf_fields.py file.pdf > file.json
  * ) and diffs the fields we can extract with confidence against
  * src/data/database.json, matched by NPU code.
+ *
+ * Extraction moved from linearized pdftotext -layout text to pdfplumber's
+ * table detection (see extract_pdf_fields.py) after confirming, on real
+ * samples, that pdftotext's column-reconstruction heuristic regularly
+ * misorders two-column content — merging distinct patient groups, dropping
+ * rows, gluing unrelated labels/values together. pdfplumber uses each
+ * word's actual position instead of guessing, so it recovers the PDF's
+ * real label -> value structure directly. This script only reads that
+ * already-clean structure; it has no text-layout logic of its own anymore
+ * (see PLAN.md for the before/after evidence on Østradiol, INR,
+ * Hydrogencarbonat, and the revisionDate/Erstatter mixup).
  *
  * By default this does NOT write anything — it only prints a report.
  * Pass --apply to also patch database.json:
  *   - Matched entries (NPU already in the database): only unit, inUseDate,
- *     revisionDate, replaces get auto-applied — these have held up correctly
- *     across real runs. referenceIntervals is NOT auto-applied to existing
- *     entries anymore: its extraction is unreliable enough on complex
- *     tables (tried and reverted — see PLAN.md) that overwriting known-good
- *     curated data with it caused real data loss. Differences are still
- *     reported as text for manual review.
+ *     revisionDate, replaces get auto-applied — these have held up
+ *     correctly across real runs. referenceIntervals is NOT auto-applied
+ *     to existing entries — even with the better extraction, overwriting
+ *     hand-curated data automatically is a real risk if this parser is
+ *     ever wrong again, so it stays report-only for matched entries by
+ *     policy, not just by current necessity.
  *   - New entries (NPU not yet in the database): auto-created as draft
- *     entries using only genuinely-reliable fields (npu, unit, dates,
- *     pdfUrl, letter, best-effort referenceIntervals). Fields that were
- *     never reliably regex-parseable from these PDFs — name (title-line
- *     format is inconsistent across templates), indication, sample,
- *     method, section — are left honestly empty rather than guessed, and
- *     the whole entry is stamped with dataQualityFlags so it's visibly a
- *     draft in the app until a human completes it.
+ *     entries. Filled from the clean per-field extraction: name (from the
+ *     "Analysenavn og kode i SP/WebReq" label, with the NPU suffix
+ *     stripped and a plausibility check — falls back to the PDF's own
+ *     filename when that label is missing, multi-line, or reads like an
+ *     instruction rather than a name, e.g. combined/panel documents),
+ *     section, indication summary, sample material/volume, alarm limits,
+ *     laboratory, unit, dates, referenceIntervals. Deep method/QC fields
+ *     are still left empty — not attempted this pass. The whole entry is
+ *     stamped with dataQualityFlags so it's visibly a draft until a human
+ *     completes/verifies it.
  *   pdfUrl/letter come from --changed-json (the scraper's changed.json),
- *   matched to each .txt file by filename.
+ *   matched to each .json field-extract file by filename.
  *
  * Pass --report <path> to write a Markdown summary suitable as a PR body.
  *
  * Usage:
- *   node scripts/pdf-diff.js [dir-of-txt-files] [--apply] [--report path.md] [--changed-json path.json]
+ *   node scripts/pdf-diff.js [dir-of-json-files] [--apply] [--report path.md] [--changed-json path.json]
  */
 
 import fs from 'fs';
@@ -45,7 +59,7 @@ const changedJsonIdx = cliArgs.indexOf('--changed-json');
 const changedJsonPath = changedJsonIdx !== -1 ? cliArgs[changedJsonIdx + 1] : null;
 const flagValueIndices = new Set([reportIdx + 1, changedJsonIdx + 1].filter(i => i > 0));
 const positional = cliArgs.filter((a, i) => !a.startsWith('--') && !flagValueIndices.has(i));
-const txtDir = positional[0] || path.join(__dirname, 'pdf-samples', 'txt');
+const jsonDir = positional[0] || path.join(__dirname, 'pdf-samples', 'json');
 const dbPath = path.join(__dirname, '..', 'src', 'data', 'database.json');
 
 // filename (without extension) -> { url, letter } — lets draft entries get a
@@ -58,221 +72,255 @@ if (changedJsonPath && fs.existsSync(changedJsonPath)) {
   }
 }
 
-const GROUP_WORDS = {
-  'alle': 'Alle',
-  'kvinde': 'Kvinder',
-  'kvinder': 'Kvinder',
-  'mand': 'Mænd',
-  'mænd': 'Mænd',
-  'børn': 'Børn',
-  'barn': 'Børn',
-  '♀': 'Kvinder',
-  '♂': 'Mænd'
-};
-
 function normalizeDate(raw) {
+  if (!raw) return null;
   const m = raw.match(/(\d{1,2})[.\-](\d{1,2})[.\-](\d{4})/);
   if (!m) return null;
   const [, d, mo, y] = m;
   return `${d.padStart(2, '0')}-${mo.padStart(2, '0')}-${y}`;
 }
 
-// excludeDates: date values (already normalized, e.g. from another label) to
-// skip over. Needed because "Taget i brug:", "Revision:" and "Erstatter:"
-// sit in a small cluster near the top of the document, and column-drift
-// sometimes splits a label from its own value across two lines with
-// *another* label's date landing in between — e.g.
-//   Udarbejdet af:   Taget i brug: 23.03.2026        Revision:
-//   Valbona Camili   Erstatter: 15.12.2025            23.03.2029
-// Searching for the first date after "Revision:" would otherwise grab
-// Erstatter's "15.12.2025" instead of Revision's own "23.03.2029", which
-// happens to be identical to (or looks like) the replaces date — silently
-// wrong with reported confidence "high" and no signal anything was off.
-function findDateAfterLabel(text, label, excludeDates = []) {
-  const idx = text.indexOf(label);
-  if (idx === -1) return { value: null, confidence: 'missing' };
-  const window = text.slice(idx + label.length, idx + label.length + 200);
-  const dateRe = /(\d{1,2})[.\-](\d{1,2})[.\-](\d{4})/g;
-  let m;
-  while ((m = dateRe.exec(window)) !== null) {
-    const normalized = normalizeDate(m[0]);
-    if (!excludeDates.includes(normalized)) {
-      return { value: normalized, confidence: 'high' };
-    }
-  }
-  // Non-date value right after the label (e.g. "Erstatter: Nyt")
-  const literalMatch = window.match(/\S.{0,20}/);
-  return { value: literalMatch ? literalMatch[0].trim() : null, confidence: 'low' };
+function dateField(data, key) {
+  const raw = data.dates?.[key];
+  const value = normalizeDate(raw);
+  return { value, confidence: value ? 'high' : 'missing' };
 }
 
-function extractNpu(text) {
-  const m = text.match(/NPU\d{5}/);
-  return m ? m[0] : null;
-}
-
-// pdftotext flattens superscript formatting before this script ever sees the
-// text — a PDF unit like "×10⁹/L" gets extracted as the plain string "x
-// 109/L", textually identical to what a genuine (much rarer) "109" would
-// produce. No regex can recover which one it was; the exponent information
-// is already gone at the text-extraction layer. Confirmed against real
-// data: 15+ hematology entries (erythrocytes, leukocyte subtypes,
-// thrombocytes) all use "×10ⁿ/L"-style units and would extract this way.
+// pdfplumber (like pdftotext before it) loses superscript/subscript
+// formatting at the font-rendering level, not the layout level — a PDF's
+// "×10⁹" and a genuine literal "109" produce identical extracted text
+// either way, so this is unrelated to the table-extraction rewrite and
+// still needed. Confirmed against real data: 15+ hematology entries
+// (erythrocytes, leukocyte subtypes, thrombocytes) all use "×10ⁿ/L"-style
+// units and would extract this way.
 const STRIPPED_EXPONENT_RE = /10\d/;
 
-function extractUnit(text) {
-  const line = text.split('\n').find(l => l.trim().startsWith('Enhed'));
-  if (!line) return { value: null, confidence: 'missing' };
-  const value = line.replace(/^\s*Enhed/, '').trim();
+function extractUnit(data) {
+  const value = data.fields['Enhed'];
   if (!value) return { value: null, confidence: 'missing' };
   return { value, confidence: STRIPPED_EXPONENT_RE.test(value) ? 'low' : 'high' };
 }
 
-function extractLaboratory(text) {
-  const idx = text.indexOf('Udførende laboratorie');
-  if (idx === -1) return { value: null, confidence: 'missing' };
-  const window = text.slice(idx, idx + 400);
-  const m = window.match(/Herlev og Gentofte[^\n.]{0,80}|Herlev-matriklen[^\n]{0,120}/);
-  if (!m) return { value: null, confidence: 'missing' };
-  // If the phrase isn't reasonably close to the label, flag it as low-confidence —
-  // column drift in some templates puts an unrelated value right after the label.
-  const distance = window.indexOf(m[0]);
-  return { value: m[0].replace(/\s+/g, ' ').trim(), confidence: distance < 120 ? 'high' : 'low' };
+function extractLaboratory(data) {
+  const value = data.fields['Udførende laboratorie'];
+  return value ? { value, confidence: 'high' } : { value: null, confidence: 'missing' };
 }
 
-// A reference-interval row is any line that splits into "descriptor : numeric-range/threshold [unit]".
-// Unit tail is unrestricted (not "no digits") because units like "x 103 IU/L" or "10³ IU/L" contain them.
-const ROW_RE = /^(.{1,60}?):\s*([<≥≤>]?\s*[\d.,]+(?:\s*[-–]\s*[\d.,]+)?)\s*(.{0,25})$/;
-const STANDALONE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])\s*:?\s*$/i;
+const SECTION_MAP = [
+  [/koagulation/i, 'KOAGULATION'],
+  [/immun/i, 'IMMUNKEMI'],
+  [/poct|præanalyse|ekg/i, 'POCT'],
+  [/kemi/i, 'KEMI']
+];
 
-// An age/time descriptor must contain a recognizable unit (or be a bare group word) —
-// this is what keeps unrelated "label: value" lines elsewhere in the document (dates,
-// stability durations, etc.) from being mistaken for reference-interval rows.
-// Note: \b doesn't work around å/æ/ø (JS treats them as non-word chars), so these
-// patterns match on the substring directly instead of relying on word boundaries.
+function extractSection(data) {
+  const raw = data.fields['Ansvarlig KBA analysesektion'];
+  if (!raw) return null;
+  for (const [re, code] of SECTION_MAP) {
+    if (re.test(raw)) return code;
+  }
+  return null;
+}
+
+// The "Analysenavn og kode i SP" / "...WebReq" cells usually hold the exact
+// canonical "Name;P" string plus the NPU, but not always — combined
+// documents (e.g. Hydrogencarbonat's arterial+venous variant), shared
+// antibody-panel sheets (Sjøgren SSA/SSB/U1 snRNP all point to the same
+// "Nucleært-Ab(IgG) [ANA]" screening panel text instead of their own
+// name), and unavailable-via-this-channel notes (e.g. "Rekvirering via
+// WebReq er ikke muligt") put something else there instead.
+//
+// A blacklist of "doesn't look like a name" phrases was tried and found
+// insufficient — real documents kept producing new non-name phrasings a
+// fixed list can't anticipate. Require a *positive* signal instead: every
+// genuine name in this database follows the "Name;SpecimenCode" NPU
+// convention (e.g. "Antitrypsin;P", "Hæmoglobin A1c (IFCC);Hb(B)"), so
+// only accept candidates containing that semicolon-separated shape.
+const NAME_SHAPE_RE = /^[^;\n]{2,70};\s*[A-Za-zÆØÅæøå0-9()]{1,15}$/;
+
+function cleanNameCandidate(raw, npu) {
+  if (!raw || raw.includes('\n')) return null;
+  const text = raw
+    .replace(new RegExp(`\\(?\\s*og\\s+${npu}\\s*\\)?`, 'i'), '')
+    .replace(new RegExp(`\\(?\\s*${npu}\\s*\\)?`, 'i'), '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/^[,()]+|[,()]+$/g, '')
+    .trim();
+  return NAME_SHAPE_RE.test(text) ? text : null;
+}
+
+function extractName(data) {
+  if (!data.npu) return null;
+  return (
+    cleanNameCandidate(data.fields['Analysenavn og kode i SP'], data.npu) ||
+    cleanNameCandidate(data.fields['Analysenavn og kode i WebReq'], data.npu) ||
+    null
+  );
+}
+
+function extractIndicationSummary(data) {
+  const raw = data.fields['Indikation og resultatvurdering'];
+  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+}
+
+function extractSampleMaterial(data) {
+  const raw = data.fields['Prøvemateriale og rørtype'];
+  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+}
+
+function extractMinVolume(data) {
+  const raw = data.fields['Mindste prøvemængde'];
+  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+}
+
+function extractAlarmLimits(data) {
+  const raw = data.fields['Ringegrænser'];
+  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+}
+
+const REF_LABEL_ALIASES = [
+  'Referenceinterval',
+  'Referenceinterval/kliniske be- slutningsgrænser',
+  'Klinisk beslutningsgrænse',
+  'Kliniske beslutningsgrænse',
+  'Kliniske beslutningsgrænser'
+];
+
+function findReferenceCell(data) {
+  for (const label of REF_LABEL_ALIASES) {
+    if (data.fields[label]) return data.fields[label];
+  }
+  return null;
+}
+
+const GROUP_WORDS = {
+  'alle': 'Alle',
+  'kvinde': 'Kvinder',
+  'kvinder': 'Kvinder',
+  '♀': 'Kvinder',
+  'mand': 'Mænd',
+  'mænd': 'Mænd',
+  '♂': 'Mænd',
+  'børn': 'Børn',
+  'barn': 'Børn'
+};
+
+// A reference-interval row is a line that splits into "descriptor : numeric-range/threshold [unit]".
+// Unit tail is unrestricted (not "no digits") because units like "x 103 IU/L" or "10³ IU/L" contain them.
+const ROW_RE = /^(.{1,60}?):\s*([<≥≤>]?\s*[\d.,]+(?:\s*[-–]\s*[\d.,]+)?)\s*(.{0,60})$/;
+const STANDALONE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])\s*:?\s*$/i;
+const BARE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])$/i;
 const AGE_UNIT_RE = /(år|døgn|dage?|(?:^|\s)d(?:\s|$)|mdr\.?|uger|måned|timer|voksne|risiko|menopause|fase)/i;
 const DATE_LIKE_RE = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
 
-// Label text that sometimes drifts into the same line as a genuine interval row
-// (PDF column misalignment) — stripped rather than used to reject the row.
-const NOISE_PREFIXES = [
-  'Udførende laboratorie', 'Analyseringshyppighed', 'Svartid', 'Prøvehåndtering',
-  'Præanalytiske fejlkilder', 'Ringegrænser', '(efter modtagelse af prøve)', 'Forsendelse',
-  'Referenceinterval/kliniske be-', 'Referenceinterval', 'slutningsgrænser'
-];
-const DOC_NUMBER_RE = /Metodeblad nr\.\s*[A-Z]-\d+\/\d+/i;
-const BARE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])$/i;
-
-function stripNoisePrefixes(descriptor) {
-  let cleaned = descriptor.replace(DOC_NUMBER_RE, ' ');
-  for (const noise of NOISE_PREFIXES) {
-    cleaned = cleaned.replace(noise, ' ');
-  }
-  return cleaned.replace(/\s+/g, ' ').trim();
-}
-
-function splitGroupFromAge(descriptor) {
+// Strips a leading "♀: " / "Kvinder: " style group prefix off a line, if
+// present, and returns what's left along with the resolved group. Needed
+// because rows like "♀: 16 dage – 10 år: 0,02-0,11 nmol/L" have TWO
+// colons — running ROW_RE on the raw line lets its non-greedy descriptor
+// match settle for the first ("♀"), which then looks like a bare group
+// symbol (matches BARE_GROUP_RE) and swallows the real age/range into a
+// mangled "unit" string instead. Stripping the prefix first means ROW_RE
+// only ever sees the second, real colon.
+function stripLeadingGroupPrefix(line) {
   for (const word of Object.keys(GROUP_WORDS)) {
     const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const re = new RegExp(`^${escaped}[:.]?\\s*`, 'i');
-    if (re.test(descriptor)) {
-      return { group: GROUP_WORDS[word], age: descriptor.replace(re, '').trim() };
+    const re = new RegExp(`^${escaped}[:.]\\s*`, 'i');
+    if (re.test(line)) {
+      return { group: GROUP_WORDS[word], rest: line.replace(re, '').trim() };
     }
   }
   return null;
 }
 
-function extractReferenceIntervals(text) {
-  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+// Parses a reference-interval cell's text into rows. This now runs on text
+// pdfplumber already isolated to this one labeled field, not the whole
+// document — the false-positive risk that made an earlier, similar "treat
+// any non-age label as its own group" attempt unsafe against raw
+// pdftotext text (it swept in unrelated dates/stability/interference text
+// from elsewhere in the document) doesn't apply here: there's nothing else
+// in this string to sweep in. Confirmed against real samples: correctly
+// captures decision-threshold tables (Negativ/Inkonklusiv/Positiv) that
+// the previous version dropped 2 of 3 rows from.
+// Some templates put a row's label on one line and its value on the very
+// next, e.g. "Arterie- og kapillærblod:" / "22,0-27,0 mmol/L." — confirmed
+// on Hydrogencarbonat, where this cost the whole Veneblod row before this
+// merge existed. Only merges when the next line has no colon of its own
+// (i.e. clearly a bare value, not the start of a different label: value
+// row) so it doesn't swallow a following group header or row by mistake.
+function mergeSplitLabelValueLines(lines) {
+  const merged = [];
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const next = lines[i + 1];
+    if (/:$/.test(line) && next && !next.includes(':')) {
+      merged.push(`${line} ${next}`);
+      i++;
+    } else {
+      merged.push(line);
+    }
+  }
+  return merged;
+}
+
+function extractReferenceIntervals(cellText) {
+  if (!cellText) return [];
+  const rawLines = cellText.split('\n').map(l => l.trim()).filter(Boolean);
+  const lines = mergeSplitLabelValueLines(rawLines);
   const rows = [];
   let currentGroup = 'Alle';
 
-  for (const line of lines) {
-    if (STANDALONE_GROUP_RE.test(line)) {
-      const word = line.replace(':', '').trim().toLowerCase();
+  for (const rawLine of lines) {
+    if (STANDALONE_GROUP_RE.test(rawLine)) {
+      const word = rawLine.replace(':', '').trim().toLowerCase();
       currentGroup = GROUP_WORDS[word] || currentGroup;
       continue;
     }
 
+    const prefixStripped = stripLeadingGroupPrefix(rawLine);
+    const line = prefixStripped ? prefixStripped.rest : rawLine;
+    const inlineGroup = prefixStripped ? prefixStripped.group : null;
+
     const m = line.match(ROW_RE);
     if (!m) continue;
     const [, descriptorRaw, range, unitRaw] = m;
-    const descriptor = stripNoisePrefixes(descriptorRaw.trim());
+    const descriptor = descriptorRaw.trim();
     const trimmedRange = range.replace(/\s+/g, ' ').trim();
     const unit = unitRaw.trim();
+    if (!descriptor || DATE_LIKE_RE.test(trimmedRange)) continue;
 
-    if (DATE_LIKE_RE.test(trimmedRange)) continue;
-
-    // "Alle: 10 – 65 U/L" — a whole-life interval with no age subdivision at all.
     if (BARE_GROUP_RE.test(descriptor)) {
+      rows.push({ group: inlineGroup || GROUP_WORDS[descriptor.toLowerCase()] || descriptor, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
+      continue;
+    }
+
+    if (AGE_UNIT_RE.test(descriptor)) {
       rows.push({
-        group: GROUP_WORDS[descriptor.toLowerCase()] || descriptor,
-        age: 'Alle aldre',
+        group: inlineGroup || currentGroup,
+        age: descriptor,
         range: trimmedRange,
         unit: unit || null
       });
       continue;
     }
 
-    if (!AGE_UNIT_RE.test(descriptor)) continue;
-
-    const inline = splitGroupFromAge(descriptor);
-    rows.push({
-      group: inline ? inline.group : currentGroup,
-      age: inline ? inline.age : descriptor,
-      range: trimmedRange,
-      unit: unit || null
-    });
+    // Not an age bracket — a decision-threshold label (Negativ/Positiv/...)
+    // or similar. Safe to keep as its own group now the input is already
+    // isolated to this one field (see function comment).
+    rows.push({ group: inlineGroup || descriptor, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
   }
   return rows;
 }
 
-// When the normal row extraction finds nothing, some templates (e.g. Antitrypsin,
-// Apolipoprotein B) just state a single unlabeled threshold/range for the whole
-// reference-interval section, with no age stratification at all — e.g. "0,97-1,68 g/L"
-// sitting alone. Per manual review of those PDFs: that means the value applies to all
-// ages, so fall back to a single "Alle / Alle aldre" row anchored on the document's
-// own declared unit (kept narrow to the Referenceinterval section so it can't pick up
-// unrelated numbers from the QC/measuring-range tables elsewhere in the document).
-function extractSectionSlice(text, startLabels, endLabels) {
-  let startIdx = -1;
-  let startLen = 0;
-  for (const label of startLabels) {
-    const idx = text.toLowerCase().indexOf(label.toLowerCase());
-    if (idx !== -1 && (startIdx === -1 || idx < startIdx)) {
-      startIdx = idx;
-      startLen = label.length;
-    }
-  }
-  if (startIdx === -1) return null;
-
-  let endIdx = text.length;
-  for (const label of endLabels) {
-    const idx = text.indexOf(label, startIdx + startLen);
-    if (idx !== -1 && idx < endIdx) endIdx = idx;
-  }
-  return text.slice(startIdx, endIdx);
-}
-
-function extractFallbackWholeLifeRange(text, unitValue) {
-  if (!unitValue) return null;
+// Some templates (e.g. Antitrypsin, Apolipoprotein B) state a single
+// unlabeled threshold/range for the whole cell instead of a "label: value"
+// row — e.g. just "0,97-1,68 g/L" on its own line. Catch that as a
+// whole-life "Alle" row anchored on the document's own declared unit.
+function extractFallbackWholeLifeRange(cellText, unitValue) {
+  if (!cellText || !unitValue) return null;
   const escapedUnit = unitValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  // Templates like Apolipoprotein B state the value right next to a
-  // "beslutningsgrænse:" (decision threshold) label — grab it directly rather than
-  // via section bounds, since "beslutningsgrænse" also appears loosely in prose
-  // elsewhere in the same document without being followed by a colon.
-  const directMatch = text.match(
-    new RegExp(`beslutningsgrænse\\s*:\\s*([<≥>]?\\s*[\\d.,]+(?:\\s*[-–]\\s*[\\d.,]+)?)\\s*${escapedUnit}`, 'i')
-  );
-  if (directMatch) return { range: directMatch[1].replace(/\s+/g, ' ').trim(), unit: unitValue };
-
-  // Otherwise (e.g. Antitrypsin), the value sits unlabeled somewhere between the
-  // "Referenceinterval" heading and the next section — scan that bounded slice.
-  const slice = extractSectionSlice(text, ['Referenceinterval'], ['Ringegrænser', 'Udførende laboratorie']);
-  if (!slice) return null;
-
   const re = new RegExp(`([<≥>]?\\s*[\\d.,]+(?:\\s*[-–]\\s*[\\d.,]+)?)\\s*${escapedUnit}`);
-  const lines = slice.split('\n').map(l => l.trim()).filter(Boolean);
+  const lines = cellText.split('\n').map(l => l.trim()).filter(Boolean);
   for (const line of lines) {
     const m = line.match(re);
     if (m) return { range: m[1].replace(/\s+/g, ' ').trim(), unit: unitValue };
@@ -280,32 +328,33 @@ function extractFallbackWholeLifeRange(text, unitValue) {
   return null;
 }
 
-function parsePdfText(text) {
-  const unit = extractUnit(text);
-  let referenceIntervals = extractReferenceIntervals(text);
+function parsePdfJson(data) {
+  const unit = extractUnit(data);
+  const refCell = findReferenceCell(data);
+  let referenceIntervals = extractReferenceIntervals(refCell);
 
   if (referenceIntervals.length === 0) {
-    const fallback = extractFallbackWholeLifeRange(text, unit.value);
+    const fallback = extractFallbackWholeLifeRange(refCell, unit.value);
     if (fallback) {
       referenceIntervals = [{ group: 'Alle', age: 'Alle aldre', range: fallback.range, unit: fallback.unit }];
     }
   }
 
-  // Order matters: replaces/inUseDate are extracted first so their values
-  // can be excluded when searching for revisionDate — see findDateAfterLabel's
-  // comment for why (column-drift can put another label's date in the way).
-  const replaces = findDateAfterLabel(text, 'Erstatter:');
-  const inUseDate = findDateAfterLabel(text, 'Taget i brug:', [replaces.value].filter(Boolean));
-  const revisionDate = findDateAfterLabel(text, 'Revision:', [replaces.value, inUseDate.value].filter(Boolean));
-
   return {
-    npu: extractNpu(text),
+    npu: data.npu || null,
+    docId: data.docId || null,
     unit,
-    inUseDate,
-    revisionDate,
-    replaces,
-    laboratory: extractLaboratory(text),
-    referenceIntervals
+    inUseDate: dateField(data, 'inUseDate'),
+    revisionDate: dateField(data, 'revisionDate'),
+    replaces: dateField(data, 'replaces'),
+    laboratory: extractLaboratory(data),
+    referenceIntervals,
+    name: extractName(data),
+    section: extractSection(data),
+    indicationSummary: extractIndicationSummary(data),
+    sampleMaterial: extractSampleMaterial(data),
+    minVolume: extractMinVolume(data),
+    alarmLimits: extractAlarmLimits(data)
   };
 }
 
@@ -321,22 +370,18 @@ function intervalsEqual(a = [], b = []) {
 // as a warning icon so anyone browsing the catalog knows to double-check this
 // entry against its source PDF rather than trust it outright. Cleared by
 // scripts/mark-reviewed.js once a human has verified it.
-const REFERENCE_INTERVAL_FLAG = 'Referenceinterval udtrukket automatisk fra PDF-scraping — kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet.';
-const DRAFT_ENTRY_FLAG = 'Automatisk oprettet kladde fra PDF-scraping. Navn er sat til PDF-filnavnet (ikke det kanoniske format) og indikation/prøvetagning/metode/sektion er ikke udfyldt — kræver manuel færdiggørelse.';
-const EXPONENT_UNIT_FLAG = 'Enheden kan indeholde en tabt eksponent — pdftotext udtrækker fx PDF-tekstens "×10⁹" som "109", der er umuligt at skelne fra et ægte "109" i den udtrukne tekst. Tjek enheden mod selve PDF\'en.';
+const REFERENCE_INTERVAL_FLAG = 'Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.';
+const DRAFT_ENTRY_FLAG = 'Automatisk oprettet kladde fra PDF-scraping. Metode/apparatur-felter og evt. indikationens forhøjet/nedsat-lister er ikke udfyldt — kræver manuel færdiggørelse.';
+const NAME_IS_FILENAME_FLAG = 'Navn kunne ikke udtrækkes pålideligt fra PDF\'en og er sat til filnavnet i stedet — ikke det kanoniske ";P"-format. Bør rettes manuelt.';
+const EXPONENT_UNIT_FLAG = 'Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx "×10⁹" som "109", der er umuligt at skelne fra et ægte "109". Tjek enheden mod selve PDF\'en.';
 
-// Fields we trust enough to auto-apply to an EXISTING entry. `laboratory`
-// and everything under `method`/QC are excluded — see PLAN.md's "Known
-// parser quirks": PDF two-column layout drift makes those unreliable, so
-// they always stay manual-review-only regardless of --apply.
-//
-// referenceIntervals is deliberately NOT auto-applied here anymore. It was
-// for a while (see PLAN.md), but on complex/drifted tables it silently
-// replaced correct, hand-curated data with worse extractions — dropped
-// rows, merged distinct patient groups into one, garbled prose into a
-// range. That's a real regression when it happens to data someone already
-// verified, so referenceIntervals differences on matched entries are
-// report-only now; a human decides whether to apply them by hand.
+// Fields we trust enough to auto-apply to an EXISTING entry. Everything
+// under `method`/QC stays manual-review-only regardless of --apply — not
+// attempted by this parser at all yet. referenceIntervals is deliberately
+// NOT auto-applied here even though the new extraction is far more
+// reliable (see PLAN.md): overwriting hand-curated data automatically is a
+// real risk if this parser is ever wrong again, so it's report-only for
+// matched entries by policy, not just by current necessity.
 function applyToEntry(dbEntry, parsed) {
   const applied = [];
   const setIfChanged = (label, parsedField, dbValue, setter) => {
@@ -358,21 +403,13 @@ function slugify(name, npu) {
   return name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '') + `-${npu.toLowerCase()}`;
 }
 
-// "Metodeblad nr. M-256/03" -> "M-256/03". Same landmark already used to
-// strip noise out of referenceIntervals descriptors (see stripNoisePrefixes).
-function extractDocId(text) {
-  const m = text.match(/Metodeblad nr\.\s*([A-Z]-\d+\/\d+)/i);
-  return m ? m[1] : null;
-}
-
-// Builds a new database.json entry from only the fields this parser can
-// reliably get (see the file-level comment for why the rest are left
-// empty rather than guessed). meta is { url, letter } from the scraper's
-// changed.json, keyed by filename — see changedMeta below.
-function createDraftEntry(fileBaseName, parsed, meta, docId) {
-  const name = fileBaseName; // PDF's own filename, e.g. "Zink (Plasma)" — not the ";P" canonical format, but real and unambiguous
+// Builds a new database.json entry. meta is { url, letter } from the
+// scraper's changed.json, keyed by filename — see changedMeta above.
+function createDraftEntry(fileBaseName, parsed, meta) {
+  const nameIsFilename = !parsed.name;
+  const name = parsed.name || fileBaseName; // fallback: PDF's own filename — real and unambiguous, just not the canonical ";P" format
   return {
-    id: docId || '',
+    id: parsed.docId || '',
     documentNumber: '',
     slug: slugify(name, parsed.npu),
     name,
@@ -384,28 +421,29 @@ function createDraftEntry(fileBaseName, parsed, meta, docId) {
     webreqCode: '',
     pdfUrl: meta?.url || '',
     unit: parsed.unit.value || '',
-    section: '',
+    section: parsed.section || '',
     hospital: 'Herlev og Gentofte Hospital',
     department: 'Klinisk Biokemisk Afdeling',
     inUseDate: parsed.inUseDate.value || '',
     revisionDate: parsed.revisionDate.value || '',
     replaces: parsed.replaces.value || '',
-    indication: { summary: '', elevated: [], decreased: [] },
-    sample: { material: '', tube: '', tubeColor: '', minVolume: '', specialConditions: '' },
+    indication: { summary: parsed.indicationSummary || '', elevated: [], decreased: [] },
+    sample: { material: parsed.sampleMaterial || '', tube: '', tubeColor: '', minVolume: parsed.minVolume || '', specialConditions: '' },
     referenceIntervals: parsed.referenceIntervals,
-    alarmLimits: '',
-    logistics: { laboratory: '', frequency: '', handling: {}, stability: {}, transport: {}, preanalyticalErrors: '' },
+    alarmLimits: parsed.alarmLimits || '',
+    logistics: { laboratory: parsed.laboratory.value || '', frequency: '', handling: {}, stability: {}, transport: {}, preanalyticalErrors: '' },
     method: {},
     history: [],
     dataQualityFlags: [
       DRAFT_ENTRY_FLAG,
+      ...(nameIsFilename ? [NAME_IS_FILENAME_FLAG] : []),
       ...(parsed.referenceIntervals.length > 0 ? [REFERENCE_INTERVAL_FLAG] : []),
       ...(parsed.unit.confidence === 'low' ? [EXPONENT_UNIT_FLAG] : [])
     ]
   };
 }
 
-function report(file, text, parsed, dbEntry, database) {
+function report(file, parsed, dbEntry, database) {
   const lines = [];
   const md = [];
   lines.push(`\n=== ${file} (${parsed.npu || 'NO NPU FOUND'}) ===`);
@@ -421,46 +459,47 @@ function report(file, text, parsed, dbEntry, database) {
       return { kind: 'skipped', md: md.join('\n') };
     }
 
-    const fileBaseName = file.replace(/\.txt$/i, '');
+    const fileBaseName = file.replace(/\.json$/i, '');
     const meta = changedMeta.get(fileBaseName);
-    const docId = extractDocId(text);
 
     if (apply) {
-      const draft = createDraftEntry(fileBaseName, parsed, meta, docId);
+      const draft = createDraftEntry(fileBaseName, parsed, meta);
       database.push(draft);
-      lines.push(`  + Created draft entry "${draft.name}" (${draft.slug}) — needs manual completion (name/indication/sample/method/section).`);
+      lines.push(`  + Created draft entry "${draft.name}" (${draft.slug})${draft.dataQualityFlags.length > 1 ? ' — needs manual review, see flags' : ''}.`);
       lines.push(`    unit: ${fmt(parsed.unit)}`);
       lines.push(`    inUseDate: ${fmt(parsed.inUseDate)}`);
       lines.push(`    revisionDate: ${fmt(parsed.revisionDate)}`);
+      lines.push(`    section: ${parsed.section || '(none)'}`);
       lines.push(`    referenceIntervals (${parsed.referenceIntervals.length}):`);
       parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
       console.log(lines.join('\n'));
 
-      md.push(`**+ Created draft entry:** \`${draft.slug}\` — **needs manual completion**: name (currently the PDF filename, not the canonical \`;P\` format), indication, sample/tube, method, section.`);
+      md.push(`**+ Created draft entry:** \`${draft.slug}\``);
       md.push('');
+      md.push(`- name: ${draft.name}${parsed.name ? '' : ' _(fallback: PDF filename, not canonical format)_'}`);
+      md.push(`- section: ${parsed.section || '(none)'}`);
       md.push(`- unit: ${fmt(parsed.unit)}`);
       md.push(`- inUseDate: ${fmt(parsed.inUseDate)}`);
       md.push(`- revisionDate: ${fmt(parsed.revisionDate)}`);
       md.push(`- referenceIntervals (unverified):`);
       parsed.referenceIntervals.forEach(r => md.push(`  - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+      md.push(`- dataQualityFlags: ${draft.dataQualityFlags.length}`);
       return { kind: 'new', md: md.join('\n'), created: true };
     }
 
     lines.push('  ⚠ No matching entry in database.json — candidate NEW entry (dry run, not created).');
+    lines.push(`    name: ${parsed.name || '(fallback to filename)'}`);
     lines.push(`    unit: ${fmt(parsed.unit)}`);
     lines.push(`    inUseDate: ${fmt(parsed.inUseDate)}`);
     lines.push(`    revisionDate: ${fmt(parsed.revisionDate)}`);
-    lines.push(`    laboratory: ${fmt(parsed.laboratory)}`);
     lines.push(`    referenceIntervals (${parsed.referenceIntervals.length}):`);
     parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     console.log(lines.join('\n'));
 
     md.push('**⚠ No matching NPU in database.json — candidate NEW entry (dry run, not created).**');
     md.push('');
+    md.push(`- name: ${parsed.name || '(fallback to filename)'}`);
     md.push(`- unit: ${fmt(parsed.unit)}`);
-    md.push(`- inUseDate: ${fmt(parsed.inUseDate)}`);
-    md.push(`- revisionDate: ${fmt(parsed.revisionDate)}`);
-    md.push(`- laboratory: ${fmt(parsed.laboratory)}`);
     md.push(`- referenceIntervals:`);
     parsed.referenceIntervals.forEach(r => md.push(`  - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     return { kind: 'new', md: md.join('\n') };
@@ -499,7 +538,7 @@ function report(file, text, parsed, dbEntry, database) {
     lines.push('    PDF:');
     parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
 
-    md.push('- ≠ **referenceIntervals** _(not auto-applied — this parser is unreliable on complex tables; compare manually against the PDF before editing)_:');
+    md.push('- ≠ **referenceIntervals** _(not auto-applied by policy — compare manually against the PDF before editing)_:');
     md.push('  - DB: ' + (dbEntry.referenceIntervals || []).map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
     md.push('  - PDF: ' + parsed.referenceIntervals.map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
     needsReview.push('referenceIntervals (not auto-applied)');
@@ -533,10 +572,10 @@ function fmt(field) {
 
 // --- main ---
 const database = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
-const files = fs.readdirSync(txtDir).filter(f => f.endsWith('.txt'));
+const files = fs.readdirSync(jsonDir).filter(f => f.endsWith('.json'));
 
 if (files.length === 0) {
-  console.log(`No .txt files found in ${txtDir}`);
+  console.log(`No .json field-extract files found in ${jsonDir}`);
   process.exit(1);
 }
 
@@ -544,10 +583,10 @@ const results = [];
 let anyApplied = false;
 
 for (const file of files) {
-  const text = fs.readFileSync(path.join(txtDir, file), 'utf-8');
-  const parsed = parsePdfText(text);
+  const data = JSON.parse(fs.readFileSync(path.join(jsonDir, file), 'utf-8'));
+  const parsed = parsePdfJson(data);
   const dbEntry = database.find(item => item.npu === parsed.npu);
-  const result = report(file, text, parsed, dbEntry, database);
+  const result = report(file, parsed, dbEntry, database);
   if (result) {
     results.push(result);
     if (result.appliedFields?.length || result.created) anyApplied = true;
@@ -573,7 +612,7 @@ if (reportPath) {
         : `${newNotCreatedCount} candidate new entr${newNotCreatedCount === 1 ? 'y' : 'ies'} (dry run, not created)`) +
       (skippedCount ? `, ${skippedCount} skipped (no NPU found)` : '') + '.',
     apply
-      ? '_unit/inUseDate/revisionDate applied to matched entries; new entries created as flagged drafts needing manual completion; referenceIntervals changes on matched entries were NOT applied — see below._'
+      ? '_unit/inUseDate/revisionDate applied to matched entries; new entries created as flagged drafts (name/section/indication/sample/referenceIntervals filled where reliably extractable, method/QC left for manual completion); referenceIntervals changes on matched entries were NOT applied — see below._'
       : '_Dry run — no changes applied._',
     ''
   ];
