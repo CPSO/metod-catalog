@@ -20,6 +20,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { serializeDatabase } from './lib/database-format.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const cliArgs = process.argv.slice(2);
@@ -309,6 +310,12 @@ function intervalsEqual(a = [], b = []) {
   });
 }
 
+// Shown in the app's list/detail views (see referenceTable.js, detailPanel.js)
+// as a warning icon so anyone browsing the catalog knows to double-check this
+// entry against its source PDF rather than trust it outright. Cleared by
+// scripts/mark-reviewed.js once a human has verified it.
+const REFERENCE_INTERVAL_FLAG = 'Referenceinterval opdateret automatisk fra PDF-scraping — udtræk kan være ufuldstændigt (fx sammenlagte grupper eller manglende rækker). Bør verificeres mod kildedokumentet.';
+
 // Fields we trust enough to auto-apply. `laboratory` and everything under
 // `method`/QC are excluded — see PLAN.md's "Known parser quirks": PDF
 // two-column layout drift makes those unreliable, so they always stay
@@ -330,6 +337,11 @@ function applyToEntry(dbEntry, parsed) {
   if (!intervalsEqual(parsed.referenceIntervals, dbEntry.referenceIntervals) && parsed.referenceIntervals.length > 0) {
     dbEntry.referenceIntervals = parsed.referenceIntervals;
     applied.push('referenceIntervals');
+
+    dbEntry.dataQualityFlags = dbEntry.dataQualityFlags || [];
+    if (!dbEntry.dataQualityFlags.includes(REFERENCE_INTERVAL_FLAG)) {
+      dbEntry.dataQualityFlags.push(REFERENCE_INTERVAL_FLAG);
+    }
   }
 
   return applied;
@@ -447,39 +459,6 @@ for (const file of files) {
     results.push(result);
     if (result.appliedFields?.length) anyApplied = true;
   }
-}
-
-// database.json formats every `referenceIntervals` row as one compact
-// single-line object (unlike the rest of the file, which is plain
-// `JSON.stringify(db, null, 2)` output). Plain re-stringifying would
-// reformat that array in every entry, not just the ones we touched,
-// turning a 2-field change into a file-wide diff — so referenceIntervals
-// is pulled out via a marker, stringified normally, then spliced back in
-// using the original compact format.
-function formatIntervalRow(r) {
-  return `{ "group": ${JSON.stringify(r.group)}, "age": ${JSON.stringify(r.age)}, "range": ${JSON.stringify(r.range)}, "unit": ${JSON.stringify(r.unit)} }`;
-}
-
-function formatIntervals(rows, indent) {
-  if (!rows || rows.length === 0) return '[]';
-  const itemIndent = indent + '  ';
-  const items = rows.map(r => itemIndent + formatIntervalRow(r)).join(',\n');
-  return `[\n${items}\n${indent}]`;
-}
-
-function serializeDatabase(db) {
-  const markers = [];
-  const patched = db.map((entry, i) => {
-    if (!entry.referenceIntervals) return entry;
-    const marker = `@@REFINTERVALS_${i}@@`;
-    markers.push({ marker, rows: entry.referenceIntervals });
-    return { ...entry, referenceIntervals: marker };
-  });
-  let text = JSON.stringify(patched, null, 2);
-  for (const { marker, rows } of markers) {
-    text = text.replace(`"${marker}"`, formatIntervals(rows, '    '));
-  }
-  return text;
 }
 
 if (apply && anyApplied) {

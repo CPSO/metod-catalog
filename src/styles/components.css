@@ -485,6 +485,43 @@
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
 }
 
+.data-quality-flag {
+  display: inline-block;
+  margin-left: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--color-warning);
+  cursor: help;
+  vertical-align: middle;
+}
+
+.data-quality-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 1rem 1.75rem 0 1.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: var(--color-warning);
+}
+
+.data-quality-banner svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.data-quality-banner p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.data-quality-banner p + p {
+  margin-top: 0.4rem;
+}
+
 .ref-tooltip {
   position: fixed;
   z-index: 500;

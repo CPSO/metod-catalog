@@ -73,7 +73,8 @@ function buildRows(items) {
         laboratory: item.logistics?.laboratory || '-',
         age: interval.age || '-',
         group: interval.group || '-',
-        pdfUrl: item.pdfUrl || ''
+        pdfUrl: item.pdfUrl || '',
+        dataQualityFlags: item.dataQualityFlags || []
       });
     });
   });
@@ -198,7 +199,7 @@ export function renderReferenceTable(container, items, { sortKey, sortDir, onSor
 
   const bodyHtml = rows.map((row, i) => `
     <tr data-row-index="${i}" tabindex="0" role="button" aria-label="Se metodeblad for ${row.name}">
-      <td class="cell-name">${row.name}</td>
+      <td class="cell-name">${row.name}${row.dataQualityFlags.length ? ` <span class="data-quality-flag" data-tooltip="${row.dataQualityFlags.join(' ').replace(/"/g, '&quot;')}">⚠</span>` : ''}</td>
       <td class="mono cell-npu">${row.npu}</td>
       <td>${row.group}</td>
       <td>${row.age}</td>

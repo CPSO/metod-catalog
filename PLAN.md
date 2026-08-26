@@ -193,9 +193,30 @@ with proposed changes — never auto-commits, since this is clinical reference d
    without a careful per-PR read — see limitation noted above.
 4. Push local commits to origin when ready.
 
+## Data-quality flags in the UI (done)
+Since `pdf-diff.js --apply`'s `referenceIntervals` extraction is known-unreliable
+(see limitations above), entries it auto-applies referenceIntervals changes to now
+carry that risk visibly in the app itself, not just in the PR:
+- `pdf-diff.js`'s `applyToEntry()` stamps `dataQualityFlags: string[]` onto any
+  entry whose `referenceIntervals` it changes (dedup'd, so re-scraping an
+  already-flagged entry doesn't pile up duplicate messages).
+- **UI**: `referenceTable.js` shows a small ⚠ next to the analysis name in the
+  list view (hover for the reason, via the existing fast-tooltip system);
+  `detailPanel.js` shows a full warning banner at the top of the detail panel.
+  Both confirmed visually via a headless-browser screenshot test with a
+  temporary test flag (not committed).
+- **Clearing**: `scripts/mark-reviewed.js <npu-or-slug>` removes the flags from
+  an entry once a human has verified it against the source PDF — e.g.
+  `node scripts/mark-reviewed.js NPU12564`.
+- Shared `scripts/lib/database-format.js` now holds the formatting-preserving
+  `serializeDatabase()` (previously duplicated inline in `pdf-diff.js`) so both
+  `pdf-diff.js --apply` and `mark-reviewed.js` write in the same compact
+  `referenceIntervals` style without reformatting the rest of the file.
+
 ## Running / Testing with Docker
 ```bash
 docker compose up -d --build
 docker compose exec app node scripts/pdf-diff.js
+docker compose exec app node scripts/mark-reviewed.js <npu-or-slug>
 ```
 
