@@ -49,13 +49,28 @@ function normalizeDate(raw) {
   return `${d.padStart(2, '0')}-${mo.padStart(2, '0')}-${y}`;
 }
 
-function findDateAfterLabel(text, label) {
+// excludeDates: date values (already normalized, e.g. from another label) to
+// skip over. Needed because "Taget i brug:", "Revision:" and "Erstatter:"
+// sit in a small cluster near the top of the document, and column-drift
+// sometimes splits a label from its own value across two lines with
+// *another* label's date landing in between — e.g.
+//   Udarbejdet af:   Taget i brug: 23.03.2026        Revision:
+//   Valbona Camili   Erstatter: 15.12.2025            23.03.2029
+// Searching for the first date after "Revision:" would otherwise grab
+// Erstatter's "15.12.2025" instead of Revision's own "23.03.2029", which
+// happens to be identical to (or looks like) the replaces date — silently
+// wrong with reported confidence "high" and no signal anything was off.
+function findDateAfterLabel(text, label, excludeDates = []) {
   const idx = text.indexOf(label);
   if (idx === -1) return { value: null, confidence: 'missing' };
   const window = text.slice(idx + label.length, idx + label.length + 200);
-  const dateMatch = window.match(/(\d{1,2})[.\-](\d{1,2})[.\-](\d{4})/);
-  if (dateMatch) {
-    return { value: normalizeDate(dateMatch[0]), confidence: 'high' };
+  const dateRe = /(\d{1,2})[.\-](\d{1,2})[.\-](\d{4})/g;
+  let m;
+  while ((m = dateRe.exec(window)) !== null) {
+    const normalized = normalizeDate(m[0]);
+    if (!excludeDates.includes(normalized)) {
+      return { value: normalized, confidence: 'high' };
+    }
   }
   // Non-date value right after the label (e.g. "Erstatter: Nyt")
   const literalMatch = window.match(/\S.{0,20}/);
@@ -268,12 +283,19 @@ function parsePdfText(text) {
     }
   }
 
+  // Order matters: replaces/inUseDate are extracted first so their values
+  // can be excluded when searching for revisionDate — see findDateAfterLabel's
+  // comment for why (column-drift can put another label's date in the way).
+  const replaces = findDateAfterLabel(text, 'Erstatter:');
+  const inUseDate = findDateAfterLabel(text, 'Taget i brug:', [replaces.value].filter(Boolean));
+  const revisionDate = findDateAfterLabel(text, 'Revision:', [replaces.value, inUseDate.value].filter(Boolean));
+
   return {
     npu: extractNpu(text),
     unit,
-    inUseDate: findDateAfterLabel(text, 'Taget i brug:'),
-    revisionDate: findDateAfterLabel(text, 'Revision:'),
-    replaces: findDateAfterLabel(text, 'Erstatter:'),
+    inUseDate,
+    revisionDate,
+    replaces,
     laboratory: extractLaboratory(text),
     referenceIntervals
   };

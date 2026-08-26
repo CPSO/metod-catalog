@@ -140,13 +140,24 @@ with proposed changes — never auto-commits, since this is clinical reference d
     so **PRs from this workflow still need a real read of the
     referenceIntervals diffs**, not just a skim — the fix above shrinks the
     blast radius of that risk, it doesn't eliminate it.
-  - **Separate bug noticed in passing, not yet fixed**: `revisionDate`
-    extraction can pick up the wrong date when "Revision:" and "Erstatter:"
-    labels appear on adjacent lines with their values column-wrapped (seen
-    in U1 snRNP's source PDF: `findDateAfterLabel()`'s 200-char window after
-    "Revision:" spans into the next line and matches "Erstatter:"'s date
-    first). Returns a wrong value with `confidence: high`, no warning flag —
-    worth fixing before trusting `revisionDate` auto-apply blindly.
+  - **`revisionDate` extraction bug — fixed.** Column-drift can split
+    "Revision:" from its own value across two lines with "Erstatter:"'s date
+    sitting in between, e.g.:
+    ```
+    Udarbejdet af:   Taget i brug: 23.03.2026        Revision:
+    Valbona Camili   Erstatter: 15.12.2025            23.03.2029
+    ```
+    `findDateAfterLabel()`'s first-date-in-window scan grabbed
+    `Erstatter:`'s date instead of `Revision:`'s own, silently, with
+    `confidence: high` and no warning. First found via the local (stale)
+    sample text for U1 snRNP; confirmed against **live** re-downloaded PDFs
+    the real GitHub Action run touched, since the local sample turned out
+    to have a different (older) layout than what's on the site now. Fixed
+    by extracting `replaces`/`inUseDate` first and excluding their already-
+    known values when scanning for `revisionDate`. Verified against live
+    Sjøgren SSA and U1 snRNP PDFs (both previously wrong, now correct) and
+    the full local 24-sample set (zero `revisionDate` diffs anywhere, no
+    regressions).
 - **`.github/workflows/scrape-metodeblade.yml`** — weekly cron +
   `workflow_dispatch`. Installs Playwright Chromium + `poppler-utils`, runs
   the scraper, extracts text with `pdftotext -layout -enc UTF-8`, runs
