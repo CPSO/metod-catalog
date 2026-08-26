@@ -1,0 +1,68 @@
+name: Scrape metodeblade PDFs
+
+on:
+  schedule:
+    - cron: '0 5 * * 1' # weekly, Monday 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  scrape-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Install poppler-utils (pdftotext)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
+      - name: Scrape metodeblade PDFs
+        run: node scripts/scrape-metodeblade.js scripts/pdf-cache
+
+      - name: Extract text from new/changed PDFs
+        run: |
+          mkdir -p scripts/pdf-cache/txt
+          shopt -s nullglob
+          for f in scripts/pdf-cache/*.pdf; do
+            base="$(basename "$f" .pdf)"
+            pdftotext -layout -enc UTF-8 "$f" "scripts/pdf-cache/txt/$base.txt"
+          done
+
+      - name: Run parser / apply changes
+        id: diff
+        run: |
+          if [ -z "$(ls -A scripts/pdf-cache/txt 2>/dev/null)" ]; then
+            echo "No new/changed PDFs — nothing to parse."
+            echo "has_txt=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "has_txt=true" >> "$GITHUB_OUTPUT"
+          node scripts/pdf-diff.js scripts/pdf-cache/txt --apply --report scripts/pdf-cache/report.md
+
+      - name: Open PR with changes
+        if: steps.diff.outputs.has_txt == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: sync database.json from scraped metodeblade PDFs"
+          title: "Metodeblade sync — ${{ github.run_id }}"
+          body-path: scripts/pdf-cache/report.md
+          branch: metodeblade-sync/${{ github.run_id }}
+          add-paths: |
+            src/data/database.json
+            scripts/pdf-manifest.json
+          delete-branch: true

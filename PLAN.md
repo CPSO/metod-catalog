@@ -78,10 +78,109 @@ with proposed changes — never auto-commits, since this is clinical reference d
 | `230084b` | Correct two more stale database entries from source PDFs |
 | `4af237c` | Add PDF scraping dry-run parser and correct stale database entries |
 
+### GitHub Action for periodic scraping (done)
+- **Discovery mechanism**: the metodeblade landing page has no index of
+  individual analyses, but per-letter pages do:
+  `.../metodeblade/Sider/{LETTER}.aspx` (`0-9`, `A`–`Z`, `Æ`, `Ø`, `Å`), each
+  listing that letter's PDF links directly in the HTML. Confirmed live
+  against the site.
+- **Bot defense**: the site sits behind an F5 JS challenge
+  (`security-check.regionh.dk`) that blocks plain HTTP clients (curl,
+  fetch). A headless Playwright/Chromium browser passes it fine — first
+  navigate to the landing page to get past the challenge and pick up
+  session cookies, then everything else (letter pages, PDF downloads) reuses
+  that browser context.
+- **`scripts/scrape-metodeblade.js`** — walks all letter pages, downloads
+  each PDF via the authenticated browser context, hashes it, and only saves
+  new/changed PDFs (tracked in `scripts/pdf-manifest.json`, url → sha256 +
+  last-seen/last-changed). Unchanged PDFs are skipped on subsequent runs.
+  Needs Playwright's Chromium + system deps installed
+  (`npx playwright install --with-deps chromium`) — does **not** work in the
+  project's regular `node:24-slim` dev container (missing browser system
+  libs); run it in CI or via the `mcr.microsoft.com/playwright` Docker image.
+- **`scripts/pdf-diff.js`** — extended with `--apply` (patches matched
+  entries' `unit`/`inUseDate`/`revisionDate`/`referenceIntervals` in
+  `database.json`; `laboratory` and deep method/QC fields are never
+  auto-applied — always manual review) and `--report <path>` (writes a
+  Markdown summary for use as a PR body). A custom serializer preserves the
+  file's existing one-object-per-line `referenceIntervals` formatting so
+  applied changes produce small, reviewable diffs instead of reformatting
+  the whole file.
+  - **Known limitation, confirmed via testing, partially fixed**: rows
+    labeled with a decision-threshold word instead of an age bracket (e.g.
+    "Negativ: < 7 kU/L", "Inkonklusiv: 7-10 kU/L", "Positiv: > 10 kU/L")
+    used to be silently dropped by `extractReferenceIntervals()` — for
+    tables with no age stratification at all, that meant every row but one
+    vanished (the survivor came from `extractFallbackWholeLifeRange()`
+    grabbing the first bare number in the section, losing its label too).
+    Fixed by adding `DECISION_LABEL_RE`, a narrow curated vocabulary
+    (negativ/positiv/inkonklusiv/gråzone/grænseværdi/beslutningsgrænse/
+    terapeutisk interval) matched anywhere in the descriptor (not anchored
+    to the start, since column-drift sometimes glues an unrelated
+    left-column label onto the same line before the real one) — confirmed
+    against real samples: Sjøgren SSA/SSB and U1 snRNP now correctly
+    capture all 3 rows instead of 1. A first attempt widened this to *any*
+    non-age descriptor instead of a curated list, which fixed the same
+    cases but also reintroduced garbage from dates/stability/interference
+    text throughout the document (exactly what `AGE_UNIT_RE`'s original
+    narrowness was protecting against) — reverted in favor of the
+    curated-vocabulary version.
+    **Still open** (not attempted — see below for why): (1) column-drift
+    can still relocate genuine reference-interval content outside any
+    reliable section boundary (e.g. INR's "Terapeutisk interval" row and
+    Hæmoglobin A1c's real values get interleaved with unrelated
+    stability/heading text in ways that differ per template — a
+    boundary-based fix was prototyped and reverted after it verified
+    unreliable across templates); (2) `ROW_RE`'s 25-char trailing-unit cap
+    drops rows with explanatory prose after the value (e.g. INR's
+    "Terapeutisk interval: 2,0-3,0 (enkelte patientgrupper ...)"); (3)
+    heavily drifted multi-variant templates like Østradiol still garble.
+    `--apply` still writes referenceIntervals into `database.json` per the
+    current design (the PR is meant to catch remaining issues on review),
+    so **PRs from this workflow still need a real read of the
+    referenceIntervals diffs**, not just a skim — the fix above shrinks the
+    blast radius of that risk, it doesn't eliminate it.
+  - **Separate bug noticed in passing, not yet fixed**: `revisionDate`
+    extraction can pick up the wrong date when "Revision:" and "Erstatter:"
+    labels appear on adjacent lines with their values column-wrapped (seen
+    in U1 snRNP's source PDF: `findDateAfterLabel()`'s 200-char window after
+    "Revision:" spans into the next line and matches "Erstatter:"'s date
+    first). Returns a wrong value with `confidence: high`, no warning flag —
+    worth fixing before trusting `revisionDate` auto-apply blindly.
+- **`.github/workflows/scrape-metodeblade.yml`** — weekly cron +
+  `workflow_dispatch`. Installs Playwright Chromium + `poppler-utils`, runs
+  the scraper, extracts text with `pdftotext -layout -enc UTF-8`, runs
+  `pdf-diff.js --apply --report`, and opens a PR (via
+  `peter-evans/create-pull-request`) touching only `database.json` and
+  `pdf-manifest.json` if anything changed. Never pushes to `main` directly.
+- Added `playwright` as a devDependency; `scripts/pdf-cache/` (scraper's
+  working directory — downloaded PDFs, extracted text, generated report) is
+  gitignored, only `pdf-manifest.json` is committed.
+- **Not yet done**: a full live run of the Action itself (`workflow_dispatch`
+  on GitHub) hasn't been triggered — validation so far is a local spike
+  (Playwright in the `mcr.microsoft.com/playwright` Docker image) that
+  confirmed bot-check bypass, letter-page scraping, PDF download, manifest
+  diffing (including a correct no-op second run), and the full
+  scrape → extract → apply → report pipeline against one real PDF (Zink).
+- Note: `scripts/pdf-samples/*.pdf` and `txt/` are actually committed to
+  git today (tracked), despite this file previously describing them as
+  gitignored — `.gitignore` had the relevant lines commented out. Fixed
+  going forward (uncommented), but the already-tracked sample files
+  haven't been removed from git history.
+
 ## Next steps (in rough priority order)
-1. Add further PDF samples from remaining letters (B, C, D, E, F, G, I, J, L, M, N, P, R, T, V) to expand catalog coverage beyond the current 20 entries.
-2. Design and build the GitHub Action workflow for periodic scraping (`apt-get install poppler-utils`, `pdftotext`, run `pdf-diff.js`, create automated PR for reviewed updates).
-3. Push local commits to origin when ready.
+1. Trigger the new workflow manually (`workflow_dispatch`) once pushed to
+   origin, and review the first PR carefully — it will be a large one since
+   `pdf-manifest.json` starts empty (every known PDF looks "new").
+2. Add further PDF samples from remaining letters (B, C, E, F, G, I, J, L,
+   M, N, O, P, Q, R, S, T, U, V, W, X, Y) to expand catalog coverage beyond
+   the current 20 entries — the new scraper can supply these automatically
+   now via its PR, but each still needs the same manual-entry treatment for
+   brand-new NPUs (indication, sample, method fields).
+3. Consider improving `extractReferenceIntervals()` for age/group
+   stratification before trusting `--apply`'s referenceIntervals output
+   without a careful per-PR read — see limitation noted above.
+4. Push local commits to origin when ready.
 
 ## Running / Testing with Docker
 ```bash

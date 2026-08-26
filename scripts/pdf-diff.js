@@ -5,11 +5,16 @@
  * ) and diffs the fields we can extract with confidence against
  * src/data/database.json, matched by NPU code.
  *
- * This does NOT write anything — it only prints a report. It's the dry-run
- * step before wiring PDF scraping into a GitHub Action that opens a PR.
+ * By default this does NOT write anything — it only prints a report.
+ * Pass --apply to also patch matched entries in database.json for the
+ * fields we trust (unit, dates, referenceIntervals) and write a Markdown
+ * summary (--report <path>) suitable as a PR body. Low-confidence fields
+ * (laboratory, deep method/QC fields) are never auto-applied — they're
+ * always left for manual review. PDFs with no matching NPU in the database
+ * are never auto-created as new entries; they're flagged in the report.
  *
  * Usage:
- *   node scripts/pdf-diff.js [dir-of-txt-files]
+ *   node scripts/pdf-diff.js [dir-of-txt-files] [--apply] [--report path.md]
  */
 
 import fs from 'fs';
@@ -17,7 +22,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const txtDir = process.argv[2] || path.join(__dirname, 'pdf-samples', 'txt');
+const cliArgs = process.argv.slice(2);
+const apply = cliArgs.includes('--apply');
+const reportIdx = cliArgs.indexOf('--report');
+const reportPath = reportIdx !== -1 ? cliArgs[reportIdx + 1] : null;
+const positional = cliArgs.filter((a, i) => !a.startsWith('--') && cliArgs[i - 1] !== '--report');
+const txtDir = positional[0] || path.join(__dirname, 'pdf-samples', 'txt');
 const dbPath = path.join(__dirname, '..', 'src', 'data', 'database.json');
 
 const GROUP_WORDS = {
@@ -89,6 +99,21 @@ const STANDALONE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])\s*:
 const AGE_UNIT_RE = /(år|døgn|dage?|(?:^|\s)d(?:\s|$)|mdr\.?|uger|måned|timer|voksne|risiko|menopause|fase)/i;
 const DATE_LIKE_RE = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
 
+// Decision-threshold row labels (as opposed to age brackets) — a deliberately
+// narrow, curated vocabulary rather than "any non-age descriptor". Widening
+// this to accept arbitrary labels was tried and reverted: it let through
+// Negativ/Inkonklusiv/Positiv rows correctly, but also swept in unrelated
+// "label: number unit"-shaped lines from elsewhere in the document (dates,
+// stability/storage durations, interference thresholds, author names glued
+// to a date field by column-drift) — the exact false-positive risk
+// AGE_UNIT_RE was originally written to prevent, just without an age word
+// to gate on.
+// Not anchored to the start: two-column PDF layouts sometimes glue an
+// unrelated left-column label onto the same extracted line (e.g. a
+// "Prøvetagning ... forhold" continuation ending up right before
+// "Negativ: < 7 kU/L"), so the decision label can appear mid-descriptor.
+const DECISION_LABEL_RE = /(negativ|positiv|inkonklusiv(\s*\(gråzone\))?|gråzone|grænseværdi|beslutningsgrænse|klinisk beslutningsgrænse|terapeutisk interval)/i;
+
 // Label text that sometimes drifts into the same line as a genuine interval row
 // (PDF column misalignment) — stripped rather than used to reject the row.
 const NOISE_PREFIXES = [
@@ -150,15 +175,30 @@ function extractReferenceIntervals(text) {
       continue;
     }
 
-    if (!AGE_UNIT_RE.test(descriptor)) continue;
+    if (!descriptor) continue;
 
-    const inline = splitGroupFromAge(descriptor);
-    rows.push({
-      group: inline ? inline.group : currentGroup,
-      age: inline ? inline.age : descriptor,
-      range: trimmedRange,
-      unit: unit || null
-    });
+    if (AGE_UNIT_RE.test(descriptor)) {
+      const inline = splitGroupFromAge(descriptor);
+      rows.push({
+        group: inline ? inline.group : currentGroup,
+        age: inline ? inline.age : descriptor,
+        range: trimmedRange,
+        unit: unit || null
+      });
+      continue;
+    }
+
+    // Not an age bracket, but matches a known decision-threshold label
+    // (e.g. "Negativ: < 7 kU/L", "Inkonklusiv: 7-10 kU/L", "Positiv: > 10 kU/L").
+    // These used to get silently dropped here, which for tables with no age
+    // stratification at all meant every row but one vanished (the lone
+    // survivor came from extractFallbackWholeLifeRange() picking the first
+    // bare number in the section, losing the label entirely).
+    const decisionMatch = descriptor.match(DECISION_LABEL_RE);
+    if (decisionMatch) {
+      const group = descriptor.slice(decisionMatch.index).trim();
+      rows.push({ group, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
+    }
   }
   return rows;
 }
@@ -247,9 +287,37 @@ function intervalsEqual(a = [], b = []) {
   });
 }
 
+// Fields we trust enough to auto-apply. `laboratory` and everything under
+// `method`/QC are excluded — see PLAN.md's "Known parser quirks": PDF
+// two-column layout drift makes those unreliable, so they always stay
+// manual-review-only regardless of --apply.
+function applyToEntry(dbEntry, parsed) {
+  const applied = [];
+  const setIfChanged = (label, parsedField, dbValue, setter) => {
+    if (parsedField.value === null || parsedField.confidence === 'low') return;
+    if (parsedField.value !== dbValue) {
+      setter(parsedField.value);
+      applied.push(label);
+    }
+  };
+
+  setIfChanged('unit', parsed.unit, dbEntry.unit, v => { dbEntry.unit = v; });
+  setIfChanged('inUseDate', parsed.inUseDate, dbEntry.inUseDate, v => { dbEntry.inUseDate = v; });
+  setIfChanged('revisionDate', parsed.revisionDate, dbEntry.revisionDate, v => { dbEntry.revisionDate = v; });
+
+  if (!intervalsEqual(parsed.referenceIntervals, dbEntry.referenceIntervals) && parsed.referenceIntervals.length > 0) {
+    dbEntry.referenceIntervals = parsed.referenceIntervals;
+    applied.push('referenceIntervals');
+  }
+
+  return applied;
+}
+
 function report(file, parsed, dbEntry) {
   const lines = [];
+  const md = [];
   lines.push(`\n=== ${file} (${parsed.npu || 'NO NPU FOUND'}) ===`);
+  md.push(`### ${file} (${parsed.npu || 'NO NPU FOUND'})`);
 
   if (!dbEntry) {
     lines.push('  ⚠ No matching entry in database.json — candidate NEW entry.');
@@ -260,11 +328,22 @@ function report(file, parsed, dbEntry) {
     lines.push(`    referenceIntervals (${parsed.referenceIntervals.length}):`);
     parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     console.log(lines.join('\n'));
-    return;
+
+    md.push('**⚠ No matching NPU in database.json — needs manual entry (not auto-created).**');
+    md.push('');
+    md.push(`- unit: ${fmt(parsed.unit)}`);
+    md.push(`- inUseDate: ${fmt(parsed.inUseDate)}`);
+    md.push(`- revisionDate: ${fmt(parsed.revisionDate)}`);
+    md.push(`- laboratory: ${fmt(parsed.laboratory)}`);
+    md.push(`- referenceIntervals:`);
+    parsed.referenceIntervals.forEach(r => md.push(`  - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+    return { kind: 'new', md: md.join('\n') };
   }
 
   lines.push(`  Matched: "${dbEntry.name}" (${dbEntry.slug})`);
+  md.push(`Matched: **${dbEntry.name}** (\`${dbEntry.slug}\`)`);
   let anyDiff = false;
+  const needsReview = [];
 
   const fieldDiff = (label, parsedField, dbValue) => {
     if (parsedField.value === null) {
@@ -275,6 +354,8 @@ function report(file, parsed, dbEntry) {
       anyDiff = true;
       const flag = parsedField.confidence === 'low' ? ' [low confidence — verify]' : '';
       lines.push(`  ≠ ${label}: DB="${dbValue}" → PDF="${parsedField.value}"${flag}`);
+      md.push(`- ≠ **${label}**: \`${dbValue}\` → \`${parsedField.value}\`${flag}`);
+      if (parsedField.confidence === 'low') needsReview.push(label);
     }
   };
 
@@ -282,6 +363,7 @@ function report(file, parsed, dbEntry) {
   fieldDiff('inUseDate', parsed.inUseDate, dbEntry.inUseDate);
   fieldDiff('revisionDate', parsed.revisionDate, dbEntry.revisionDate);
   fieldDiff('laboratory', parsed.laboratory, dbEntry.logistics?.laboratory);
+  if (parsed.laboratory.value !== null) needsReview.push('laboratory (never auto-applied)');
 
   if (!intervalsEqual(parsed.referenceIntervals, dbEntry.referenceIntervals)) {
     anyDiff = true;
@@ -290,10 +372,32 @@ function report(file, parsed, dbEntry) {
     (dbEntry.referenceIntervals || []).forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     lines.push('    PDF:');
     parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+
+    md.push('- ≠ **referenceIntervals**:');
+    md.push('  - DB: ' + (dbEntry.referenceIntervals || []).map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
+    md.push('  - PDF: ' + parsed.referenceIntervals.map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
   }
 
-  if (!anyDiff) lines.push('  ✓ No differences found.');
+  if (!anyDiff) {
+    lines.push('  ✓ No differences found.');
+    md.push('✓ No differences found.');
+  }
   console.log(lines.join('\n'));
+
+  let appliedFields = [];
+  if (apply && anyDiff) {
+    appliedFields = applyToEntry(dbEntry, parsed);
+    if (appliedFields.length) {
+      md.push('');
+      md.push(`**Applied to database.json:** ${appliedFields.join(', ')}`);
+    }
+  }
+  if (needsReview.length) {
+    md.push('');
+    md.push(`**Needs manual review:** ${needsReview.join(', ')}`);
+  }
+
+  return { kind: 'matched', md: md.join('\n'), anyDiff, appliedFields, needsReview };
 }
 
 function fmt(field) {
@@ -309,9 +413,72 @@ if (files.length === 0) {
   process.exit(1);
 }
 
+const results = [];
+let anyApplied = false;
+
 for (const file of files) {
   const text = fs.readFileSync(path.join(txtDir, file), 'utf-8');
   const parsed = parsePdfText(text);
   const dbEntry = database.find(item => item.npu === parsed.npu);
-  report(file, parsed, dbEntry);
+  const result = report(file, parsed, dbEntry);
+  if (result) {
+    results.push(result);
+    if (result.appliedFields?.length) anyApplied = true;
+  }
+}
+
+// database.json formats every `referenceIntervals` row as one compact
+// single-line object (unlike the rest of the file, which is plain
+// `JSON.stringify(db, null, 2)` output). Plain re-stringifying would
+// reformat that array in every entry, not just the ones we touched,
+// turning a 2-field change into a file-wide diff — so referenceIntervals
+// is pulled out via a marker, stringified normally, then spliced back in
+// using the original compact format.
+function formatIntervalRow(r) {
+  return `{ "group": ${JSON.stringify(r.group)}, "age": ${JSON.stringify(r.age)}, "range": ${JSON.stringify(r.range)}, "unit": ${JSON.stringify(r.unit)} }`;
+}
+
+function formatIntervals(rows, indent) {
+  if (!rows || rows.length === 0) return '[]';
+  const itemIndent = indent + '  ';
+  const items = rows.map(r => itemIndent + formatIntervalRow(r)).join(',\n');
+  return `[\n${items}\n${indent}]`;
+}
+
+function serializeDatabase(db) {
+  const markers = [];
+  const patched = db.map((entry, i) => {
+    if (!entry.referenceIntervals) return entry;
+    const marker = `@@REFINTERVALS_${i}@@`;
+    markers.push({ marker, rows: entry.referenceIntervals });
+    return { ...entry, referenceIntervals: marker };
+  });
+  let text = JSON.stringify(patched, null, 2);
+  for (const { marker, rows } of markers) {
+    text = text.replace(`"${marker}"`, formatIntervals(rows, '    '));
+  }
+  return text;
+}
+
+if (apply && anyApplied) {
+  fs.writeFileSync(dbPath, serializeDatabase(database) + '\n');
+  console.log(`\n✎ Applied changes written to ${dbPath}`);
+}
+
+if (reportPath) {
+  const newCount = results.filter(r => r.kind === 'new').length;
+  const changedCount = results.filter(r => r.kind === 'matched' && r.anyDiff).length;
+  const header = [
+    '## PDF scrape / database sync report',
+    '',
+    `${files.length} PDF(s) checked — ${changedCount} matched entr${changedCount === 1 ? 'y' : 'ies'} with differences, ${newCount} candidate new entr${newCount === 1 ? 'y' : 'ies'}.`,
+    apply
+      ? (anyApplied
+        ? '_Changes for high-confidence fields have been applied to `database.json` in this PR._'
+        : '_Nothing to apply — no field differences found._')
+      : '_Dry run — no changes applied._',
+    ''
+  ];
+  fs.writeFileSync(reportPath, header.join('\n') + '\n' + results.map(r => r.md).join('\n\n') + '\n');
+  console.log(`\n✎ Report written to ${reportPath}`);
 }
