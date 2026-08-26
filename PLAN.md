@@ -1,5 +1,57 @@
 # PDF scraping / database sync — progress & plan
 
+## ⏭ Pick up here tomorrow: planning a clean database wipe/rebuild
+**Decided 2026-08-26, not yet executed — discuss and plan the exact approach
+before touching `database.json`.**
+
+Trigger: while filling in missing `pdfUrl` links by hand, found that
+`Alkalisk phosphatase [BASP];P` (NPU01289) has been renamed+renumbered by
+the hospital to `Basisk fosfatase;P` (NPU53077, doc M-018/13, was
+M-016/10) — confirmed via the live PDF's own text. Fixing just the
+identity fields (npu/name/pdfUrl) on the old hand-curated entry created a
+**duplicate**: the already-merged scraper PR (#6) had separately
+auto-created a *second* NPU53077 entry (bare draft) for the same analysis,
+since it couldn't match the old stale NPU01289. Same slug on both — a real
+routing bug. Investigating further showed the two entries' `referenceIntervals`
+genuinely differ (the new document has much more granular pediatric age
+brackets), so this isn't just an identity mismatch — the underlying
+clinical data changed between document revisions too. Reverted the
+in-progress fix rather than ship a half-resolved duplicate (see git log —
+nothing committed from this).
+
+User's call: now that the extraction pipeline is the pdfplumber-based one
+(see "Extraction layer rewrite" below) instead of the old pdftotext regex
+parser, reconciling 20 individually hand-curated legacy entries against
+whatever NPU-renumbering/renaming the hospital has done since they were
+written is going to keep surfacing one-off duplicate/stale-identity bugs
+like this one. Rather than patch these as they're found, do a clean wipe
+and rebuild the database from the current live site using the current
+(much more capable) pipeline.
+
+**Open questions to resolve before executing, tomorrow:**
+1. Full wipe (delete all 189 entries, let the scraper auto-create all 211
+   fresh as drafts) loses the *rich* hand-authored content on the original
+   20 entries — full `method`/QC fields, `indication.elevated`/`decreased`
+   bullet lists, tube colors/alternates, detailed stability/transport
+   fields — none of which the current pipeline extracts yet (only
+   `indication.summary` as one raw paragraph, no method/QC at all). Decide:
+   is losing that content acceptable (re-earn it manually over time, same
+   as the other drafts), or should those 20 entries' hand-authored
+   sections be preserved/merged back in after the wipe rather than
+   discarded?
+2. Scope: wipe *everything* and rebuild from scratch, or only wipe/rebuild
+   entries whose NPU no longer resolves against a current site listing
+   (i.e. targeted at the stale-identity problem specifically), leaving
+   already-correct entries alone?
+3. Should extraction be extended first (method/QC fields, indication
+   elevated/decreased splitting) so a rebuild doesn't regress those fields
+   for entries that currently have them, or is "rebuild now, improve
+   extraction coverage later" fine?
+4. Mechanically: does "wipe" mean clearing `database.json` to `[]` and
+   `scripts/pdf-manifest.json` to `{}` and letting the next scheduled/
+   manual Action run repopulate everything as drafts via the normal
+   `--apply` flow, or a dedicated one-off script?
+
 ## Goal
 Automate keeping `src/data/database.json` in sync with the hospital's real
 metodeblad PDFs (`gentoftehospital.dk/.../klinisk-biokemisk-afdeling/metodeblade/`).
