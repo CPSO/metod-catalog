@@ -352,7 +352,8 @@
         "action": "Justeret CV%, måleusikkerhed og MRKD samt holdbarhed. Mindste prøvemængde præciseret. Analysen og referenceinterval vurderet og fundet fortsat klinisk egnet.",
         "initials": "AWUL0013"
       }
-    ]
+    ],
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/A/Alanintransaminase%20[ALAT]%20(Plasma).pdf"
   },
   {
     "id": "M-016/10",
@@ -580,7 +581,8 @@
         "action": "Gennemgående revideret jf. SV tillæg til valideringsrapport.",
         "initials": "-"
       }
-    ]
+    ],
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/A/Antithrombin%20(Plasma).pdf"
   },
   {
     "id": "M-022/07",
@@ -802,7 +804,8 @@
         "action": "Opdateret målområder i henhold til nyeste ESC kardiovaskulære guidelines.",
         "initials": "AWUL0013"
       }
-    ]
+    ],
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/A/Apolipoprotein%20B%20(Plasma).pdf"
   },
   {
     "id": "M-232/03",
@@ -916,7 +919,8 @@
         "action": "Planlagt revision: Ændret måleområde.",
         "initials": "AOLS0291"
       }
-    ]
+    ],
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/A/Ammonium%20(Plasma).pdf"
   },
   {
     "id": "M-212/04",
@@ -1038,7 +1042,8 @@
         "action": "Planlagt revision: Ændret holdbarhed.",
         "initials": "AWUL0013"
       }
-    ]
+    ],
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/A/Antitrypsin%20(Plasma).pdf"
   },
   {
     "id": "M-252/03",
@@ -2180,7 +2185,7 @@
     "labkaFullName": "P-Østradiol ESTRA",
     "spCode": "Østradiol;P NPU01972",
     "webreqCode": "Østradiol;P NPU01972",
-    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/O/%C3%98stradiol%20(Plasma).pdf",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/DocLib/%C3%98stradiol%20(Plasma).pdf",
     "unit": "nmol/L",
     "section": "IMMUNKEMI",
     "hospital": "Herlev og Gentofte Hospital",
