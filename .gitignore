@@ -5,6 +5,7 @@ dist/
 scripts/pdf-samples/*.pdf
 scripts/pdf-samples/txt/
 scripts/pdf-samples/json/
+scripts/pdf-samples/changed.json
 
 # Scraper working directory (downloaded PDFs, extracted text, generated report) —
 # scripts/pdf-manifest.json is the only artifact from a scrape run that's committed
