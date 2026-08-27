@@ -12,11 +12,13 @@
 | **#12** | Docs — this PR trail + rewrite of "Next steps". |
 | **#13** | UI — header badge `Herlev & Gentofte KBA` → `Klinisk forsknings Enhed`; subtitle `Klinisk Biokemisk Afdeling` → `… Herlev & Gentofte`. |
 | **#14** | `scripts/lib/text-clean.js` `desymbolize()` — Adobe Symbol-font glyphs that pdfplumber emits as Private-Use-Area code points (`µ`→`` etc.) are mapped back to real Unicode on every field. Full rebuild: 3 `entry.unit` (`g/L`→`µg/L`, `mol/L`→`µmol/L`), 8 row units, 6 QC levels, 1 `indication` (`α3`), 103 `sample.material` (`Vacuette®`). Header secondary title restyled to match `<h1>`. |
+| **#16** | **Multi-department scaffolding.** `src/data/database.json` → `src/data/kba.json`; new empty `src/data/kma.json`; new `src/data/departments.js` registry. Navbar gets an "Afdeling" dropdown; navbar/filterBar/detailPanel/search all read the registry (nothing hard-codes KBA). KBA layout unchanged; KMA is a stub with an empty-state message. Pipeline scripts + workflow follow the `kba.json` rename. |
 
-**Current state of `main`:** 186 draft entries, every one carrying
-`dataQualityFlags`. Reference data uses `target` + `referenceNote`;
-Symbol-font chars (µ, ®, α, …) render correctly. The remaining work is
-the per-entry **manual review pass** (see "Next steps").
+**Current state of `main`:** two departments — **KBA** (186 draft
+entries, `target`/`referenceNote`, Symbol-font chars correct) and **KMA**
+(empty; text-import pipeline + detail layout TBD). Remaining KBA work is
+the per-entry **manual review pass** (see "Next steps"); KMA needs its
+dataset, an import pipeline, and a real detail panel.
 
 ---
 
