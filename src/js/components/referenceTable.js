@@ -12,17 +12,49 @@ const COLUMNS = [
   { key: 'pdfUrl', label: 'Metodeblad PDF', sortable: false }
 ];
 
-// Rows where the youngest age boundary implied by this interval is below 18.
-// Intervals that don't specify a numeric age (e.g. "Alle aldre") are treated as adult-inclusive.
+// Converts one age token ("60 dage", "6 mdr.", "2 uger", "31 d", "17 år",
+// "18") to years. A bare number, or an unrecognised unit, is read as years.
+const AGE_UNIT_YEARS = [
+  [/\b(?:døgn|dage?|dag|d)\b/, 1 / 365],
+  [/\b(?:uger?|uge)\b/, 1 / 52],
+  [/\b(?:mdr|måneder?|måned)\b/, 1 / 12],
+  [/år/, 1] // no \b — a JS word boundary doesn't fire next to "å" (PLAN.md)
+];
+function ageTokenToYears(token) {
+  const num = token.match(/\d+(?:[.,]\d+)?/);
+  if (!num) return null;
+  const n = Number(num[0].replace(',', '.'));
+  if (!isFinite(n)) return null;
+  const unit = AGE_UNIT_YEARS.find(([re]) => re.test(token.toLowerCase()));
+  return n * (unit ? unit[1] : 1);
+}
+
+// "Kun voksne (18+)" hides reference intervals that apply to children —
+// i.e. any bracket whose LOWER bound is under 18 years. Non-numeric
+// brackets ("Alle aldre", "Voksne") can't be judged and stay visible.
+// The bug this replaces: the first number was compared to 18 as if it
+// were always years, so "30-60 dage" (30–60 *days*) survived the filter
+// because 30 ≥ 18, and "60 dage-17 år" did too.
 function isAdultInterval(ageText) {
   if (!ageText) return true;
-  const firstNumber = ageText.match(/\d+/);
-  if (!firstNumber) return true;
-  const value = Number(firstNumber[0]);
-  // "< 18 år" is an exclusive upper bound (everyone in the bracket is younger than that number),
-  // so it only counts as adult once the bound itself is past 18.
-  if (ageText.trim().startsWith('<')) return value > 18;
-  return value >= 18;
+  const t = ageText.trim().toLowerCase();
+  if (!/\d/.test(t)) return true;
+
+  // "< 18 år" / "≤ 17 år": an upper bound only, so the bracket starts at 0
+  // — a children's bracket unless the bound itself is past 18.
+  if (/^[<≤]/.test(t)) {
+    const y = ageTokenToYears(t);
+    return y == null ? true : y > 18;
+  }
+
+  // Lower bound = the first dash-separated token. If it carries no unit of
+  // its own, a unit at the very end of the string applies to it too
+  // ("30-60 dage" → lower bound is 30 *days*).
+  const lowerRaw = t.split(/[–-]/)[0].trim();
+  const trailingUnit = (t.match(/(døgn|dage?|dag|uger?|uge|mdr\.?|måneder?|måned|år)\s*$/) || [])[1];
+  const lowerTok = /[a-zæøå]/.test(lowerRaw) || !trailingUnit ? lowerRaw : `${lowerRaw} ${trailingUnit}`;
+  const years = ageTokenToYears(lowerTok);
+  return years == null ? true : years >= 18;
 }
 
 function parseDanishDate(str) {

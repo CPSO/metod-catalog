@@ -1019,8 +1019,8 @@
       { "group": "Alle", "age": "1 – 11 mdr.", "range": "15 – 65", "unit": "U/L" },
       { "group": "Alle", "age": "1 år – 4 år", "range": "10 – 60", "unit": "U/L" },
       { "group": "Alle", "age": "5 år – 17 år", "range": "17 – 46", "unit": "U/L" },
-      { "group": "Alle", "age": "Kvinde ≥ 18 år", "range": "15 – 35", "unit": "U/L" },
-      { "group": "Alle", "age": "Mand ≥ 18 år", "range": "15 – 45", "unit": "U/L" }
+      { "group": "Kvinder", "age": "≥ 18 år", "range": "15 – 35", "unit": "U/L" },
+      { "group": "Mænd", "age": "≥ 18 år", "range": "15 – 45", "unit": "U/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -1931,7 +1931,7 @@
       { "group": "Mænd", "age": "11 – 13 år", "range": "0,02-0,23", "unit": "nmol/L" },
       { "group": "Mænd", "age": "14 – 15 år", "range": "0,02-0,27", "unit": "nmol/L" },
       { "group": "Mænd", "age": "≥ 16 år", "range": "≤ 0,30", "unit": "nmol/L" },
-      { "group": "Alle", "age": "For kvinder over 50 år: ” >50 år (efter menopause)", "range": "≤ 0,30", "unit": "nmol/L”" },
+      { "group": "Kvinder", "age": "For over 50 år: ” >50 år (efter menopause)", "range": "≤ 0,30", "unit": "nmol/L”" },
       { "group": "Alle", "age": "”Follikulær fase", "range": "0,07-0,53", "unit": "nmol/L." },
       { "group": "Midtcyklustop", "age": "Alle aldre", "range": "0,23-1,31", "unit": "nmol/L." },
       { "group": "Alle", "age": "Luteal fase", "range": "0,20-0,79", "unit": "nmol/L”" }
@@ -4623,8 +4623,8 @@
       { "group": "Alle", "age": "14-30 dage", "range": "2,30-5,00", "unit": "x 1012/L" },
       { "group": "Alle", "age": "30-60 dage", "range": "2,90-4,70", "unit": "x 1012/L" },
       { "group": "Alle", "age": "60 dage-17 år", "range": "3,30-6,60", "unit": "x 1012/L" },
-      { "group": "Alle", "age": "≥18 år kvinde", "range": "3,94-5,16", "unit": "x 1012/L" },
-      { "group": "Alle", "age": "≥18 år mand", "range": "4,25-5,71", "unit": "x 1012/L" }
+      { "group": "Kvinder", "age": "≥18 år", "range": "3,94-5,16", "unit": "x 1012/L" },
+      { "group": "Mænd", "age": "≥18 år", "range": "4,25-5,71", "unit": "x 1012/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -4802,8 +4802,8 @@
       { "group": "Alle", "age": "1-2 måneder", "range": "0,25-0,42", "unit": null },
       { "group": "Alle", "age": "2 måneder -12 år", "range": "0,28-0,42", "unit": null },
       { "group": "Alle", "age": "12-18 år", "range": "0,32-0,47", "unit": null },
-      { "group": "Alle", "age": "≥18 år kvinde", "range": "0,35-0,46", "unit": null },
-      { "group": "Alle", "age": "≥18 år mand", "range": "0,40-0,50", "unit": null }
+      { "group": "Kvinder", "age": "≥18 år", "range": "0,35-0,46", "unit": null },
+      { "group": "Mænd", "age": "≥18 år", "range": "0,40-0,50", "unit": null }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -6776,8 +6776,8 @@
       { "group": "Alle", "age": "2 mdr– 24 mdr", "range": "6,0 – 8,3", "unit": "mmol/L" },
       { "group": "Alle", "age": "2 år – 11 år", "range": "6,5 – 8,9", "unit": "mmol/L" },
       { "group": "Alle", "age": "12 – 17 år", "range": "6,6 – 9,9", "unit": "mmol/L" },
-      { "group": "Alle", "age": "Kvinder > 18 år", "range": "7,3 – 9,5", "unit": "mmol/L" },
-      { "group": "Alle", "age": "Mænd > 18 år", "range": "8,3 – 10,5", "unit": "mmol/L" }
+      { "group": "Kvinder", "age": "> 18 år", "range": "7,3 – 9,5", "unit": "mmol/L" },
+      { "group": "Mænd", "age": "> 18 år", "range": "8,3 – 10,5", "unit": "mmol/L" }
     ],
     "alarmLimits": "",
     "logistics": {
@@ -11219,8 +11219,8 @@
     },
     "referenceIntervals": [
       { "group": "Alle", "age": "Børn 0-9 år", "range": "<15", "unit": "µg/L" },
-      { "group": "Alle", "age": "Kvinder 10-125 år", "range": "19-49", "unit": "µg/L" },
-      { "group": "Alle", "age": "Mænd 10-125 år", "range": "24-77", "unit": "µg/L" }
+      { "group": "Kvinder", "age": "10-125 år", "range": "19-49", "unit": "µg/L" },
+      { "group": "Mænd", "age": "10-125 år", "range": "24-77", "unit": "µg/L" }
     ],
     "alarmLimits": "Ikke relevant.",
     "logistics": {
@@ -14219,9 +14219,9 @@
     "referenceIntervals": [
       { "group": "Alle", "age": "• Alle, 6 mdr - 12 år", "range": "< 0,41", "unit": null },
       { "group": "Alle", "age": "• Alle, 12 - 18 år", "range": "< 0,48", "unit": null },
-      { "group": "Alle", "age": "• Kvinde, 18 - 49 år", "range": "0,10 - 0,50", "unit": null },
-      { "group": "Alle", "age": "• Kvinde, >= 50 år", "range": "0,15 - 0,50", "unit": null },
-      { "group": "Alle", "age": "• Mand, > 18 år", "range": "0,15 - 0,57", "unit": null }
+      { "group": "Kvinder", "age": "18 - 49 år", "range": "0,10 - 0,50", "unit": null },
+      { "group": "Kvinder", "age": ">= 50 år", "range": "0,15 - 0,50", "unit": null },
+      { "group": "Mænd", "age": "> 18 år", "range": "0,15 - 0,57", "unit": null }
     ],
     "alarmLimits": "Ikke relevant",
     "logistics": {
@@ -15227,7 +15227,7 @@
     },
     "referenceIntervals": [
       { "group": "Alle", "age": "0 dage – 1 måned", "range": "3,8-6,5", "unit": "kPa" },
-      { "group": "Alle", "age": ">1 måned: Kvinder", "range": "4,3 – 5,7", "unit": "kPa" }
+      { "group": "Kvinder", "age": ">1 måned", "range": "4,3 – 5,7", "unit": "kPa" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
