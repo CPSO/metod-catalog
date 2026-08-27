@@ -1,9 +1,11 @@
 // Navigation & Header Component
 
 export function renderNavbar(container, {
+  view = 'catalog',
   department,
   departments = [],
   onDepartmentChange,
+  onHome,
   onOpenTubeGuide,
   onOpenImporter,
   onToggleTheme,
@@ -11,13 +13,23 @@ export function renderNavbar(container, {
   totalCount
 }) {
   const dept = department || departments[0] || {};
-  const showTubeGuide = dept.features?.tubeGuide;
-  const showImporter = dept.features?.importer;
+  const isChooser = view === 'chooser';
+  const showTubeGuide = !isChooser && dept.features?.tubeGuide;
+  const showImporter = !isChooser && dept.features?.importer;
+  const showDeptSelect = !isChooser && departments.length > 1;
+
+  const title = isChooser ? 'Metodeblade' : (dept.docTerm || 'Metodeblade');
+  const subtitle = isChooser
+    ? `<span>Vælg afdeling for at åbne kataloget</span>`
+    : `
+      <span>${dept.label ? `${dept.label} ${dept.site || ''}`.trim() : ''}</span>
+      <span>•</span>
+      <span class="mono">${totalCount} analyser i databasen</span>`;
 
   container.innerHTML = `
     <header class="app-header">
       <div class="container nav-container">
-        <a href="?dept=${dept.id}" class="brand-section">
+        <a href="${isChooser ? '.' : `?dept=${dept.id}`}" class="brand-section" id="brand-home">
           <div class="brand-logo">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
@@ -26,19 +38,15 @@ export function renderNavbar(container, {
           </div>
           <div class="brand-text">
             <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <h1>${dept.docTerm || 'Metodeblade'}</h1>
+              <h1>${title}</h1>
               <span class="brand-title-secondary">Klinisk forsknings Enhed</span>
             </div>
-            <div class="brand-subtitle">
-              <span>${dept.label ? `${dept.label} ${dept.site || ''}`.trim() : ''}</span>
-              <span>•</span>
-              <span class="mono">${totalCount} analyser i databasen</span>
-            </div>
+            <div class="brand-subtitle">${subtitle}</div>
           </div>
         </a>
 
         <div class="header-actions">
-          ${departments.length > 1 ? `
+          ${showDeptSelect ? `
             <label class="dept-select-wrap" title="Skift afdeling / database">
               <span class="dept-select-label">Afdeling</span>
               <select id="department-select" class="filter-select">
@@ -82,6 +90,9 @@ export function renderNavbar(container, {
     </header>
   `;
 
+  document.getElementById('brand-home')?.addEventListener('click', (e) => {
+    if (!isChooser && onHome) { e.preventDefault(); onHome(); }
+  });
   document.getElementById('department-select')?.addEventListener('change', (e) => {
     onDepartmentChange?.(e.target.value);
   });

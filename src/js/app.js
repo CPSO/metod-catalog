@@ -7,6 +7,7 @@ import { renderReferenceTable } from './components/referenceTable.js';
 import { renderDetailPanel } from './components/detailPanel.js';
 import { renderTubeGuideModal } from './components/tubeGuide.js';
 import { renderImporterModal } from './components/importerModal.js';
+import { renderDepartmentChooser } from './components/departmentChooser.js';
 import { showToast } from './utils/export.js';
 
 const DEFAULT_FILTERS = {
@@ -24,6 +25,8 @@ class App {
     this.departmentStorageKey = 'metod_catalog_department';
 
     this.state = {
+      // 'chooser' = the department landing page, 'catalog' = a department's catalog
+      view: this.resolveInitialView(),
       department: this.resolveInitialDepartment(),
       ...DEFAULT_FILTERS,
       sortKey: 'name',
@@ -44,11 +47,45 @@ class App {
   }
 
   // ── Department ──────────────────────────────────────────────────────────
+  // A bare URL lands on the chooser; a `?dept=` link (from choosing, the
+  // header dropdown, or a bookmark) goes straight into that catalog.
+  resolveInitialView() {
+    const fromUrl = (new URLSearchParams(window.location.search).get('dept') || '').toUpperCase();
+    return DEPARTMENTS.some(d => d.id === fromUrl) ? 'catalog' : 'chooser';
+  }
+
   resolveInitialDepartment() {
     const fromUrl = new URLSearchParams(window.location.search).get('dept');
     const stored = localStorage.getItem('metod_catalog_department');
     const candidate = (fromUrl || stored || DEFAULT_DEPARTMENT).toUpperCase();
     return DEPARTMENTS.some(d => d.id === candidate) ? candidate : DEFAULT_DEPARTMENT;
+  }
+
+  enterDepartment(id) {
+    if (!DEPARTMENTS.some(d => d.id === id)) return;
+    this.state.department = id;
+    this.state.view = 'catalog';
+    localStorage.setItem(this.departmentStorageKey, id);
+    Object.assign(this.state, DEFAULT_FILTERS);
+    this.state.selectedItem = null;
+
+    const url = new URL(window.location);
+    url.searchParams.set('dept', id);
+    url.hash = '';
+    history.pushState('', document.title, url);
+
+    this.loadDepartmentData();
+    this.render();
+  }
+
+  goToChooser() {
+    this.state.view = 'chooser';
+    this.state.selectedItem = null;
+    const url = new URL(window.location);
+    url.searchParams.delete('dept');
+    url.hash = '';
+    history.pushState('', document.title, url);
+    this.render();
   }
 
   customStorageKey() {
@@ -154,6 +191,7 @@ class App {
   }
 
   handleRouting() {
+    if (this.state.view === 'chooser') return; // no deep-linking from the landing page
     const hash = window.location.hash.replace('#', '').trim();
     if (hash) {
       const h = hash.toLowerCase();
@@ -218,9 +256,11 @@ class App {
 
   renderNavbarSection() {
     renderNavbar(this.navContainer, {
+      view: this.state.view,
       department: this.dept,
       departments: DEPARTMENTS,
       onDepartmentChange: (id) => this.switchDepartment(id),
+      onHome: () => this.goToChooser(),
       onOpenTubeGuide: () => this.openTubeGuide(),
       onOpenImporter: () => this.openImporter(),
       onToggleTheme: () => this.toggleTheme(),
@@ -309,7 +349,21 @@ class App {
   }
 
   render() {
+    document.body.dataset.view = this.state.view;
     this.renderNavbarSection();
+
+    if (this.state.view === 'chooser') {
+      this.filterBarContainer.innerHTML = '';
+      this.panelContainer.innerHTML = '';
+      this.modalContainer.innerHTML = '';
+      renderDepartmentChooser(this.tableContainer, {
+        departments: DEPARTMENTS,
+        activeDepartment: this.state.department,
+        onSelect: (id) => this.enterDepartment(id)
+      });
+      return;
+    }
+
     this.renderMainContent();
     this.renderPanel();
     this.renderModals();
