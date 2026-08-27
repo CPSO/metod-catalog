@@ -14,10 +14,10 @@ export function renderNavbar(container, { onOpenTubeGuide, onOpenImporter, onTog
           <div class="brand-text">
             <div style="display: flex; align-items: center; gap: 0.5rem;">
               <h1>Metodeblade</h1>
-              <span class="hospital-badge">Herlev & Gentofte KBA</span>
+              <span class="hospital-badge">Klinisk forsknings Enhed</span>
             </div>
             <div class="brand-subtitle">
-              <span>Klinisk Biokemisk Afdeling</span>
+              <span>Klinisk Biokemisk Afdeling Herlev & Gentofte</span>
               <span>•</span>
               <span class="mono">${totalCount} analyser i databasen</span>
             </div>
