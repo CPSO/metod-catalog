@@ -590,7 +590,15 @@ function extractReferenceIntervals(cellText) {
     // isolated to this one field (see function comment).
     rows.push({ group: inlineGroup || descriptor, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
   }
-  return rows;
+  // Drop rows that are really a bibliographic citation leaking out of a
+  // "Kilder:" / "Referencer:" block at the bottom of the cell — the
+  // "range" is a bare DOI prefix ("10.1080", "10.3109") or the descriptor
+  // names a journal / DOI. Seen on Laktatdehydrogenase, Prokollagen III.
+  return rows.filter(r => {
+    if (/^10\.\d{3,}$/.test(r.range)) return false;
+    if (/\bDOI\b|\bet al\.?|Clin Chem Lab Med|SJCLI/i.test(`${r.group} ${r.unit || ''}`)) return false;
+    return true;
+  });
 }
 
 // Some templates (e.g. Antitrypsin, Apolipoprotein B) state a single

@@ -383,7 +383,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/A/Alfa-1-F%C3%B8toprotein%20(Plasma).pdf",
-    "unit": "× 103 IU/L",
+    "unit": "× 10³ IU/L",
     "section": "IMMUNKEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -444,8 +444,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 19,7 % beregnet på baggrund af en skønnet biologisk variation på 4,6 %",
       "measuringRange": {
-        "total": "Direkte måleområde: 1,1-830 × 103 IU/L",
-        "standard": "Ved fortynding: 1,1-166,000 × 103 IU/L"
+        "total": "Direkte måleområde: 1,1-830 × 10³ IU/L",
+        "standard": "Ved fortynding: 1,1-166,000 × 10³ IU/L"
       },
       "interference": {
         "hemoglobin": "<310 µmol/L",
@@ -457,8 +457,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -735,7 +734,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/A/Antithrombin%20(Plasma).pdf",
-    "unit": "x 103 IU/L",
+    "unit": "× 10³ IU/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -757,10 +756,10 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-6 dage", "range": "0,40-0,90", "unit": "x 103 IU/L" },
-      { "group": "Alle", "age": "6 dage-1 måned", "range": "0,45-1,01", "unit": "x 103 IU/L" },
-      { "group": "Alle", "age": "1-3 måneder", "range": "0,61-1,15", "unit": "x 103 IU/L" },
-      { "group": "Alle", "age": ">3 måneder", "range": "0,83-1,15", "unit": "x 103 IU/L" }
+      { "group": "Alle", "age": "0-6 dage", "range": "0,40-0,90", "unit": "× 10³ IU/L" },
+      { "group": "Alle", "age": "6 dage-1 måned", "range": "0,45-1,01", "unit": "× 10³ IU/L" },
+      { "group": "Alle", "age": "1-3 måneder", "range": "0,61-1,15", "unit": "× 10³ IU/L" },
+      { "group": "Alle", "age": ">3 måneder", "range": "0,83-1,15", "unit": "× 10³ IU/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -797,7 +796,7 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 26,4% beregnet på baggrund af en skønnet biologisk variation på 3,4%.",
       "measuringRange": {
-        "total": "0,10-1,50 x 103 IU/L",
+        "total": "0,10-1,50 × 10³ IU/L",
         "standard": ">1,50"
       },
       "interference": {
@@ -808,8 +807,7 @@
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
       "Navn kunne ikke udtrækkes pålideligt fra PDF'en og er sat til filnavnet i stedet — ikke det kanoniske \";P\"-format. Bør rettes manuelt.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -3367,7 +3365,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/C/Cancer-antigen%2019-9%20(Plasma).pdf",
-    "unit": "x 103 arb.enh./L",
+    "unit": "× 10³ arb.enh./L",
     "section": "IMMUNKEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -3387,7 +3385,7 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "Alle aldre", "range": "<37", "unit": "x 103 arb.enh./L" }
+      { "group": "Alle", "age": "Alle aldre", "range": "<37", "unit": "× 10³ arb.enh./L" }
     ],
     "alarmLimits": "Ingen ringegrænser.",
     "logistics": {
@@ -3408,16 +3406,15 @@
       "externalQC": "LABQUALITY Tumour markers",
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 51% beregnet på baggrund af en skønnet biologisk variation på 16%.",
       "measuringRange": {
-        "total": "Standard: 1,20-700 x 103 arb.enh./L.",
-        "standard": "Fortynding: 1,20-140.000 x 103 arb.enh./L"
+        "total": "Standard: 1,20-700 × 10³ arb.enh./L.",
+        "standard": "Fortynding: 1,20-140.000 × 10³ arb.enh./L"
       },
       "comments": "Patientprøver kan indeholde heterofile antistoffer, der kan reagere i immunanalyser og give falsk forhøjede eller for lave resultater."
     },
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -4599,7 +4596,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/E/Erytrocytter%20(Blod).pdf",
-    "unit": "x 1012/L",
+    "unit": "× 10¹²/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -4619,12 +4616,12 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-14 dage", "range": "3,10-5,50", "unit": "x 1012/L" },
-      { "group": "Alle", "age": "14-30 dage", "range": "2,30-5,00", "unit": "x 1012/L" },
-      { "group": "Alle", "age": "30-60 dage", "range": "2,90-4,70", "unit": "x 1012/L" },
-      { "group": "Alle", "age": "60 dage-17 år", "range": "3,30-6,60", "unit": "x 1012/L" },
-      { "group": "Kvinder", "age": "≥18 år", "range": "3,94-5,16", "unit": "x 1012/L" },
-      { "group": "Mænd", "age": "≥18 år", "range": "4,25-5,71", "unit": "x 1012/L" }
+      { "group": "Alle", "age": "0-14 dage", "range": "3,10-5,50", "unit": "× 10¹²/L" },
+      { "group": "Alle", "age": "14-30 dage", "range": "2,30-5,00", "unit": "× 10¹²/L" },
+      { "group": "Alle", "age": "30-60 dage", "range": "2,90-4,70", "unit": "× 10¹²/L" },
+      { "group": "Alle", "age": "60 dage-17 år", "range": "3,30-6,60", "unit": "× 10¹²/L" },
+      { "group": "Kvinder", "age": "≥18 år", "range": "3,94-5,16", "unit": "× 10¹²/L" },
+      { "group": "Mænd", "age": "≥18 år", "range": "4,25-5,71", "unit": "× 10¹²/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -4667,8 +4664,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 7,9% beregnet på baggrund af en skønnet biologisk variation på 2,8%.",
       "measuringRange": {
-        "total": "0,01 - 18 x 1012/L",
-        "standard": "0,01 - 18 x 1012/L"
+        "total": "0,01 - 18 × 10¹²/L",
+        "standard": "0,01 - 18 × 10¹²/L"
       },
       "interference": {
         "biasNote": "Leukocytose: Meget høje leucocyttal kan give falsk forhøjede erytrocyttal. Kuldeagglutininer: Ved kuldeagglutinationssygdom kan måles falsk for lave erytrocytter. Agglutinerede erytrocytter: Kan give falsk lave erytrocyttal."
@@ -4677,8 +4674,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -4693,7 +4689,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/E/Erytrocytter%20(CSV).pdf",
-    "unit": "x 106/L",
+    "unit": "× 10⁶/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -4713,7 +4709,7 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "Alle aldre", "range": "< 300", "unit": "x 106/L" }
+      { "group": "Alle", "age": "Alle aldre", "range": "< 300", "unit": "× 10⁶/L" }
     ],
     "alarmLimits": "≥ 300 x 106/L Der ringes ikke svar på cerebrospinalvæske-celletællinger på ambulante neurologiske patienter.",
     "logistics": {
@@ -4750,8 +4746,8 @@
       ],
       "clinicalDifference": "Ej relevant",
       "measuringRange": {
-        "total": "300 – 9.999.999 x 106/L",
-        "standard": "300 – 9.999.999 x 106/L"
+        "total": "300 – 9.999.999 × 10⁶/L",
+        "standard": "300 – 9.999.999 × 10⁶/L"
       },
       "interference": {
         "biasNote": "Blodtilblanding under prøvetagning."
@@ -4761,8 +4757,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -7238,8 +7233,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 5,4% beregnet på baggrund af en skønnet biologisk variation på 1,0%",
       "measuringRange": {
-        "total": "Måleområdet for reticulocytter er 10 – 1200 x 109/L, se metode-",
-        "standard": "Måleområdet for reticulocytter er 10 – 1200 x 109/L, se metode-"
+        "total": "Måleområdet for reticulocytter er 10 – 1200 × 10⁹/L, se metode-",
+        "standard": "Måleområdet for reticulocytter er 10 – 1200 × 10⁹/L, se metode-"
       },
       "interference": {
         "biasNote": "Lipæmi, hæmolyse."
@@ -7446,7 +7441,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/I/Immunglobulin%20E%20(Plasma).pdf",
-    "unit": "x 103 IU/L",
+    "unit": "× 10³ IU/L",
     "section": "IMMUNKEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -7468,9 +7463,9 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "1 dag - 11 mdr.", "range": "< 30", "unit": "x 103 IU/L" },
-      { "group": "Alle", "age": "1 år - 13 år", "range": "< 60", "unit": "x 103 IU/L" },
-      { "group": "Alle", "age": "≥ 14 år", "range": "< 150", "unit": "x 103 IU/L" }
+      { "group": "Alle", "age": "1 dag - 11 mdr.", "range": "< 30", "unit": "× 10³ IU/L" },
+      { "group": "Alle", "age": "1 år - 13 år", "range": "< 60", "unit": "× 10³ IU/L" },
+      { "group": "Alle", "age": "≥ 14 år", "range": "< 150", "unit": "× 10³ IU/L" }
     ],
     "alarmLimits": "Ikke relevant",
     "logistics": {
@@ -7491,16 +7486,15 @@
       "externalQC": "LABQUALITY General Clinical Chemistry Serum B and C",
       "clinicalDifference": "Kan ikke beregnes pga. manglende data om biologisk variation.",
       "measuringRange": {
-        "total": "1,5-3000 x 103 IU/L",
-        "standard": "Måleområde med fortynding: 1,5 – 15000 x 103 IU/L."
+        "total": "1,5-3000 × 10³ IU/L",
+        "standard": "Måleområde med fortynding: 1,5 – 15000 × 10³ IU/L."
       },
       "comments": "Patientprøver kan indeholde heterofile antistoffer, der kan reagere i immunanalyser og give falsk forhøjede eller for lave resultater."
     },
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -8405,7 +8399,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Kerneholdige%20celler%20(Csv).pdf",
-    "unit": "x 106/L",
+    "unit": "× 10⁶/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -8425,7 +8419,7 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "Alle aldre", "range": "< 5", "unit": "x 106/L" }
+      { "group": "Alle", "age": "Alle aldre", "range": "< 5", "unit": "× 10⁶/L" }
     ],
     "alarmLimits": "≥ 5 x 106/L Der ringes ikke svar på cerebrospinalvæske-celletællinger på ambulante neurologiske patienter.",
     "logistics": {
@@ -8462,8 +8456,8 @@
       ],
       "clinicalDifference": "Ej relevant",
       "measuringRange": {
-        "total": "5 – 600.000 x 106/L",
-        "standard": "5 – 600.000 x 106/L"
+        "total": "5 – 600.000 × 10⁶/L",
+        "standard": "5 – 600.000 × 10⁶/L"
       },
       "interference": {
         "biasNote": "Blodtilblanding under prøvetagning."
@@ -8473,8 +8467,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -9617,9 +9610,7 @@
       { "group": "Alle", "age": "5 år – 13 år", "range": "157 – 327", "unit": "U/L" },
       { "group": "Alle", "age": "14 år – 17 år", "range": "121 – 271", "unit": "U/L" },
       { "group": "Alle", "age": "18 år – 69 år", "range": "105 – 205", "unit": "U/L" },
-      { "group": "Alle", "age": "≥ 70 år", "range": "115 – 255", "unit": "U/L" },
-      { "group": "Kilder: Rustad et al. SJCLI 2004. 64;271-284 DOI", "age": "Alle aldre", "range": "10.1080", "unit": "/00365510410006324 og Hilsted et al. SJCLI 2013." },
-      { "group": "73;1-9 DOI", "age": "Alle aldre", "range": "10.3109", "unit": "/00365513.2012.721519" }
+      { "group": "Alle", "age": "≥ 70 år", "range": "115 – 255", "unit": "U/L" }
     ],
     "alarmLimits": "Ingen.",
     "logistics": {
@@ -9685,7 +9676,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/L/Leukocytter%20(Blod).pdf",
-    "unit": "x 109 /L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -9705,13 +9696,13 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-14 dage", "range": "5,5-19,3", "unit": "x 109/L" },
-      { "group": "Alle", "age": "14 dage-1 måned", "range": "6,9-19,9", "unit": "x 109/L" },
-      { "group": "Alle", "age": "1-2 måneder", "range": "6,0-16,3", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2 måneder -2 år", "range": "6,2-16,2", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2-12 år", "range": "4,5-12,5", "unit": "x 109/L" },
-      { "group": "Alle", "age": "12-18 år", "range": "4,4-10,5", "unit": "x 109/L" },
-      { "group": "Alle", "age": ">18 år", "range": "3,5-8,8", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-14 dage", "range": "5,5-19,3", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "14 dage-1 måned", "range": "6,9-19,9", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "1-2 måneder", "range": "6,0-16,3", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2 måneder -2 år", "range": "6,2-16,2", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2-12 år", "range": "4,5-12,5", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "12-18 år", "range": "4,4-10,5", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": ">18 år", "range": "3,5-8,8", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "Hospitalspatienter: < 1,0 x 109/L. Praksispatienter: < 1,0 x 109/L og > 50 x 109/L",
     "logistics": {
@@ -9754,8 +9745,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 31% beregnet på baggrund af en skønnet biologisk variation på 11,1%",
       "measuringRange": {
-        "total": "0,1 – 600 x 109/L.",
-        "standard": "0,1 – 600 x 109/L."
+        "total": "0,1 – 600 × 10⁹/L.",
+        "standard": "0,1 – 600 × 10⁹/L."
       },
       "interference": {
         "biasNote": "Høj koncentration af erythroblaster, agglutination af trombocytter, immunglobuliner, makrotrombocytter."
@@ -9764,8 +9755,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -9780,7 +9770,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/L/Leukocyttype%20-%20Basofilocytter%20(Blod).pdf",
-    "unit": "x 109/L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -9800,10 +9790,10 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-14 dage", "range": "0,01-0,50", "unit": "x 109/L" },
-      { "group": "Alle", "age": "14 dage – 6 måneder", "range": "0,01-0,30", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6 måneder – 18år", "range": "0,01-0,10", "unit": "x 109/L" },
-      { "group": "Alle", "age": ">18 år", "range": "0,01-0,10", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-14 dage", "range": "0,01-0,50", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "14 dage – 6 måneder", "range": "0,01-0,30", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6 måneder – 18år", "range": "0,01-0,10", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": ">18 år", "range": "0,01-0,10", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -9852,8 +9842,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -9868,7 +9857,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/L/Leukocyttype%20-%20Eosinofilocytter%20(Blod).pdf",
-    "unit": "x 109/L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -9888,11 +9877,11 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-2 måneder", "range": "0,01-0,90", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2-6 måneder", "range": "0,01-0,50", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6 måneder-14 år", "range": "0,05-0,70", "unit": "x 109/L" },
-      { "group": "Alle", "age": "14-18 år", "range": "0,03-0,60", "unit": "x 109/L" },
-      { "group": "Alle", "age": ">18 år", "range": "0,01-0,50", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-2 måneder", "range": "0,01-0,90", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2-6 måneder", "range": "0,01-0,50", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6 måneder-14 år", "range": "0,05-0,70", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "14-18 år", "range": "0,03-0,60", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": ">18 år", "range": "0,01-0,50", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -9935,8 +9924,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 50,4% beregnet på baggrund af en skønnet biologisk variation på 15,7%",
       "measuringRange": {
-        "total": "Måleintervallet på Leukocytter;B er: 0,1 – 600 x 109/L.",
-        "standard": "Måleintervallet på Leukocytter;B er: 0,1 – 600 x 109/L."
+        "total": "Måleintervallet på Leukocytter;B er: 0,1 – 600 × 10⁹/L.",
+        "standard": "Måleintervallet på Leukocytter;B er: 0,1 – 600 × 10⁹/L."
       },
       "interference": {
         "biasNote": "Tilstedeværelse af unormale granula (degranulering af bestemte zoner, giftige granula osv.) kan interferere med eosinofiloptællingen."
@@ -9946,8 +9935,7 @@
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
       "Navn kunne ikke udtrækkes pålideligt fra PDF'en og er sat til filnavnet i stedet — ikke det kanoniske \";P\"-format. Bør rettes manuelt.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -9962,7 +9950,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/L/Leukocyttype%20-%20Lymfocytter%20(Blod).pdf",
-    "unit": "x 109/L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -9982,12 +9970,12 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-2 måneder", "range": "1,75-9,14", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2 måneder-6 måneder", "range": "2,14-8,99", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6 måneder-6 år", "range": "1,83-7,85", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6-13 år", "range": "1,32-4,07", "unit": "x 109/L" },
-      { "group": "Alle", "age": "13-18 år", "range": "1,20-3,60", "unit": "x 109/L" },
-      { "group": "Alle", "age": ">18 år", "range": "1,00-3,5", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-2 måneder", "range": "1,75-9,14", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2 måneder-6 måneder", "range": "2,14-8,99", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6 måneder-6 år", "range": "1,83-7,85", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6-13 år", "range": "1,32-4,07", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "13-18 år", "range": "1,20-3,60", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": ">18 år", "range": "1,00-3,5", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -10030,8 +10018,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 31,1% beregnet på baggrund af en skønnet biologisk variation på 10,5%",
       "measuringRange": {
-        "total": "0,1 – 600 x 109/L.",
-        "standard": "0,1 – 600 x 109/L."
+        "total": "0,1 – 600 × 10⁹/L.",
+        "standard": "0,1 – 600 × 10⁹/L."
       },
       "interference": {
         "biasNote": "Agglutination af trombocytter."
@@ -10040,8 +10028,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -10056,7 +10043,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/L/Leukocyttype%20-%20Monocytter%20(Blod).pdf",
-    "unit": "x 109/L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -10076,11 +10063,11 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-14 dage", "range": "0,52-1,77", "unit": "x 109/L" },
-      { "group": "Alle", "age": "14 dage-2 måneder", "range": "0,28-1,38", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2 måneder-6 måneder", "range": "0,24-1,17", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6 måneder-18 år", "range": "0,21-0,77", "unit": "x 109/L" },
-      { "group": "Alle", "age": ">18 år", "range": "0,20-0,80", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-14 dage", "range": "0,52-1,77", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "14 dage-2 måneder", "range": "0,28-1,38", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2 måneder-6 måneder", "range": "0,24-1,17", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6 måneder-18 år", "range": "0,21-0,77", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": ">18 år", "range": "0,20-0,80", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -10120,15 +10107,14 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 43,9% beregnet på baggrund af en skønnet biologisk variation på 14%",
       "measuringRange": {
-        "total": "0,1 – 600 x 109/L",
-        "standard": "0,1 – 600 x 109/L"
+        "total": "0,1 – 600 × 10⁹/L",
+        "standard": "0,1 – 600 × 10⁹/L"
       }
     },
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -10143,7 +10129,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/L/Leukocyttype%20-%20Neutrofilocytter%20(Blod).pdf",
-    "unit": "x 109/L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -10163,13 +10149,13 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-14 dage", "range": "1,70-11,0", "unit": "x 109/L" },
-      { "group": "Alle", "age": "14 dage-1 måned", "range": "1,30-11,0", "unit": "x 109/L" },
-      { "group": "Alle", "age": "1-2 måneder", "range": "0,83-4,68", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2 måneder-6 måneder", "range": "0,97-7,20", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6 måneder-14 år", "range": "1,60-6,70", "unit": "x 109/L" },
-      { "group": "Alle", "age": "14-18 år", "range": "2,00-9,60", "unit": "x 109/L" },
-      { "group": "Alle", "age": ">18 år", "range": "1,60-5,90", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-14 dage", "range": "1,70-11,0", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "14 dage-1 måned", "range": "1,30-11,0", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "1-2 måneder", "range": "0,83-4,68", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2 måneder-6 måneder", "range": "0,97-7,20", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6 måneder-14 år", "range": "1,60-6,70", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "14-18 år", "range": "2,00-9,60", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": ">18 år", "range": "1,60-5,90", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "For praksis < 0,5 x 109/L",
     "logistics": {
@@ -10209,16 +10195,15 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 35,2% beregnet på baggrund af en skønnet biologisk variation på 12,5%.",
       "measuringRange": {
-        "total": "0,1 – 600 x 109/L",
-        "standard": "0,1 – 600 x 109/L"
+        "total": "0,1 – 600 × 10⁹/L",
+        "standard": "0,1 – 600 × 10⁹/L"
       }
     },
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
       "Navn kunne ikke udtrækkes pålideligt fra PDF'en og er sat til filnavnet i stedet — ikke det kanoniske \";P\"-format. Bør rettes manuelt.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -10233,7 +10218,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/L/Leukocyttype%20-%20Store%20ufarvede%20celler%20(Blod).pdf",
-    "unit": "x 109/L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -10253,7 +10238,7 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "Alle aldre", "range": "<0,20", "unit": "x 109/L" }
+      { "group": "Alle", "age": "Alle aldre", "range": "<0,20", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -10298,8 +10283,7 @@
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
       "Navn kunne ikke udtrækkes pålideligt fra PDF'en og er sat til filnavnet i stedet — ikke det kanoniske \";P\"-format. Bør rettes manuelt.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -12143,8 +12127,7 @@
     },
     "referenceIntervals": [
       { "group": "Alle", "age": "18-40 år", "range": "4,0 – 11,0", "unit": "µg/L" },
-      { "group": "Alle", "age": "40-70 år", "range": "3,5 – 9,5", "unit": "µg/L" },
-      { "group": "Clin Chem Lab Med. 2014 Feb;52(2)", "age": "Alle aldre", "range": "237-41.", "unit": "doi: 10.1515/cclm-2013-0502" }
+      { "group": "Alle", "age": "40-70 år", "range": "3,5 – 9,5", "unit": "µg/L" }
     ],
     "alarmLimits": "Ikke relevant",
     "logistics": {
@@ -12772,7 +12755,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/R/Reticulocytter%20(Blod).pdf",
-    "unit": "x 109/L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -12792,12 +12775,12 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-7 dage", "range": "79-222", "unit": "x 109/L" },
-      { "group": "Alle", "age": "7 dage-6 måneder", "range": "37-120", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6 måneder-2 år", "range": "29-92", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2-6 år", "range": "29-83", "unit": "x 109/L" },
-      { "group": "Alle", "age": "6-18 år", "range": "37-106", "unit": "x 109/L" },
-      { "group": "Alle", "age": "≥18 år", "range": "25-99", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-7 dage", "range": "79-222", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "7 dage-6 måneder", "range": "37-120", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6 måneder-2 år", "range": "29-92", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2-6 år", "range": "29-83", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "6-18 år", "range": "37-106", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "≥18 år", "range": "25-99", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "Ingen",
     "logistics": {
@@ -12840,8 +12823,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 30% beregnet på baggrund af en skønnet biologisk variation på 9,7%",
       "measuringRange": {
-        "total": "10 – 1200 x 109/L",
-        "standard": "10 – 1200 x 109/L"
+        "total": "10 – 1200 × 10⁹/L",
+        "standard": "10 – 1200 × 10⁹/L"
       },
       "interference": {
         "biasNote": "Hæmolyse. Heinz legemer, parasitæmi, autofluorescens af erytrocytter (porfyri, medikamenter)."
@@ -12851,8 +12834,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -14451,7 +14433,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/T/Trombocytter%20(Blod).pdf",
-    "unit": "x 109 /L",
+    "unit": "× 10⁹/L",
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -14471,11 +14453,11 @@
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "group": "Alle", "age": "0-14 dage", "range": "85-590", "unit": "x 109/L" },
-      { "group": "Alle", "age": "14 dage-1 måned", "range": "120-555", "unit": "x 109/L" },
-      { "group": "Alle", "age": "1 måned-2 år", "range": "135-620", "unit": "x 109/L" },
-      { "group": "Alle", "age": "2-18 år", "range": "165-435", "unit": "x 109/L" },
-      { "group": "Alle", "age": "≥18 år", "range": "145-390", "unit": "x 109/L" }
+      { "group": "Alle", "age": "0-14 dage", "range": "85-590", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "14 dage-1 måned", "range": "120-555", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "1 måned-2 år", "range": "135-620", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "2-18 år", "range": "165-435", "unit": "× 10⁹/L" },
+      { "group": "Alle", "age": "≥18 år", "range": "145-390", "unit": "× 10⁹/L" }
     ],
     "alarmLimits": "< 20 x 109/L",
     "logistics": {
@@ -14518,8 +14500,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 21,8% beregnet på baggrund af en skønnet biologisk variation på 7,3%",
       "measuringRange": {
-        "total": "Impedans måling: 4 – 5000 x 109/L",
-        "standard": "Flowcytometrisk/optisk måling: 18 – 5000 x 109/L"
+        "total": "Impedans måling: 4 – 5000 × 10⁹/L",
+        "standard": "Flowcytometrisk/optisk måling: 18 – 5000 × 10⁹/L"
       },
       "interference": {
         "biasNote": "Mikrocytter, schistocytter, svær hæmolyse, agglutination af erytrocytter/trombocytter, inklusioner i erytrocytter, makrotrombocytter, parenteral ernæring."
@@ -14529,8 +14511,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
     ]
   },
   {
@@ -14967,7 +14948,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/C/cfDNA_BRAF%20(Plasma).pdf",
-    "unit": "x103/L",
+    "unit": "× 10³/L",
     "section": "",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -15018,8 +14999,8 @@
       ],
       "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 113,6 % beregnet på baggrund af en skønnet biologisk variation på 39,1 %",
       "measuringRange": {
-        "total": "7,20 – 50.000 x 103/L.",
-        "standard": "<0,55 x 103/L →udgives som ”Ikke påvist”."
+        "total": "7,20 – 50.000 × 10³/L.",
+        "standard": "<0,55 × 10³/L →udgives som ”Ikke påvist”."
       },
       "interference": {
         "biasNote": "Ingen kendt interferens."
@@ -15028,8 +15009,7 @@
     "history": [],
     "dataQualityFlags": [
       "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
-      "Navn kunne ikke udtrækkes pålideligt fra PDF'en og er sat til filnavnet i stedet — ikke det kanoniske \";P\"-format. Bør rettes manuelt.",
-      "Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx \"×10⁹\" som \"109\", der er umuligt at skelne fra et ægte \"109\". Tjek enheden mod selve PDF'en."
+      "Navn kunne ikke udtrækkes pålideligt fra PDF'en og er sat til filnavnet i stedet — ikke det kanoniske \";P\"-format. Bør rettes manuelt."
     ]
   },
   {
