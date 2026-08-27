@@ -75,18 +75,18 @@
 
 .dept-select-wrap {
   display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
   cursor: pointer;
 }
 
 .dept-select-label {
-  font-size: 0.62rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--text-muted);
-  padding-left: 0.15rem;
+  white-space: nowrap;
 }
 
 .dept-select-wrap .filter-select {
