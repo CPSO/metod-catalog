@@ -13,6 +13,8 @@
 | **#13** | UI — header badge `Herlev & Gentofte KBA` → `Klinisk forsknings Enhed`; subtitle `Klinisk Biokemisk Afdeling` → `… Herlev & Gentofte`. |
 | **#14** | `scripts/lib/text-clean.js` `desymbolize()` — Adobe Symbol-font glyphs that pdfplumber emits as Private-Use-Area code points (`µ`→`` etc.) are mapped back to real Unicode on every field. Full rebuild: 3 `entry.unit` (`g/L`→`µg/L`, `mol/L`→`µmol/L`), 8 row units, 6 QC levels, 1 `indication` (`α3`), 103 `sample.material` (`Vacuette®`). Header secondary title restyled to match `<h1>`. |
 | **#16** | **Multi-department scaffolding.** `src/data/database.json` → `src/data/kba.json`; new empty `src/data/kma.json`; new `src/data/departments.js` registry. Navbar gets an "Afdeling" dropdown; navbar/filterBar/detailPanel/search all read the registry (nothing hard-codes KBA). KBA layout unchanged; KMA is a stub with an empty-state message. Pipeline scripts + workflow follow the `kba.json` rename. |
+| **#18** | UI — "Afdeling" label moved inline before the department dropdown. |
+| **#19** | **Department landing page.** A bare URL lands on a "Vælg afdeling" chooser (card per department); `?dept=` skips it. `new departmentChooser.js`; `app.js` gets `state.view`; the header dropdown still switches departments in-place; the logo returns to the chooser. |
 
 **Current state of `main`:** two departments — **KBA** (186 draft
 entries, `target`/`referenceNote`, Symbol-font chars correct) and **KMA**
