@@ -104,7 +104,7 @@ function buildRows(items) {
       rows.push({
         item,
         name: item.name,
-        npu: item.npu,
+        npu: item.npu || item.code || '',
         range: interval.range,
         unit: interval.unit || item.unit,
         inUseDate: item.inUseDate || '-',
@@ -172,7 +172,7 @@ function wireFastTooltips(container) {
   });
 }
 
-export function renderReferenceTable(container, items, { sortKey, sortDir, onSort, onSelectItem, onResetSearch, adultOnly = false }) {
+export function renderReferenceTable(container, items, { sortKey, sortDir, onSort, onSelectItem, onResetSearch, adultOnly = false, emptyMessage = null }) {
   if (!items || items.length === 0) {
     container.innerHTML = `
       <div class="empty-state">
@@ -183,15 +183,16 @@ export function renderReferenceTable(container, items, { sortKey, sortDir, onSor
             <line x1="8" y1="11" x2="14" y2="11"/>
           </svg>
         </div>
-        <h3>Ingen analyser fundet</h3>
-        <p>Vi fandt ingen metodeblade der matcher dine søgekriterier eller filtre.</p>
+        <h3>${emptyMessage ? 'Ingen data' : 'Ingen analyser fundet'}</h3>
+        <p>${emptyMessage || 'Vi fandt ingen metodeblade der matcher dine søgekriterier eller filtre.'}</p>
+        ${emptyMessage ? '' : `
         <button id="empty-reset-btn" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
             <path d="M3 3v5h5"/>
           </svg>
           <span>Vis alle analyser</span>
-        </button>
+        </button>`}
       </div>
     `;
     document.getElementById('empty-reset-btn')?.addEventListener('click', onResetSearch);

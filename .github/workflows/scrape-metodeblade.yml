@@ -63,11 +63,11 @@ jobs:
         if: steps.diff.outputs.has_json == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "chore: sync database.json from scraped metodeblade PDFs"
-          title: "Metodeblade sync — ${{ github.run_id }}"
+          commit-message: "chore: sync kba.json from scraped metodeblade PDFs"
+          title: "Metodeblade sync (KBA) — ${{ github.run_id }}"
           body-path: scripts/pdf-cache/report.md
           branch: metodeblade-sync/${{ github.run_id }}
           add-paths: |
-            src/data/database.json
+            src/data/kba.json
             scripts/pdf-manifest.json
           delete-branch: true

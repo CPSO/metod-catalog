@@ -1,5 +1,5 @@
 // Main Application Logic
-import rawDatabase from '../data/database.json';
+import { DEPARTMENTS, DEFAULT_DEPARTMENT, getDepartment } from '../data/departments.js';
 import { CatalogSearchEngine } from './search.js';
 import { renderNavbar } from './components/navbar.js';
 import { renderFilterBar } from './components/filterBar.js';
@@ -9,26 +9,23 @@ import { renderTubeGuideModal } from './components/tubeGuide.js';
 import { renderImporterModal } from './components/importerModal.js';
 import { showToast } from './utils/export.js';
 
+const DEFAULT_FILTERS = {
+  query: '',
+  section: 'ALL',
+  tubeColor: 'ALL',
+  letter: 'ALL',
+  accreditedOnly: false,
+  adultOnly: true
+};
+
 class App {
   constructor() {
-    this.storageKey = 'metod_catalog_custom_db';
     this.themeStorageKey = 'metod_catalog_theme';
+    this.departmentStorageKey = 'metod_catalog_department';
 
-    // Load custom entries from localStorage merged with base JSON
-    const stored = localStorage.getItem(this.storageKey);
-    const customEntries = stored ? JSON.parse(stored) : [];
-    this.database = [...rawDatabase, ...customEntries];
-
-    this.searchEngine = new CatalogSearchEngine(this.database);
-
-    // Initial state
     this.state = {
-      query: '',
-      section: 'ALL',
-      tubeColor: 'ALL',
-      letter: 'ALL',
-      accreditedOnly: false,
-      adultOnly: true,
+      department: this.resolveInitialDepartment(),
+      ...DEFAULT_FILTERS,
       sortKey: 'name',
       sortDir: 'asc',
       selectedItem: null,
@@ -37,6 +34,8 @@ class App {
       theme: localStorage.getItem(this.themeStorageKey) || 'light'
     };
 
+    this.loadDepartmentData();
+
     this.initTheme();
     this.initDomContainers();
     this.bindGlobalEvents();
@@ -44,6 +43,52 @@ class App {
     this.render();
   }
 
+  // ── Department ──────────────────────────────────────────────────────────
+  resolveInitialDepartment() {
+    const fromUrl = new URLSearchParams(window.location.search).get('dept');
+    const stored = localStorage.getItem('metod_catalog_department');
+    const candidate = (fromUrl || stored || DEFAULT_DEPARTMENT).toUpperCase();
+    return DEPARTMENTS.some(d => d.id === candidate) ? candidate : DEFAULT_DEPARTMENT;
+  }
+
+  customStorageKey() {
+    return `metod_catalog_custom_db_${this.state.department}`;
+  }
+
+  loadDepartmentData() {
+    this.dept = getDepartment(this.state.department);
+    const stored = localStorage.getItem(this.customStorageKey());
+    const customEntries = stored ? JSON.parse(stored) : [];
+    this.database = [...this.dept.dataset, ...customEntries];
+    if (this.searchEngine) {
+      this.searchEngine.setDataset(this.database);
+    } else {
+      this.searchEngine = new CatalogSearchEngine(this.database);
+    }
+  }
+
+  switchDepartment(id) {
+    if (id === this.state.department || !DEPARTMENTS.some(d => d.id === id)) return;
+    this.state.department = id;
+    localStorage.setItem(this.departmentStorageKey, id);
+
+    // Reset per-department view state
+    Object.assign(this.state, DEFAULT_FILTERS);
+    this.state.selectedItem = null;
+    if (this.searchInput) this.searchInput.value = '';
+    this.toggleClearButton();
+
+    // Reflect in the URL without adding history noise
+    const url = new URL(window.location);
+    url.searchParams.set('dept', id);
+    url.hash = '';
+    history.replaceState('', document.title, url);
+
+    this.loadDepartmentData();
+    this.render();
+  }
+
+  // ── Theme ──────────────────────────────────────────────────────────────
   initTheme() {
     document.documentElement.setAttribute('data-theme', this.state.theme);
   }
@@ -66,14 +111,12 @@ class App {
   }
 
   bindGlobalEvents() {
-    // Search input typing
     this.searchInput?.addEventListener('input', (e) => {
       this.state.query = e.target.value;
       this.toggleClearButton();
       this.renderMainContent();
     });
 
-    // Clear search button
     this.clearSearchBtn?.addEventListener('click', () => {
       this.state.query = '';
       if (this.searchInput) this.searchInput.value = '';
@@ -81,7 +124,6 @@ class App {
       this.renderMainContent();
     });
 
-    // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
       if (e.key === '/' && document.activeElement !== this.searchInput && !this.state.selectedItem) {
         e.preventDefault();
@@ -98,7 +140,6 @@ class App {
       }
     });
 
-    // URL Hash Routing
     window.addEventListener('hashchange', () => {
       this.handleRouting();
     });
@@ -115,10 +156,14 @@ class App {
   handleRouting() {
     const hash = window.location.hash.replace('#', '').trim();
     if (hash) {
-      const match = this.database.find(item => item.slug === hash || item.id === hash || item.npu.toLowerCase() === hash.toLowerCase());
-      if (match) {
-        this.state.selectedItem = match;
-      }
+      const h = hash.toLowerCase();
+      const match = this.database.find(item =>
+        item.slug === hash ||
+        item.id === hash ||
+        (item.npu || '').toLowerCase() === h ||
+        (item.code || '').toLowerCase() === h
+      );
+      this.state.selectedItem = match || null;
     } else {
       this.state.selectedItem = null;
     }
@@ -160,22 +205,22 @@ class App {
   }
 
   importNewEntry(newEntry) {
-    // Add to current database
     this.database.push(newEntry);
 
-    // Save custom entries to localStorage
-    const stored = localStorage.getItem(this.storageKey);
+    const stored = localStorage.getItem(this.customStorageKey());
     const customEntries = stored ? JSON.parse(stored) : [];
     customEntries.push(newEntry);
-    localStorage.setItem(this.storageKey, JSON.stringify(customEntries));
+    localStorage.setItem(this.customStorageKey(), JSON.stringify(customEntries));
 
-    // Rebuild index
     this.searchEngine.setDataset(this.database);
     this.render();
   }
 
   renderNavbarSection() {
     renderNavbar(this.navContainer, {
+      department: this.dept,
+      departments: DEPARTMENTS,
+      onDepartmentChange: (id) => this.switchDepartment(id),
       onOpenTubeGuide: () => this.openTubeGuide(),
       onOpenImporter: () => this.openImporter(),
       onToggleTheme: () => this.toggleTheme(),
@@ -194,6 +239,7 @@ class App {
     });
 
     renderFilterBar(this.filterBarContainer, {
+      filters: this.dept.filters,
       sections: this.searchEngine.getSections(),
       availableLetters: this.searchEngine.getAvailableLetters(),
       activeLetter: this.state.letter,
@@ -206,11 +252,7 @@ class App {
         this.renderMainContent();
       },
       onResetFilters: () => {
-        this.state.section = 'ALL';
-        this.state.tubeColor = 'ALL';
-        this.state.letter = 'ALL';
-        this.state.accreditedOnly = false;
-        this.state.adultOnly = true;
+        Object.assign(this.state, DEFAULT_FILTERS, { query: this.state.query });
         this.renderMainContent();
       }
     });
@@ -218,7 +260,8 @@ class App {
     renderReferenceTable(this.tableContainer, results, {
       sortKey: this.state.sortKey,
       sortDir: this.state.sortDir,
-      adultOnly: this.state.adultOnly,
+      adultOnly: this.dept.filters.adult && this.state.adultOnly,
+      emptyMessage: this.database.length === 0 ? this.dept.emptyMessage : null,
       onSort: (key) => {
         if (this.state.sortKey === key) {
           this.state.sortDir = this.state.sortDir === 'asc' ? 'desc' : 'asc';
@@ -230,13 +273,7 @@ class App {
       },
       onSelectItem: (item) => this.openDetailModal(item),
       onResetSearch: () => {
-        // "Vis alle analyser" clears every filter (including letter and adult-only)
-        this.state.query = '';
-        this.state.section = 'ALL';
-        this.state.tubeColor = 'ALL';
-        this.state.letter = 'ALL';
-        this.state.accreditedOnly = false;
-        this.state.adultOnly = false;
+        Object.assign(this.state, DEFAULT_FILTERS, { adultOnly: false });
         if (this.searchInput) this.searchInput.value = '';
         this.toggleClearButton();
         this.renderMainContent();
@@ -247,6 +284,7 @@ class App {
   renderPanel() {
     if (this.state.selectedItem) {
       renderDetailPanel(this.panelContainer, this.state.selectedItem, {
+        department: this.dept,
         onClose: () => this.closeDetailModal()
       });
     } else {
@@ -255,11 +293,11 @@ class App {
   }
 
   renderModals() {
-    if (this.state.isTubeGuideOpen) {
+    if (this.state.isTubeGuideOpen && this.dept.features.tubeGuide) {
       renderTubeGuideModal(this.modalContainer, {
         onClose: () => this.closeTubeGuide()
       });
-    } else if (this.state.isImporterOpen) {
+    } else if (this.state.isImporterOpen && this.dept.features.importer) {
       renderImporterModal(this.modalContainer, {
         onImportData: (entry) => this.importNewEntry(entry),
         currentDatabase: this.database,
@@ -278,7 +316,6 @@ class App {
   }
 }
 
-// Bootstrap
 document.addEventListener('DOMContentLoaded', () => {
   new App();
 });

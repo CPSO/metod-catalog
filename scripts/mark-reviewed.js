@@ -16,7 +16,7 @@ import { fileURLToPath } from 'url';
 import { serializeDatabase } from './lib/database-format.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dbPath = path.join(__dirname, '..', 'src', 'data', 'database.json');
+const dbPath = path.join(__dirname, '..', 'src', 'data', 'kba.json');
 
 const identifier = process.argv[2];
 if (!identifier) {

@@ -2,7 +2,56 @@
 import { renderTubeBadge } from '../utils/tubeBadge.js';
 import { copyToClipboard, downloadJson, showToast } from '../utils/export.js';
 
-export function renderDetailPanel(container, item, { onClose }) {
+// Per-department detail layouts. KBA is the full biochemistry panel below;
+// other departments (KMA microbiology, …) get their own renderer keyed by
+// `department.detailPanel` — a stub until that dataset's shape is known.
+const PANELS = {
+  kba: renderKbaDetailPanel,
+  kma: renderKmaDetailPanel
+};
+
+export function renderDetailPanel(container, item, { onClose, department } = {}) {
+  if (!item) {
+    container.innerHTML = '';
+    return;
+  }
+  const render = PANELS[department?.detailPanel] || renderKbaDetailPanel;
+  render(container, item, { onClose });
+}
+
+function renderKmaDetailPanel(container, item, { onClose }) {
+  container.innerHTML = `
+    <div class="detail-backdrop" id="detail-backdrop"></div>
+    <aside class="detail-panel" role="dialog" aria-modal="true">
+      <div class="detail-panel-header">
+        <div>
+          <h2 style="font-size: 1.4rem;">${item.name || '—'}</h2>
+          <span class="mono" style="color: var(--text-muted);">${item.code || ''}</span>
+        </div>
+        <button id="detail-close-btn" class="btn btn-ghost" aria-label="Luk">✕</button>
+      </div>
+      <div class="detail-panel-body" style="padding: 1.5rem;">
+        <div class="detail-card">
+          <h4>KMA-visning kommer snart</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem;">
+            Detaljevisningen for Klinisk Mikrobiologisk Afdeling er endnu ikke bygget —
+            datastrukturen fastlægges når tekstkilderne importeres.
+          </p>
+          <pre class="mono" style="white-space: pre-wrap; font-size: 0.8rem; margin-top: 1rem; color: var(--text-muted);">${escapeJson(item)}</pre>
+        </div>
+      </div>
+    </aside>
+  `;
+  document.getElementById('detail-close-btn')?.addEventListener('click', onClose);
+  document.getElementById('detail-backdrop')?.addEventListener('click', onClose);
+}
+
+function escapeJson(obj) {
+  return JSON.stringify(obj, null, 2)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function renderKbaDetailPanel(container, item, { onClose }) {
   if (!item) {
     container.innerHTML = '';
     return;
