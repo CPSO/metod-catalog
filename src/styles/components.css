@@ -41,7 +41,8 @@
   flex-shrink: 0;
 }
 
-.brand-text h1 {
+.brand-text h1,
+.brand-text .brand-title-secondary {
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--text-primary);

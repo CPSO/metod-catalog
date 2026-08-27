@@ -50,6 +50,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { serializeDatabase } from './lib/database-format.js';
 import { parseReferenceCell, findReferenceCell } from './lib/reference-parser.js';
+import { desymbolize } from './lib/text-clean.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const cliArgs = process.argv.slice(2);
@@ -188,7 +189,7 @@ function extractName(data) {
 //  /  — meaningless once the font mapping is gone.
 function unwrap(text) {
   return text
-    .replace(/[-]/g, '')
+    .replace(/[-]/g, desymbolize) // map Symbol-font µ/α/≥/… then drop stray PUA
     .replace(/(\S)-\n(\S)/g, '$1$2')
     .replace(/\s*\n\s*/g, ' ')
     .replace(/[ \t]{2,}/g, ' ')
@@ -447,7 +448,19 @@ function extractAlarmLimits(data) {
 }
 
 
-function parsePdfJson(data) {
+// Map Symbol-font PUA code points (µ, α, ≥, <, …) back to real Unicode on
+// every extracted field up front, so no downstream extractor has to know
+// about it. See scripts/lib/text-clean.js.
+function desymbolizeData(data) {
+  const fields = {};
+  for (const [k, v] of Object.entries(data.fields || {})) {
+    fields[desymbolize(k)] = typeof v === 'string' ? desymbolize(v) : v;
+  }
+  return { ...data, fields };
+}
+
+function parsePdfJson(rawData) {
+  const data = desymbolizeData(rawData);
   const unit = extractUnit(data);
   const refCell = findReferenceCell(data);
   const { rows: referenceIntervals, note: referenceNote } = parseReferenceCell(refCell, { unit: unit.value });

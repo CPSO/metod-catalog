@@ -24,7 +24,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma (Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
+      "material": "Plasma (Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette® glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 30 µL prøvemateriale + 300 µL dødvolumen)",
@@ -186,7 +186,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator.",
+      "material": "Serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas",
@@ -277,7 +277,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 25 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -382,7 +382,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -565,7 +565,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot-aktivator",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot-aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 20 µL prøvemateriale + 300 µL dødvolumen)",
@@ -654,7 +654,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "EDTA plasma taget i Vacuette glas med lilla prop og sort ring, indeholdende K2-EDTA.",
+      "material": "EDTA plasma taget i Vacuette® glas med lilla prop og sort ring, indeholdende K2-EDTA.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et korrekt fyldt glas.",
@@ -830,7 +830,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn, og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 16 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve",
@@ -1008,7 +1008,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 4 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -1091,7 +1091,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 11 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 5 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -1182,7 +1182,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 25 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -1420,7 +1420,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 μL plasma. Svarende til ~400 μL fuldblod for voksne og børn og ~550 μL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 10 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -1516,7 +1516,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Til bestemmelse af P-Bilirubin (konjugeret): 200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 14 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -1695,7 +1695,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -1773,7 +1773,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 10 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -1863,7 +1863,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -1941,7 +1941,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "For at undgå påvirkning af CO2-niveauet og pH i prøven, tages et helt, korrekt fyldt glas. Prøveglas må desuden ikke trykudlignes eller afproppes.",
@@ -2102,7 +2102,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 4 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -2444,7 +2444,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot-aktivator",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot-aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 60 µL prøve + 300 µL dødvolumen).",
@@ -2523,7 +2523,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan serum anvendes.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan serum anvendes.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas. Alternativt: til én analyse skal bruges 100 µL plasma + 300 µL plasma til dødvolumen.",
@@ -2753,7 +2753,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -2835,7 +2835,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én analyse skal bruges 30 µL prøvemateriale + 300 µL dødvolumen)",
@@ -3143,7 +3143,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -3225,7 +3225,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -3307,7 +3307,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -3464,7 +3464,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -3542,7 +3542,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -3620,7 +3620,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende lithium-Heparin Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot-aktivator",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende lithium-Heparin Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot-aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 60 µL plasma + 300 µL plasma til dødvolumen).",
@@ -3706,7 +3706,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas",
@@ -3779,7 +3779,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -4304,7 +4304,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 μL plasma. Svarende til ~400 μL fuldblod for voksne og børn og ~550 μL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 8 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -4518,7 +4518,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/F/Ferritin%20(Plasma).pdf",
-    "unit": "g/L",
+    "unit": "µg/L",
     "section": "IMMUNKEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -4535,17 +4535,17 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Helt fyldt glas. (alternativt: til én måling kræves 25 µL prøvemateriale + 300 µL til dødvolumen).",
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "target": "Alle", "age": "1 – 2 mdr.", "range": "200 – 600", "unit": "g/L" },
-      { "target": "Alle", "age": "3 – 5 mdr.", "range": "50 – 200", "unit": "g/L" },
-      { "target": "Alle", "age": "6 mdr.–13 år", "range": "7 – 140", "unit": "g/L" },
-      { "target": "Alle", "age": "≥14 år", "range": "12 - 300", "unit": "g/L" }
+      { "target": "Alle", "age": "1 – 2 mdr.", "range": "200 – 600", "unit": "µg/L" },
+      { "target": "Alle", "age": "3 – 5 mdr.", "range": "50 – 200", "unit": "µg/L" },
+      { "target": "Alle", "age": "6 mdr.–13 år", "range": "7 – 140", "unit": "µg/L" },
+      { "target": "Alle", "age": "≥14 år", "range": "12 - 300", "unit": "µg/L" }
     ],
     "referenceNote": "",
     "alarmLimits": "Ikke relevant",
@@ -4569,12 +4569,12 @@
       "externalQC": "LABQUALITY Hormone determinations A",
       "precisionControls": [
         {
-          "level": "23 g/L",
+          "level": "23 µg/L",
           "cv": "4,8%",
           "ci": "15%"
         },
         {
-          "level": "382 g/L",
+          "level": "382 µg/L",
           "cv": "6%",
           "ci": "12,3%"
         }
@@ -4616,7 +4616,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -4947,7 +4947,7 @@
       ]
     },
     "sample": {
-      "material": "Serum Vacuette glas med rød prop og sort ring, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med rød prop og sort ring, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 115 µL prøvemateriale + 300 µL til dødvolumen)",
@@ -5029,7 +5029,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring, indeholdende clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring, indeholdende clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 60 µL prøvemateriale + 300 µL til dødvolumen)",
@@ -5120,7 +5120,7 @@
       ]
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas",
@@ -5302,7 +5302,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 4 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -5371,7 +5371,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/G/Gliacelleprotein%20[S100B]%20(Plasma).pdf",
-    "unit": "g/L",
+    "unit": "µg/L",
     "section": "IMMUNKEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -5384,14 +5384,14 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas",
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "target": "Alle", "age": "Alle aldre", "range": "<0,10", "unit": "g/L" }
+      { "target": "Alle", "age": "Alle aldre", "range": "<0,10", "unit": "µg/L" }
     ],
     "referenceNote": "",
     "alarmLimits": "Ikke relevant",
@@ -5416,13 +5416,13 @@
       "precisionControls": [
         {
           "name": "PreciControl Universal Roche Baseret på humant serum",
-          "level": "0,2 g/L",
+          "level": "0,2 µg/L",
           "cv": "3,5%",
           "ci": "9,1%"
         },
         {
           "name": "PreciControl Universal Roche Baseret på humant serum",
-          "level": "2,7 g/L",
+          "level": "2,7 µg/L",
           "cv": "3,0%",
           "ci": "8,3%"
         }
@@ -5459,12 +5459,12 @@
     "revisionDate": "24-03-2029",
     "replaces": "15-12-2025",
     "indication": {
-      "summary": "Måling af antistoffer mod 3 kæden af kollagen IV anvendes med henblik på klinisk diagnosticering af Goodpasture syndrom og anti-GBM-sygdom. Op til 10% af ANCA-positive patienter udviser GBM-antistioffer, hvilket indikerer et alvorligere forløb af nyreskade. Mistanke om Goodpastures syndrom, anti-glomerulær basalmembran sygdom og ANCA-associeret vasculitis. Ved mistanke om Wegener's Granulomatosis eller nekrotiserende vasculitis tages PR3- og MPO ANCA. Se også Fortolkning af autoantistof-analyser",
+      "summary": "Måling af antistoffer mod α3 kæden af kollagen IV anvendes med henblik på klinisk diagnosticering af Goodpasture syndrom og anti-GBM-sygdom. Op til 10% af ANCA-positive patienter udviser GBM-antistioffer, hvilket indikerer et alvorligere forløb af nyreskade. Mistanke om Goodpastures syndrom, anti-glomerulær basalmembran sygdom og ANCA-associeret vasculitis. Ved mistanke om Wegener's Granulomatosis eller nekrotiserende vasculitis tages PR3- og MPO ANCA. Se også Fortolkning af autoantistof-analyser",
       "elevated": [],
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -5713,7 +5713,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Fuldblod. Vacuette glas med lilla prop og sort ring, indeholdende K2EDTA.",
+      "material": "Fuldblod. Vacuette® glas med lilla prop og sort ring, indeholdende K2EDTA.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL fuldblod. 4,5 µL fuldblod fra primærprøve dispenseres af Atellica CH. Hertil kan være pipettespild og der kræves 100 µL dødvolumen.",
@@ -5872,7 +5872,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. 10 µL plasma fra primærprøve dispenseres af Atellica CH. Hertil kan være op til 15 µL pipettespild og kræves 100 µL dødvolumen.",
@@ -5961,7 +5961,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -6026,7 +6026,7 @@
     "spCode": "",
     "webreqCode": "",
     "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/H/Homocystein%20(Plasma).pdf",
-    "unit": "mol/L",
+    "unit": "µmol/L",
     "section": "IMMUNKEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
@@ -6036,23 +6036,23 @@
     "indication": {
       "summary": "Indikation: • Mistanke om mangel på cobalamin • Mistanke om folatmangel • Udredning og kontrol af yngre voksne (< 50 år) for tidlig hjerte-karsygdom • Mistanke om medfødt homocystinuri",
       "elevated": [
-        "• Cobalaminmangel • Folatmangel • Hjerte-karsygdomme hos yngre ( 50 år) • Homocystinuri"
+        "• Cobalaminmangel • Folatmangel • Hjerte-karsygdomme hos yngre (< 50 år) • Homocystinuri"
       ],
       "decreased": [
         "• Downs syndrom • Hypertyreose • Terapi med folinsyre og penicillamin"
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, Lithium-Heparin.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, Lithium-Heparin.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas. Alternativt kræver én analyse min. 40 μL plasma + 300 μL plasma i dødvolumen.",
       "specialConditions": ""
     },
     "referenceIntervals": [
-      { "target": "Alle", "age": "0 – 14 år", "range": "< 10", "unit": "mol/L" },
-      { "target": "Alle", "age": "15 – 64 år", "range": "< 15", "unit": "mol/L" },
-      { "target": "Alle", "age": "> 64 år", "range": "< 20", "unit": "mol/L" }
+      { "target": "Alle", "age": "0 – 14 år", "range": "< 10", "unit": "µmol/L" },
+      { "target": "Alle", "age": "15 – 64 år", "range": "< 15", "unit": "µmol/L" },
+      { "target": "Alle", "age": "> 64 år", "range": "< 20", "unit": "µmol/L" }
     ],
     "referenceNote": "under Sundhedsfaglig råd i klinisk biokemi.",
     "alarmLimits": "Ikke relevant",
@@ -6077,13 +6077,13 @@
       "precisionControls": [
         {
           "name": "Homocysteine control level 1 Bio-Rad Baseret på humant serum",
-          "level": "4,9 mol/L",
+          "level": "4,9 µmol/L",
           "cv": "7,2%",
           "ci": "14%"
         },
         {
           "name": "Homocysteine control level 3 Bio-Rad Baseret på humant serum",
-          "level": "21 mol/L",
+          "level": "21 µmol/L",
           "cv": "5,0%",
           "ci": "10%"
         }
@@ -6372,7 +6372,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin.",
+      "material": "Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "1 mL plasma (2 mL heparin fuldblod)",
@@ -6728,7 +6728,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas",
@@ -6812,7 +6812,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -6911,7 +6911,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma (Vacuette glas med grøn prop og sort ring, indeholdende lithium-Heparin) Alternativt: serum (vacuette glas med rød prop og sort ring tilsat clot-aktivator).",
+      "material": "Plasma (Vacuette® glas med grøn prop og sort ring, indeholdende lithium-Heparin) Alternativt: serum (vacuette® glas med rød prop og sort ring tilsat clot-aktivator).",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas. Alternativt kræver én analyse min. 40 µL plasma + 300 µL plasma i dødvolumen.",
@@ -6978,7 +6978,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -7071,7 +7071,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -7171,7 +7171,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan benyttes Serum Vacuette glas med rød prop og sort ring tilsat clot-aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan benyttes Serum Vacuette® glas med rød prop og sort ring tilsat clot-aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én analyse behøves 40 µL prøvemateriale + 300 µL dødvolumen).",
@@ -7261,7 +7261,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas",
@@ -7354,7 +7354,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -7615,7 +7615,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma: Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum: Vacuette glas med rød prop og sort ring tilsat clot aktivator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma: Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum: Vacuette® glas med rød prop og sort ring tilsat clot aktivator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. 50 µL plasma fra primærprøve dispenseres af Atellica CH. Hertil kan være op til 15 µL pipettespild og kræves 100 µL dødvolumen.",
@@ -7700,7 +7700,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -8301,7 +8301,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -8389,7 +8389,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning eller Vacuette glas med lilla prop og hvid eller sort ring, indeholdende K2- EDTA.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning eller Vacuette® glas med lilla prop og hvid eller sort ring, indeholdende K2- EDTA.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et korrekt fyldt glas. Mindste prøvemængde er 50 µL plasma, hvori dødvolumen ikke er indregnet. Ved behov for fortynding (gentagelse af målingen) kan yderligere 50 µL plasma være påkrævet.",
@@ -8478,7 +8478,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -8552,7 +8552,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 4 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -8639,7 +8639,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -8725,7 +8725,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma: Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin.",
+      "material": "Plasma: Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -8900,7 +8900,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum. Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Plasma. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum. Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas",
@@ -9160,7 +9160,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 4,5 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -9338,7 +9338,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. 50 µL plasma fra primærprøve dispenseres af Atellica CH. Hertil kan være op til 15 µL pipettespild og kræves 100 µL dødvolumen.",
@@ -10125,7 +10125,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 3 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -10215,7 +10215,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas",
@@ -10296,7 +10296,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Vacuette plastglas (serum uden gel) med rød prop og sort ring, clot aktivator. Alternativt kan benyttes: Vacuette glas med lilla prop og hvid/sort ring, K2- EDTA.",
+      "material": "Vacuette® plastglas (serum uden gel) med rød prop og sort ring, clot aktivator. Alternativt kan benyttes: Vacuette® glas med lilla prop og hvid/sort ring, K2- EDTA.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -10380,7 +10380,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan serum anvendes. Analysen kan laves på kapillærblod.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan serum anvendes. Analysen kan laves på kapillærblod.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas. Alternativt: for én analyse kræves 35 µL plasma og 300 µL plasma som dødvolumen.",
@@ -10551,7 +10551,7 @@
       ]
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas",
@@ -10645,7 +10645,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -10723,7 +10723,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan serum benyttes, taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Der kan ikke anvendes gelglas. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan serum benyttes, taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Der kan ikke anvendes gelglas. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 20 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -10884,7 +10884,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -10962,7 +10962,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Hepariniseret plasma. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt materiale: Serum",
+      "material": "Hepariniseret plasma. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt materiale: Serum",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Fyldt glas.",
@@ -11380,7 +11380,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas",
@@ -11466,7 +11466,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring, indeholdende clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring, indeholdende clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Helt fyldt glas. (alternativt: til én måling kræves 40 µL prøvemateriale + 300 µL til dødvolumen).",
@@ -11543,7 +11543,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -11621,7 +11621,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas. Alternativt til én analyse kræves 20 µL prøvemateriale + 300 µL dødvolumen.",
@@ -11704,7 +11704,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én analyse kræves 100 µL prøvemateriale + 300 µL dødvolumen)",
@@ -11790,7 +11790,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum. Vacuette glas med rød prop og sort ring tilsat clot aktivator.",
+      "material": "Serum. Vacuette® glas med rød prop og sort ring tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt til én måling kræves 20 µL prøvemateriale + 300 µL til dødvolumen)",
@@ -11888,7 +11888,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes Serum Vacuette glas med rød prop og sort ring tilsat clot-aktivator",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes Serum Vacuette® glas med rød prop og sort ring tilsat clot-aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas.",
@@ -11976,7 +11976,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med rød prop og sort ring, med clot aktivator.",
+      "material": "Serum Vacuette® glas med rød prop og sort ring, med clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas. Én analyse kræver 20 µL prøvemateriale + 300 µL i dødvolumen.",
@@ -12134,7 +12134,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -12212,7 +12212,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring, tilsat clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring, tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Helt fyldt glas (alternativt: til én måling kræves 45 µL prøvemateriale + 300 µL til dødvolumen)",
@@ -12385,7 +12385,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Af denne forfortynding kræver analysen et volumen på 18 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -12478,7 +12478,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Vacuette glas 6,5 mL med gul prop uden tilsætning.",
+      "material": "Vacuette® glas 6,5 mL med gul prop uden tilsætning.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "2 ml",
@@ -12559,7 +12559,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -12732,7 +12732,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -12810,7 +12810,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum. Vacuette glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Serum. Vacuette® glas med rød prop og sort ring, uden tilsætning. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 12 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -12898,7 +12898,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -12976,7 +12976,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 8 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -13212,7 +13212,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -13289,7 +13289,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -13371,7 +13371,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma: Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan serum anvendes.",
+      "material": "Plasma: Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin. Alternativt kan serum anvendes.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas. Alternativt: til én analyse kræves 35 μL plasma + 300 μL plasma til dødvolumen.",
@@ -13551,7 +13551,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -13629,7 +13629,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med rød prop og sort ring, tilsat clot aktivator.",
+      "material": "Serum Vacuette® glas med rød prop og sort ring, tilsat clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Helt fyldt glas. (alternativt: til én måling kræves 40 µL prøvemateriale + 300 µL til dødvolumen).",
@@ -13711,7 +13711,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma (Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod, og der skal i så fald udtages 2 MiniCollect-rør for at sikre tilstrækkeligt materiale.",
+      "material": "Plasma (Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette® glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod, og der skal i så fald udtages 2 MiniCollect-rør for at sikre tilstrækkeligt materiale.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én analyse kræves mindst 90 µL prøvemateriale + 300 µL dødvolumen).",
@@ -13887,7 +13887,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma (Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
+      "material": "Plasma (Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette® glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 15 µL prøve + 300 µL dødvolumen).",
@@ -13976,7 +13976,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma (Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
+      "material": "Plasma (Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette® glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Helt fyldt glas. (alternativt: til én måling kræves 40 µL prøvemateriale + 300 µL til dødvolumen).",
@@ -14059,7 +14059,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -14159,7 +14159,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Se metodeblade for Jern;P (NPU02508) og Transferrin;P (NPU26470).",
@@ -14245,7 +14245,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 5,3 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -14338,7 +14338,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma (Vacuette glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
+      "material": "Plasma (Vacuette® glas med grøn prop og sort ring, indeholdende lithium-heparin) Alternativt: serum (Vacuette® glas med rød prop og sort ring, tilsat clot aktivator) Analysen kan udføres på kapillærblod.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Helt fyldt glas. (alternativt: til én måling kræves 40 µL prøvemateriale + 300 µL til dødvolumen).",
@@ -14595,7 +14595,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, lithium-heparin . Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring, clot aktivator.",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, lithium-heparin . Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring, clot aktivator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et helt fyldt glas (alternativt: til én måling kræves 100 µL prøvemateriale + 300 µL dødvolumen).",
@@ -14676,7 +14676,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Serum Vacuette glas med Sandfarvet prop, indeholdende clot aktivator",
+      "material": "Serum Vacuette® glas med Sandfarvet prop, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Minimum ½ mL serum",
@@ -14762,7 +14762,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma/serum. Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette glas med rød prop og sort ring, uden tilsætning",
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Et fyldt glas.",
@@ -14858,7 +14858,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Lithium-heparin plasma taget i Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Lithium-heparin plasma taget i Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette® glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 3 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
@@ -14942,7 +14942,7 @@
       ]
     },
     "sample": {
-      "material": "Plasma Vacuette glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette glas med rød prop og sort ring, indeholdende clot aktivator",
+      "material": "Plasma Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Serum Vacuette® glas med rød prop og sort ring, indeholdende clot aktivator",
       "tube": "",
       "tubeColor": "",
       "minVolume": "Helt fyldt glas. (alternativt: til én måling kræves 115 µL prøvemateriale + 300 µL til dødvolumen).",
@@ -15255,7 +15255,7 @@
       "decreased": []
     },
     "sample": {
-      "material": "Plasma/serum. Lithium-heparin plasma taget i Vacuette-glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette-glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette-glas med rød prop og hvid ring, indeholdende clot activator.",
+      "material": "Plasma/serum. Lithium-heparin plasma taget i Vacuette®-glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes serum taget i Vacuette®-glas med rød prop og sort ring, indeholdende clot activator. Ved reduceret prøvemængde, fx ifm. prøvetagning på børn, kan anvendes Vacuette®-glas med grøn prop og hvid ring, indeholdende Lithium-Heparin eller Vacuette®-glas med rød prop og hvid ring, indeholdende clot activator.",
       "tube": "",
       "tubeColor": "",
       "minVolume": "200 µL plasma. Svarende til ~400 µL fuldblod for voksne og børn og ~550 µL fuldblod for spædbørn. Der tages 50 μL plasma/serum fra prøven til en forfortynding. Fra denne forfortynding kræver analysen et volumen på 25 μL til en enkelt bestemmelse. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
