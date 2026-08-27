@@ -20,6 +20,8 @@
 // decision band "Positiv", …), default "Alle". `age` is age-only, default
 // "Alle aldre". `note` carries prose the winning stage couldn't structure.
 
+import { desymbolize } from './text-clean.js';
+
 export const REF_LABEL_ALIASES = [
   'Referenceinterval',
   'Referenceinterval/kliniske be- slutningsgrænser',
@@ -398,7 +400,8 @@ function dedupeRows(rows) {
 // Returns { rows, note, stage } — `stage` is the recogniser that matched
 // ("ageSexTable" | "targetTable" | "decisionBands" | "singleValue" |
 // "narrative" | "empty"), useful for routing analysis; callers may ignore it.
-export function parseReferenceCell(cellText, ctx = {}) {
+export function parseReferenceCell(rawCell, ctx = {}) {
+  const cellText = desymbolize(rawCell);
   if (!cellText || !cellText.trim()) return { rows: [], note: '', stage: 'empty' };
   for (const [name, stage] of REFERENCE_STAGES) {
     let out = null;
