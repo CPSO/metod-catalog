@@ -71,7 +71,7 @@ Projektet indeholder allerede en GitHub Actions workflow i `.github/workflows/de
 
 ## 📂 Datastruktur & Tilføjelse af Nye Bogstaver
 
-Alle analyser er gemt i `src/data/database.json`. Formatet er fuldt struktureret:
+Kataloget er opdelt pr. afdeling: `src/data/kba.json` (Klinisk Biokemisk Afdeling) og `src/data/kma.json` (Klinisk Mikrobiologisk Afdeling), registreret i `src/data/departments.js`. KBA-formatet er fuldt struktureret:
 
 ```json
 {
@@ -102,4 +102,4 @@ Alle analyser er gemt i `src/data/database.json`. Formatet er fuldt struktureret
   "referenceNote": ""
 }
 ```
-Du kan enten tilføje nye poster direkte i `src/data/database.json` eller bruge den indbyggede import-knap på websiden.
+Du kan enten tilføje nye poster direkte i afdelingens JSON-fil eller bruge den indbyggede import-knap på websiden (kun KBA).

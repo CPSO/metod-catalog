@@ -5,6 +5,7 @@ const DANISH_ALPHABET = [
 ];
 
 export function renderFilterBar(container, {
+  filters = { letter: true, section: true, tubeColor: true, accredited: true, adult: true },
   sections,
   availableLetters = new Set(),
   activeLetter = 'ALL',
@@ -15,10 +16,16 @@ export function renderFilterBar(container, {
   onFilterChange,
   onResetFilters
 }) {
-  const hasActiveFilters = activeLetter !== 'ALL' || activeSection !== 'ALL' || activeTubeColor !== 'ALL' || accreditedOnly || !adultOnly;
+  const hasActiveFilters =
+    (filters.letter && activeLetter !== 'ALL') ||
+    (filters.section && activeSection !== 'ALL') ||
+    (filters.tubeColor && activeTubeColor !== 'ALL') ||
+    (filters.accredited && accreditedOnly) ||
+    (filters.adult && !adultOnly);
 
   container.innerHTML = `
     <div class="filter-wrapper">
+      ${filters.letter ? `
       <!-- 1-9 / A-Å Alphabet Letter Filter -->
       <div class="alphabet-bar-container" aria-label="Filtrer analyser efter forbogstav">
         <div class="alphabet-bar">
@@ -30,7 +37,7 @@ export function renderFilterBar(container, {
             const isAvailable = availableLetters.has(char);
             const isActive = activeLetter === char;
             return `
-              <button class="alphabet-btn ${isActive ? 'active' : ''} ${!isAvailable ? 'disabled' : ''}" 
+              <button class="alphabet-btn ${isActive ? 'active' : ''} ${!isAvailable ? 'disabled' : ''}"
                       data-letter="${char}"
                       ${!isAvailable ? 'disabled title="Ingen analyser med ' + char + '"' : 'title="Filtrer analyser startende med ' + char + '"'}>
                 ${char}
@@ -39,10 +46,12 @@ export function renderFilterBar(container, {
           }).join('')}
         </div>
       </div>
+      ` : ''}
 
       <!-- Faceted Controls Bar -->
       <div class="filter-bar">
         <div class="filter-group-left">
+          ${filters.adult ? `
           <!-- Kun voksne (18+) Toggle -->
           <button id="adult-toggle" class="filter-pill ${adultOnly ? 'active' : ''}" title="Skjul referenceintervaller for børn (alder under 18 år)">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -51,13 +60,17 @@ export function renderFilterBar(container, {
             </svg>
             <span>Kun voksne (18+)</span>
           </button>
+          ` : ''}
 
+          ${filters.section ? `
           <!-- Analysesektion -->
           <select id="section-filter" class="filter-select" aria-label="Filtrer efter sektion">
             <option value="ALL" ${activeSection === 'ALL' ? 'selected' : ''}>Alle Sektioner</option>
             ${sections.map(s => `<option value="${s}" ${activeSection === s ? 'selected' : ''}>${s}</option>`).join('')}
           </select>
+          ` : ''}
 
+          ${filters.tubeColor ? `
           <!-- Prøverør farve -->
           <select id="tube-filter" class="filter-select" aria-label="Filtrer efter prøverør">
             <option value="ALL" ${activeTubeColor === 'ALL' ? 'selected' : ''}>Alle Prøverør</option>
@@ -66,7 +79,9 @@ export function renderFilterBar(container, {
             <option value="purple" ${activeTubeColor === 'purple' ? 'selected' : ''}>🟣 Lilla prop (EDTA)</option>
             <option value="lightblue" ${activeTubeColor === 'lightblue' ? 'selected' : ''}>🔵 Lyseblå prop (Citrat)</option>
           </select>
+          ` : ''}
 
+          ${filters.accredited ? `
           <!-- Akkrediteret Toggle -->
           <button id="accredited-toggle" class="filter-pill ${accreditedOnly ? 'active' : ''}">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -74,6 +89,7 @@ export function renderFilterBar(container, {
             </svg>
             <span>Kun DANAK akkrediterede</span>
           </button>
+          ` : ''}
         </div>
 
         <div class="filter-group-right">

@@ -16,6 +16,7 @@ export class CatalogSearchEngine {
       const searchTerms = [
         item.name,
         item.npu,
+        item.code,
         item.labka,
         item.labkaFullName,
         item.spCode,
@@ -52,7 +53,7 @@ export class CatalogSearchEngine {
     return this.searchIndex
       .filter(({ item, searchTerms }) => {
         // 1. Section Filter
-        if (section !== 'ALL' && item.section.toUpperCase() !== section.toUpperCase()) {
+        if (section !== 'ALL' && (item.section || '').toUpperCase() !== section.toUpperCase()) {
           return false;
         }
 
@@ -88,7 +89,8 @@ export class CatalogSearchEngine {
         // Calculate relevance score
         let score = 0;
         if (cleanQuery) {
-          if (item.npu.toLowerCase() === cleanQuery || item.labka.toLowerCase() === cleanQuery) {
+          const idHit = [item.npu, item.code, item.labka].some(v => (v || '').toLowerCase() === cleanQuery);
+          if (idHit) {
             score += 100;
           } else if (item.name.toLowerCase().startsWith(cleanQuery)) {
             score += 50;

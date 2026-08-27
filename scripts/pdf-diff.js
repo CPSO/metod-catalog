@@ -62,7 +62,7 @@ const changedJsonPath = changedJsonIdx !== -1 ? cliArgs[changedJsonIdx + 1] : nu
 const flagValueIndices = new Set([reportIdx + 1, changedJsonIdx + 1].filter(i => i > 0));
 const positional = cliArgs.filter((a, i) => !a.startsWith('--') && !flagValueIndices.has(i));
 const jsonDir = positional[0] || path.join(__dirname, 'pdf-samples', 'json');
-const dbPath = path.join(__dirname, '..', 'src', 'data', 'database.json');
+const dbPath = path.join(__dirname, '..', 'src', 'data', 'kba.json');
 
 // filename (without extension) -> { url, letter } — lets draft entries get a
 // real pdfUrl/letter without trying to parse either out of the PDF text.
