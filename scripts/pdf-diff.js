@@ -467,6 +467,33 @@ const BARE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])$/i;
 const AGE_UNIT_RE = /(år|døgn|dage?|(?:^|\s)d(?:\s|$)|mdr\.?|uger|måned|timer|voksne|risiko|menopause|fase)/i;
 const DATE_LIKE_RE = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
 
+// A gender word can sit anywhere in the age descriptor instead of being
+// its own header row or a "Kvinder:"-style leading prefix — real examples
+// from the catalog: "≥18 år kvinde", "Kvinde ≥ 18 år", "Kvinder > 18 år",
+// "Mænd 10-125 år", "• Kvinde, 18 - 49 år". Pull it out so the row is
+// grouped correctly and the age text is left clean. No \b directly against
+// æ/ø/å (PLAN.md) — the word stems here start/end on ASCII letters so
+// \b is safe.
+const AGE_GENDER_RE = /\b(kvinder?|mænd|mand|drenge?|piger?)\b/i;
+const GENDER_TO_GROUP = {
+  kvinde: 'Kvinder', kvinder: 'Kvinder',
+  mand: 'Mænd', 'mænd': 'Mænd',
+  dreng: 'Drenge', drenge: 'Drenge',
+  pige: 'Piger', piger: 'Piger'
+};
+function splitGroupFromAge(age) {
+  const m = age.match(AGE_GENDER_RE);
+  if (!m) return { group: null, age };
+  const group = GENDER_TO_GROUP[m[1].toLowerCase()] || null;
+  const cleaned = age
+    .replace(AGE_GENDER_RE, ' ')
+    .replace(/\s+,/g, ',')
+    .replace(/^[\s•,:–-]+|[\s•,:–-]+$/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  return { group, age: cleaned || 'Alle aldre' };
+}
+
 // Strips a leading "♀: " / "Kvinder: " style group prefix off a line, if
 // present, and returns what's left along with the resolved group. Needed
 // because rows like "♀: 16 dage – 10 år: 0,02-0,11 nmol/L" have TWO
@@ -548,9 +575,10 @@ function extractReferenceIntervals(cellText) {
     }
 
     if (AGE_UNIT_RE.test(descriptor)) {
+      const fromAge = splitGroupFromAge(descriptor);
       rows.push({
-        group: inlineGroup || currentGroup,
-        age: descriptor,
+        group: inlineGroup || fromAge.group || currentGroup,
+        age: fromAge.age,
         range: trimmedRange,
         unit: unit || null
       });
@@ -562,7 +590,15 @@ function extractReferenceIntervals(cellText) {
     // isolated to this one field (see function comment).
     rows.push({ group: inlineGroup || descriptor, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
   }
-  return rows;
+  // Drop rows that are really a bibliographic citation leaking out of a
+  // "Kilder:" / "Referencer:" block at the bottom of the cell — the
+  // "range" is a bare DOI prefix ("10.1080", "10.3109") or the descriptor
+  // names a journal / DOI. Seen on Laktatdehydrogenase, Prokollagen III.
+  return rows.filter(r => {
+    if (/^10\.\d{3,}$/.test(r.range)) return false;
+    if (/\bDOI\b|\bet al\.?|Clin Chem Lab Med|SJCLI/i.test(`${r.group} ${r.unit || ''}`)) return false;
+    return true;
+  });
 }
 
 // Some templates (e.g. Antitrypsin, Apolipoprotein B) state a single
