@@ -1,8 +1,77 @@
 # PDF scraping / database sync — progress & plan
 
-## ⏭ Pick up here tomorrow: planning a clean database wipe/rebuild
-**Decided 2026-08-26, not yet executed — discuss and plan the exact approach
-before touching `database.json`.**
+## ✅ Clean database wipe/rebuild — executed 2026-08-27
+
+Decisions taken (see `AskUserQuestion` round this session):
+1. **Full wipe, accept the loss** of the 20 rich hand-authored entries'
+   method/QC/indication-split/logistics content — re-earn manually over
+   time like every other draft. No merge-back from git history.
+2. **Extend extraction first** so the rebuilt drafts are as complete as
+   the pipeline can make them (see "Extraction extension" below).
+3. **Local script + commit** as the mechanism.
+
+What was done:
+- `src/data/database.json` → `[]`, `scripts/pdf-manifest.json` → `{}`.
+- Rebuilt from the **24 local sample PDFs only** (`scripts/pdf-samples/`)
+  via `extract_pdf_fields.py` + `pdf-diff.js --apply --changed-json`
+  (a `changed.json` was synthesised from the pre-wipe manifest so drafts
+  keep real `pdfUrl`/`letter`). Result: **23 draft entries** (EKG skipped
+  — no NPU). Down from 189.
+- The remaining ~188 analyses are **not yet in the DB** — they come back
+  on the next CI run of `scrape-metodeblade.yml` (manifest is now empty, so
+  every PDF reads as new and gets recreated as a draft by the extended
+  pipeline). That run is the next step.
+
+### Extraction extension (`scripts/pdf-diff.js`, this session)
+The pdfplumber rewrite already isolates every method/QC label as a clean
+cell (see "Extraction layer rewrite" below) — they just weren't being
+consumed. Now `createDraftEntry()` fills:
+- **`method.*`**: `ceMarked`/`accredited` (Ja/Nej→bool), `traceability`,
+  `principle`, `instrument`, `calibrator`, `reagent`, `externalQC`,
+  `precisionControls[]` (name/level/cv/ci zipped from the four
+  pipe-separated QC cells; level-only rows dropped — the UI keys on
+  `name`), `clinicalDifference`, `measuringRange{total,standard}` (prose
+  lines rejected via a range-shape check), `interference{hemoglobin,
+  bilirubin,lipemia,biasNote}` (strict bracket-form only; qualitative /
+  kit-insert prose goes to `biasNote` verbatim, no guessed limits),
+  `comments`. Verified near-identical to the hand-curated Albumin/ALAT
+  blocks on the 24 samples.
+- **`indication.elevated` / `.decreased`**: split on Danish "Forhøjet…:" /
+  "Nedsat…:" header lines (`ELEVATED_HDR_RE`/`DECREASED_HDR_RE` — anchored
+  on the stem, **no `\b`** near the ø/å, the trap this file keeps
+  flagging), soft-wrapped bullets rejoined by `linesToBullets()`. Entries
+  with no such header keep the single summary blob (unchanged behaviour).
+- **`logistics`**: `frequency`, `turnaroundTime`, `preanalyticalErrors`,
+  best-effort `stability{wholeBlood,pipetted}` (only when the cell is
+  actually structured — pipe-separated or two explicit sub-labels;
+  prose blobs like INR's are left `{}` rather than truncated).
+- New helper `unwrap()` centralises soft-wrap rejoin + **strips U+E000–
+  U+F8FF** (Wingdings/Symbol bullets pdfplumber emits as raw PUA bytes).
+  Now also applied to unit/sampleMaterial/minVolume/alarmLimits/laboratory
+  so no JSON string value carries an embedded `\n`.
+- Misc fixes found in testing: `Albumin;P;P` double specimen-code (broke
+  name extraction), `; P`→`;P` canonicalisation, MRKD boilerplate drifting
+  into `traceability` on the antibody-panel sheets (`MRKD_SIG_RE` guard).
+- `DRAFT_ENTRY_FLAG` reworded (method is populated now); new
+  `METHOD_INCOMPLETE_FLAG` fires only when the method block comes out
+  empty.
+- **Policy unchanged**: matched (existing) entries still only get
+  unit/dates auto-applied; `method`/`indication`/`referenceIntervals` are
+  never auto-written to an existing entry, only used for new drafts.
+
+### Known-still-imperfect on the 23 rebuilt drafts (all carry
+`dataQualityFlags`, so the UI shows the warning):
+- Østradiol `referenceIntervals` still garble (heavily drifted
+  multi-variant template — documented below, not fixed).
+- Combined-panel sheets (Hydrogencarbonat, Albumin (Urin), Hæmoglobin
+  A1c, Oxygen, the Sjøgren/U1 antibody panels) fall back to the PDF
+  filename for `name` and have thinner method blocks — known hard cases.
+- AFP `indication.elevated` is one dash-separated blob, not split per
+  condition.
+
+---
+
+## Original trigger for the wipe (kept for context)
 
 Trigger: while filling in missing `pdfUrl` links by hand, found that
 `Alkalisk phosphatase [BASP];P` (NPU01289) has been renamed+renumbered by
@@ -28,29 +97,15 @@ like this one. Rather than patch these as they're found, do a clean wipe
 and rebuild the database from the current live site using the current
 (much more capable) pipeline.
 
-**Open questions to resolve before executing, tomorrow:**
-1. Full wipe (delete all 189 entries, let the scraper auto-create all 211
-   fresh as drafts) loses the *rich* hand-authored content on the original
-   20 entries — full `method`/QC fields, `indication.elevated`/`decreased`
-   bullet lists, tube colors/alternates, detailed stability/transport
-   fields — none of which the current pipeline extracts yet (only
-   `indication.summary` as one raw paragraph, no method/QC at all). Decide:
-   is losing that content acceptable (re-earn it manually over time, same
-   as the other drafts), or should those 20 entries' hand-authored
-   sections be preserved/merged back in after the wipe rather than
-   discarded?
-2. Scope: wipe *everything* and rebuild from scratch, or only wipe/rebuild
-   entries whose NPU no longer resolves against a current site listing
-   (i.e. targeted at the stale-identity problem specifically), leaving
-   already-correct entries alone?
-3. Should extraction be extended first (method/QC fields, indication
-   elevated/decreased splitting) so a rebuild doesn't regress those fields
-   for entries that currently have them, or is "rebuild now, improve
-   extraction coverage later" fine?
-4. Mechanically: does "wipe" mean clearing `database.json` to `[]` and
-   `scripts/pdf-manifest.json` to `{}` and letting the next scheduled/
-   manual Action run repopulate everything as drafts via the normal
-   `--apply` flow, or a dedicated one-off script?
+**These open questions were resolved 2026-08-27 — see the "✅ Clean
+database wipe/rebuild" section at the top of this file for what was
+decided and done.**
+1. Rich content on the 20 legacy entries: **accepted the loss.**
+2. Scope: **wipe everything.**
+3. Extend extraction first: **yes** — done before the wipe.
+4. Mechanism: cleared `database.json`→`[]` and `pdf-manifest.json`→`{}`,
+   then a one-off local `pdf-diff.js --apply` run against the 24 sample
+   PDFs; the rest repopulates on the next CI run.
 
 ## Goal
 Automate keeping `src/data/database.json` in sync with the hospital's real
@@ -407,22 +462,28 @@ New pieces:
   wrong again someday," not "this parser is currently wrong."
 
 ## Next steps (in rough priority order)
-1. Trigger the workflow again and review the resulting PR — first run will
-   still be large (`pdf-manifest.json` on `main` is still empty; every
-   known PDF looks "new" the first time). Draft entries should now come in
-   much more complete (name/section/indication/sample/alarm limits filled
-   where extractable, not just the bare npu/unit/dates/referenceIntervals
-   skeleton from before the pdfplumber rewrite).
-2. Manually complete whatever the auto-created draft entries still leave
-   empty — `method`/QC fields always (not attempted yet), plus
-   `name`/`indication`/`sample` on the entries where those specifically
-   couldn't be reliably extracted (flagged individually, not blanket) —
-   and double-check units on any entry flagged with the exponent-risk note
-   against its source PDF.
-3. Consider splitting `indication.summary`'s raw paragraph into the
-   `elevated`/`decreased` bullet arrays the schema has fields for — not
-   attempted this pass; the raw text is captured but not sub-parsed.
+1. **Trigger `scrape-metodeblade.yml` and review the PR.** The DB is now
+   23 entries and the manifest is empty, so this run recreates all ~211
+   analyses as drafts through the extended pipeline (method/QC +
+   indication split now included). Expect a large PR; the 23 already
+   present will re-match by NPU (unit/dates only auto-apply), the rest
+   come in new.
+2. Manually complete / verify the draft entries — the method block is now
+   machine-filled, so this is a *review* pass, not from-scratch: confirm
+   method/QC against pages 2–3 of each PDF, fix the filename-fallback
+   `name`s (combined-panel sheets), check units flagged with the
+   exponent-risk note, and re-do Østradiol's `referenceIntervals` by hand.
+   Clear flags per entry with `scripts/mark-reviewed.js`.
+3. Improve extraction coverage further where the 23-entry rebuild exposed
+   gaps: AFP-style dash-list indication splitting, combined-panel `name`
+   extraction, `logistics.transport`/`handling` (currently always empty —
+   the source cells only carry column headers, no values).
 4. Push local commits to origin when ready.
+
+### ~~Split `indication.summary` into `elevated`/`decreased`~~ — done 2026-08-27
+Implemented in `extractIndication()` (see the wipe/rebuild section at the
+top). Header-driven; entries without a "Forhøjet…:"/"Nedsat…:" header keep
+the single summary blob.
 
 ## Data-quality flags in the UI (done)
 Since `pdf-diff.js --apply`'s `referenceIntervals` extraction is known-unreliable

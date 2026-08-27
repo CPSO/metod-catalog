@@ -96,8 +96,9 @@ function dateField(data, key) {
 const STRIPPED_EXPONENT_RE = /10\d/;
 
 function extractUnit(data) {
-  const value = data.fields['Enhed'];
-  if (!value) return { value: null, confidence: 'missing' };
+  const raw = data.fields['Enhed'];
+  if (!raw) return { value: null, confidence: 'missing' };
+  const value = unwrap(raw);
   return { value, confidence: STRIPPED_EXPONENT_RE.test(value) ? 'low' : 'high' };
 }
 
@@ -143,7 +144,12 @@ function cleanNameCandidate(raw, npu) {
   const text = raw
     .replace(new RegExp(`\\(?\\s*og\\s+${npu}\\s*\\)?`, 'i'), '')
     .replace(new RegExp(`\\(?\\s*${npu}\\s*\\)?`, 'i'), '')
+    // Some sheets double the specimen code in this cell ("Albumin;P;P"),
+    // which then fails NAME_SHAPE_RE for having two semicolons — collapse
+    // an immediately-repeated ";Code" back to one.
+    .replace(/(;\s*[A-Za-zÆØÅæøå0-9()]{1,15})\1/, '$1')
     .replace(/\s+/g, ' ')
+    .replace(/;\s+/g, ';') // canonical form is ";P", not "; P"
     .trim()
     .replace(/^[,()]+|[,()]+$/g, '')
     .trim();
@@ -159,24 +165,271 @@ function extractName(data) {
   );
 }
 
-function extractIndicationSummary(data) {
+// Rejoins soft-wrapped lines into whole sentences: a hyphen at end of line
+// is a word split ("he-\npatom" -> "hepatom"), any other line break is a
+// space. pdfplumber keeps the PDF's visual line breaks inside a cell.
+// Also drops Unicode Private Use Area code points (U+E000–U+F8FF): the
+// metodeblad PDFs render list bullets and arrows with a symbol font
+// (Wingdings/Symbol), which pdfplumber extracts as raw PUA bytes like
+//  /  — meaningless once the font mapping is gone.
+function unwrap(text) {
+  return text
+    .replace(/[-]/g, '')
+    .replace(/(\S)-\n(\S)/g, '$1$2')
+    .replace(/\s*\n\s*/g, ' ')
+    .replace(/[ \t]{2,}/g, ' ')
+    .trim();
+}
+
+// Danish metodeblad indication cells put the free-text summary first, then
+// (not always) a "Forhøjet …:" / "Nedsat …:" header followed by a list of
+// conditions, one per visual line but often soft-wrapped mid-sentence. The
+// header wording varies ("Forhøjet albumin:", "Forhøjede værdier ses ved:",
+// "Nedsatte værdier:"), so match on the leading adjective + a trailing
+// colon rather than a fixed phrase. If no such header is present the whole
+// cell stays as the summary and elevated/decreased stay empty — same as
+// before this split existed.
+// No \b anywhere near the Danish vowels — a word boundary between "ø"/"å"
+// and an ASCII letter does not exist in JS regex, so "\bforhøjet\b" never
+// matches (this is the exact trap PLAN.md flags). Anchor on the stem and
+// let [^:]* run to the colon instead. Kept deliberately short so a normal
+// prose sentence that merely ends in a colon can't trip it.
+const ELEVATED_HDR_RE = /^(forh[øo]j|[øo]get|[øo]gede|stigende)[^:]{0,40}:\s*$/i;
+const DECREASED_HDR_RE = /^(nedsat|neds[æa]t|formindsk|faldende|lave? )[^:]{0,40}:\s*$/i;
+
+function linesToBullets(lines) {
+  const bullets = [];
+  let cur = '';
+  for (const line of lines) {
+    if (!cur) cur = line;
+    else if (cur.endsWith('-')) cur = cur.slice(0, -1) + line;
+    else cur = `${cur} ${line}`;
+    if (/[.;]$/.test(line.trim())) {
+      bullets.push(cur.trim());
+      cur = '';
+    }
+  }
+  if (cur.trim()) bullets.push(cur.trim());
+  return bullets.filter(Boolean);
+}
+
+function extractIndication(data) {
   const raw = data.fields['Indikation og resultatvurdering'];
-  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+  if (!raw) return { summary: null, elevated: [], decreased: [] };
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  const buckets = { summary: [], elevated: [], decreased: [] };
+  let mode = 'summary';
+  for (const line of lines) {
+    if (ELEVATED_HDR_RE.test(line)) { mode = 'elevated'; continue; }
+    if (DECREASED_HDR_RE.test(line)) { mode = 'decreased'; continue; }
+    buckets[mode].push(line);
+  }
+  return {
+    summary: buckets.summary.length ? unwrap(buckets.summary.join('\n')) : null,
+    elevated: linesToBullets(buckets.elevated),
+    decreased: linesToBullets(buckets.decreased)
+  };
+}
+
+// --- method / QC block -----------------------------------------------------
+// Every field below comes back as its own isolated table cell from
+// extract_pdf_fields.py — the two-column drift that made these "not
+// reliably parseable" under pdftotext -layout (see PLAN.md) is gone once
+// the table structure survives extraction. Multi-value QC rows
+// (precisionControls and friends) are pipe-separated by the Python side,
+// one segment per control level.
+const YESNO_RE = /^\s*ja\b/i;
+
+function yesNo(v) {
+  if (!v) return undefined;
+  if (YESNO_RE.test(v)) return true;
+  if (/^\s*nej\b/i.test(v)) return false;
+  return undefined;
+}
+
+function findFieldByPrefix(data, prefix) {
+  const key = Object.keys(data.fields).find(k => k.toLowerCase().startsWith(prefix.toLowerCase()));
+  return key ? data.fields[key] : null;
+}
+
+function splitPipe(v) {
+  return v ? v.split('|').map(s => unwrap(s)).filter(Boolean) : [];
+}
+
+function extractPrecisionControls(data) {
+  const names = splitPipe(data.fields['Præcisionskontrolmaterialer (navn, producent, materialetype)']);
+  const levels = splitPipe(data.fields['Kontrolniveauer']);
+  const cvs = splitPipe(data.fields['Intermediær præcision (CV inkl. instru. spred.) oprundet']);
+  const cis = splitPipe(data.fields['Ekspanderet måleusikkerhed (k=2 sv.t. 95% CI på måleresultatet)']);
+  const n = Math.max(names.length, levels.length, cvs.length, cis.length);
+  const controls = [];
+  for (let i = 0; i < n; i++) {
+    const row = {};
+    if (names[i]) row.name = names[i];
+    if (levels[i]) row.level = levels[i];
+    if (cvs[i]) row.cv = cvs[i];
+    if (cis[i]) row.ci = cis[i];
+    // The detail view keys the row off `name`; a level-only row (some
+    // templates only fill "Kontrolniveauer") would render "undefined".
+    if (row.name || (row.cv && row.ci)) controls.push(row);
+  }
+  return controls;
+}
+
+// Column drift on a few templates (the antibody-panel sheets) drops the
+// "Mindste relevante kliniske difference" boilerplate into a neighbouring
+// method cell. It has a fixed opening, so it's easy to recognise and keep
+// out of every field except clinicalDifference.
+const MRKD_SIG_RE = /^Ved to prøver på samme patient/i;
+
+function extractMeasuringRange(data) {
+  const raw = findFieldByPrefix(data, 'Måleområde');
+  if (!raw) return undefined;
+  const parts = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  if (!parts.length) return undefined;
+  // Second line is only a "standard" range if it actually looks like one —
+  // several templates put an explanatory sentence there instead ("Under
+  // svares som <0,9 ..."), which must not become measuringRange.standard.
+  const RANGE_LIKE = /[<>≤≥]?\s*[\d.,]+\s*[-–]\s*[\d.,]+|^[<>≤≥]\s*[\d.,]+/;
+  // If no line is actually a numeric range, this cell is prose (combined
+  // panel sheets do this) — don't invent a measuringRange.
+  if (!parts.some(p => RANGE_LIKE.test(p))) return undefined;
+  const total = parts.find(p => RANGE_LIKE.test(p)) || parts[0];
+  const rest = parts.filter(p => p !== total);
+  const standard = rest.find(p => RANGE_LIKE.test(p)) || total;
+  return { total, standard };
+}
+
+// The reliable form is a bracketed limit right after the analyte name:
+//   "Hæmoglobin (0,37 mmol/L)", "Bilirubin (513 µmol/L konjugeret ...)",
+//   "Lipæmi (Intralipid) (4,5 mmol/L)"  ->  take the bracket that has a
+//   number in it. Templates that instead give qualitative prose ("Kraftig
+//   hæmolyse ...") or a kit-insert paragraph get no per-analyte limits —
+//   the cell goes to biasNote verbatim rather than being guessed apart.
+function extractInterference(data) {
+  const raw = data.fields['Interferens (hæmolyse, icterus, lipæmi, andet)'];
+  if (!raw) return undefined;
+  const flat = unwrap(raw);
+  const out = {};
+  const limitAfter = word => {
+    // <analyte> ... (<something with a digit>) — first such bracket only.
+    const re = new RegExp(`${word}\\b[^\\n]*?\\(([^)]*\\d[^)]*)\\)`, 'i');
+    const m = flat.match(re);
+    return m ? m[1].trim() : null;
+  };
+  const hb = limitAfter('h[æae]moglobin');
+  const bili = limitAfter('bilirubin');
+  const lip = limitAfter('lip[æae]mi');
+  if (hb) out.hemoglobin = hb;
+  if (bili) out.bilirubin = bili;
+  if (lip) out.lipemia = lip;
+  const introMatch = flat.match(/[^.]*?(?:<\s*10\s*%\s*bias|ingen (?:væsentlig )?interferens|påvirkes ikke)[^.:]*[.:]/i);
+  if (introMatch) out.biasNote = introMatch[0].trim();
+  else if (!hb && !bili && !lip) out.biasNote = flat;
+  return Object.keys(out).length ? out : undefined;
+}
+
+function compact(obj) {
+  const out = {};
+  for (const [k, v] of Object.entries(obj)) {
+    if (v === undefined || v === null || v === '') continue;
+    if (Array.isArray(v) && v.length === 0) continue;
+    out[k] = v;
+  }
+  return out;
+}
+
+function extractMethod(data) {
+  const f = data.fields;
+  const TRACE_LABEL = 'Metrologisk sporbarhed (rutinemålingens sporbarhed til referen- cemateriale og/el. –metode)';
+  // A drifted cell that's really the MRKD boilerplate is not a value for
+  // this field — drop it rather than surface it under the wrong label.
+  const str = (label) => {
+    const v = f[label] ? unwrap(f[label]) : undefined;
+    return v && !MRKD_SIG_RE.test(v) ? v : undefined;
+  };
+  return compact({
+    ceMarked: yesNo(f['CE mærket analyse (apparatur og reagens i kombination)']),
+    accredited: yesNo(f['Akkrediteret analyse']),
+    traceability: str(TRACE_LABEL),
+    principle: str('Analyseprincip'),
+    instrument: str('Apparatur'),
+    calibrator: str('Kalibrator'),
+    reagent: str('Reagens'),
+    externalQC: str('Ekstern kvalitetskontrol'),
+    precisionControls: extractPrecisionControls(data),
+    clinicalDifference: f['Mindste relevante kliniske difference'] ? unwrap(f['Mindste relevante kliniske difference']) : undefined,
+    measuringRange: extractMeasuringRange(data),
+    interference: extractInterference(data),
+    comments: f['Bemærkninger'] && !/^\s*ingen/i.test(f['Bemærkninger']) ? unwrap(f['Bemærkninger']) : undefined
+  });
+}
+
+// --- logistics (best-effort) --------------------------------------------
+// The "Holdbarhed" cell is one of the messier ones — column drift leftovers,
+// 2–3 sub-values, no consistent structure. Split it into chunks on the
+// pipe separator and the recurring Danish sub-labels, then bucket each
+// chunk as whole-blood vs. pipetted/frozen by keyword. Anything it can't
+// place is left out rather than mis-filed; the entry is flagged as a draft
+// regardless.
+function extractStability(data) {
+  const raw = data.fields['Holdbarhed'];
+  if (!raw) return {};
+  const flat = raw
+    .replace(/(\S)-\n(\S)/g, '$1$2')
+    .replace(/\n/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  // Only attempt a split when the cell is actually structured: pipe-
+  // separated sub-columns, or two explicit "Holdbarhed …" sub-labels.
+  // Otherwise it's a prose blob (e.g. INR) and any split truncates a
+  // sentence — leave it empty and let the draft flag stand.
+  const hasPipe = flat.includes('|');
+  const hasLabelPair = /holdbarhed\s+i?\s*fuldblod/i.test(flat)
+    && /(holdbarhed\s+afpipetteret|for\s+afpipetteret|frossent\s+plasma)/i.test(flat);
+  if (!hasPipe && !hasLabelPair) return {};
+
+  const chunks = flat
+    .split(/\s*\|\s*|(?=Holdbarhed\s+(?:i\s*fuldblod|afpipetteret))|(?=For afpipetteret\b)|(?=Frossent plasma\b)/i)
+    .map(c => c.trim())
+    .filter(Boolean);
+  const out = {};
+  for (const c of chunks) {
+    if (/afpipetteret plasma har samme/i.test(c)) continue;
+    if (/fuldblod/i.test(c)) {
+      if (!out.wholeBlood) out.wholeBlood = c.replace(/^.*?fuldblod[^:]*:?\s*/i, '').trim();
+    } else if (/afpipetteret|frossent|frosset/i.test(c)) {
+      if (!out.pipetted) out.pipetted = c.replace(/^.*?(afpipetteret|frossent plasma|frosset plasma)[^:]*:?\s*/i, '').trim();
+    }
+  }
+  return out;
+}
+
+function extractLogistics(data) {
+  return {
+    laboratory: (v => v ? unwrap(v) : '')(extractLaboratory(data).value),
+    frequency: data.fields['Analyseringshyppighed'] ? unwrap(data.fields['Analyseringshyppighed']) : '',
+    turnaroundTime: data.fields['Svartid (efter modtagelse af prøve)'] ? unwrap(data.fields['Svartid (efter modtagelse af prøve)']) : '',
+    handling: {},
+    stability: extractStability(data),
+    transport: {},
+    preanalyticalErrors: data.fields['Præanalytiske fejlkilder'] ? unwrap(data.fields['Præanalytiske fejlkilder']) : ''
+  };
 }
 
 function extractSampleMaterial(data) {
   const raw = data.fields['Prøvemateriale og rørtype'];
-  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+  return raw ? unwrap(raw) : null;
 }
 
 function extractMinVolume(data) {
   const raw = data.fields['Mindste prøvemængde'];
-  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+  return raw ? unwrap(raw) : null;
 }
 
 function extractAlarmLimits(data) {
   const raw = data.fields['Ringegrænser'];
-  return raw ? raw.replace(/\s*\n\s*/g, ' ').trim() : null;
+  return raw ? unwrap(raw) : null;
 }
 
 const REF_LABEL_ALIASES = [
@@ -351,10 +604,12 @@ function parsePdfJson(data) {
     referenceIntervals,
     name: extractName(data),
     section: extractSection(data),
-    indicationSummary: extractIndicationSummary(data),
+    indication: extractIndication(data),
     sampleMaterial: extractSampleMaterial(data),
     minVolume: extractMinVolume(data),
-    alarmLimits: extractAlarmLimits(data)
+    alarmLimits: extractAlarmLimits(data),
+    method: extractMethod(data),
+    logistics: extractLogistics(data)
   };
 }
 
@@ -371,7 +626,8 @@ function intervalsEqual(a = [], b = []) {
 // entry against its source PDF rather than trust it outright. Cleared by
 // scripts/mark-reviewed.js once a human has verified it.
 const REFERENCE_INTERVAL_FLAG = 'Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.';
-const DRAFT_ENTRY_FLAG = 'Automatisk oprettet kladde fra PDF-scraping. Metode/apparatur-felter og evt. indikationens forhøjet/nedsat-lister er ikke udfyldt — kræver manuel færdiggørelse.';
+const DRAFT_ENTRY_FLAG = 'Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.';
+const METHOD_INCOMPLETE_FLAG = 'Metode-/apparaturafsnittet kunne ikke udtrækkes fra PDF\'en og er tomt — kræver manuel udfyldelse.';
 const NAME_IS_FILENAME_FLAG = 'Navn kunne ikke udtrækkes pålideligt fra PDF\'en og er sat til filnavnet i stedet — ikke det kanoniske ";P"-format. Bør rettes manuelt.';
 const EXPONENT_UNIT_FLAG = 'Enheden kan indeholde en tabt eksponent — PDF-tekstudtræk viser fx "×10⁹" som "109", der er umuligt at skelne fra et ægte "109". Tjek enheden mod selve PDF\'en.';
 
@@ -427,16 +683,21 @@ function createDraftEntry(fileBaseName, parsed, meta) {
     inUseDate: parsed.inUseDate.value || '',
     revisionDate: parsed.revisionDate.value || '',
     replaces: parsed.replaces.value || '',
-    indication: { summary: parsed.indicationSummary || '', elevated: [], decreased: [] },
+    indication: {
+      summary: parsed.indication.summary || '',
+      elevated: parsed.indication.elevated,
+      decreased: parsed.indication.decreased
+    },
     sample: { material: parsed.sampleMaterial || '', tube: '', tubeColor: '', minVolume: parsed.minVolume || '', specialConditions: '' },
     referenceIntervals: parsed.referenceIntervals,
     alarmLimits: parsed.alarmLimits || '',
-    logistics: { laboratory: parsed.laboratory.value || '', frequency: '', handling: {}, stability: {}, transport: {}, preanalyticalErrors: '' },
-    method: {},
+    logistics: parsed.logistics,
+    method: parsed.method,
     history: [],
     dataQualityFlags: [
       DRAFT_ENTRY_FLAG,
       ...(nameIsFilename ? [NAME_IS_FILENAME_FLAG] : []),
+      ...(Object.keys(parsed.method).length === 0 ? [METHOD_INCOMPLETE_FLAG] : []),
       ...(parsed.referenceIntervals.length > 0 ? [REFERENCE_INTERVAL_FLAG] : []),
       ...(parsed.unit.confidence === 'low' ? [EXPONENT_UNIT_FLAG] : [])
     ]
