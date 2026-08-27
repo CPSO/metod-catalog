@@ -49,6 +49,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { serializeDatabase } from './lib/database-format.js';
+import { parseReferenceCell, findReferenceCell } from './lib/reference-parser.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const cliArgs = process.argv.slice(2);
@@ -95,10 +96,23 @@ function dateField(data, key) {
 // units and would extract this way.
 const STRIPPED_EXPONENT_RE = /10\d/;
 
+// pdfplumber flattens "×10⁹/L" to "x 109/L" (font-level loss). But the
+// exponent is recoverable from lab convention + the "×10" signature, so
+// restore it: "x 103 IU/L" -> "× 10³ IU/L", "x 10-3 IU/L" -> "× 10⁻³ IU/L".
+// A bare "109" with no leading "×10" is left alone — that really is
+// ambiguous, and extractUnit still flags it.
+const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
+function normalizeExponentUnit(v) {
+  if (typeof v !== 'string' || !v) return v;
+  return v
+    .replace(/([x×])\s*10(-?\d+)/g, (_, __, exp) => '× 10' + exp.replace(/[-\d]/g, c => SUP[c]))
+    .replace(/([⁰¹²³⁴⁵⁶⁷⁸⁹⁻])\s+\//g, '$1/');
+}
+
 function extractUnit(data) {
   const raw = data.fields['Enhed'];
   if (!raw) return { value: null, confidence: 'missing' };
-  const value = unwrap(raw);
+  const value = normalizeExponentUnit(unwrap(raw));
   return { value, confidence: STRIPPED_EXPONENT_RE.test(value) ? 'low' : 'high' };
 }
 
@@ -297,7 +311,7 @@ function extractMeasuringRange(data) {
   const total = parts.find(p => RANGE_LIKE.test(p)) || parts[0];
   const rest = parts.filter(p => p !== total);
   const standard = rest.find(p => RANGE_LIKE.test(p)) || total;
-  return { total, standard };
+  return { total: normalizeExponentUnit(total), standard: normalizeExponentUnit(standard) };
 }
 
 // The reliable form is a bracketed limit right after the analyte name:
@@ -432,202 +446,12 @@ function extractAlarmLimits(data) {
   return raw ? unwrap(raw) : null;
 }
 
-const REF_LABEL_ALIASES = [
-  'Referenceinterval',
-  'Referenceinterval/kliniske be- slutningsgrænser',
-  'Klinisk beslutningsgrænse',
-  'Kliniske beslutningsgrænse',
-  'Kliniske beslutningsgrænser'
-];
-
-function findReferenceCell(data) {
-  for (const label of REF_LABEL_ALIASES) {
-    if (data.fields[label]) return data.fields[label];
-  }
-  return null;
-}
-
-const GROUP_WORDS = {
-  'alle': 'Alle',
-  'kvinde': 'Kvinder',
-  'kvinder': 'Kvinder',
-  '♀': 'Kvinder',
-  'mand': 'Mænd',
-  'mænd': 'Mænd',
-  '♂': 'Mænd',
-  'børn': 'Børn',
-  'barn': 'Børn'
-};
-
-// A reference-interval row is a line that splits into "descriptor : numeric-range/threshold [unit]".
-// Unit tail is unrestricted (not "no digits") because units like "x 103 IU/L" or "10³ IU/L" contain them.
-const ROW_RE = /^(.{1,60}?):\s*([<≥≤>]?\s*[\d.,]+(?:\s*[-–]\s*[\d.,]+)?)\s*(.{0,60})$/;
-const STANDALONE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])\s*:?\s*$/i;
-const BARE_GROUP_RE = /^(alle|kvinder?|mænd|mand|børn|barn|[♀♂])$/i;
-const AGE_UNIT_RE = /(år|døgn|dage?|(?:^|\s)d(?:\s|$)|mdr\.?|uger|måned|timer|voksne|risiko|menopause|fase)/i;
-const DATE_LIKE_RE = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
-
-// A gender word can sit anywhere in the age descriptor instead of being
-// its own header row or a "Kvinder:"-style leading prefix — real examples
-// from the catalog: "≥18 år kvinde", "Kvinde ≥ 18 år", "Kvinder > 18 år",
-// "Mænd 10-125 år", "• Kvinde, 18 - 49 år". Pull it out so the row is
-// grouped correctly and the age text is left clean. No \b directly against
-// æ/ø/å (PLAN.md) — the word stems here start/end on ASCII letters so
-// \b is safe.
-const AGE_GENDER_RE = /\b(kvinder?|mænd|mand|drenge?|piger?)\b/i;
-const GENDER_TO_GROUP = {
-  kvinde: 'Kvinder', kvinder: 'Kvinder',
-  mand: 'Mænd', 'mænd': 'Mænd',
-  dreng: 'Drenge', drenge: 'Drenge',
-  pige: 'Piger', piger: 'Piger'
-};
-function splitGroupFromAge(age) {
-  const m = age.match(AGE_GENDER_RE);
-  if (!m) return { group: null, age };
-  const group = GENDER_TO_GROUP[m[1].toLowerCase()] || null;
-  const cleaned = age
-    .replace(AGE_GENDER_RE, ' ')
-    .replace(/\s+,/g, ',')
-    .replace(/^[\s•,:–-]+|[\s•,:–-]+$/g, '')
-    .replace(/\s{2,}/g, ' ')
-    .trim();
-  return { group, age: cleaned || 'Alle aldre' };
-}
-
-// Strips a leading "♀: " / "Kvinder: " style group prefix off a line, if
-// present, and returns what's left along with the resolved group. Needed
-// because rows like "♀: 16 dage – 10 år: 0,02-0,11 nmol/L" have TWO
-// colons — running ROW_RE on the raw line lets its non-greedy descriptor
-// match settle for the first ("♀"), which then looks like a bare group
-// symbol (matches BARE_GROUP_RE) and swallows the real age/range into a
-// mangled "unit" string instead. Stripping the prefix first means ROW_RE
-// only ever sees the second, real colon.
-function stripLeadingGroupPrefix(line) {
-  for (const word of Object.keys(GROUP_WORDS)) {
-    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const re = new RegExp(`^${escaped}[:.]\\s*`, 'i');
-    if (re.test(line)) {
-      return { group: GROUP_WORDS[word], rest: line.replace(re, '').trim() };
-    }
-  }
-  return null;
-}
-
-// Parses a reference-interval cell's text into rows. This now runs on text
-// pdfplumber already isolated to this one labeled field, not the whole
-// document — the false-positive risk that made an earlier, similar "treat
-// any non-age label as its own group" attempt unsafe against raw
-// pdftotext text (it swept in unrelated dates/stability/interference text
-// from elsewhere in the document) doesn't apply here: there's nothing else
-// in this string to sweep in. Confirmed against real samples: correctly
-// captures decision-threshold tables (Negativ/Inkonklusiv/Positiv) that
-// the previous version dropped 2 of 3 rows from.
-// Some templates put a row's label on one line and its value on the very
-// next, e.g. "Arterie- og kapillærblod:" / "22,0-27,0 mmol/L." — confirmed
-// on Hydrogencarbonat, where this cost the whole Veneblod row before this
-// merge existed. Only merges when the next line has no colon of its own
-// (i.e. clearly a bare value, not the start of a different label: value
-// row) so it doesn't swallow a following group header or row by mistake.
-function mergeSplitLabelValueLines(lines) {
-  const merged = [];
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const next = lines[i + 1];
-    if (/:$/.test(line) && next && !next.includes(':')) {
-      merged.push(`${line} ${next}`);
-      i++;
-    } else {
-      merged.push(line);
-    }
-  }
-  return merged;
-}
-
-function extractReferenceIntervals(cellText) {
-  if (!cellText) return [];
-  const rawLines = cellText.split('\n').map(l => l.trim()).filter(Boolean);
-  const lines = mergeSplitLabelValueLines(rawLines);
-  const rows = [];
-  let currentGroup = 'Alle';
-
-  for (const rawLine of lines) {
-    if (STANDALONE_GROUP_RE.test(rawLine)) {
-      const word = rawLine.replace(':', '').trim().toLowerCase();
-      currentGroup = GROUP_WORDS[word] || currentGroup;
-      continue;
-    }
-
-    const prefixStripped = stripLeadingGroupPrefix(rawLine);
-    const line = prefixStripped ? prefixStripped.rest : rawLine;
-    const inlineGroup = prefixStripped ? prefixStripped.group : null;
-
-    const m = line.match(ROW_RE);
-    if (!m) continue;
-    const [, descriptorRaw, range, unitRaw] = m;
-    const descriptor = descriptorRaw.trim();
-    const trimmedRange = range.replace(/\s+/g, ' ').trim();
-    const unit = unitRaw.trim();
-    if (!descriptor || DATE_LIKE_RE.test(trimmedRange)) continue;
-
-    if (BARE_GROUP_RE.test(descriptor)) {
-      rows.push({ group: inlineGroup || GROUP_WORDS[descriptor.toLowerCase()] || descriptor, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
-      continue;
-    }
-
-    if (AGE_UNIT_RE.test(descriptor)) {
-      const fromAge = splitGroupFromAge(descriptor);
-      rows.push({
-        group: inlineGroup || fromAge.group || currentGroup,
-        age: fromAge.age,
-        range: trimmedRange,
-        unit: unit || null
-      });
-      continue;
-    }
-
-    // Not an age bracket — a decision-threshold label (Negativ/Positiv/...)
-    // or similar. Safe to keep as its own group now the input is already
-    // isolated to this one field (see function comment).
-    rows.push({ group: inlineGroup || descriptor, age: 'Alle aldre', range: trimmedRange, unit: unit || null });
-  }
-  // Drop rows that are really a bibliographic citation leaking out of a
-  // "Kilder:" / "Referencer:" block at the bottom of the cell — the
-  // "range" is a bare DOI prefix ("10.1080", "10.3109") or the descriptor
-  // names a journal / DOI. Seen on Laktatdehydrogenase, Prokollagen III.
-  return rows.filter(r => {
-    if (/^10\.\d{3,}$/.test(r.range)) return false;
-    if (/\bDOI\b|\bet al\.?|Clin Chem Lab Med|SJCLI/i.test(`${r.group} ${r.unit || ''}`)) return false;
-    return true;
-  });
-}
-
-// Some templates (e.g. Antitrypsin, Apolipoprotein B) state a single
-// unlabeled threshold/range for the whole cell instead of a "label: value"
-// row — e.g. just "0,97-1,68 g/L" on its own line. Catch that as a
-// whole-life "Alle" row anchored on the document's own declared unit.
-function extractFallbackWholeLifeRange(cellText, unitValue) {
-  if (!cellText || !unitValue) return null;
-  const escapedUnit = unitValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp(`([<≥>]?\\s*[\\d.,]+(?:\\s*[-–]\\s*[\\d.,]+)?)\\s*${escapedUnit}`);
-  const lines = cellText.split('\n').map(l => l.trim()).filter(Boolean);
-  for (const line of lines) {
-    const m = line.match(re);
-    if (m) return { range: m[1].replace(/\s+/g, ' ').trim(), unit: unitValue };
-  }
-  return null;
-}
 
 function parsePdfJson(data) {
   const unit = extractUnit(data);
   const refCell = findReferenceCell(data);
-  let referenceIntervals = extractReferenceIntervals(refCell);
-
-  if (referenceIntervals.length === 0) {
-    const fallback = extractFallbackWholeLifeRange(refCell, unit.value);
-    if (fallback) {
-      referenceIntervals = [{ group: 'Alle', age: 'Alle aldre', range: fallback.range, unit: fallback.unit }];
-    }
-  }
+  const { rows: referenceIntervals, note: referenceNote } = parseReferenceCell(refCell, { unit: unit.value });
+  for (const row of referenceIntervals) row.unit = normalizeExponentUnit(row.unit);
 
   return {
     npu: data.npu || null,
@@ -638,6 +462,7 @@ function parsePdfJson(data) {
     replaces: dateField(data, 'replaces'),
     laboratory: extractLaboratory(data),
     referenceIntervals,
+    referenceNote,
     name: extractName(data),
     section: extractSection(data),
     indication: extractIndication(data),
@@ -653,7 +478,9 @@ function intervalsEqual(a = [], b = []) {
   if (a.length !== b.length) return false;
   return a.every((row, i) => {
     const other = b[i];
-    return other && row.group === other.group && row.age === other.age && row.range === other.range;
+    const g = row.target ?? row.group;
+    const og = other && (other.target ?? other.group);
+    return other && g === og && row.age === other.age && row.range === other.range;
   });
 }
 
@@ -662,6 +489,7 @@ function intervalsEqual(a = [], b = []) {
 // entry against its source PDF rather than trust it outright. Cleared by
 // scripts/mark-reviewed.js once a human has verified it.
 const REFERENCE_INTERVAL_FLAG = 'Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet.';
+const REFERENCE_NOTE_ONLY_FLAG = 'Referenceinterval-feltet kunne ikke struktureres i rækker — den rå tekst er gemt i referenceNote og bør indtastes manuelt.';
 const DRAFT_ENTRY_FLAG = 'Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.';
 const METHOD_INCOMPLETE_FLAG = 'Metode-/apparaturafsnittet kunne ikke udtrækkes fra PDF\'en og er tomt — kræver manuel udfyldelse.';
 const NAME_IS_FILENAME_FLAG = 'Navn kunne ikke udtrækkes pålideligt fra PDF\'en og er sat til filnavnet i stedet — ikke det kanoniske ";P"-format. Bør rettes manuelt.';
@@ -726,6 +554,7 @@ function createDraftEntry(fileBaseName, parsed, meta) {
     },
     sample: { material: parsed.sampleMaterial || '', tube: '', tubeColor: '', minVolume: parsed.minVolume || '', specialConditions: '' },
     referenceIntervals: parsed.referenceIntervals,
+    referenceNote: parsed.referenceNote || '',
     alarmLimits: parsed.alarmLimits || '',
     logistics: parsed.logistics,
     method: parsed.method,
@@ -735,6 +564,7 @@ function createDraftEntry(fileBaseName, parsed, meta) {
       ...(nameIsFilename ? [NAME_IS_FILENAME_FLAG] : []),
       ...(Object.keys(parsed.method).length === 0 ? [METHOD_INCOMPLETE_FLAG] : []),
       ...(parsed.referenceIntervals.length > 0 ? [REFERENCE_INTERVAL_FLAG] : []),
+      ...(parsed.referenceIntervals.length === 0 && parsed.referenceNote ? [REFERENCE_NOTE_ONLY_FLAG] : []),
       ...(parsed.unit.confidence === 'low' ? [EXPONENT_UNIT_FLAG] : [])
     ]
   };
@@ -768,7 +598,7 @@ function report(file, parsed, dbEntry, database) {
       lines.push(`    revisionDate: ${fmt(parsed.revisionDate)}`);
       lines.push(`    section: ${parsed.section || '(none)'}`);
       lines.push(`    referenceIntervals (${parsed.referenceIntervals.length}):`);
-      parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+      parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.target ?? r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
       console.log(lines.join('\n'));
 
       md.push(`**+ Created draft entry:** \`${draft.slug}\``);
@@ -779,7 +609,7 @@ function report(file, parsed, dbEntry, database) {
       md.push(`- inUseDate: ${fmt(parsed.inUseDate)}`);
       md.push(`- revisionDate: ${fmt(parsed.revisionDate)}`);
       md.push(`- referenceIntervals (unverified):`);
-      parsed.referenceIntervals.forEach(r => md.push(`  - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+      parsed.referenceIntervals.forEach(r => md.push(`  - ${r.target ?? r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
       md.push(`- dataQualityFlags: ${draft.dataQualityFlags.length}`);
       return { kind: 'new', md: md.join('\n'), created: true };
     }
@@ -790,7 +620,7 @@ function report(file, parsed, dbEntry, database) {
     lines.push(`    inUseDate: ${fmt(parsed.inUseDate)}`);
     lines.push(`    revisionDate: ${fmt(parsed.revisionDate)}`);
     lines.push(`    referenceIntervals (${parsed.referenceIntervals.length}):`);
-    parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+    parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.target ?? r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     console.log(lines.join('\n'));
 
     md.push('**⚠ No matching NPU in database.json — candidate NEW entry (dry run, not created).**');
@@ -798,7 +628,7 @@ function report(file, parsed, dbEntry, database) {
     md.push(`- name: ${parsed.name || '(fallback to filename)'}`);
     md.push(`- unit: ${fmt(parsed.unit)}`);
     md.push(`- referenceIntervals:`);
-    parsed.referenceIntervals.forEach(r => md.push(`  - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+    parsed.referenceIntervals.forEach(r => md.push(`  - ${r.target ?? r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     return { kind: 'new', md: md.join('\n') };
   }
 
@@ -831,13 +661,13 @@ function report(file, parsed, dbEntry, database) {
     anyDiff = true;
     lines.push('  ≠ referenceIntervals [NOT auto-applied — compare manually]:');
     lines.push('    DB:');
-    (dbEntry.referenceIntervals || []).forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+    (dbEntry.referenceIntervals || []).forEach(r => lines.push(`      - ${r.target ?? r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
     lines.push('    PDF:');
-    parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
+    parsed.referenceIntervals.forEach(r => lines.push(`      - ${r.target ?? r.group} | ${r.age} | ${r.range} ${r.unit || ''}`));
 
     md.push('- ≠ **referenceIntervals** _(not auto-applied by policy — compare manually against the PDF before editing)_:');
-    md.push('  - DB: ' + (dbEntry.referenceIntervals || []).map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
-    md.push('  - PDF: ' + parsed.referenceIntervals.map(r => `${r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
+    md.push('  - DB: ' + (dbEntry.referenceIntervals || []).map(r => `${r.target ?? r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
+    md.push('  - PDF: ' + parsed.referenceIntervals.map(r => `${r.target ?? r.group}/${r.age}/${r.range}${r.unit || ''}`).join('; '));
     needsReview.push('referenceIntervals (not auto-applied)');
   }
 

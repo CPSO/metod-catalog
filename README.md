@@ -97,8 +97,9 @@ Alle analyser er gemt i `src/data/database.json`. Formatet er fuldt struktureret
     "minVolume": "Et fyldt glas"
   },
   "referenceIntervals": [
-    { "group": "Alle", "age": "18 år – 39 år", "range": "36 – 48", "unit": "g/L" }
-  ]
+    { "target": "Alle", "age": "18 år – 39 år", "range": "36 – 48", "unit": "g/L" }
+  ],
+  "referenceNote": ""
 }
 ```
 Du kan enten tilføje nye poster direkte i `src/data/database.json` eller bruge den indbyggede import-knap på websiden.

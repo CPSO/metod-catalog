@@ -6,7 +6,10 @@
 // is pulled out via a marker, stringified normally, then spliced back in
 // using the original compact format.
 function formatIntervalRow(r) {
-  return `{ "group": ${JSON.stringify(r.group)}, "age": ${JSON.stringify(r.age)}, "range": ${JSON.stringify(r.range)}, "unit": ${JSON.stringify(r.unit)} }`;
+  // `target` (what the row applies to: a sex, specimen, phase, decision
+  // band …) replaced the old sex-only `group`; tolerate either key on read.
+  const target = r.target ?? r.group ?? 'Alle';
+  return `{ "target": ${JSON.stringify(target)}, "age": ${JSON.stringify(r.age)}, "range": ${JSON.stringify(r.range)}, "unit": ${JSON.stringify(r.unit ?? null)} }`;
 }
 
 function formatIntervals(rows, indent) {
