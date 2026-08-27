@@ -236,8 +236,9 @@ export function renderDetailPanel(container, item, { onClose }) {
           <!-- TAB 3: REFERENCEINTERVALLER -->
           <div class="tab-pane active" id="tab-intervals">
             <div class="detail-section">
+              ${(item.referenceIntervals && item.referenceIntervals.length) ? `
               <h3 class="detail-section-title">Interaktiv Referenceinterval Beregner</h3>
-              
+
               <div class="ref-calculator-box">
                 <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
                   Vælg patientens køn og alder for at se det gældende referenceinterval:
@@ -267,16 +268,16 @@ export function renderDetailPanel(container, item, { onClose }) {
               <table class="data-table" id="ref-matrix-table">
                 <thead>
                   <tr>
-                    <th>Gruppe / Køn</th>
+                    <th>Gælder for</th>
                     <th>Alder</th>
                     <th>Referenceinterval</th>
                     <th>Enhed</th>
                   </tr>
                 </thead>
                 <tbody>
-                  ${(item.referenceIntervals || []).map(r => `
+                  ${item.referenceIntervals.map(r => `
                     <tr>
-                      <td><strong>${r.group}</strong></td>
+                      <td><strong>${r.target ?? r.group ?? 'Alle'}</strong></td>
                       <td>${r.age}</td>
                       <td class="mono" style="font-weight: 700; color: var(--color-primary);">${r.range}</td>
                       <td>${r.unit || item.unit}</td>
@@ -284,6 +285,21 @@ export function renderDetailPanel(container, item, { onClose }) {
                   `).join('')}
                 </tbody>
               </table>
+              ` : `
+              <h3 class="detail-section-title">Referenceinterval</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                ${item.referenceNote
+                  ? 'Kildeteksten kunne ikke opdeles i rækker (ingen alders-/kønsopdeling i metodebladet). Rå tekst fra PDF\'en:'
+                  : 'Intet referenceinterval angivet i metodebladet.'}
+              </p>
+              ` }
+
+              ${item.referenceNote ? `
+              <div class="detail-card" style="margin-top: 1rem;">
+                <h4>Kildetekst (referenceNote)</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; white-space: pre-wrap;">${item.referenceNote}</p>
+              </div>
+              ` : ''}
 
               <div class="detail-card" style="margin-top: 1rem;">
                 <h4>Ringegrænser (Akutvarsling)</h4>
@@ -481,9 +497,9 @@ export function renderDetailPanel(container, item, { onClose }) {
       matched = intervals[0];
     } else {
       matched = intervals.find(r => {
-        const groupLower = r.group.toLowerCase();
-        if (gender === 'female' && groupLower.includes('mænd')) return false;
-        if (gender === 'male' && groupLower.includes('kvinder')) return false;
+        const t = (r.target ?? r.group ?? '').toLowerCase();
+        if (gender === 'female' && (t.includes('mænd') || t === 'drenge')) return false;
+        if (gender === 'male' && (t.includes('kvinder') || t === 'piger')) return false;
         return true;
       }) || intervals[0];
     }

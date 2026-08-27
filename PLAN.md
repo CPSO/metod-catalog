@@ -59,7 +59,7 @@ consumed. Now `createDraftEntry()` fills:
   unit/dates auto-applied; `method`/`indication`/`referenceIntervals` are
   never auto-written to an existing entry, only used for new drafts.
 
-### Known-still-imperfect on the 23 rebuilt drafts (all carry
+### Known-still-imperfect on the rebuilt drafts (all carry
 `dataQualityFlags`, so the UI shows the warning):
 - Østradiol `referenceIntervals` still garble (heavily drifted
   multi-variant template — documented below, not fixed).
@@ -68,6 +68,54 @@ consumed. Now `createDraftEntry()` fills:
   filename for `name` and have thinner method blocks — known hard cases.
 - AFP `indication.elevated` is one dash-separated blob, not split per
   condition.
+
+## Reference-interval cell: staged parser + `target` / `referenceNote` (done 2026-08-27)
+
+The `Referenceinterval / kliniske beslutningsgrænser` cell is free text in
+the PDFs; for ~1/3 of analyses it isn't an age/sex table at all (specimen
+type, cycle phase, time of day, decision bands, citations, genotype
+prose), and the old single branchy `extractReferenceIntervals()` forced
+`{group, age, range, unit}` onto all of it and produced garbage in
+`group`/`age`.
+
+Replaced with a **staged recogniser ladder** in
+`scripts/lib/reference-parser.js` (imported by `pdf-diff.js`). Each stage
+is `(cell, ctx) -> { rows, note } | null`; the runner tries them in order
+and takes the first with rows, else a terminal `narrative` stage that
+yields no rows and puts the verbatim text in `note`. Stages:
+`ageSexTable` → `targetTable` (specimen/phase/time) → `decisionBands`
+(Negativ/Positiv/…, both `label: value` and `value (label)` layouts) →
+`singleValue` (one value + prose) → `narrative`. Fit tests are strict and
+separate from extraction, which is what makes "fall through" safe.
+
+Schema changes (migrated across all 186 entries via a full rebuild):
+- row key **`group` → `target`** — a sex, a specimen (`Veneblod`), a phase
+  (`Follikulær fase`), a decision band (`Positiv`), … default `Alle`.
+  `scripts/lib/database-format.js` and the UI read `target ?? group`.
+- new entry field **`referenceNote`** — raw/leftover cell text the ladder
+  couldn't structure. New `REFERENCE_NOTE_ONLY_FLAG` when rows are empty
+  but a note exists.
+- `normalizeExponentUnit()` in `pdf-diff.js` now restores `x 109/L` →
+  `× 10⁹/L` (and `x 10-3` → `× 10⁻³`) on `unit`, row units, and
+  `measuringRange` at build time — replaces the one-off `_expfix` pass
+  from the PR #9 session and drops the exponent flag for those.
+
+Routing over all 211 fresh cells: 90 ageSexTable, 36 decisionBands, 29
+singleValue, 15 empty (no cell), 31 narrative, 10 targetTable. The 31
+narrative are genuinely unstructurable (genotype prose, "Ikke relevant",
+flattened age grids). `referenceIntervals` row count vs the previous
+build: 143 byte-identical, ~7 empty→populated, ~10 lost a mangled row but
+gained the content in `referenceNote` (INR terapeutisk interval, FSH
+fertil-alder, Østradiol phases, …).
+
+UI (`detailPanel.js`): the calculator + matrix render only when there are
+structured rows; otherwise the `referenceNote` shows as a card. Matrix
+column "Gruppe / Køn" → "Gælder for". `referenceTable.js` list column
+"Køn" → "Gælder for".
+
+Still imperfect: Østradiol keeps one garbled row (phase data is in the
+note); ACTH's single time-bracket row goes to narrative; combined
+Kappa/Lambda panel lists 3 sub-analytes as `target`.
 
 ---
 

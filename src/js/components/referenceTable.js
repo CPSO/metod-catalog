@@ -2,7 +2,7 @@
 const COLUMNS = [
   { key: 'name', label: 'Analyse' },
   { key: 'npu', label: 'NPU-kode' },
-  { key: 'group', label: 'Køn' },
+  { key: 'group', label: 'Gælder for' },
   { key: 'age', label: 'Alder' },
   { key: 'range', label: 'Referenceinterval' },
   { key: 'unit', label: 'Enhed' },
@@ -92,7 +92,7 @@ function getRevisionStatus(dateStr) {
 function buildRows(items) {
   const rows = [];
   items.forEach(item => {
-    const intervals = item.referenceIntervals?.length ? item.referenceIntervals : [{ group: '-', age: '-', range: '-', unit: item.unit }];
+    const intervals = item.referenceIntervals?.length ? item.referenceIntervals : [{ target: '-', age: '-', range: '-', unit: item.unit }];
     intervals.forEach(interval => {
       rows.push({
         item,
@@ -104,7 +104,7 @@ function buildRows(items) {
         revisionDate: item.revisionDate || '-',
         laboratory: item.logistics?.laboratory || '-',
         age: interval.age || '-',
-        group: interval.group || '-',
+        group: interval.target ?? interval.group ?? '-',
         pdfUrl: item.pdfUrl || '',
         dataQualityFlags: item.dataQualityFlags || []
       });

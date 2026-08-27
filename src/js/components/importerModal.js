@@ -209,8 +209,9 @@ function parseMetodebladText(text) {
       specialConditions: 'Følg afdelingens prøvetagningsvejledning.'
     },
     referenceIntervals: [
-      { group: 'Alle', age: 'Alle aldre', range: 'Se referenceblad', unit }
+      { target: 'Alle', age: 'Alle aldre', range: 'Se referenceblad', unit }
     ],
+    referenceNote: '',
     alarmLimits: 'Ingen.',
     logistics: {
       laboratory: 'Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling',
