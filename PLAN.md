@@ -9,10 +9,14 @@
 | **#9** | Manual-review fixes: gender-in-age reference rows split into `group`; unit-aware `isAdultInterval()` (day/week/month brackets no longer read as years); `×10ⁿ` unit exponents restored on 17 entries; 3 citation-fragment rows dropped. |
 | **#10** | **Staged reference-interval parser** (`scripts/lib/reference-parser.js`) replaces the one branchy `extractReferenceIntervals()`. Row key `group`→`target`; new `referenceNote` field; `narrative` fallback so no more invented rows; exponent normalisation folded into `pdf-diff.js`. Full rebuild from a fresh 211-PDF scrape. UI updated (`detailPanel.js`, `referenceTable.js`). See section below. |
 | **#11** | `isAdultInterval()` overlap fix — a bracket that spans infancy→old age (INR `60 uger - 125 år`) is no longer hidden under "Kun voksne"; `Børn født i gestationsalder 37.-39. uge` no longer misread as 37 years. Verified against all 262 distinct age strings. |
+| **#12** | Docs — this PR trail + rewrite of "Next steps". |
+| **#13** | UI — header badge `Herlev & Gentofte KBA` → `Klinisk forsknings Enhed`; subtitle `Klinisk Biokemisk Afdeling` → `… Herlev & Gentofte`. |
+| **#14** | `scripts/lib/text-clean.js` `desymbolize()` — Adobe Symbol-font glyphs that pdfplumber emits as Private-Use-Area code points (`µ`→`` etc.) are mapped back to real Unicode on every field. Full rebuild: 3 `entry.unit` (`g/L`→`µg/L`, `mol/L`→`µmol/L`), 8 row units, 6 QC levels, 1 `indication` (`α3`), 103 `sample.material` (`Vacuette®`). Header secondary title restyled to match `<h1>`. |
 
 **Current state of `main`:** 186 draft entries, every one carrying
-`dataQualityFlags`. Reference data uses `target` + `referenceNote`. The
-remaining work is the per-entry **manual review pass** (see "Next steps").
+`dataQualityFlags`. Reference data uses `target` + `referenceNote`;
+Symbol-font chars (µ, ®, α, …) render correctly. The remaining work is
+the per-entry **manual review pass** (see "Next steps").
 
 ---
 
