@@ -1,5 +1,21 @@
 # PDF scraping / database sync — progress & plan
 
+## Merged PR trail (2026-08-27, all on `main`)
+
+| PR | What |
+|----|------|
+| **#7** | Wipe `database.json`→`[]` + `pdf-manifest.json`→`{}`; extend `pdf-diff.js` extraction (method/QC block, `indication.elevated`/`decreased` split, logistics); rebuild 23 drafts from the 24 local sample PDFs. |
+| **#8** | Full CI scrape (`scrape-metodeblade.yml`) — repopulates all analyses as drafts through the extended pipeline. **23 → 186 entries.** |
+| **#9** | Manual-review fixes: gender-in-age reference rows split into `group`; unit-aware `isAdultInterval()` (day/week/month brackets no longer read as years); `×10ⁿ` unit exponents restored on 17 entries; 3 citation-fragment rows dropped. |
+| **#10** | **Staged reference-interval parser** (`scripts/lib/reference-parser.js`) replaces the one branchy `extractReferenceIntervals()`. Row key `group`→`target`; new `referenceNote` field; `narrative` fallback so no more invented rows; exponent normalisation folded into `pdf-diff.js`. Full rebuild from a fresh 211-PDF scrape. UI updated (`detailPanel.js`, `referenceTable.js`). See section below. |
+| **#11** | `isAdultInterval()` overlap fix — a bracket that spans infancy→old age (INR `60 uger - 125 år`) is no longer hidden under "Kun voksne"; `Børn født i gestationsalder 37.-39. uge` no longer misread as 37 years. Verified against all 262 distinct age strings. |
+
+**Current state of `main`:** 186 draft entries, every one carrying
+`dataQualityFlags`. Reference data uses `target` + `referenceNote`. The
+remaining work is the per-entry **manual review pass** (see "Next steps").
+
+---
+
 ## ✅ Clean database wipe/rebuild — executed 2026-08-27
 
 Decisions taken (see `AskUserQuestion` round this session):
@@ -510,23 +526,29 @@ New pieces:
   wrong again someday," not "this parser is currently wrong."
 
 ## Next steps (in rough priority order)
-1. **Trigger `scrape-metodeblade.yml` and review the PR.** The DB is now
-   23 entries and the manifest is empty, so this run recreates all ~211
-   analyses as drafts through the extended pipeline (method/QC +
-   indication split now included). Expect a large PR; the 23 already
-   present will re-match by NPU (unit/dates only auto-apply), the rest
-   come in new.
-2. Manually complete / verify the draft entries — the method block is now
-   machine-filled, so this is a *review* pass, not from-scratch: confirm
-   method/QC against pages 2–3 of each PDF, fix the filename-fallback
-   `name`s (combined-panel sheets), check units flagged with the
-   exponent-risk note, and re-do Østradiol's `referenceIntervals` by hand.
-   Clear flags per entry with `scripts/mark-reviewed.js`.
-3. Improve extraction coverage further where the 23-entry rebuild exposed
-   gaps: AFP-style dash-list indication splitting, combined-panel `name`
-   extraction, `logistics.transport`/`handling` (currently always empty —
-   the source cells only carry column headers, no values).
-4. Push local commits to origin when ready.
+
+The pipeline is mature (PRs #7–#11). What's left is per-entry human work
+and a few remaining extraction gaps.
+
+1. **Manual review pass over the 186 drafts.** Every entry is
+   `dataQualityFlags`-marked. Per entry: verify `method`/QC against pages
+   2–3 of the PDF, fix the ~26 filename-fallback `name`s (combined-panel
+   sheets), check units flagged with the exponent note, sanity-check the
+   `referenceIntervals` rows, and read `referenceNote` where present.
+   Clear flags with `scripts/mark-reviewed.js <npu-or-slug>`.
+2. **Reference-interval rows that need a hand:** Østradiol (one garbled
+   row; phase data is in `referenceNote`), ACTH (single time-bracket row
+   went to `narrative`), the 14 entries with no extractable reference
+   cell at all (pdfplumber miss — the PDF has no labeled reference field).
+3. Extraction-coverage gaps still open: AFP-style dash-list `indication`
+   splitting; combined-panel `name` extraction; `logistics.transport` /
+   `handling` (source cells carry only column headers, no values);
+   flattened age-grid tables (IGF-I / IGF-BP3) that pdfplumber can't
+   recover.
+4. Let the weekly `scrape-metodeblade.yml` run and review its PRs — it
+   now produces `target`/`referenceNote` automatically; existing entries
+   still only get unit/dates auto-applied, `referenceIntervals` stays
+   report-only.
 
 ### ~~Split `indication.summary` into `elevated`/`decreased`~~ — done 2026-08-27
 Implemented in `extractIndication()` (see the wipe/rebuild section at the
