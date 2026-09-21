@@ -1764,8 +1764,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "16-05-2025",
-    "revisionDate": "16-05-2028",
+    "inUseDate": "16-09-2026",
+    "revisionDate": "16-09-2029",
     "replaces": "20-09-2022",
     "indication": {
       "summary": "P-C reaktivt protein [HSCRP] anvendes til evaluering af risiko for udvikling af hjerte-karsygdom. Forhøjet P-hsCRP betragtes som en indikator for øget inflammation i bl.a. karvæggen, hvilket øger risikoen for udvikling af hjerte-karsygdom.",
@@ -8469,8 +8469,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "01-03-2024",
-    "revisionDate": "01-03-2027",
+    "inUseDate": "14-09-2026",
+    "revisionDate": "14-09-2029",
     "replaces": "07-12-2020",
     "indication": {
       "summary": "Risikovurdering og terapikontrol ved hjerte-karsygdom. Høj koncentration af LDL-kolesterol er forbundet med øget risiko for kardiovaskulær sygdom.",
@@ -8630,8 +8630,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "01-03-2024",
-    "revisionDate": "01-03-2027",
+    "inUseDate": "04-09-2026",
+    "revisionDate": "04-09-2029",
     "replaces": "09-11-2020",
     "indication": {
       "summary": "Risikovurdering og terapikontrol ved hjerte-kar-sygdom. Høj koncentration af VLDL-kolesterol er forbundet med øget risiko for kardiovaskulær sygdom.",
