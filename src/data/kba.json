@@ -1764,8 +1764,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "16-05-2025",
-    "revisionDate": "16-05-2028",
+    "inUseDate": "24-09-2026",
+    "revisionDate": "24-09-2029",
     "replaces": "20-09-2022",
     "indication": {
       "summary": "P-C reaktivt protein [HSCRP] anvendes til evaluering af risiko for udvikling af hjerte-karsygdom. Forhøjet P-hsCRP betragtes som en indikator for øget inflammation i bl.a. karvæggen, hvilket øger risikoen for udvikling af hjerte-karsygdom.",
@@ -8469,8 +8469,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "01-03-2024",
-    "revisionDate": "01-03-2027",
+    "inUseDate": "14-09-2026",
+    "revisionDate": "14-09-2029",
     "replaces": "07-12-2020",
     "indication": {
       "summary": "Risikovurdering og terapikontrol ved hjerte-karsygdom. Høj koncentration af LDL-kolesterol er forbundet med øget risiko for kardiovaskulær sygdom.",
@@ -8630,8 +8630,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "01-03-2024",
-    "revisionDate": "01-03-2027",
+    "inUseDate": "04-09-2026",
+    "revisionDate": "04-09-2029",
     "replaces": "09-11-2020",
     "indication": {
       "summary": "Risikovurdering og terapikontrol ved hjerte-kar-sygdom. Høj koncentration af VLDL-kolesterol er forbundet med øget risiko for kardiovaskulær sygdom.",
@@ -15711,6 +15711,80 @@
         "standard": "0,044-55 nmol/L (ved fortynding)"
       },
       "comments": "Ved behov for præcis kvantitering af lave P-Østradiol koncentrationer (<0,05 nmol/L), kontaktes vagthavende læge på klinisk biokemisk afdeling vedrørende alternative analyser."
+    },
+    "history": [],
+    "dataQualityFlags": [
+      "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
+    ]
+  },
+  {
+    "id": "M-316/01",
+    "documentNumber": "",
+    "slug": "kolesterol-non-hdl-p-npu29055",
+    "name": "Kolesterol non-HDL;P",
+    "letter": "K",
+    "npu": "NPU29055",
+    "labka": "",
+    "labkaFullName": "",
+    "spCode": "",
+    "webreqCode": "",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Kolesterol%20non-HDL%20(Plasma).pdf",
+    "unit": "mmol/L",
+    "section": "KEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "inUseDate": "18-09-2026",
+    "revisionDate": "18-12-2026",
+    "replaces": "",
+    "indication": {
+      "summary": "Kolesterol non-HDL;P beregnes som kolesterol;P minus kolesterol HDL;P og udgør således den samlede koncentration af atherogene apolipoprotein B holdige partikler i blodet. Bestemmelsen af kolesterol non-HDL;P anvendes ved risikovurdering og terapikontrol ved hjertekarsygdom. Særligt hos patienter med højt niveau af triglycerider i blodet kan kolesterol non-HDL;P være en bedre markør for den kardiovaskulære risiko. Høje værdier er forbundet med øget risiko for hjertekarsygdom og risikoen er stigende med stigende værdier. I SCORE2 anvendes non-HDL kolesterol;P til bestemmelse af 10 års risiko for kardiovaskulære events. https://nbv.cardio.dk/kapitel/forebyggelse/ https://nbv.cardio.dk/kapitel/dyslipidaemi/ https://www.dsam.dk/vejledninger/hjerte/risikovurdering",
+      "elevated": [],
+      "decreased": []
+    },
+    "sample": {
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
+      "tube": "",
+      "tubeColor": "",
+      "minVolume": "300 µL plasma. Svarende til ~600 µL fuldblod for voksne og børn og ~700 µL fuldblod for spædbørn. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
+      "specialConditions": ""
+    },
+    "referenceIntervals": [
+      { "target": "Beslutningsgrænse", "age": "Alle aldre", "range": "3,9", "unit": "mmol/L" }
+    ],
+    "referenceNote": "Se henvisninger til anbefalinger samt SCORE2 under indikation og resultatvurdering.",
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90% af analyserne er maksimalt 60 minutter. For praksisprøver svares samme dag.",
+      "handling": {},
+      "stability": {
+        "wholeBlood": "48 timer v. 21°C",
+        "pipetted": "7 døgn v. 2 – 8 °C"
+      },
+      "transport": {},
+      "preanalyticalErrors": "Ingen særlige."
+    },
+    "method": {
+      "accredited": false,
+      "traceability": "Beregning. Se metodeblade for indgående analyser.",
+      "principle": "Resultatet fremkommer ved følgende beregning: P-Kolesterol non-HDL = P-Kolesterol – P-Kolesterol HDL",
+      "instrument": "Siemens Atellica CH 930",
+      "calibrator": "Atellica CH CHEM CAL",
+      "reagent": "Beregning",
+      "externalQC": "Indgående analyser følges ved detagelse i LABQUALITY 3391 FI Almen klinisk biokemi",
+      "precisionControls": [
+        {
+          "name": "Se metodeblade for Kolesterol (Plasma) og Kolesterol HDL (Plasma)",
+          "cv": "CV intermediær: 6 % Den intermediære præcision er beregnet ud middelværdier og standard deviationer for de indgående parametres interne kontroller. Se metodeblade for Kolesterol (Plasma) og Kolesterol HDL (Plasma).",
+          "ci": "Ekspanderet måleusikkerhed (k=2): 12 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 22 % beregnet på baggrund af en skønnet biologisk variation på 5,3 % (biologicalvariation.eu’s værdi for cholesterol)",
+      "interference": {
+        "biasNote": "Se metodeblade for Kolesterol (Plasma) og Kolesterol HDL (Plasma)."
+      }
     },
     "history": [],
     "dataQualityFlags": [
