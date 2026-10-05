@@ -1764,8 +1764,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "16-05-2025",
-    "revisionDate": "16-05-2028",
+    "inUseDate": "24-09-2026",
+    "revisionDate": "24-09-2029",
     "replaces": "20-09-2022",
     "indication": {
       "summary": "P-C reaktivt protein [HSCRP] anvendes til evaluering af risiko for udvikling af hjerte-karsygdom. Forhøjet P-hsCRP betragtes som en indikator for øget inflammation i bl.a. karvæggen, hvilket øger risikoen for udvikling af hjerte-karsygdom.",
@@ -3848,8 +3848,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Bruges sammen med andre erytrocyt-markører ved udredning af anæmi (lavt antal erytrocytter), ved udredning for polycytæmi (højt antal erytrocytter) samt ved mistanke om over- eller dehydrering. Værdien skal tolkes sammen med B-hæmoglobin.",
@@ -4026,8 +4026,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "21-09-2026",
+    "revisionDate": "21-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Erytrocytter, vol.fr., også kaldet hæmatokrit, er en estimation af fraktionen af blodvolumen som udgøres af erytrocytterne. Bruges bla. sammen med andre erytrocyt-markører ved udredning for anæmi, samt ved udredning for polycytæmi. Kan også bruges som markør for hydreringsgraden af patienten.",
@@ -4117,8 +4117,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "MCV er middelcellevolumen af erytrocytterne og bruges sammen med andre erytrocyt-markører ved udredning af anæmi. Højt middelcellevolumen af erytrocytterne kan tyde på folat eller B12 mangel og lavt middelcellevolumen kan tyde på jernmangel.",
@@ -4210,8 +4210,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "21-09-2026",
+    "revisionDate": "21-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Kvantitativt mål for anisocytose. Bruges sammen med andre erytrocyt-markører ved udredning af anæmi. Høje værdier forekommer ved mangelanæmier (jern, folat og B12) og under behandling af disse tilstande. Høje værdier ses også ved alkoholisme, hæmolytiske tilstande samt ved andre tilstande eks. diabetes, hjertesygdom. Lave værdier har ingen klinisk betydning.",
@@ -6197,8 +6197,8 @@
     "section": "POCT",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "21-09-2026",
+    "revisionDate": "21-09-2029",
     "replaces": "28-03-2022",
     "indication": {
       "summary": "Indikation: Mistanke om - og kontrol af anæmi eller polycytæmi. Kontrol af blødninger. Kontrol af væsketerapi. Resultatvurdering: Nedsatte værdier er pr. definition anæmi. Årsager til anæmi: Nedsat erythrocytproduktion (defekt Hb-syntese, defekt DNA-syntese, defekt knoglemarv, kronisk nyreinsufficiens) Nedsat erythrocyt-levetid/øget erythrocyt-tab (hæmolytiske tilstande/anæmier, kronisk blodtab, akut blodtab) Høje værdier ses ved polycytæmi og dehydrering.",
@@ -6446,8 +6446,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2026",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "MCHC er den gennemsnitlige hæmoglobinkoncentration i erytrocytterne og bruges sammen med andre erytrocyt-markører ved udredning af anæmi. Lavt middelcelle hæmoglobin indhold (MCHC) ses ved jernmangel anæmi.",
@@ -6532,8 +6532,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "MCH er den gennemsnitlige hæmoglobin-mængde (masse pr. celle) i erytrocytterne og bruges sammen med andre erytrocytmarkører ved udredning af anæmi. Lavt erytrocyt hæmoglobin indhold (MCH) ses ved jernmangelanæmi. Forhøjet MCH ses makrocytær anæmi, f.eks. ved cobalamin-eller folatmangel.",
@@ -8469,8 +8469,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "01-03-2024",
-    "revisionDate": "01-03-2027",
+    "inUseDate": "14-09-2026",
+    "revisionDate": "14-09-2029",
     "replaces": "07-12-2020",
     "indication": {
       "summary": "Risikovurdering og terapikontrol ved hjerte-karsygdom. Høj koncentration af LDL-kolesterol er forbundet med øget risiko for kardiovaskulær sygdom.",
@@ -8630,8 +8630,8 @@
     "section": "KEMI",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "01-03-2024",
-    "revisionDate": "01-03-2027",
+    "inUseDate": "04-09-2026",
+    "revisionDate": "04-09-2029",
     "replaces": "09-11-2020",
     "indication": {
       "summary": "Risikovurdering og terapikontrol ved hjerte-kar-sygdom. Høj koncentration af VLDL-kolesterol er forbundet med øget risiko for kardiovaskulær sygdom.",
@@ -9422,8 +9422,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "21-09-2026",
+    "revisionDate": "21-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Vurdering og kontrol af infektioner, leukæmi og hæmning af knoglemarven (terapi med cytostatika og andre lægemidler) Forhøjede værdier ses ved øget produktion i knoglemarven ved infektioner, inflammation eller leukæmi. Forhøjede værdier ses også ved behandling med kortikosteroider. Nedsatte værdier ses bla. ved toksisk påvirkning (fx kemoterapi), maligne processer i knoglemarven, aplasi, svær cobalamin- eller folatmangel og ved hyperspleni. Hvis det totale antal leukocytter er over eller under referenceintervallet, er det relevant at udføre B-Leukocyttype, antalk. (differentialtælling). Her undersøges antalkoncentrationen af de enkelte leukocyttyper.",
@@ -9517,8 +9517,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Forhøjede værdier kan bl.a. ses ved infektion, myelodysplastisk syndrom og kronisk myeloid leukæmi. Hvis det totale antal leukocytter er over eller under referenceintervallet, er det relevant at udføre B-Leukocyttype, antalk. (differentialtælling). Her undersøges antalkoncentrationen af de enkelte leukocyttyper og herunder basofilocytter;B Analysen basofilocytter;B kan ikke bestilles alene, men svares som en del af B-Leukocyttype, antalk. (differentialtælling).",
@@ -9605,8 +9605,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Forhøjede værdier ses ved øget produktion i knoglemarven ved bl.a. allergiske tilstande, parasitinfektioner og leukæmi. Hvis det totale antal leukocytter er over eller under referenceintervallet, er det relevant at udføre B-Leukocyttype, antalk. (differentialtælling). Her undersøges antalkoncentrationen af de enkelte leukocyttyper og herunder eosinofilocytter;B.",
@@ -9699,8 +9699,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Forhøjede værdier ses ved øget produktion i knoglemarven ved infektioner (specielt med virus), inflammation eller leukæmi. Nedsatte værdier ses bl.a. ved toksisk påvirkning (fx kemoterapi) og maligne processer i knoglemarven. Hvis det totale antal leukocytter er over eller under referenceintervallet, er det relevant at udføre B-Leukocyttype, antalk. (differentialtælling). Her undersøges antalkoncentrationen af de enkelte leukocyttyper og herunder lymfocytter;B. Analysen lymfocytter;B kan ikke bestilles alene, men svares som en del af B-Leukocyttype, antalk. (differentialtælling).",
@@ -9793,8 +9793,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Diagnose, vurdering og kontrol af infektioner, hæmatologiske sygdomme (f.eks. leukæmier) og hæmning af knoglemarven (f.eks. kemoterapi). Hvis det totale antal leukocytter er over eller under referenceintervallet, er det relevant at udføre B-leukocyttype, antalk. (differentialtælling). Her undersøges antalkoncentrationen af de enkelte leukocyttyper og herunder monocytter;B. Analysen monocytter;B kan ikke bestilles alene, men svares som en del af B-Leukocyttype, antalk. (differentialtælling).",
@@ -9880,8 +9880,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Forhøjede værdier ses ved infektioner, specielt med bakterier, samt ved leukæmi. Behandling med korticosteroider kan også give forhøjede værdier. Lave værdier: Suppression af knoglemarven, f.eks. toksisk ved kemoterapi og ved leukæmier med produktion af andre cellelinjer. Hvis det totale antal leukocytter er over eller under referenceintervallet, er det relevant at udføre B-Leukocyttype, antalk. (differentialtælling). Her undersøges antalkoncentrationen af de enkelte leukocyttyper og herunder neutrofilocytter;B.",
@@ -12628,8 +12628,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "23-09-2026",
+    "revisionDate": "23-09-2026",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Retikulocytter er cellulære mellemstadier mellem kerneholdige erytroblaster og de kerneløse, modne erytrocytter. Måling af reticulocytter bruges til vurdering af knoglemarvens funktion ofte i forbindelse med anæmiudredning. Lavt antal kan ses ved ubehandlet mangelanæmi (jernmangel, B12 vitaminmangel, folatmangel), aplastisk anæmi og andre tilstande med reduceret eller kompromitteret erytropoiese. Højt antal kan ses ved øget produktion af erytrocytter, fx ved blødning, hæmolyse og efter start af behandling for mangelanæmier.",
@@ -14407,8 +14407,8 @@
     "section": "KOAGULATION",
     "hospital": "Herlev og Gentofte Hospital",
     "department": "Klinisk Biokemisk Afdeling",
-    "inUseDate": "26-05-2026",
-    "revisionDate": "26-08-2026",
+    "inUseDate": "21-08-2026",
+    "revisionDate": "21-09-2029",
     "replaces": "06-11-2025",
     "indication": {
       "summary": "Trombocytterne er del af det hæmostatiske system og lavt antal kan medføre blødningstendens. Lavt antal ses ved reduceret produktion (eks. suppression af knoglemarven ved cytostatika behandling eller malign transformation af andre cellelinjer), øget perifer destruktion (eks. idiopatisk trombocytopenisk purpura (ITP), trombotisk trombocytopenisk purpura (TTP)), ved øget perifert forbrug (f.eks. dissemineret intravaskulær koagulation (DIC) og traumer) samt ved splenomegali. Forhøjede værdier kan ses reaktivt og sekundært til flere tilstande. Svært forhøjede værdier ses ved myeloproliferative sygdomme.",
@@ -15711,6 +15711,80 @@
         "standard": "0,044-55 nmol/L (ved fortynding)"
       },
       "comments": "Ved behov for præcis kvantitering af lave P-Østradiol koncentrationer (<0,05 nmol/L), kontaktes vagthavende læge på klinisk biokemisk afdeling vedrørende alternative analyser."
+    },
+    "history": [],
+    "dataQualityFlags": [
+      "Automatisk oprettet kladde fra PDF-scraping. Alle felter er maskinudtrukne og bør efterses mod kildedokumentet før de regnes som verificerede.",
+      "Referenceinterval udtrukket automatisk fra PDF-scraping — bør verificeres mod kildedokumentet."
+    ]
+  },
+  {
+    "id": "M-316/01",
+    "documentNumber": "",
+    "slug": "kolesterol-non-hdl-p-npu29055",
+    "name": "Kolesterol non-HDL;P",
+    "letter": "K",
+    "npu": "NPU29055",
+    "labka": "",
+    "labkaFullName": "",
+    "spCode": "",
+    "webreqCode": "",
+    "pdfUrl": "https://www.gentoftehospital.dk/afdelinger-og-klinikker/klinisk-biokemisk-afdeling/metodeblade/K/Kolesterol%20non-HDL%20(Plasma).pdf",
+    "unit": "mmol/L",
+    "section": "KEMI",
+    "hospital": "Herlev og Gentofte Hospital",
+    "department": "Klinisk Biokemisk Afdeling",
+    "inUseDate": "18-09-2026",
+    "revisionDate": "18-12-2026",
+    "replaces": "",
+    "indication": {
+      "summary": "Kolesterol non-HDL;P beregnes som kolesterol;P minus kolesterol HDL;P og udgør således den samlede koncentration af atherogene apolipoprotein B holdige partikler i blodet. Bestemmelsen af kolesterol non-HDL;P anvendes ved risikovurdering og terapikontrol ved hjertekarsygdom. Særligt hos patienter med højt niveau af triglycerider i blodet kan kolesterol non-HDL;P være en bedre markør for den kardiovaskulære risiko. Høje værdier er forbundet med øget risiko for hjertekarsygdom og risikoen er stigende med stigende værdier. I SCORE2 anvendes non-HDL kolesterol;P til bestemmelse af 10 års risiko for kardiovaskulære events. https://nbv.cardio.dk/kapitel/forebyggelse/ https://nbv.cardio.dk/kapitel/dyslipidaemi/ https://www.dsam.dk/vejledninger/hjerte/risikovurdering",
+      "elevated": [],
+      "decreased": []
+    },
+    "sample": {
+      "material": "Plasma/serum. Vacuette® glas med grøn prop og sort ring, indeholdende Lithium-Heparin. Alternativt kan benyttes: Vacuette® glas med rød prop og sort ring, uden tilsætning",
+      "tube": "",
+      "tubeColor": "",
+      "minVolume": "300 µL plasma. Svarende til ~600 µL fuldblod for voksne og børn og ~700 µL fuldblod for spædbørn. Volumenet omfatter ikke dødvolumen i prøvebeholderen eller det supplerende volumen, som er nødvendigt ved udførelse af duplikater eller andre analyser på samme prøve.",
+      "specialConditions": ""
+    },
+    "referenceIntervals": [
+      { "target": "Beslutningsgrænse", "age": "Alle aldre", "range": "3,9", "unit": "mmol/L" }
+    ],
+    "referenceNote": "Se henvisninger til anbefalinger samt SCORE2 under indikation og resultatvurdering.",
+    "alarmLimits": "Ingen.",
+    "logistics": {
+      "laboratory": "Herlev og Gentofte Hospital, Klinisk Biokemisk Afdeling",
+      "frequency": "Døgnet rundt alle ugens dage.",
+      "turnaroundTime": "Svartid for 90% af analyserne er maksimalt 60 minutter. For praksisprøver svares samme dag.",
+      "handling": {},
+      "stability": {
+        "wholeBlood": "48 timer v. 21°C",
+        "pipetted": "7 døgn v. 2 – 8 °C"
+      },
+      "transport": {},
+      "preanalyticalErrors": "Ingen særlige."
+    },
+    "method": {
+      "accredited": false,
+      "traceability": "Beregning. Se metodeblade for indgående analyser.",
+      "principle": "Resultatet fremkommer ved følgende beregning: P-Kolesterol non-HDL = P-Kolesterol – P-Kolesterol HDL",
+      "instrument": "Siemens Atellica CH 930",
+      "calibrator": "Atellica CH CHEM CAL",
+      "reagent": "Beregning",
+      "externalQC": "Indgående analyser følges ved detagelse i LABQUALITY 3391 FI Almen klinisk biokemi",
+      "precisionControls": [
+        {
+          "name": "Se metodeblade for Kolesterol (Plasma) og Kolesterol HDL (Plasma)",
+          "cv": "CV intermediær: 6 % Den intermediære præcision er beregnet ud middelværdier og standard deviationer for de indgående parametres interne kontroller. Se metodeblade for Kolesterol (Plasma) og Kolesterol HDL (Plasma).",
+          "ci": "Ekspanderet måleusikkerhed (k=2): 12 %"
+        }
+      ],
+      "clinicalDifference": "Ved to prøver på samme patient (målt med ovennævnte analysemetode) er den mindste klinisk signifikante forskel på de to svar 22 % beregnet på baggrund af en skønnet biologisk variation på 5,3 % (biologicalvariation.eu’s værdi for cholesterol)",
+      "interference": {
+        "biasNote": "Se metodeblade for Kolesterol (Plasma) og Kolesterol HDL (Plasma)."
+      }
     },
     "history": [],
     "dataQualityFlags": [
